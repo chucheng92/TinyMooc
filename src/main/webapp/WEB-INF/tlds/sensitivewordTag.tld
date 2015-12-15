@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+ <tlib-version>2.2.3</tlib-version>
+ <jsp-version>1.2</jsp-version>
+ <short-name>sstwd</short-name>
+ <uri>/sstwd-tags</uri>
+ <display-name>"SICDLAB"</display-name>
+ <!-- page标签begin -->
+ <tag>
+  <name>sensitiveword</name>
+  <tag-class>com.tinymooc.common.tag.sensitivewordsTag.SensitiveWordTag</tag-class>
+  <body-content>JSP</body-content>
+  <attribute>
+   <name>originContent</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>原文</description>
+  </attribute>
+ </tag>
+ <!-- page标签 end-->
+</taglib>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>       
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>2.2.3</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>sicd</short-name>
+	<uri>/sicd-tags</uri>
+	<display-name>"SICDLAB"</display-name>
+	<description><![CDATA[shrgood]]></description>
+	<!-- page标签begin -->
+	<tag>
+		<name>page</name>
+		<tag-class>com.tinymooc.common.tag.pageTag.PageTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>curPage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[总记录数]]></description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[总记录数]]></description>
+		</attribute>
+		<attribute>
+			<name>totalPage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[总记录数]]></description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[总记录数]]></description>
+		</attribute>
+		<attribute>
+			<name>limit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[总记录数]]></description>
+		</attribute>
+	</tag>
+	<!-- page标签 end-->
+    <!-- dateParse标签begin  -->
+	 <tag>       
+    <name>dateParse</name>       
+    <tag-class>com.tinymooc.common.tag.dateParseTag.DateParseTag</tag-class>       
+    <body-content>JSP</body-content>       
+            
+    <attribute>       
+      <name>date</name>       
+      <required>true</required>       
+      <rtexprvalue>true</rtexprvalue>     
+      <type>java.util.Date</type> 
+      <description><![CDATA[要转换的日期（util.Date 格式）]]></description>       
+    </attribute>                  
+    </tag> 
+	<!-- dateParse标签end -->
+	<!-- label标签begin  -->
+	 <tag>  
+        <name>label</name>  
+        <tag-class>com.tinymooc.handler.label.tag.LabelTag</tag-class>
+      	<body-content>JSP</body-content>
+        <attribute>  
+            <name>hotLabels</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+            <description><![CDATA[热门标签]]></description>
+        </attribute> 
+          <attribute>  
+            <name>previousLabels</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+            <description><![CDATA[之前的标签]]></description>
+        </attribute>  
+    </tag>  
+	<!-- label标签end -->
+	<!-- owner标签begin  -->
+	 <tag>  
+        <name>owner</name>  
+        <tag-class>com.tinymooc.authority.tag.relationTag.OwnerTag</tag-class>  
+      	<body-content>JSP</body-content>
+        <attribute>  
+            <name>instanceId</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+            <description><![CDATA[热门标签]]></description>
+        </attribute> 
+    </tag>  
+	<!-- owner标签end -->
+	
+	<!-- member标签begin  -->
+	 <tag>  
+        <name>member</name>  
+        <tag-class>org.sicdlab.authority.tag.relationTag.MemberTag</tag-class>  
+      	<body-content>JSP</body-content>
+        <attribute>  
+            <name>instanceId</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+            <description><![CDATA[热门标签]]></description>
+        </attribute> 
+    </tag>  
+	<!-- member标签end -->
+	
+	<!-- noRel标签begin  -->
+	 <tag>  
+        <name>noRel</name>  
+        <tag-class>org.sicdlab.authority.tag.relationTag.NoRelationTag</tag-class>  
+      	<body-content>JSP</body-content>
+        <attribute>  
+            <name>instanceId</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+            <description><![CDATA[热门标签]]></description>
+        </attribute> 
+    </tag>  
+	<!-- noRel标签end -->
+	
+</taglib>  
