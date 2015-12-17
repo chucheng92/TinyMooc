@@ -37,11 +37,11 @@ $(function(){
 <header class="header" id="header">
 
   <div class="container">
-    <a class="logo" href="turnToHomePage.htm"><img src="<c:url value="/resource/pic/logo.png" />" width="80"
+    <a class="logo" href="/index.jsp"><img src="<c:url value="/resource/pic/logo.png" />" width="80"
 				height="26"><em></em></a>
 
 			<ul class="header-nav">
-				<li class="item"><a href="/index.jsp" class="trigger">首页</a></li>
+				<li class="item"><a href="/turnToHomePage.htm" class="trigger">首页</a></li>
 				<li class="item course"><a href="goCourseHome.htm" class="trigger" id="course">课程<span
 						class="down-triangle"></span></a>
 					<div class="menus" id="menu">

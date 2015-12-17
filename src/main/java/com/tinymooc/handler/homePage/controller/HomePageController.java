@@ -253,7 +253,7 @@ public class HomePageController {
     }
 
 
-    @RequestMapping("turnToTuiTeam.htm")
+    @RequestMapping("recommendTeam.htm")
     public ModelAndView turnToTuiTeam(HttpServletRequest request) {
         System.out.println("=====Test Start===========Enter turnToTuiTeam===========");
         User user = (User) request.getSession().getAttribute("user");
@@ -323,7 +323,7 @@ public class HomePageController {
 
         //FIXME
         System.out.println("============Test End============");
-        return new ModelAndView("/homePage/recommendTeamPage");
+        return new ModelAndView("/homePage/recommendTeam");
     }
 
     @RequestMapping("turnToHelpPage.htm")
@@ -535,7 +535,7 @@ public class HomePageController {
         PageHelper.forPage(totalPage, pageSize);
         List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dCriteria, pageSize);
         request.setAttribute("list1", list1);
-        return new ModelAndView("/homePage/coursehome");
+        return new ModelAndView("/homePage/courseHome");
 
     }
 

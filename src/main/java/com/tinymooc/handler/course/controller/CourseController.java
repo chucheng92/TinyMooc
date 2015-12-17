@@ -175,22 +175,28 @@ public class CourseController {
 	@RequestMapping("courseDetailPage.htm")
 	public ModelAndView courseDetailPage(HttpServletRequest req,HttpServletResponse res){
         // FIXME
-        System.out.println("============进入courseDetailPage.htm===============");
+        System.out.println("============START 进入courseDetailPage.htm===============");
 
 		String courseId=ServletRequestUtils.getStringParameter(req, "courseId", "");
 	    Course course=courseService.findById(Course.class, courseId);
+        course.setScanNum(course.getScanNum()+1);
+        courseService.update(course);
+
 		User user=(User)req.getSession().getAttribute("user");
 
-        // 1
+        // Test 1
 		//查询该课程的用户课程信息（能得到创建者信息）
 		DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(UserCourse.class)
 				.add(Restrictions.eq("userPosition","创建者"))
 				.add(Restrictions.eq("course", course));
         // currentCourse 针对当前课程的创建者
-        List<UserCourse> tempList = (List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, detachedCriteria1);
+        UserCourse currentCourse = courseService.queryAllOfCondition(UserCourse.class, detachedCriteria1).get(0);
         // FIXME
-        System.out.println("===============tempList.size="+ tempList.size());
-        UserCourse currentCourse = tempList.get(0);
+        if (currentCourse.getLearnState()==null) {
+            System.out.println("Test 1 if===============currentCourse.getLearnState()=NULL");
+        } else {
+            System.out.println("Test 1 else===============currentCourse.getLearnState()=" + currentCourse.getLearnState());
+        }
 
         //查询该课程的所有课时
 //		DetachedCriteria criteria2=DetachedCriteria.forClass(UserCourse.class)
@@ -199,7 +205,7 @@ public class CourseController {
 //				.add(Restrictions.eq("course", course))				
 //				.addOrder(Order.asc("applyDate"));
 
-        // 2
+        // Test 2
 		//按开始学习时间降序排列查询该课程用户学习状态为"学习中"的用户课程信息
 		DetachedCriteria detachedCriteria2 = DetachedCriteria.forClass(UserCourse.class)
 				.add(Restrictions.eq("userPosition","学员"))
@@ -208,10 +214,11 @@ public class CourseController {
 				.addOrder(Order.desc("startDate"));
         // 学员学习中
         List<UserCourse> userLearnCourseList = (List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, detachedCriteria2);
-        // FIXME
-        System.out.println("===============userLearnCourseList .size="+ userLearnCourseList .size());
 
-        // 3
+        // FIXME
+        System.out.println("Test 2===============userLearnCourseList .size="+ userLearnCourseList .size());
+
+        // Test 3
 		//按开始学习时间降序排列查询该课程用户学习状态为"已学"的用户课程信息
 		DetachedCriteria detachedCriteria3 = DetachedCriteria.forClass(UserCourse.class)
 				.add(Restrictions.eq("userPosition","学员"))
@@ -221,57 +228,73 @@ public class CourseController {
         // 学员已学
         List<UserCourse> userEndCourseList = (List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, detachedCriteria3);
         // FIXME
-        System.out.println("===============userEndCourseList.size="+userEndCourseList.size());
+        System.out.println("Test 3===============userEndCourseList.size="+userEndCourseList.size());
+        // 准备学员数据
+        int studentNum= userLearnCourseList.size()+userEndCourseList.size();
 
-        // 4
+        // Test 4
 		// 查询该课程创建者其他创建的用户课程
 		DetachedCriteria detachedCriteria4 = DetachedCriteria.forClass(UserCourse.class)
 				.add(Restrictions.eq("userPosition","创建者"))
 				.add(Restrictions.eq("user", currentCourse.getUser()));
         // 查询该课程创建者创建的所有课程
         List<UserCourse> creatorCourseList =(List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, detachedCriteria4);
+        // 准备课程数数据
+        int creatorCourseNum = creatorCourseList.size();
         // FIXME
-        System.out.println("===============creatorCourseList.size="+ creatorCourseList.size());
+        System.out.println("Test 4===============creatorCourseList.size="+ creatorCourseList.size());
 
-        // 5
+        // Test 5
 		// 查询关注者为登录用户，被关注者为课程创建者的关注信息
         // 查询当前用户与创建者的关注信息
 		DetachedCriteria detachedCriteria5 = DetachedCriteria.forClass(Attention.class)
 				.add(Restrictions.eq("userByUserId", user))
 				.add(Restrictions.eq("userByAttentionedUserId", currentCourse.getUser()));
         List<Attention> attentionOfCurrentToCreator = (List<Attention>)courseService.queryAllOfCondition(Attention.class, detachedCriteria5);
-        // FIXME
-        System.out.println("===============attentionOfCurrentToCreator.size="+ attentionOfCurrentToCreator.size());
+        // 当前用户是否关注创建者
+        int isAttention= 0;
+        if(!attentionOfCurrentToCreator.isEmpty()){
+            isAttention= 1;
+        }
 
-        // 6-1
+        // FIXME
+        System.out.println("Test 5===============attentionOfCurrentToCreator.size="+ attentionOfCurrentToCreator.size());
+
+        // Test 6-1
 		// 查询课程创建者的关注信息
         // 创建者的粉丝
 		DetachedCriteria detachedCriteria6_1 = DetachedCriteria.forClass(Attention.class)
 				.add(Restrictions.eq("userByAttentionedUserId", currentCourse.getUser()));
         // 查询创建者的粉丝
         List<Attention> fansOfCreatorList = (List<Attention>)courseService.queryAllOfCondition(Attention.class, detachedCriteria6_1);
-        // FIXME
-        System.out.println("===============fansOfCreatorList.size="+ fansOfCreatorList.size());
+        // 准备粉丝数据
+        int fansNum = fansOfCreatorList.size();
 
-        // 6-2
+        // FIXME
+        System.out.println("Test 6-1 ===============fansOfCreatorList.size="+ fansOfCreatorList.size());
+
+        // Test 6-2
         // 创建者的关注
         DetachedCriteria detachedCriteria6_2 = DetachedCriteria.forClass(Attention.class)
                 .add(Restrictions.eq("userByUserId", currentCourse.getUser()));
         // 查询创建者的关注
         List<Attention> followOfCreatorList = (List<Attention>)courseService.queryAllOfCondition(Attention.class, detachedCriteria6_2);
+        // 准备关注数据
+        int followNum = followOfCreatorList.size();
         // FIXME
-        System.out.println("===============followOfCreatorList ="+ followOfCreatorList .size());
+        System.out.println("Test 6-2===============followOfCreatorList ="+ followOfCreatorList .size());
 
-        // 7
+        // Test 7
         // 该门课程的标签
 	    DetachedCriteria detachedCriteria7 = DetachedCriteria.forClass(LabelObject.class)
-	        		.add(Restrictions.eq("objectId", currentCourse.getCourse().getCourseId()));
+                .add(Restrictions.eq("objectType", "course"))
+	        	.add(Restrictions.eq("objectId", currentCourse.getCourse().getCourseId()));
         // 该门课程的标签
         List<LabelObject> labelObjectList = (List<LabelObject>)courseService.queryAllOfCondition(LabelObject.class, detachedCriteria7);
         // FIXME
-        System.out.println("===============labelObjectList ="+ labelObjectList.size());
+        System.out.println("Test 7===============labelObjectList ="+ labelObjectList.size());
 
-        // 8
+        // Test 8
         // 该门课程的评分
 	    DetachedCriteria detachedCriteria8 = DetachedCriteria.forClass(Grade.class).add(Restrictions.eq("gradeObject", courseId));
         List<Grade> gradeList = courseService.queryAllOfCondition(Grade.class, detachedCriteria8);
@@ -282,89 +305,92 @@ public class CourseController {
             userGrade =0.0;
         }
         // FIXME
-        System.out.println("===============userGrade="+userGrade);
+        System.out.println("Test 8===============userGrade="+userGrade);
 
 
-        // 9
+        // Test 9
 	    // 查询当前用户针对本课程的学习状态
 	    DetachedCriteria  detachedCriteria9 = DetachedCriteria.forClass(UserCourse.class)
 	    		.add(Restrictions.eq("user", user))
 	    		.add(Restrictions.eq("course", course))
 	    		.add(Restrictions.eq("userPosition", "学员"));
-	    String state="开始学习";
-	    List<UserCourse> courses=(List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, detachedCriteria9);
+	    String currentState = "开始学习";
+	    List<UserCourse> tempList = (List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, detachedCriteria9);
 	    // FIXME
-        System.out.println("===============courses.size="+ courses.size());
+        System.out.println("Test 9===============tempList.size="+ tempList.size());
 
-        if(!courses.isEmpty()){
-	    	state=courses.get(0).getLearnState();
+        if(!tempList.isEmpty()) {
+            currentState = tempList.get(0).getLearnState();
 	    }
 
-        // 10
+        // FIXME
+        System.out.println("==============程序执行到CourseController ->Test9===============");
+
+        // Test 10
 	    //查询该课程对应所有的课时及用户学习状态
 	    DetachedCriteria  detachedCriteria10 = DetachedCriteria.forClass(Course.class)
 	    		.add(Restrictions.eq("course", course))
 	    		.addOrder(Order.asc("applyDate"));
-	    List<Course> courses2=(List<Course>)courseService.queryAllOfCondition(Course.class, detachedCriteria10);
+	    List<Course> tempCourseList = (List<Course>)courseService.queryAllOfCondition(Course.class, detachedCriteria10);
+        // FIXME
+        System.out.println("Test10 ===============tempCourseList.size="+tempCourseList.size());
 
-        List<UserCourse> userCourse2=new ArrayList<UserCourse>();
+        List<UserCourse> userCourseList=new ArrayList<UserCourse>();
 	    String learnState="未学";
 	    
-	    for(int i=0; i<courses2.size(); i++){
-	    	UserCourse userCourse3=new UserCourse();
-	    	DetachedCriteria criteria11=DetachedCriteria.forClass(UserCourse.class)
+	    for(int i=0; i<tempCourseList.size(); i++){
+	    	UserCourse newCourse = new UserCourse();
+	    	DetachedCriteria criteria11 = DetachedCriteria.forClass(UserCourse.class)
 	    			.add(Restrictions.eq("user", user))
-	    			.add(Restrictions.eq("course", courses2.get(i)))
+	    			.add(Restrictions.eq("course", tempCourseList.get(i)))
 	    			.add(Restrictions.eq("userPosition", "学员"));
-	    	List<UserCourse> courses3=(List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, criteria11);
-	    	if(!courses3.isEmpty()){
-                learnState=courses3.get(0).getLearnState();
-	      }
-	    	userCourse3.setCourse(courses2.get(i));
-	    	userCourse3.setLearnState(learnState);
-	    	userCourse2.add(userCourse3);
+	    	List<UserCourse> localTempCourseList = (List<UserCourse>)courseService.queryAllOfCondition(UserCourse.class, criteria11);
+            // FIXME
+            System.out.println("Test11 ===============localTempCourseList="+localTempCourseList .size());
+
+	    	if(! localTempCourseList.isEmpty()){
+                learnState= localTempCourseList.get(0).getLearnState();
+	        }
+            newCourse.setCourse(tempCourseList.get(i));
+            newCourse.setLearnState(learnState);
+            userCourseList.add(newCourse);
 	    }
-
-        // 准备数据 传递request参数
-        // 粉丝
-        int fansNum = fansOfCreatorList.size();
-        // 关注
-        int followNum = followOfCreatorList.size();
-        // 课程数
-		int creatorCourseNum = creatorCourseList.size();
-		int students = userLearnCourseList.size()+userEndCourseList.size();
-
-
-        // 当前用户是否关注创建者
-        int at=0;
-		if(!attentionOfCurrentToCreator.isEmpty()){
-			at=1;
-		}
-
-		int lessons=userCourse2.size();
-		course.setScanNum(course.getScanNum()+1);
-        courseService.update(course);
-
-        int picSuffix = Integer.parseInt(currentCourse.getCourse().getCourseId().substring(0, 7), 16)%10;
+        // Test UserCourseList
         // FIXME
-        System.out.println("============picSuffix="+picSuffix);
+        System.out.println("Test 章节===============UserCourseList="+userCourseList .size());
+
+        // 准备章节数据
+        int lessonNum = userCourseList.size();
+        // Test12
+        // FIXME
+        System.out.println("Test 12=============lessonNum="+lessonNum);
+
+        int picSuffix = 0;
+        if (currentCourse.getCourse().getCourseId().length()<=2) {
+            picSuffix = Integer.parseInt(currentCourse.getCourse().getCourseId());
+        } else {
+            picSuffix = Integer.parseInt(currentCourse.getCourse().getCourseId().substring(0, 7), 16) % 10;
+        }
+
+        // Test13
+        // FIXME
+        System.out.println("Test 13============picSuffix="+picSuffix);
 
         // 封装信息
         req.setAttribute("currentCourse", currentCourse);
 		req.setAttribute("fansNum", fansNum);
 		req.setAttribute("followNum", followNum);
         req.setAttribute("userGrade",  userGrade);
-		req.setAttribute("students", students);
+		req.setAttribute("studentNum", studentNum);
 		req.setAttribute("creatorCourseNum", creatorCourseNum);
-		req.setAttribute("at", at);
-		//req.setAttribute("userCourses2", userCourses2);
-		req.setAttribute("userCourses3",  userLearnCourseList);
-		req.setAttribute("userCourses4", userEndCourseList);
+		req.setAttribute("isAttention", isAttention);
+		req.setAttribute("userLearnCourseList",  userLearnCourseList);
+		req.setAttribute("userEndCourseList", userEndCourseList);
 		req.setAttribute("user", user);
-		req.setAttribute("lessons", lessons);
+		req.setAttribute("lessonNum", lessonNum);
 		req.setAttribute("labelList", labelObjectList);
-		req.setAttribute("state", state);
-		req.setAttribute("userCourse2", userCourse2);
+		req.setAttribute("currentState", currentState);
+		req.setAttribute("userCourseList", userCourseList);
 		return new ModelAndView("/course/courseHome", "picSuffix", picSuffix);
 	}
 

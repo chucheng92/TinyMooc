@@ -16,19 +16,8 @@
 <textarea class="xheditors" id="activeContentRichEditor" name="activityIntroduce" style="height:200px;width:61%;">Test</textarea>
 
 <%-- 腾讯视频测试--%>
-<div id="id_video_container" style="width:100%;height:360px;"></div>
-<script src="http://qzonestyle.gtimg.cn/open/qcloud/video/h5/h5connect.js"></script>
-<script type="text/javascript">
-    (function(){
-        var option ={"auto_play":"0","file_id":"14651978969256119883","app_id":"1251419256","width":0,"height":360};
-        /*调用播放器进行播放*/
-        new qcVideo.Player(
-                /*代码中的id_video_container将会作为播放器放置的容器使用,可自行替换*/
-                "id_video_container",
-                option
-        );
-    })()
-</script>
+<iframe src="http://play.video.qcloud.com/iplayer.html?$appid=1251419256&$fileid=14651978969256120443&$autoplay=0&$sw=1366&$sh=768" frameborder="0" width="100%" height="720" scrolling="no"></iframe>	<!-- 页面内多处使用iframe代码，后面的JS代码只需要使用一次(作用是调整iframe的高度) -->
+<script src="http://qzonestyle.gtimg.cn/open/qcloud/video/h5/fixifmheight.js" charset="utf-8"></script>
 
 </body>
 <script type="text/javascript">
