@@ -8,7 +8,7 @@ public void userRegister(User user);
 	
 	public int checkEmail(String userEmail);
 	
-	public int checkNickName(String nickname);
+	public int checkUserName(String userName);
 	
 	public void emailVerify(User user);
 	
