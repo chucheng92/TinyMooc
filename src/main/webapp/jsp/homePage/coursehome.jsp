@@ -85,13 +85,8 @@
 				<li><sicd:page curPage="${curPage}" url="${url}" totalPage="${totalPage}" /></li>
 			</ul>
 	</div>
-	
-
-	
 
 </section>
-
-
 
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 

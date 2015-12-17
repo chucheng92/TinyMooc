@@ -111,7 +111,7 @@
         <div class="buy" data-type="staff"> <a href="http://localhost:8092/turnToHomePage.htm" target="_blank">萌课首页</a>&nbsp;| </div>
     </div>
     <div class = "menu">
-        <div><span class="copyright">©2015 TinyMooc.COM &nbsp;All Rights Reserved.&nbsp;<a href="#">闽ICP备15018990号-1</a></span></div>
+        <div>©2015 TinyMooc.COM&nbsp;All Rights Reserved.&nbsp;<a href="#">闽ICP备15018990号-1</a></div>
         <br />
         <div><SPAN id=span_dt_dt></SPAN></div>
         <SCRIPT language=javascript>

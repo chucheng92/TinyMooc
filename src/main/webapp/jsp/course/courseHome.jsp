@@ -127,15 +127,15 @@ $("#start").live("click",function(){
 		</div>
 		<span>${userGrade}</span>
 		</c:if>
-	<c:if test="${userGrade=='0.0'}">
+	<c:if test="${userGrade==0.0}">
 		<span>还没有人评分，快去评分吧</span>
 	</c:if>
        </li>
         <li>
-          <span>课时：</span>${lessons} 课
+          <span>课时：</span>${lessonNum} 课
         </li>
         <li>
-          <span>学员：</span><a href="">${students}</a> 人
+          <span>学员：</span><a href="">${studentNum}</a> 人
         </li>
         <li>
           <span>浏览：</span>${currentCourse.course.scanNum} 次
@@ -144,7 +144,7 @@ $("#start").live("click",function(){
 
       <div class="action-bar">
       <c:if test="${currentCourse.user.userId ne user.userId}">
-       <button class="btn btn-large btn-success" id="start">${state}</button>
+       <button class="btn btn-large btn-success" id="start">${currentState}</button>
        </c:if>
       </div>
      
@@ -223,19 +223,19 @@ $("#start").live("click",function(){
         </c:if>
         </c:if>
          <c:if test="${lessons>0}">
-         <c:forEach items="${userCourse2}" var="uc2" varStatus="vs">
+         <c:forEach items="${userCourseList}" var="uc2" varStatus="vs">
          <li class="lili">
          <span class="lesson-index">L${vs.index+1}</span>
          <span class="lesson-title"><a href="lessonPage.htm?childrenId=${uc2.course.courseId}">${uc2.course.courseTitle}</a></span>
          <span class="lesson-learned-status">
          ${uc2.learnState}
          </span>
-          <div class="lesson-summary">          
+          <div class="lesson-summary">
            ${fn:substring(uc2.course.courseIntro,0,50)}
           </div>
-         </li> 
-         </c:forEach> 
-         </c:if>                                          
+         </li>
+         </c:forEach>
+         </c:if>
        </ul>
         </div>
     </div>  
@@ -252,10 +252,10 @@ $("#start").live("click",function(){
        <div class="imageblock-content">
  
    <c:if test="${currentCourse.user.userId ne user.userId}">
-    <c:if test="${at==0}">
+    <c:if test="${isAttention==0}">
     <a href="" class="btn btn-small action-ajax fr"><i class="icon-plus"></i> 关注TA</a>
     </c:if>
-    <c:if test="${at==1}">
+    <c:if test="${isAttention==1}">
     <a href="" class="btn btn-small disabled action-ajax fr"><i class="icon-plus"></i> 已关注</a>
     </c:if>
    </c:if> 
