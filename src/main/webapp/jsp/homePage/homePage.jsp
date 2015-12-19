@@ -58,6 +58,7 @@
 					<div class="text">学习是为了探索这个世界的本质。</div>
 					<div class="speaker">--- 萌课网</div>
 				</div>
+                <c:if test="${empty user}">
 				<div class="signup-btns">
 					<a href="goRegisterPage.htm" class="btn btn btn-large signup-btn">立即注册</a>
 					<div class="connects">
@@ -66,8 +67,8 @@
                         <a  href="#"><img src="/resource/pic/renren_48x48.gif" width="24" height="24"></a>
                         <a href=""><img src="/resource/pic/douban_48x48.gif" width="24" height="24"></a>
 					</div>
-
 				</div>
+                </c:if>
 			</div>
 		</div>
 
@@ -101,7 +102,7 @@
 		<!-- 最新课程 -->
 
 		<div class="flat clearfix">
-			<h2>最新课程 | 哇塞，又有新课开放了，感觉飞起来</h2>
+			<h2>最新课程 | 哇塞，又有新课开放了，赶紧学起来</h2>
 			<ul class="cells cells-middle">
 			<c:forEach items="${newCourseList}" var="newCourse" varStatus="iter">
 				<li class="cell">

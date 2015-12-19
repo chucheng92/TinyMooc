@@ -1,6 +1,5 @@
 package com.tinymooc.handler.note.controller;
 
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
@@ -15,6 +14,8 @@ import com.tinymooc.util.UUIDGenerator;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class NoteController {
+    private static final Logger log = LoggerFactory.getLogger(NoteController.class);
+
     @Autowired
     private UserService userService;
     @Autowired
@@ -181,30 +184,35 @@ public class NoteController {
 
     @RequestMapping("doGrade.htm")
     public void doGrade(HttpServletRequest re, HttpServletResponse response) throws Exception {
+        // FIXME
+        log.info("==================doGrade->START==========");
+
         PrintWriter out = response.getWriter();
         User user = (User) re.getSession().getAttribute("user");
 
         if (user == null) {
-            out.write("go");
+            //FIXME
+            log.info("===================user={}", user);
+            out.print("go");
         } else {
             String objectId = re.getParameter("courseId");
             String score = re.getParameter("score");
             int mark = Integer.parseInt(score);
-            boolean b = noteService.isAreadyGrade(user, objectId);
-            if (b) {
+            boolean flag = noteService.isAreadyGrade(user, objectId);
+            if (flag) {
                 Grade grade = new Grade();
-
                 grade.setGradeId(UUIDGenerator.randomUUID());
                 grade.setGradeObject(objectId);
                 grade.setMark(mark);
                 grade.setUser(user);
-
                 noteService.save(grade);
-                out.write("ok");
+                out.print("ok");
             } else {
-                out.write("no");
+                out.print("no");
             }
-            out.close();
         }
+        //FIXME
+        log.info("===================doGrade->END=============");
+        out.close();
     }
 }
