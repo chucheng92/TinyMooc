@@ -287,12 +287,12 @@
 
     </build>
 
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>ibiblio.org</id>-->
-    <!--<name>ibiblio.org</name>-->
-    <!--<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>-->
-    <!--</repository>-->
-    <!--</repositories>-->
+    <repositories>
+    <repository>
+    <id>ibiblio.org</id>
+    <name>ibiblio.org</name>
+    <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+    </repository>
+    </repositories>
 
 </project>

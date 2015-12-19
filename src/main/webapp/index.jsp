@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>萌课网 | 学习是为了探索这个世界的本质</title>
+    <title>萌课网 - 学习是为了探索这个世界的本质</title>
     <meta name="author" content="hd.bilibili.com" />
     <meta name="description" content="tinymooc 学习是为了探索这个世界的本质。" />
     <meta name="keywords"  content="学习是为了探索这个世界的本质。" />
