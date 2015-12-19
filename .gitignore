@@ -1,5 +1,5 @@
+*.iml
+!tinymooc.iml
 *.class
 /.idea/*
 /target/*
-!/target/README.md
-src/test/test.iml
