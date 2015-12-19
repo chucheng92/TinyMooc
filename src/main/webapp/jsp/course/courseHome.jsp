@@ -1,30 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${currentCourse.course.courseTitle} - 萌课网</title>
-    <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />"/>
-
-    <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-    <link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-    <link type="text/css" href="<c:url value="/resource/css/zzsc.css"/>" rel="stylesheet"/>
-    <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
-    <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-    <link rel="stylesheet" href="<c:url value="/resource/css/scojs.css"/>">
-    <script type="text/javascript" src="<c:url value="/resource/js/sco.message.js"/>"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
             var stepW = 24;
+
             var a = $("#aa").val();
+
             var stars = $("#star > li");
-            $("#showb1").css({"width": stepW * a});
+            $("#showb1").css({"width": stepW * a/2});
             $("#showb").css("width", 0);
             stars.each(function (i) {
                 $(stars[i]).click(function (e) {
@@ -43,14 +34,17 @@
                         data: "score=" + n + "&courseId=" + courseId,
                         success: function (msg) {
                             if (msg == "ok") {
-                                $.scojs_message("评价成功！", $.scojs_message.TYPE_OK);
+                                alert("评价成功！");
                             }
                             if (msg == "no") {
                                 $("#showb").css("width", 0);
-                                $.scojs_message("你已经评价过了，不能重复评价！", $.scojs_message.TYPE_ERROR);
+                                alert("你已经评价过了，不能重复评价！");
+
                             }
                             if (msg == "go") {
-                                $.scojs_message("请登录后再评价", $.scojs_message.TYPE_OK);
+
+                                alert("请登录后再评价");
+
                             }
                         }
 
@@ -60,6 +54,7 @@
                 });
             });
         });
+
         function stopDefault(e) {
             if (e && e.preventDefault)
                 e.preventDefault();
@@ -72,11 +67,19 @@
 
     <script type="text/javascript">
         $("#start").live("click", function () {
+            <c:if test="${empty user}">
+                $.scojs_message("登录后才可以加入学习计划哦(づ￣3￣)づ╭❤～", $.scojs_message.TYPE_OK);
+                return false;
+            </c:if>
+            <c:if test="${!empty user}">
+            if ($("#start").html() == "学习中") {
+                alert("暂不支持取消课程的学习┗( T﹏T )┛");
+            }
             if ($("#start").html() == "开始学习") {
                 var courseId = $("#courseId").val();
-                //alert(courseId);
-                location.href = "startLearn.htm?courseId=" + courseId;
+                location.href = "startStudy.htm?courseId=" + courseId;
             }
+            </c:if>
         });
 
         //$("#status").children("li.lili").each(function(){
@@ -84,6 +87,7 @@
         //alert("a");
         //});
     </script>
+
 </head>
 
 <body class="flats-theme">
@@ -112,8 +116,8 @@
                     <ul class="course-metas">
                         <li>
                             <c:if test="${userGrade !='0.0'}">
-                                <div id="xzw_starSys1">
-                                    <div id="xzw_starBox1">
+                                <div id="xzw_starSys">
+                                    <div id="xzw_starBox">
                                         <ul class="star" id="star1">
                                             <li><a href="javascript:void(0)" title="很差" class="one-star"></a></li>
                                             <li><a href="javascript:void(0)" title="较差" class="two-stars"></a></li>
@@ -177,8 +181,7 @@
             </div>
 
 
-            <div class="clearfix mvl"
-                 style="background:#fff; border-bottom:1px dashed #ddeeee;border-top:1px dashed #ddeeee; padding: 8px 8px;margin-bottom:40px;">
+            <div class="clearfix mvl" align="left">
                 <div class="fr">
                     我的评价：
 

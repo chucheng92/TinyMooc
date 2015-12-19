@@ -546,7 +546,6 @@ public class CourseController {
             lessonLearnState = queryTempList2.get(0).getLearnState();
         }
 
-
         int studentNum = userLearnCourseList.size() + userEndCourseList.size();
         lesson.setScanNum(lesson.getScanNum() + 1);
 
@@ -567,7 +566,7 @@ public class CourseController {
         req.setAttribute("resource", resource);
         req.setAttribute("lessonList", lessonList);
         req.setAttribute("lessonNum", lessonList.size());
-        req.setAttribute("lessonLearnState",lessonLearnState);
+        req.setAttribute("lessonLearnState", lessonLearnState);
         return new ModelAndView("/course/lesson");
     }
 
@@ -578,6 +577,7 @@ public class CourseController {
         String content = ServletRequestUtils.getStringParameter(req, "content", "");
         String parentId = ServletRequestUtils.getStringParameter(req, "parentId", "");
         User user = (User) req.getSession().getAttribute("user");
+
         Comment comment = new Comment();
         comment.setCommentId(UUIDGenerator.randomUUID());
         comment.setCommentDate(new Date());
@@ -590,10 +590,30 @@ public class CourseController {
         }
         courseService.save(comment);
         return new ModelAndView("redirect:lessonPage.htm?childrenId=" + courseTimeId);
+
     }
 
     @RequestMapping("startLearn.htm")
     public ModelAndView startLearn(HttpServletRequest req, HttpServletResponse res) {
+        // 本课时学习状态
+        log.info("==============进入startLearn===========");
+        String courseId = ServletRequestUtils.getStringParameter(req, "courseId", "");
+        User user = (User) req.getSession().getAttribute("user");
+        Course course = courseService.findById(Course.class, courseId);
+        UserCourse userCourse = new UserCourse();
+        userCourse.setCourse(course);
+        userCourse.setLearnState("学习中");
+        userCourse.setStartDate(new Date());
+        userCourse.setUser(user);
+        userCourse.setUserCourseId(UUIDGenerator.randomUUID());
+        userCourse.setUserPosition("学员");
+        courseService.save(userCourse);
+        return new ModelAndView("redirect:lessonPage.htm?childrenId=" + courseId);
+    }
+
+    @RequestMapping("startStudy.htm")
+    public ModelAndView startStudy(HttpServletRequest req, HttpServletResponse res) {
+        // 本课程的学习状态
         String courseId = ServletRequestUtils.getStringParameter(req, "courseId", "");
         User user = (User) req.getSession().getAttribute("user");
         Course course = courseService.findById(Course.class, courseId);
@@ -606,24 +626,7 @@ public class CourseController {
         userCourse.setUserPosition("学员");
         courseService.save(userCourse);
         return new ModelAndView("redirect:courseDetailPage.htm?courseId=" + courseId);
-    }
 
-    @RequestMapping("startStudy.htm")
-    public ModelAndView startStudy(HttpServletRequest req, HttpServletResponse res) {
-        // 本课时
-        String courseId = ServletRequestUtils.getStringParameter(req, "courseId", "");
-        User user = (User) req.getSession().getAttribute("user");
-        Course course = courseService.findById(Course.class, courseId);
-
-        UserCourse userCourse = new UserCourse();
-        userCourse.setCourse(course);
-        userCourse.setLearnState("学习中");
-        userCourse.setStartDate(new Date());
-        userCourse.setUser(user);
-        userCourse.setUserCourseId(UUIDGenerator.randomUUID());
-        userCourse.setUserPosition("学员");
-        courseService.save(userCourse);
-        return new ModelAndView("redirect:lessonPage.htm?childrenId=" + courseId);
     }
 
     @RequestMapping("haveLeaned.htm")

@@ -2,19 +2,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="sicd" uri="/sicd-tags" %>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${currentCourse.course.courseTitle}-萌课网</title>
-    <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />"/>
-    <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-
-    <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-    <link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
     <link rel="stylesheet" href="<c:url value="/resource/css/bdsstyle.css"/>">
     <script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
 
@@ -46,7 +39,18 @@
                 }
             });
             $("#save").click(function () {
-                $("#form1").submit();
+                <c:if test="${empty user}">
+                    alert("登陆后才可以发表回复(づ￣3￣)づ╭❤～");
+                    return false;
+                </c:if>
+                <c:if test="${!empty user}">
+                    if ($("#content").val() == "") {
+                        alert("内容不能为空");
+                        return false;
+                    } else {
+                        $("#form1").submit();
+                    }
+                </c:if>
             });
 
             $(".btn.btn-success").live("click", function () {
@@ -136,13 +140,17 @@
     </script>
     <script type="text/javascript">
         function test() {
+            <c:if test="${empty user}">
+            alert("登陆后才可以加入学习计划哦(づ￣3￣)づ╭❤～");
+            return false;
+            </c:if>
+            <c:if test="${!empty user}">
             var courseId = document.getElementById("courseTimeId").value;
-            //alert(document.getElementById("start").innerHTML);
             var a = document.getElementById("start").innerHTML;
             if (a == "开始学习") {
-                window.location.href = "startStudy.htm?courseId=" + courseId;
+                window.location.href = "startLearn.htm?courseId=" + courseId;
             }
-
+            </c:if>
         }
 
     </script>
@@ -166,12 +174,14 @@
              class="flat course-header course-small-header">
             <div class="imageblock clearfix">
                 <div class="imageblock-image">
-                    <a href=""><img src="/resource/pic/huoban.png" width="48" heiht="48" alt="${currentCourse.course.courseTitle}"></a>
+                    <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}"><img
+                            src="/resource/pic/huoban.png" width="48" heiht="48"
+                            alt="${currentCourse.course.courseTitle}"></a>
                 </div>
                 <div class="imageblock-content">
 
                     <h1 class="mbm">
-                        <a href="">${currentCourse.course.courseTitle}</a>
+                        <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}">${currentCourse.course.courseTitle}</a>
                     </h1>
 
                     <div style="margin-left: -5px;">
@@ -183,7 +193,9 @@
                         </div>
                         <div class="action-bar">
                             <c:if test="${currentCourse.user.userId ne user.userId}">
-                                <button class="btn btn-large btn-success" id="start" onclick="test()">${lessonLearnState}</button>
+                                <p>本课时的进度</p>
+                                <button class="btn btn-large btn-success" id="start"
+                                        onclick="test()">${lessonLearnState}</button>
                             </c:if>
                         </div>
                     </div>
@@ -195,7 +207,7 @@
         <div id="lessoncontent" class="flat lesson-flat">
 
             <h1>
-                <span class="lesson-index" id="index">L${lessonNum}</span>
+                <span class="lesson-index" id="index">章节</span>
                 <span class="lesson-title">${lesson.courseTitle}</span>
             </h1>
 
@@ -227,9 +239,8 @@
                     ${resource.link.linkUrl}"
                 </c:if>
                 <c:if test="${!empty resource.video}">
-
                     <div class="media-player">
-                        <video controls="controls" poster="<c:url value='/resource/pic/logo2.jpg'/>">
+                        <video controls="controls" poster="<c:url value='/resource/pic/info/4bee.jpg'/>">
                             <source src="<c:url value='/resource/video/${resource.video.videoUrl}'/>" type="video/mp4"/>
                         </video>
                     </div>
@@ -241,7 +252,7 @@
 			
 				<c:if test="${learnLessonState=='学习中'}">
                     <a href="haveLeaned.htm?courseId=${lesson.courseId}" id="set-learned-btn" class="btn btn-success">
-                        <i class="glyphicon-ok"></i>学过了</a>
+                        <i class="glyphicon-ok"></i>学习中</a>
                 </c:if>
 				<c:if test="${learnLessonState=='已学'}">
                     <a href="" id="cancel-learned-btn" class="btn btn-success disabled">
@@ -258,7 +269,7 @@
         <c:if test="${commentNum>0}">
             <div class="flat">
                 <h3>${commentNum} 回复</h3>
-                <ul class="discuss-replies" style="border: 1px solid;border-color:#DDDDDD ">
+                <ul class="discuss-replies">
                     <c:forEach items="${singleCommentList}" var="cm1">
                         <li class="reply" data-author="${cm1.user.userName}">
                             <div class="who">
@@ -269,7 +280,7 @@
                                 <strong class="mrs"><a href="" class="show-user-card "
                                                        title="${cm1.user.userName}">${cm1.user.userName}</a></strong>
                                 <span class="said-meta"><fmt:formatDate value="${cm1.commentDate}"
-                                                                        pattern="yy-MM-dd HH:mm"/></span>
+                                                                        pattern="yyyyy-MM-dd HH:mm"/></span>
                             </div>
                             <div class="said-content editor-content reply-editor-content">
                                     ${cm1.commentContent}
@@ -278,7 +289,7 @@
                                 <button type="button" class="btn btn-link">回复</button>
                             </p>
 
-                            <ul class="discuss-replies" style="border: 1px solid;border-color:#DDDDDD ">
+                            <ul class="discuss-replies">
                                 <c:forEach items="${nestedCommentList}" var="cm2">
                                     <c:if test="${cm2.comment.commentId eq cm1.commentId}">
                                         <li class="reply" data-author="${cm2.user.userName}">
@@ -293,9 +304,7 @@
                                                 <span class="said-meta"><fmt:formatDate value="${cm2.commentDate}"
                                                                                         pattern="yyyy-MM-dd HH:mm"/></span>
                                             </div>
-                                            <div class="said-content editor-content reply-editor-content">
-                                                    ${cm2.commentContent}
-                                            </div>
+                                            <div class="said-content editor-content reply-editor-content">${cm2.commentContent}</div>
                                         </li>
                                     </c:if>
                                 </c:forEach>
@@ -305,8 +314,7 @@
                                 <div style="display: none;" class="frame">
                                     <form id="form2" class="form1 reply-form" method="post" action="createReply.htm">
                                         <p class="text">
-                                            <textarea class="xheditors aa" name="content" style="padding-left: 0px"
-                                                      required="required"></textarea>
+                                            <textarea class="xheditors aa" name="content" style="padding-left: 0px" required="required"></textarea>
                                             <input type="hidden" name="courseTimeId" value="${lesson.courseId}"/>
                                             <input type="hidden" name="parentId" value="${cm1.commentId}"/>
                                         </p>
@@ -398,10 +406,11 @@
         <div class="flat lesson-nav" id="lesson-window-list" style="display: block;">
             <h2>课时列表</h2>
             <ul id="lesson">
-                <c:forEach items="${lessonList}" var="les">
+                <c:forEach items="${lessonList}" var="les" varStatus="vs">
                     <li>
-                        <span class="lesson-index">L${les.lessonNum}</span>
-                        <span class="lesson-title"> <a href="">${les.courseTitle}</a></span>
+                        <span class="lesson-index">L${vs.count}</span>
+                        <span class="lesson-title"><a
+                                href="lessonPage.htm?childrenId=${les.courseId}">${les.courseTitle}</a></span>
                     </li>
                 </c:forEach>
             </ul>
@@ -419,7 +428,8 @@
 
             <div class="course-author-block imageblock clearfix">
                 <div class="imageblock-image">
-                    <a href="" class="show-user-card" data-uid="7800"><img src="${currentCourse.user.headImage.imageMid}"></a>
+                    <a href="" class="show-user-card" data-uid="7800"><img
+                            src="${currentCourse.user.headImage.imageMid}"></a>
                 </div>
                 <div class="imageblock-content">
 

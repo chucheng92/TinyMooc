@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
 <link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
 
-<script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.6-zh-cn.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
 <script type="text/javascript">
 $(function(){
 $("a#img").click(function(){
