@@ -30,7 +30,7 @@
                         <div class="tab-bar">
                             <ul class="clearfix">
                                 <li class="active"><a href="myTinyMooc.htm">课程推荐</a></li>
-                                <li ><a href="recommendTeam.htm">小组推荐</a></li>
+                                <li ><a href="recommendTeam..htm">小组推荐</a></li>
 
                             </ul>
                         </div>

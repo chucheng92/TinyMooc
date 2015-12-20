@@ -372,8 +372,8 @@ public class HomePageController {
         return new ModelAndView("/userPage/accountLabel", map);
     }
 
-    @RequestMapping("goPersonal.htm")
-    public ModelAndView goPersonal(HttpServletRequest request) throws Exception {
+    @RequestMapping("goPersonnal.htm")
+    public ModelAndView goPersonnal(HttpServletRequest request) throws Exception {
 
         if ((request.getSession().getAttribute("user")) == null) {
             return new ModelAndView("redirect:goLoginPage.htm");
