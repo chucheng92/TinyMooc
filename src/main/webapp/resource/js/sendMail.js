@@ -49,22 +49,24 @@ function callBackReg() {
         if (result == 'info_registered') {
             //document.getElementById("name").innerHTML = "<font color='green'></font>";
             flag1 = true;
-            alert("info_registered");
+            //alert("info_registered");
             return true;
         }
 
         if (result == 'info_yourself') {
-            alert("info_yourself");
+            //alert("info_yourself");
             $.scojs_message("亲，你寂寞了嘛，发给自己干嘛(。﹏。*)", $.scojs_message.TYPE_OK);
+            return false;
         }
 
         if (result == "info_default") {
-            alert("info_default");
+            //alert("info_default");
             $.scojs_message("请输入对方的姓名", $.scojs_message.TYPE_OK);
+            return false;
         }
 
         if (result == 'info_no_such_person') {
-            alert("'info_no_such_person");
+            //alert("'info_no_such_person");
             $.scojs_message("收件人不存在，请检查~(╯﹏╰)~", $.scojs_message.TYPE_OK);
             //document.getElementById("name").innerHTML = "<font color='red'>收件人不存在</font>";
             return false;

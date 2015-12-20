@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import com.tinymooc.authority.annotation.CheckAuthority;
 import com.tinymooc.common.domain.Level;
@@ -41,10 +42,11 @@ public class PrivateMailController {
     @Autowired
     private UserRegisterService userRegisterService;
 
-    //	@CheckAuthority(name="查看私信")
+    @CheckAuthority(name="查看私信")
     @RequestMapping("goPrivateMail.htm")
     public ModelAndView goPrivateMail(HttpServletRequest request) {
         User user = (User) request.getSession().getAttribute("user");
+
         //我发送的
         Criteria criteria = privateMailService.getCurrentSession().createCriteria(Message.class);
         criteria.add(Restrictions.eq("userByReceiverId", user));
@@ -53,8 +55,6 @@ public class PrivateMailController {
                 .add(Projections.property("sendDate")).add(Projections.property("messageState")));
 
         List<Object> mailList = new ArrayList<Object>();
-        // FIXME
-        System.out.println("===================criteria.list()="+criteria.list());
 
         for (Object o : criteria.list()) {
             Object[] array = (Object[]) o;
@@ -100,12 +100,14 @@ public class PrivateMailController {
         User user = (User)request.getSession().getAttribute("user");
         // FIXME
         System.out.println("============进入checkUsedName==================");
+        String currentUserName = user.getUserName();
+        System.out.println("==================currentUserNamee="+currentUserName);
         System.out.println("==================userName="+userName);
 
         PrintWriter out = null;
         String result = null;
         out = response.getWriter();
-        if (user.getUserName().equals(userName)) {
+        if (userName.equalsIgnoreCase(currentUserName)) {
             // FIXME
             System.out.println("==========info_yourself===============");
 
@@ -156,34 +158,32 @@ public class PrivateMailController {
         return new ModelAndView("redirect:goPrivateMail.htm");
     }
 
-//    @RequestMapping("sendMail1.htm")
-//    public ModelAndView sendMail1(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//
-//        String nickname = request.getParameter("userName");
-//
-//
-//        System.out.println(nickname);
-//
-//        DetachedCriteria dCriteria = DetachedCriteria.forClass(User.class);
-//        dCriteria.add(Restrictions.eq("nickname", nickname));
-//
-//        User receiver = privateMailService.queryAllOfCondition(User.class, dCriteria).get(0);
-//
-//        User sender = (User) request.getSession().getAttribute("user");
-//        String context = request.getParameter("context");
-//
-//
-//        System.out.println("receiver" + receiver + "sender" + sender + "context" + context);
-//        Message message = new Message();
-//        message.setMessageId(UUIDGenerator.randomUUID());
-//        message.setMessageState("未读");
-//        message.setSendDate(new Date());
-//        message.setContent(context);
-//        message.setUserByReceiverId(receiver);
-//        message.setUserBySenderId(sender);
-//        privateMailService.save(message);
-//        return new ModelAndView("redirect:getDetail.htm", "userId", receiver.getUserId());
-//    }
+    @RequestMapping("sendContextMail.htm")
+    public ModelAndView sendMail1(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String userName = request.getParameter("userName");
+        // FIXME
+        System.out.println("======================userName="+userName);
+
+        DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(User.class);
+        detachedCriteria1.add(Restrictions.eq("userName", userName));
+        User receiver = privateMailService.queryAllOfCondition(User.class, detachedCriteria1).get(0);
+
+        User sender = (User) request.getSession().getAttribute("user");
+        String context = request.getParameter("context");
+
+        // FIXME
+        System.out.println("============sender: "+ sender + "receiver:" + receiver + "context" + context+"================");
+
+        Message message = new Message();
+        message.setMessageId(UUIDGenerator.randomUUID());
+        message.setMessageState("未读");
+        message.setSendDate(new Date());
+        message.setContent(context);
+        message.setUserByReceiverId(receiver);
+        message.setUserBySenderId(sender);
+        privateMailService.save(message);
+        return new ModelAndView("redirect:getDetail.htm", "userId", receiver.getUserId());
+    }
 
     @RequestMapping("deleteMail.htm")
     public ModelAndView deleteMail(HttpServletRequest request) {
@@ -197,56 +197,48 @@ public class PrivateMailController {
 
     @RequestMapping("getDetail.htm")
     public ModelAndView getDetail(HttpServletRequest request) {
-        String userBid = request.getParameter("userId");
-
-        System.out.println(userBid);
+        String senderId = request.getParameter("userId");
+        // FIXME
+        System.out.println("================senderId="+senderId+"==================");
         User user = (User) request.getSession().getAttribute("user");
+        User sender = privateMailService.findById(User.class, senderId);
+        // FIXME
+        System.out.println("================user="+user.getUserName());
+        System.out.println("================sender="+sender.getUserName());
 
-        User userB = privateMailService.findById(User.class, userBid);
+        //打开会话的时候 ，将与这个sender相关信息全标记为已读
+        DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(Message.class);
+        detachedCriteria1.add(Restrictions.eq("userBySenderId", sender))
+            .add(Restrictions.eq("userByReceiverId", user))
+            .add(Restrictions.eq("messageState", "未读"));
 
+        List<Message> unreadList = privateMailService.queryAllOfCondition(Message.class, detachedCriteria1);
 
-        //打开回话的时候 ，将与这个sender相关信息全更成    已读
-        DetachedCriteria dCriteria1 = DetachedCriteria.forClass(Message.class);
-
-        dCriteria1.add(Restrictions.eq("userBySenderId", userB));
-
-        dCriteria1.add(Restrictions.eq("userByReceiverId", user));
-
-        dCriteria1.add(Restrictions.eq("messageState", "未读"));
-
-
-        List<Message> list1 = privateMailService.queryAllOfCondition(Message.class, dCriteria1);
-
-        for (int i = 0; i < list1.size(); i++) {
-            Message message = list1.get(i);
+        for (int i = 0; i < unreadList.size(); i++) {
+            Message message = unreadList.get(i);
             message.setMessageState("已读");
             privateMailService.update(message);
-
         }
 
         int sum = privateMailService.sumMail(user.getUserId());
-
         HttpSession session = request.getSession();
-
         session.setAttribute("sumMail", sum);
 
         int credit = user.getCredit();
         System.out.println("================credit================" + credit);
         Level level = userService.getUserLevel(credit);
-        //查询回话列表
 
-        DetachedCriteria dCriteria = DetachedCriteria.forClass(Message.class);
-
-        dCriteria.add(Restrictions.or(Restrictions.and(Restrictions.eq("userBySenderId", userB), Restrictions.eq("userByReceiverId", user)), Restrictions.and(Restrictions.eq("userByReceiverId", userB), Restrictions.eq("userBySenderId", user))));
-
-        dCriteria.addOrder(Order.desc("sendDate"));
+        //查询回复列表
+        DetachedCriteria detachedCriteria2 = DetachedCriteria.forClass(Message.class);
+        detachedCriteria2.add(Restrictions.or(Restrictions.and(Restrictions.eq("userBySenderId", sender), Restrictions.eq("userByReceiverId", user)), Restrictions.and(Restrictions.eq("userByReceiverId", sender), Restrictions.eq("userBySenderId", user))));
+        detachedCriteria2.addOrder(Order.desc("sendDate"));
 
         int pageSize = 8;
-        int totalPage = privateMailService.countTotalPage(dCriteria, pageSize);
+        int totalPage = privateMailService.countTotalPage(detachedCriteria2, pageSize);
         PageHelper.forPage(totalPage, pageSize);
-        List<Message> list = (List<Message>) privateMailService.getByPage(dCriteria, pageSize);
+        List<Message> list = (List<Message>) privateMailService.getByPage(detachedCriteria2, pageSize);
 
-        request.setAttribute("userB", userB);
+        request.setAttribute("sender", sender);
         request.setAttribute("level", level);
         request.setAttribute("num", list.size());
         request.setAttribute("list", list);
