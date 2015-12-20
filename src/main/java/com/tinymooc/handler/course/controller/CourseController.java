@@ -306,6 +306,7 @@ public class CourseController {
         List<Grade> gradeList = courseService.queryAllOfCondition(Grade.class, detachedCriteria8);
         double userGrade = 0.0;
         if (gradeList.size() != 0) {
+            // 页面限制位数
             userGrade = courseService.queryGrade(courseId);
         } else {
             userGrade = 0.0;
@@ -343,9 +344,8 @@ public class CourseController {
 
         // 课时
         List<UserCourse> lessonList = new ArrayList<UserCourse>();
-        String currentLessonState = "未学";
-
         for (int i = 0; i < tempLessonList.size(); i++) {
+            String currentLessonState = "未学";
             UserCourse newCourse = new UserCourse();
             DetachedCriteria detachedCriteria11 = DetachedCriteria.forClass(UserCourse.class)
                     .add(Restrictions.eq("user", user))
@@ -441,6 +441,10 @@ public class CourseController {
         // FIXME
         log.info("==================进入lessonPage===============");
         String childrenId = ServletRequestUtils.getStringParameter(req, "childrenId", "");
+
+        // FIXME
+        log.info("==================childrenId={}", childrenId);
+
         User user = (User) req.getSession().getAttribute("user");
         // 课时
         Course lesson = courseService.findById(Course.class, childrenId);
@@ -549,6 +553,8 @@ public class CourseController {
         int studentNum = userLearnCourseList.size() + userEndCourseList.size();
         lesson.setScanNum(lesson.getScanNum() + 1);
 
+        // FIXME
+        log.info("==============程序执行到此============");
         req.setAttribute("lesson", lesson);
         req.setAttribute("currentCourse", currentCourse);
         req.setAttribute("userLearnCourseList", userLearnCourseList);
