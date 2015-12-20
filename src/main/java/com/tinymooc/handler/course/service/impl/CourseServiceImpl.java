@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CourseServiceImpl extends BaseServiceImpl implements CourseService {
 	@Override
-	public boolean IsAreadyGrade(User user, String ObjId) {
+	public boolean isAreadyGrade(User user, String ObjId) {
 		// TODO Auto-generated method stub
 		
 		List<Grade> list=getCurrentSession().createCriteria(Grade.class).add(Restrictions.eq("user", user)).add(Restrictions.eq("gradeObject", ObjId)).list();
