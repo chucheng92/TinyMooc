@@ -3,4 +3,3 @@
 *.class
 /.idea/*
 /target/*
-!/target/README.md
