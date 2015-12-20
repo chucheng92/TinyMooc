@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-*.iml
 *.class
 /.idea/*
 /target/*
-!/target/README.md
-*.log
-=======
-*.class
-/.idea/*
-/target/*
->>>>>>> dev
