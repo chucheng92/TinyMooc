@@ -207,10 +207,10 @@ public class PrivateMailController {
         detachedCriteria1.add(Restrictions.eq("userByReceiverId", user));
         detachedCriteria1.add(Restrictions.eq("messageState", "未读"));
 
-        List<Message> tenpList = privateMailService.queryAllOfCondition(Message.class, detachedCriteria1);
+        List<Message> tempList = privateMailService.queryAllOfCondition(Message.class, detachedCriteria1);
 
-        for (int i = 0; i < tenpList.size(); i++) {
-            Message message = tenpList.get(i);
+        for (int i = 0; i < tempList.size(); i++) {
+            Message message = tempList.get(i);
             message.setMessageState("已读");
             privateMailService.update(message);
         }

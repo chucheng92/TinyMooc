@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class AttentionController {
+
     @Autowired
     private UserService userService;
     @Autowired
@@ -128,14 +129,12 @@ public class AttentionController {
             int credit = user.getCredit();
             // FIXME
             System.out.println("==================credit=================" + credit);
-
             Level level = userService.getUserLevel(credit);
             request.setAttribute("level", level);
             List<Attention> list = attentionService.queryAttention(user.getUserId());
-
             request.setAttribute("sum", list.size());
 
-            return new ModelAndView("/friend/myAttention", "list", list);
+            return new ModelAndView("/attention/myAttention", "list", list);
         }
     }
 
