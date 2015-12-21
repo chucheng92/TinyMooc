@@ -37,8 +37,6 @@
             <table width="100%">
               <tbody><tr>
                 <td>
-                  <a href="getDetail.htm?userId=${mail[0].userId}" class="thread-link">
-                
                     <div class="clearfix pts pbs">
                     <img src="<c:url value="${mail[0].headImage.imageMid}"/>" class="avatar">
                     <c:if test="${mail[2]=='未读'}">
@@ -48,10 +46,9 @@
                       <div class="author">
                       	${mail[0].userName}
                       </div>
+                        <a href="getDetail.htm?userId=${mail[0].userId}" class="thread-link">最新消息&nbsp;${mail[1]}</a>
                     </div>
-                    
                     </div>
-                  </a>
                 </td>
                 <td class="pl5" width="10px"><a href="" onclick="return confirm(&#39;真的要删除该会话吗？&#39;);">x</a></td>
               </tr>

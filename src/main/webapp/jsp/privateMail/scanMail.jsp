@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="sicd" uri="/sicd-tags"%>	
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
@@ -10,7 +9,6 @@
 <title>私信列表</title>
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-
 <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
 <link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
 <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
@@ -34,7 +32,7 @@
     <a href="" onclick="return confirm(&#39;真的要删除整个私信会话吗？&#39;);">全部删除</a>
   </div>
   <h2>
-                    与${userB.nickname}的会话<span class="mls">(共有${num}条)</span>
+                    与${sender.userName}的会话<span class="mls">(共有${num}条)</span>
          
   </h2>
 
@@ -43,14 +41,14 @@
 
 <div class="mod">
   <ul class="msg-list mbl">
-  <c:forEach items="${list}" var="list">
+  <c:forEach items="${list}" var="reply">
   
         <li class="msg-row">
       <div class="imageblock clearfix">
-        <div class="imageblock-image"><a href="http://www.howzhi.com/u/1359470/"><img src="<c:url value="${list.userBySenderId.headImage.imageMid}"/>" class="img"></a></div>
+        <div class="imageblock-image"><a href="http://www.howzhi.com/u/1359470/"><img src="<c:url value="${reply.userBySenderId.headImage.imageMid}"/>" class="img"></a></div>
         <div class="imageblock-content">
-          <div class="mbs"><a href="#" class="fr mls">回复</a><span class="time fr"><fmt:formatDate value="${list.sendDate}" pattern="yyyy/MM/dd:HH:mm:ss"/></span><a href="#">${list.userBySenderId.nickname} TO ${list.userByReceiverId.nickname}</a></div>
-          <div class="editor-content">${list.content}</div>
+          <div class="mbs"><a href="#" class="fr mls">回复</a><span class="time fr"><fmt:formatDate value="${reply.sendDate}" pattern="yyyy/MM/dd:HH:mm:ss"/></span><a href="#">${reply.userBySenderId.userName} TO ${reply.userByReceiverId.userName}</a></div>
+          <div class="editor-content">${reply.content}</div>
         </div>
       </div>
     </li>
@@ -59,7 +57,7 @@
   
   <a id="latest-message" name="latest-message">&nbsp;</a>
 	<sicd:page curPage="${curPage}" url="${url}" totalPage="${totalPage}" />
-  <form id="message-reply-form" method="post" action="sendMail1.htm?userName=${userB.nickname}">
+  <form id="message-reply-form" method="post" action="sendReplyMail.htm?userName=${sender.userName}">
     <textarea id="messagereply_message" name="context" required="required" class="input-xxlarge" rows="3" maxlength="1000"></textarea>
     <p class="messageReplyBtns">
       <button type="submit" class="btn btn-success">回复</button>
@@ -75,7 +73,7 @@
       <div class="avatar-mod clearfix">
         <a href="goPersonnal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
         <div class="infos">
-          <div class="nickname"><a href="/u/1359470/" title="fanfanle">${userName}</a></div>
+          <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
           <div class="icons">
             <a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>
 			<a class="user-level user-level-6"  href="">${level.title}</a>
