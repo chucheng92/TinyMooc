@@ -508,7 +508,7 @@ public class HomePageController {
 
     }
 
-    @RequestMapping("goPersonalAtt.htm")
+    @RequestMapping("goPersonalAttention.htm")
     public ModelAndView goPersonalAtt(HttpServletRequest request) {
 
         String userId = request.getParameter("userId");
