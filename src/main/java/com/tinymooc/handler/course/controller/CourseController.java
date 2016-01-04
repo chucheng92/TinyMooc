@@ -398,7 +398,7 @@ public class CourseController {
         req.setAttribute("labelList", labelObjectList);
         req.setAttribute("currentCourseState", currentCourseState);
         req.setAttribute("lessonList", lessonList);
-        return new ModelAndView("/course/courseHome", "picSuffix", picSuffix);
+        return new ModelAndView("/course/courseDetailPage", "picSuffix", picSuffix);
     }
 
     /**

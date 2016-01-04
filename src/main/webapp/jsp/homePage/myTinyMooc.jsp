@@ -5,12 +5,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>TinyMooc - 萌课网</title>
+    <title>我的萌课 - 萌课网</title>
 </head>
+
 <body class="flats-theme">
-
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
-
 <section class="container clearfix">
     <div id="me" class="me clearfix">
         <div class="main">

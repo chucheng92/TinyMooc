@@ -188,68 +188,76 @@ public class HomePageController {
     @RequestMapping("myTinyMooc.htm")
     public ModelAndView myTinyMooc(HttpServletRequest request) {
         User user = (User) request.getSession().getAttribute("user");
-        System.out.println("=======HomePageController START=========");
-        //FIXME
-        System.out.println("用户已经登录");
-        System.out.println("=====User====" + user.getUserName());
-        int credit = user.getCredit();
-        System.out.println("========credit=====" + credit);
 
-        Level level = userService.getUserLevel(credit);
-        System.out.println("===level===" + level.getLv());
-
-        // FIXME
-        String sessionId = (String) request.getSession().getAttribute("userId");
-        System.out.println(sessionId);
-
-        //热门标签
-        DetachedCriteria dCriteriaLabel = DetachedCriteria.forClass(Label.class);
-        dCriteriaLabel.addOrder(Order.desc("frequency"));
-        List<Label> labelList = userService.queryMaxNumOfCondition(Label.class, dCriteriaLabel, 8);
-
-        //课程推荐
-        DetachedCriteria dCriteriaCourse = DetachedCriteria.forClass(Course.class);
-        dCriteriaCourse.addOrder(Order.desc("scanNum"));
-        dCriteriaCourse.add(Restrictions.eq("courseState", "批准"));
-        // TODO 是否取消课程的自关联
-        dCriteriaCourse.add(Restrictions.isNull("course"));
-        List<Course> courseList1 = userService.queryMaxNumOfCondition(Course.class, dCriteriaCourse, 6);
-
-        List<UserCourse> hotCourseList = new ArrayList<>();
-        for (int i = 0; i < courseList1.size(); i++) {
-            Course course = courseList1.get(i);
-            DetachedCriteria dCriteriaUserCourse = DetachedCriteria.forClass(UserCourse.class);
-            dCriteriaUserCourse.add(Restrictions.eq("course", course));
-            List<UserCourse> userCourseList = userService.queryAllOfCondition(UserCourse.class, dCriteriaUserCourse);
-
-            // UserCourse中以创建者作为标识
-            for (int j = 0; j < userCourseList.size(); j++) {
-                if (userCourseList.get(j).getUserPosition().equals("创建者")) {
-                    hotCourseList.add(userCourseList.get(j));
-                    break;
-                }
-            }
-            // FIXME
-            System.out.println("=======已登录========userCourseList.size()===========" + userCourseList.size());
+        String message = "";
+        if (user == null) {
+            message = "请先登录啊(￣▽￣)";
+            return new ModelAndView("/login/login", "message", message);
         }
+        else {
+            System.out.println("=======HomePageController START=========");
+            //FIXME
+            System.out.println("用户已经登录");
+            System.out.println("=====User====" + user.getUserName());
+            int credit = user.getCredit();
+            System.out.println("========credit=====" + credit);
 
-        // FIXME
-        System.out.println("=====已登录hotCourseList.size=====" + hotCourseList.size());
+            Level level = userService.getUserLevel(credit);
+            System.out.println("===level===" + level.getLv());
 
-        //达人推荐
-        DetachedCriteria dCriteria2 = DetachedCriteria.forClass(User.class)
-                .addOrder(Order.desc("credit"))
-                .add(Restrictions.ne("userId", user.getUserId()));
-        List<User> expertList = userService.queryMaxNumOfCondition(User.class, dCriteria2, 4);
+            // FIXME
+            String sessionId = (String) request.getSession().getAttribute("userId");
+            System.out.println(sessionId);
 
-        // 封装数据
-        request.setAttribute("hotCourseList", hotCourseList);
-        request.setAttribute("labelList", labelList);
-        request.setAttribute("expertList", expertList);
+            //热门标签
+            DetachedCriteria dCriteriaLabel = DetachedCriteria.forClass(Label.class);
+            dCriteriaLabel.addOrder(Order.desc("frequency"));
+            List<Label> labelList = userService.queryMaxNumOfCondition(Label.class, dCriteriaLabel, 8);
 
-        // TODO
-        System.out.println("用户已经登录转向用户登录页面");
-        return new ModelAndView("/homePage/myTinyMooc", "level", level);
+            //课程推荐
+            DetachedCriteria dCriteriaCourse = DetachedCriteria.forClass(Course.class);
+            dCriteriaCourse.addOrder(Order.desc("scanNum"));
+            dCriteriaCourse.add(Restrictions.eq("courseState", "批准"));
+            // TODO 是否取消课程的自关联
+            dCriteriaCourse.add(Restrictions.isNull("course"));
+            List<Course> courseList1 = userService.queryMaxNumOfCondition(Course.class, dCriteriaCourse, 6);
+
+            List<UserCourse> hotCourseList = new ArrayList<>();
+            for (int i = 0; i < courseList1.size(); i++) {
+                Course course = courseList1.get(i);
+                DetachedCriteria dCriteriaUserCourse = DetachedCriteria.forClass(UserCourse.class);
+                dCriteriaUserCourse.add(Restrictions.eq("course", course));
+                List<UserCourse> userCourseList = userService.queryAllOfCondition(UserCourse.class, dCriteriaUserCourse);
+
+                // UserCourse中以创建者作为标识
+                for (int j = 0; j < userCourseList.size(); j++) {
+                    if (userCourseList.get(j).getUserPosition().equals("创建者")) {
+                        hotCourseList.add(userCourseList.get(j));
+                        break;
+                    }
+                }
+                // FIXME
+                System.out.println("=======已登录========userCourseList.size()===========" + userCourseList.size());
+            }
+
+            // FIXME
+            System.out.println("=====已登录hotCourseList.size=====" + hotCourseList.size());
+
+            //达人推荐
+            DetachedCriteria dCriteria2 = DetachedCriteria.forClass(User.class)
+                    .addOrder(Order.desc("credit"))
+                    .add(Restrictions.ne("userId", user.getUserId()));
+            List<User> expertList = userService.queryMaxNumOfCondition(User.class, dCriteria2, 4);
+
+            // 封装数据
+            request.setAttribute("hotCourseList", hotCourseList);
+            request.setAttribute("labelList", labelList);
+            request.setAttribute("expertList", expertList);
+
+            // TODO
+            System.out.println("用户已经登录转向用户登录页面");
+            return new ModelAndView("/homePage/myTinyMooc", "level", level);
+        }
     }
 
 
@@ -535,7 +543,7 @@ public class HomePageController {
         PageHelper.forPage(totalPage, pageSize);
         List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dCriteria, pageSize);
         request.setAttribute("list1", list1);
-        return new ModelAndView("/homePage/courseHome");
+        return new ModelAndView("/homePage/allcourse");
 
     }
 
