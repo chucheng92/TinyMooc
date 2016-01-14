@@ -71,7 +71,7 @@ public class HomePageController {
         dCriteria.add(Restrictions.eq("courseState", "批准"));
         // TODO 是否取消课程的自关联
         dCriteria.add(Restrictions.isNull("course"));
-        List<Course> hotCourseListTemp = userService.queryMaxNumOfCondition(Course.class, dCriteria, 4);
+        List<Course> hotCourseListTemp = userService.queryMaxNumOfCondition(Course.class, dCriteria, 8);
         // FIXME
         System.out.println("=======未登录hotCourseListTemp.size()===========" + hotCourseListTemp.size());
 
@@ -97,7 +97,7 @@ public class HomePageController {
         dCriteria1.addOrder(Order.desc("applyDate"));
         dCriteria1.add(Restrictions.eq("courseState", "批准"));
         dCriteria1.add(Restrictions.isNull("course"));
-        List<Course> newCourseListTemp = userService.queryMaxNumOfCondition(Course.class, dCriteria1, 4);
+        List<Course> newCourseListTemp = userService.queryMaxNumOfCondition(Course.class, dCriteria1, 8);
         // FIXME
         System.out.println("=======未登录newCourseListTemp.size()===========" + newCourseListTemp.size());
 

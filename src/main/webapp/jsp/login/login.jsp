@@ -48,7 +48,7 @@
                     <label class="fa-label">
                         <i class="fa fa-user"></i>
                     </label>
-                    <input class="form-control" id="login_username" type="text" name="userEmail" value="" required placeholder='邮箱' />
+                    <input class="form-control" id="login_username" type="text" name="userEmail" value="" placeholder='邮箱' />
                     <div class="help-block"></div>
                 </div>
             </div>
@@ -58,15 +58,17 @@
                     <label class="fa-label">
                         <i class="fa fa-unlock-alt"></i>
                     </label>
-                    <input class="form-control" id="login_password" type="password" name="userPassword" required placeholder='密码'/>
+                    <input class="form-control" id="login_password" type="password" name="userPassword" placeholder='密码'/>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="controls">
             <span class="checkbox mtm ">
-              <label> <input type="checkbox" name="_remember_me" checked="checked"> 记住密码 </label>
+              <label> <input id="signin_remeberme" tabIndex="3" name="autoLogin" type="checkbox"> 下次自动登录 </label>
               <a class="pull-right active" href="goFindPassword.htm">忘记密码</a>
+                <br/>
+                <span style="color: red">${note}</span>
             </span>
                 </div>
                 <input class="login-btn btn-primary btn" type="submit" value="登录" />
@@ -90,108 +92,8 @@
                     </a>
 
                 </div>
-
             </div>
-            <input type="hidden" name="_target_path" value="http://www.howzhi.com/me/">
-            <input type="hidden" name="_csrf_token" value="9fb724d7cc584fd68a590f79d82f0be6ad62837a">
         </form>
-    </div>
-    <div class="login-box register">
-        <h1>
-            注册萌课账号
-            <a href="javascript:;" class="pull-right js-trun" >登录<i class="fa fa-arrow-circle-o-right"></i>
-            </a>
-        </h1>
-        <form id="register-form" class="form-vertical" method="post" action="register.htm">
-
-            <div class="form-group mb40">
-                <label class="control-label required" for="register_emailOrMobile">常用手机号或邮箱</label>
-                <div class="controls">
-                    <label class="fa-label">
-                        　　<i class="hz-icon icon-demo25"></i>
-                    </label>
-                    <input type="text" id="register_emailOrMobile" name="emailOrMobile" required="required"
-                           class="form-control" data-url="/register/email_or_mobile/check"
-                           placeholder="常用手机号或邮箱">
-                    <p class="help-block"></p>
-                </div>
-            </div>
-
-            <div class="form-group mb40">
-                <label class="control-label required" for="register_nickname">昵称</label>
-                <div class="controls">
-                    <label class="fa-label">
-                        <i class="hz-icon icon-person"></i>
-                    </label>
-                    <input type="text" id="register_nickname" name="nickname" required="required" class="form-control"
-                           data-url="/register/nickname/check" placeholder="请输入昵称">
-                </div>
-            </div>
-            <div class="form-group mb40">
-                <label class="control-label required" for="register_password">密码</label>
-                <div class="controls">
-                    <label class="fa-label">
-                        <i class="hz-icon icon-lock"></i>
-                    </label>
-                    <input type="password" id="register_password" name="password" required="required" class="form-control"
-                           placeholder="密码">
-                </div>
-            </div>
-
-
-            <div class="form-group mb40 hidden email_mobile_msg">
-                <label class="control-label required" for="sms_code">短信验证码</label>
-                <div class="controls row">
-                    <div class="col-xs-6">
-                        <input type="text" class="form-control ident" id="sms_code" name="sms_code" placeholder="短信验证码"
-                               required="required"  data-url="/edu_cloud/sms_check/sms_registration">
-                    </div>
-                    <div class="col-xs-6">
-                        <a href="#modal" data-toggle="modal" class="btn ident btn-primary btn-lg  form-control  js-sms-send disabled"
-                           data-url="/register/captcha/modal"
-                           data-sms-url="/edu_cloud/sms_send">
-                            <span id="js-time-left"></span>
-                            <span id="js-fetch-btn-text">获取短信验证码</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group mb40 agren">
-                <div class="controls">
-                    <label><input type="checkbox" id="user_terms" checked="checked"> 我已阅读并同意<a href="/userterms" target="_blank">《服务协议》</a>
-                    </label>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="controls">
-                    <button type="submit" id="register-btn " data-submiting-text="正在提交" class="login-btn btn-primary btn">注册
-                    </button>
-                </div>
-            </div>
-            <input type="hidden" name="captcha_enabled" value="0"/>
-            <input type="hidden" name="_csrf_token" value="9fb724d7cc584fd68a590f79d82f0be6ad62837a">
-        </form>
-        <div class="social">
-            快捷登录：
-
-            <a href="/login/bind/weibo?_target_path=http%3A%2F%2Fwww.howzhi.com%2Fme%2F" class="social-login-btn">
-                <i class="hz-icon icon-weibo"></i>
-            </a>
-            <a href="/login/bind/qq?_target_path=http%3A%2F%2Fwww.howzhi.com%2Fme%2F" class="social-login-btn">
-                <i class="hz-icon icon-qq"></i>
-            </a>
-            <a href="/login/bind/renren?_target_path=http%3A%2F%2Fwww.howzhi.com%2Fme%2F" class="social-login-btn">
-                <i class="hz-icon icon-renren"></i>
-            </a>
-            <a href="/login/bind/douban?_target_path=http%3A%2F%2Fwww.howzhi.com%2Fme%2F" class="social-login-btn">
-                <i class="hz-icon icon-gongnengyedouban"></i>
-            </a>
-            <a href="/login/bind/weixinweb?_target_path=http%3A%2F%2Fwww.howzhi.com%2Fme%2F" class="social-login-btn">
-                <i class="hz-icon icon-weixin"></i>
-            </a>
-
-        </div>
-
     </div>
 </div>
 

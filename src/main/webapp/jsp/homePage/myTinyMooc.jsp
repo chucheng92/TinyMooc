@@ -141,9 +141,6 @@
     </div>
 
 </section>
-
-
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
-
 </body>
 </html>

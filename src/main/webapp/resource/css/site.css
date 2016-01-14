@@ -247,13 +247,14 @@ textarea.placeholder {
     visibility: visible;
 }
 .container {
-    margin: 0px auto; width: 978px; max-width: 978px;
+    margin: 0px auto; width: 978px; max-width: 1000px;
 }
 
 /*2016-1-4 18:40:07 @Campanulaceae*/
 .container2 {
-    margin: 0px auto;
+    margin-bottom: 0px;
 }
+
 .content {
     min-height: 420px;
 }
@@ -2585,7 +2586,7 @@ i.kaixin {
 /*}*/
 
 .footer {
-    color:#fff;  padding: 30px 0px;  background: #515151; line-height: 20px;margin-bottom:0px;
+    color:#fff;  padding: 30px 0px;  background: #515151; line-height: 20px;  margin-top: 200px; margin-bottom:0px;
 }
 
 .footer a {
