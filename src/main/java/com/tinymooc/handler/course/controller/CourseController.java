@@ -1,5 +1,6 @@
 package com.tinymooc.handler.course.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +14,8 @@ import com.tinymooc.common.tag.pageTag.PageHelper;
 import com.tinymooc.handler.course.service.CourseService;
 import com.tinymooc.handler.label.service.LabelService;
 import com.tinymooc.handler.user.service.UserService;
+import com.tinymooc.handler.video.service.VideoService;
+import com.tinymooc.util.CSVUtil;
 import com.tinymooc.util.UUIDGenerator;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -29,6 +32,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CourseController {
     private Logger log = LoggerFactory.getLogger(CourseController.class);
+    @Autowired
+    private VideoService videoService;
 
     @Autowired
     private CourseService courseService;
@@ -448,6 +453,7 @@ public class CourseController {
         User user = (User) req.getSession().getAttribute("user");
         // 课时
         Course lesson = courseService.findById(Course.class, childrenId);
+
         // FIXME
         log.info("==================lesson.title={}", lesson.getCourseTitle());
 
@@ -553,6 +559,28 @@ public class CourseController {
         int studentNum = userLearnCourseList.size() + userEndCourseList.size();
         lesson.setScanNum(lesson.getScanNum() + 1);
 
+        // Test14 准备TencentVideoId
+        String fileId = null;
+
+        List<Video> videoList = videoService.queryAll(Video.class);
+
+        for (Video v: videoList) {
+            String vTitle = v.getVideoUrl().substring(0, v.getVideoUrl().lastIndexOf('.'));
+
+            //FIXME
+            System.out.println(v.getVideoUrl().lastIndexOf('.'));
+            System.out.println("=================vTitle="+vTitle);
+
+            if ( vTitle.equals(lesson.getCourseTitle())) {
+                fileId = CSVUtil.core(new File("D:/New/文件地址列表-2016-01-14.csv"), vTitle);
+                v.setTencentVideoId(fileId);
+                videoService.update(v);
+                // FIXME
+                System.out.println("==================fileId="+fileId);
+                break;
+            }
+        }
+
         // FIXME
         log.info("==============程序执行到此============");
         req.setAttribute("lesson", lesson);
@@ -573,7 +601,7 @@ public class CourseController {
         req.setAttribute("lessonList", lessonList);
         req.setAttribute("lessonNum", lessonList.size());
         req.setAttribute("lessonLearnState", lessonLearnState);
-        return new ModelAndView("/course/lesson");
+        return new ModelAndView("/course/lesson", "fileId", fileId);
     }
 
     @CheckAuthority(name = "回复话题")

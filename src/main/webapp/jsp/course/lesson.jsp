@@ -174,14 +174,14 @@
              class="flat course-header course-small-header">
             <div class="imageblock clearfix">
                 <div class="imageblock-image">
-                    <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}"><img
+                    <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}" target="_blank"><img
                             src="/resource/pic/huoban.png" width="48" heiht="48"
                             alt="${currentCourse.course.courseTitle}"></a>
                 </div>
                 <div class="imageblock-content">
 
                     <h1 class="mbm">
-                        <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}">${currentCourse.course.courseTitle}</a>
+                        <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}" target="_blank">${currentCourse.course.courseTitle}</a>
                     </h1>
 
                     <div style="margin-left: -5px;">
@@ -239,11 +239,10 @@
                     ${resource.link.linkUrl}"
                 </c:if>
                 <c:if test="${!empty resource.video}">
-                    <div class="media-player">
-                        <video controls="controls" poster="<c:url value='/resource/pic/info/4bee.jpg'/>">
-                            <source src="<c:url value='/resource/video/${resource.video.videoUrl}'/>" type="video/mp4"/>
-                        </video>
-                    </div>
+                    <%--<div class="media-player">--%>
+                        <iframe src="http://play.video.qcloud.com/iplayer.html?$appid=1251419256&$fileid=${requestScope.fileId}&$autoplay=0&$sw=1280&$sh=720" frameborder="0" width="100%" height="720" scrolling="no"></iframe>
+                        <script src="http://qzonestyle.gtimg.cn/open/qcloud/video/h5/fixifmheight.js" charset="utf-8"></script>
+                    <%--</div>--%>
                 </c:if>
 
 
@@ -410,7 +409,7 @@
                     <li>
                         <span class="lesson-index">L${vs.count}</span>
                         <span class="lesson-title"><a
-                                href="lessonPage.htm?childrenId=${les.courseId}">${les.courseTitle}</a></span>
+                                href="lessonPage.htm?childrenId=${les.courseId}" target="_blank">${les.courseTitle}</a></span>
                     </li>
                 </c:forEach>
             </ul>
@@ -509,21 +508,6 @@
     jQuery(function ($) {
         if ($('textarea.xheditors.note').length != 0) {
             $('textarea.xheditors.note').xheditor({
-                upLinkUrl: "uploadFile.htm",
-                upLinkExt: "zip,rar,txt,doc,docx,pdf,ppt,pptx,pps,ppsx,xlsx,xls,7z",
-                upImgUrl: "uploadPic.htm",
-                upImgExt: "jpg,jpeg,gif,png", tools: 'simple',
-                forcePtag: false,
-                html5Upload: false,
-                emotMark: true
-            });
-        }
-    });
-</script>
-<script type="text/javascript">
-    jQuery(function ($) {
-        if ($('textarea.xheditors.aa').length != 0) {
-            $('textarea.xheditors.aa').xheditor({
                 upLinkUrl: "uploadFile.htm",
                 upLinkExt: "zip,rar,txt,doc,docx,pdf,ppt,pptx,pps,ppsx,xlsx,xls,7z",
                 upImgUrl: "uploadPic.htm",

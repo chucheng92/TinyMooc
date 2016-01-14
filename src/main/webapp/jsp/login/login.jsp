@@ -188,47 +188,4 @@
 </ul>
 
 </body>
-<%--<body class="lily-theme" style="background: url(/resource/pic/login_bg.png) no-repeat top center">--%>
-<%--<jsp:include page="/jsp/include/head1.jsp"></jsp:include>--%>
-
-<%--<section class="container signin">--%>
-  <%--<div class="container-padding clearfix">--%>
-  <%--<h1>登录萌课网</h1>--%>
-  <%--<div class="normal-main">--%>
-    <%--<form id="signin-form" class="form signin-form" method="post" action="login.htm" name="form1">--%>
-        <%--<p>--%>
-      <%--<label for="signin_username">邮箱</label>--%>
-      <%--<input id="signin_username" tabIndex="1" name="userEmail" value="" type="text" onblur="checkReg()">--%>
-      <%--<span id="email"></span>--%>
-    <%--</p>--%>
-    <%--<p>--%>
-      <%--<label for="signin_password">密码</label>--%>
-      <%--<input id="signin_password" tabIndex="2" name="userPassword" type="password" onblur="checkPwd()">--%>
-      <%--<span id="pwd"></span>--%>
-    <%--</p>--%>
-    <%--<p class="actions reset-labels reset-inputs">--%>
-    <%----%>
-      <%--<input id="signin_remeberme" tabIndex="3" name="autoLogin" type="checkbox"><label for="signin_remeberme">下次自动登录</label>--%>
-      <%--<a class="ml15" href="goFindPassword.htm">忘记密码了</a><br>--%>
-      <%--<span style="color: red">${note}</span>--%>
-    <%--</p>--%>
-    <%--<p class="actions">--%>
-     <%----%>
-     <%--<button class="btn btn-success" tabIndex="4" type="submit">登录</button>--%>
-    <%--</p>--%>
-  <%--</form>--%>
-  <%--</div>--%>
-  <%----%>
-  <%--<div class="normal-side">--%>
-    <%--<p>还没有萌课帐号？ <a href="goRegisterPage.htm">立即注册</a></p>--%>
-    <%--<!-- <div class="connect-for-sign">--%>
-      <%----%>
-    <%--</div> -->--%>
-  <%--</div>--%>
-  <%--</div>--%>
-<%--</section>--%>
-<%--<div style="margin-bottom:20%"></div>--%>
-<%--<jsp:include page="/jsp/include/foot.jsp"></jsp:include>--%>
-
-<%--</body>--%>
 </html>

@@ -32,7 +32,6 @@
             | <a href="http://www.xmu.edu.cn/" target="_blank" class="mrs">厦门大学</a>
             |
             <br/>
-             <br/>
             <span id=span_dt_dt></span>
             <script language=javascript>
                 function show_date_time() {
@@ -55,9 +54,6 @@
                 show_date_time();
             </script>
             </div>
-
 </footer>
-
-
 </body>
 </html>

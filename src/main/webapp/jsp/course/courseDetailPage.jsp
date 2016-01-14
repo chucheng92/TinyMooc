@@ -239,7 +239,7 @@
                             <li class="lili">
                                 <span class="lesson-index">L${vs.index+1}</span>
                                 <span class="lesson-title"><a
-                                        href="lessonPage.htm?childrenId=${lesson.course.courseId}">${lesson.course.courseTitle}</a></span>
+                                        href="lessonPage.htm?childrenId=${lesson.course.courseId}" target="_blank">${lesson.course.courseTitle}</a></span>
                                 <span class="lesson-learned-status">
                                         ${lesson.learnState}
                                 </span>
