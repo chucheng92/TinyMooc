@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
 <link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
 
-<script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.6-zh-cn.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
 <script type="text/javascript">
 $(function(){
 $("a#img").click(function(){
@@ -89,7 +89,7 @@ $("#save").click(function(){
           <div class="control-group">
             <label class="control-label">标题</label>
             <div class="controls">
-              <input type="text" name="courseTitle" value="" data-display="标题" required />
+              <input type="text" name="courseTitle" value="" data-display="标题" placeholder="视频文件本栏请置空，图文请填写标题" />
               <input type="hidden" name="courseId" value="${course.courseId}">
             </div>
           </div>

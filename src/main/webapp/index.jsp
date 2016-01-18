@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>萌课网 | 学习是为了探索这个世界的本质</title>
+    <title>萌课网 - 学习是为了探索这个世界的本质</title>
     <meta name="author" content="hd.bilibili.com" />
     <meta name="description" content="tinymooc 学习是为了探索这个世界的本质。" />
     <meta name="keywords"  content="学习是为了探索这个世界的本质。" />
@@ -111,7 +111,7 @@
         <div class="buy" data-type="staff"> <a href="http://localhost:8092/turnToHomePage.htm" target="_blank">萌课首页</a>&nbsp;| </div>
     </div>
     <div class = "menu">
-        <div><span class="copyright">©2015 TinyMooc.COM &nbsp;All Rights Reserved.&nbsp;<a href="#">闽ICP备15018990号-1</a></span></div>
+        <div>©2015 TinyMooc.COM &nbsp;All Rights Reserved.&nbsp;<a href="#">闽ICP备15018990号-1</a></div>
         <br />
         <div><SPAN id=span_dt_dt></SPAN></div>
         <SCRIPT language=javascript>

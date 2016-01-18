@@ -27,6 +27,7 @@ public class Video implements java.io.Serializable {
     private String resourceId;
     private Resource resource;
     private String videoUrl;
+    private String tencentVideoId;
 
     public Video() {
     }
@@ -71,5 +72,13 @@ public class Video implements java.io.Serializable {
         this.videoUrl = videoUrl;
     }
 
+    @Column(name="TENCENT_VIDEO_ID")
+    public String getTencentVideoId() {
+        return this.tencentVideoId;
+    }
+
+    public void setTencentVideoId(String tencentVideoId) {
+        this.tencentVideoId = tencentVideoId;
+    }
 }
 

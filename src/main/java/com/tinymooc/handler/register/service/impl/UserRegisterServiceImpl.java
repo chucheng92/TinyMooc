@@ -8,8 +8,10 @@ import com.tinymooc.handler.register.service.UserRegisterService;
 import com.tinymooc.common.base.impl.BaseServiceImpl;
 import com.tinymooc.common.domain.User;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-@Service("UserRegisterServiceImpl")
+@Transactional
+@Service
 public class UserRegisterServiceImpl extends BaseServiceImpl implements UserRegisterService {
 
 	@Override
@@ -51,10 +53,10 @@ public class UserRegisterServiceImpl extends BaseServiceImpl implements UserRegi
 	}
 
 	@Override
-	public int checkNickName(String nickname) {
+	public int checkUserName(String userName) {
 		// TODO Auto-generated method stub
 		
-		List<User> list=getCurrentSession().createCriteria(User.class).add(Restrictions.eq("nickname", nickname)).list();
+		List<User> list=getCurrentSession().createCriteria(User.class).add(Restrictions.eq("userName", userName)).list();
 		
 		
 		return list.size();

@@ -6,9 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.tinymooc.handler.register.service.SendMailService;
 import com.tinymooc.handler.register.service.UserRegisterService;
-import com.tinymooc.authority.annotation.CheckAuthority;
-import com.tinymooc.handler.register.service.SendMailService;
-import com.tinymooc.handler.register.service.UserRegisterService;
 import com.tinymooc.common.domain.HeadImage;
 import  com.tinymooc.common.domain.User;
 import com.tinymooc.util.UUIDGenerator;
@@ -31,6 +28,7 @@ public class UserRegisterController {
 	public ModelAndView goRegisterPage(){
 		return new ModelAndView("/register/register");
 	}
+
 	//检测邮箱是否被注册，ajax处用
 	@RequestMapping("checkUsedEmail.htm")
 	public String checkUsedEmail(HttpServletRequest request ,HttpServletResponse response)throws Exception{
@@ -40,8 +38,7 @@ public class UserRegisterController {
 		String result=null;
 		out=response.getWriter();
 		if(userRegisterService.checkEmail(userEmail)!=0){
-			
-			result="registed";
+			result="registered";
 			System.out.println(result);
 		}else{
 			result="ok";
@@ -49,17 +46,17 @@ public class UserRegisterController {
 		out.print(result);
 		return null;
 	}
-	@RequestMapping("checkUsedNick.htm")
-	public String checkUsedNick(HttpServletRequest request ,HttpServletResponse response)throws Exception{
-		String name=ServletRequestUtils.getStringParameter(request, "nickname");
-		String nickname = new String(name.getBytes("ISO8859-1"),"UTF-8");
-		System.out.println(nickname+"####################");
+	@RequestMapping("checkRegisterUsedName.htm")
+	public String checkUsedNick(HttpServletRequest request ,HttpServletResponse response) throws Exception{
+		String name=ServletRequestUtils.getStringParameter(request, "userName");
+		String userName = new String(name.getBytes("ISO8859-1"),"UTF-8");
+		System.out.println(userName+"####################");
 		PrintWriter out=null;
 		String result=null;
 		out=response.getWriter();
-		if(userRegisterService.checkNickName(nickname)!=0){
+		if(userRegisterService.checkUserName(userName)!=0){
 			
-			result="registed";
+			result="registered";
 			System.out.println(result);
 		}else{
 			result="ok";
@@ -71,7 +68,6 @@ public class UserRegisterController {
 	
 	@RequestMapping("userRegister.htm")
 	public  ModelAndView userRegister(HttpServletRequest request ,HttpServletResponse response) throws Exception{
-		/*System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");*/
 		String userEmail=ServletRequestUtils.getStringParameter(request, "userEmail");
 		String userPassword=ServletRequestUtils.getStringParameter(request, "userPassword");
 		String userName=ServletRequestUtils.getStringParameter(request, "userName");
@@ -104,15 +100,7 @@ public class UserRegisterController {
 		user.setCredit(1);
 		user.setGold(10);
 		user.setHeadImage(headImage);
-		
-		/*System.out.println(user.getUserEmail());
-		System.out.println(user.getUerMarks());
-		System.out.println(user.getUserPassword());
-		System.out.println(user.getUserId());
-		System.out.println(user);*/
 		userRegisterService.save(user);
-		
-		
 		
 		SendMailService email = new SendMailService("smtp.163.com", 25, 0, true, "initialran@163.com","19920104tr",true);
 		String url="尊敬的"+user.getUserName()+"您好，点击链接激活您的微课程账号<br><a href='http://localhost:8092/verifyEmail.htm?userid="+user.getUserId()+"'>激活</a><br>";

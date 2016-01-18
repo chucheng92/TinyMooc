@@ -1,11 +1,6 @@
 package com.tinymooc.authority.listener;
 
-import java.io.IOException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.TimerTask;
+
 
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
@@ -15,6 +10,12 @@ import com.tinymooc.common.base.impl.BaseServiceImpl;
 import com.tinymooc.common.domain.Authority;
 import com.tinymooc.util.UUIDGenerator;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.TimerTask;
 
 
 public class SyncAuthority extends TimerTask {

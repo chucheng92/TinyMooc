@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class AttentionController {
+
     @Autowired
     private UserService userService;
     @Autowired
@@ -128,38 +129,34 @@ public class AttentionController {
             int credit = user.getCredit();
             // FIXME
             System.out.println("==================credit=================" + credit);
-
             Level level = userService.getUserLevel(credit);
             request.setAttribute("level", level);
             List<Attention> list = attentionService.queryAttention(user.getUserId());
-
             request.setAttribute("sum", list.size());
 
-            return new ModelAndView("/friend/myAttention", "list", list);
+            return new ModelAndView("/attention/myAttention", "list", list);
         }
     }
 
     // 我的粉丝列表
     @RequestMapping("myFans.htm")
     public ModelAndView myFans(HttpServletRequest request) throws Exception {
+        // FIXME
         System.out.println("================myFans.htm被执行==========");
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
-
             return new ModelAndView("/login/login");
         } else {
-
             int credit = user.getCredit();
             // FIXME
             System.out.println("==================credit=================" + credit);
 
             Level level = userService.getUserLevel(credit);
             request.setAttribute("level", level);
-            List<Attention> list = attentionService.queryFans(user.getUserId());
+            List<Attention> fansList = attentionService.queryFans(user.getUserId());
 
-            request.setAttribute("sum", list.size());
-
-            return new ModelAndView("/friend/myFans", "list", list);
+            request.setAttribute("sum", fansList.size());
+            return new ModelAndView("/attention/myFans", "fansList", fansList);
         }
     }
 

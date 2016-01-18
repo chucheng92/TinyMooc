@@ -20,19 +20,19 @@ $(function(){
 	});
 });
 </script>
-
 </head>
+
 <body>
 <header class="header" id="header">
 
 		<div class="container">
-			<a class="logo" href="turnToHomePage.htm"><img src="<c:url value="/resource/pic/logo.png" />" width="80"
+			<a class="logo" href="/index.jsp"><img src="<c:url value="/resource/pic/logo.png" />" width="80"
 				height="26"><em></em></a>
 
 			<ul class="header-nav">
-				<li class="item"><a href="/index.jsp" class="trigger">首页</a></li>
-				<li class="item course"><a href="goCourseHome.htm" class="trigger" id="course">课程<span
-						class="down-triangle"></span></a>
+				<li class="item"><a href="/turnToHomePage.htm" class="trigger">首页</a></li>
+                <li class="item"><a href="/myTinyMooc.htm" class="trigger">我的萌课</a></li>
+				<li class="item course"><a href="goCourseHome.htm" class="trigger" id="course">课程<span class="down-triangle"></span></a>
 					<div class="menus" id="menu">
 						<ul class="clearfix">
                             <li><a href="goMajorHome.htm?type=摄影">摄影</a></li>
@@ -42,10 +42,11 @@ $(function(){
 							<li><a href="goMajorHome.htm?type=文学">文学</a></li>
 							<li><a href="goMajorHome.htm?type=求职">求职</a></li>
 							<li><a href="goMajorHome.htm?type=动漫">动漫</a></li>
-							<li><a href="goMajorHome.htm?type=公开课">公开课</a></li>
+                            <li><a href="goMajorHome.htm?type=音乐">音乐</a></li>
 							<li><a href="goMajorHome.htm?type=其他">其他</a></li>
 						</ul>
-					</div></li>
+					</div>
+                </li>
 				<li class="item"><a href="teamPage.htm" class="trigger">小组</a></li>
 			</ul>
 
@@ -56,9 +57,7 @@ $(function(){
 			</form>
 
 			<div class="user-status-bar">
-				<a href="goLoginPage.htm" class="status-item  sign-status-item"
-					id="signin-status-item">登录</a> <a href="goRegisterPage.htm"
-					class="status-item sign-status-item" id="signup-status-item">注册</a>
+				<a href="goLoginPage.htm" class="status-item  sign-status-item" id="signin-status-item">登录</a> <a href="goRegisterPage.htm" class="status-item sign-status-item" id="signup-status-item">注册</a>
 			</div>
 
 		</div>

@@ -1,20 +1,11 @@
-    <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/bootstrap.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-<link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
 <script type="text/javascript" src="<c:url value="/resource/js/sea.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
 <script type="text/javascript">
 	$('.carousel').carousel();
 </script>
