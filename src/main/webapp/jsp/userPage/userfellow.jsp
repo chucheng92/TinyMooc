@@ -5,26 +5,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>好友</title>
-<link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-<link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
+<title>好友 - 萌课网</title>
+<link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+<link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
 
-<script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
+<link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
+<link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
+<link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
+<link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
+<script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
 </head>
 <body class="lily-theme">
 
-
-
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
-
-
-
-
 
 <section class="container">
   <div class="container-padding clearfix">
