@@ -1,0 +1,566 @@
+element.style {
+}
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+}
+html, body {
+    font-family:arial,sans-serif;
+    color: #211922;
+    font-size: 12px;
+    height: 100%;
+}
+html {
+    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/21/214130cnu36f99665f3667.jpg');
+}
+head {
+    display: none;
+}
+body {
+    margin: 0;
+}
+body {
+    position: relative;
+    overflow-y: scroll;
+}
+body {
+    display: block;
+    margin: 8px;
+}
+.AppBase {
+
+    min-width: 750px;
+}
+div {
+    display: block;
+}
+.Module.fadeIn {
+    -webkit-animation: fadeIn 0.3s;
+
+    -webkit-animation-fill-mode: forwards;
+
+}
+.LoginPage {
+    overflow: hidden;
+    padding: 10px;
+}
+.LoginPage .contents {
+    background: #fff;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+    margin: 100px auto 0;
+    position: relative;
+    max-width: 470px;
+    z-index: 682;
+    max-width: 390px;
+}
+.LoginBase .standardForm {
+    margin-bottom: 0;
+}
+.Login .standardForm {
+    max-width: auto;
+}
+.standardForm--login {
+    max-width: 470px;
+    padding-top: 20px;
+}
+.standardForm {
+    margin: 0 auto 70px;
+    max-width: 734px;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+.standardForm--login>h1 {
+    color: #525252;
+    font-size: 23px;
+    margin: 10px 40px 15px;
+}
+
+.standardForm>h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #333;
+    font-size: 35px;
+    margin: 25px 0 0;
+    text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+.LoginBase .socialLogin {
+    border-radius: 6px 6px 0 0;
+    padding: 15px 40px;
+}
+.LoginBase .socialLogin:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.Button.btn.unAuthFacebookConnect {
+    background-color: #435f9c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5676bc), to(#31497b));
+    background: -webkit-linear-gradient(#5676bc, #31497b);
+    background: linear-gradient(#5676bc, #31497b);
+    border: 1px solid #293e69;
+    border-top-color: #31497b;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+.Button.btn.unAuthFacebookConnect, .Button.btn.unAuthGplusConnect, .Button.btn.unAuthTwitterConnect, .Button.btn.unAuthRakutenConnect {
+    height: 42px;
+    position: relative;
+}
+.Button.btn.rounded {
+    border-radius: 3px;
+}
+.LoginBase .unAuthFacebookConnect, .LoginBase .unAuthGplusConnect, .LoginBase .unAuthRakutenConnect, .LoginBase .unAuthTwitterConnect {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 0;
+    text-align: left;
+    width: 100%;
+}
+.Button.btn.registerLoginButton em {
+    left: 0;
+    position: absolute;
+    padding: 0;
+    top: 0;
+}
+.Button.btn.unAuthFacebookConnect em {
+    width: 42px;
+    height: 42px;
+    background: url("/resource/img/qq.png") no-repeat;
+    background-color: #5a78b9;
+    background-color: rgba(255,255,255,0.08);
+}
+.Button.btn.unAuthFacebookConnect em, .Button.btn.unAuthGplusConnect em, .Button.btn.unAuthTwitterConnect em, .Button.btn.unAuthRakutenConnect em {
+    bottom: 0;
+    -webkit-box-shadow: 1px 0 0 rgba(0,0,0,0.05);
+    box-shadow: 1px 0 0 rgba(0,0,0,0.05);
+    height: 39px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 41px;
+}
+.Button em {
+    display: inline-block;
+    outline: none;
+    position: relative;
+    vertical-align: middle;
+}
+.Button.btn.registerLoginButton span {
+    display: inline-block;
+    margin-left: 42px;
+    margin-top: -3px;
+}
+.Button.btn.unAuthFacebookConnect span, .Button.btn.unAuthGplusConnect span, .Button.btn.unAuthTwitterConnect span, .Button.btn.unAuthRakutenConnect span {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0,0,0,0.25);
+}
+.Button.btn.unAuthFacebookConnect {
+    background-color: #435f9c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5676bc), to(#31497b));
+    background: -webkit-linear-gradient(#5676bc, #31497b);
+    background: linear-gradient(#5676bc, #31497b);
+    border: 1px solid #293e69;
+    border-top-color: #31497b;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+.Button.btn.unAuthGplusConnect {
+    background-color: #ef6666;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f87474), to(#e65858));
+    background: -webkit-linear-gradient(#f87474, #e65858);
+    background: linear-gradient(#f87474, #e65858);
+    border: 1px solid #e34242;
+    border-top-color: #e65858;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+.Button.btn.unAuthFacebookConnect, .Button.btn.unAuthGplusConnect, .Button.btn.unAuthTwitterConnect, .Button.btn.unAuthRakutenConnect {
+    height: 42px;
+    position: relative;
+}
+.Button.btn.rounded {
+    border-radius: 3px;
+}
+.LoginBase .unAuthFacebookConnect, .LoginBase .unAuthGplusConnect, .LoginBase .unAuthRakutenConnect, .LoginBase .unAuthTwitterConnect {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 0;
+    text-align: left;
+    width: 100%;
+}
+.Button.btn.registerLoginButton em {
+    left: 0;
+    position: absolute;
+    padding: 0;
+    top: 0;
+}
+.Button.btn.unAuthGplusConnect em {
+    width: 41px;
+    height: 41px;
+    background: url("/resource/img/weixin.png") no-repeat;
+    background-color: #e65858;
+    background-color: rgba(255,255,255,0.07);
+}
+.Button.btn.unAuthFacebookConnect em, .Button.btn.unAuthGplusConnect em, .Button.btn.unAuthTwitterConnect em, .Button.btn.unAuthRakutenConnect em {
+    bottom: 0;
+    -webkit-box-shadow: 1px 0 0 rgba(0,0,0,0.05);
+    box-shadow: 1px 0 0 rgba(0,0,0,0.05);
+    height: 39px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 41px;
+}
+.Button em {
+    display: inline-block;
+    outline: none;
+    position: relative;
+    vertical-align: middle;
+}
+.Button.btn.registerLoginButton span {
+    display: inline-block;
+    margin-left: 42px;
+    margin-top: -3px;
+}
+.Button.btn.unAuthFacebookConnect span, .Button.btn.unAuthGplusConnect span, .Button.btn.unAuthTwitterConnect span, .Button.btn.unAuthRakutenConnect span {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0,0,0,0.25);
+}
+.Button.btn.unAuthGplusConnect {
+    background-color: #ef6666;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f87474), to(#e65858));
+    background: -webkit-linear-gradient(#f87474, #e65858);
+    background: linear-gradient(#f87474, #e65858);
+    border: 1px solid #e34242;
+    border-top-color: #e65858;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+.Button.btn.unAuthTwitterConnect {
+    background-color: #3fa7d1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5fbee4), to(#2090bd));
+    background: -webkit-linear-gradient(#5fbee4, #2090bd);
+    background: linear-gradient(#5fbee4, #2090bd);
+    border: 1px solid #1c7fa8;
+    border-top-color: #2090bd;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+.Button.btn.unAuthFacebookConnect, .Button.btn.unAuthGplusConnect, .Button.btn.unAuthTwitterConnect, .Button.btn.unAuthRakutenConnect {
+    height: 42px;
+    position: relative;
+}
+.Button.btn.rounded {
+    border-radius: 3px;
+}
+.LoginBase .unAuthFacebookConnect, .LoginBase .unAuthGplusConnect, .LoginBase .unAuthRakutenConnect, .LoginBase .unAuthTwitterConnect {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 0;
+    text-align: left;
+    width: 100%;
+}
+.Button.btn.registerLoginButton em {
+    left: 0;
+    position: absolute;
+    padding: 0;
+    top: 0;
+}
+.Button.btn.unAuthTwitterConnect em {
+    width: 41px;
+    height: 41px;
+    background: url("/resource/img/weibo.png") no-repeat;
+    background-color: #49b5e1;
+    background-color: rgba(255,255,255,0.08);
+}
+.Button.btn.unAuthFacebookConnect em, .Button.btn.unAuthGplusConnect em, .Button.btn.unAuthTwitterConnect em, .Button.btn.unAuthRakutenConnect em {
+    bottom: 0;
+    -webkit-box-shadow: 1px 0 0 rgba(0,0,0,0.05);
+    box-shadow: 1px 0 0 rgba(0,0,0,0.05);
+    height: 39px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 41px;
+}
+.Button em {
+    display: inline-block;
+    outline: none;
+    position: relative;
+    vertical-align: middle;
+}
+.Button.btn.registerLoginButton span {
+    display: inline-block;
+    margin-left: 42px;
+    margin-top: -3px;
+}
+.Button.btn.unAuthFacebookConnect span, .Button.btn.unAuthGplusConnect span, .Button.btn.unAuthTwitterConnect span, .Button.btn.unAuthRakutenConnect span {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0,0,0,0.25);
+}
+.Button.btn.unAuthTwitterConnect {
+    background-color: #3fa7d1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5fbee4), to(#2090bd));
+    background: -webkit-linear-gradient(#5fbee4, #2090bd);
+    background: linear-gradient(#5fbee4, #2090bd);
+    border: 1px solid #1c7fa8;
+    border-top-color: #2090bd;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+.LoginBase .socialLogin:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.LoginBase .userLogin {
+    border-top: 1px solid #dfdfdf;
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+.standardForm--login>ul, .standardForm--login .formSection {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.standardForm>ul, .standardForm .formSection {
+    background: #fff;
+    border-radius: 6px;
+    margin: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, ul {
+    display: block;
+}
+.standardForm>ul>li:first-child, .standardForm .formSection>li:first-child {
+    border: 0;
+}
+.Login .loginUsername {
+    padding-bottom: 5px;
+}
+.standardForm--login>ul>li, .standardForm--login .formSection>li {
+    border: none;
+    padding: 5px 40px;
+    position: relative;
+}
+.standardForm>ul>li, .standardForm .formSection>li {
+    overflow: hidden;
+    border-top: 1px solid #dfdfdf;
+    padding: 15px 21px 15px 27px;
+}
+.standardForm--login input[type="email"], .standardForm--login input[type="number"], .standardForm--login input[type="password"], .standardForm--login input[type="text"], .standardForm--login input[type="url"], .standardForm--login textarea {
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 15px;
+}
+.standardForm input[type="email"], .standardForm input[type="number"], .standardForm input[type="password"], .standardForm input[type="text"], .standardForm input[type="url"], .standardForm textarea {
+    background-color: #f3f3f3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#f5f5f5));
+    background: -webkit-linear-gradient(#f0f0f0, #f5f5f5);
+    background: linear-gradient(#f0f0f0, #f5f5f5);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #d6d3ce;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.12) inset;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12) inset;
+    color: #333;
+    font-size: 14px;
+    padding: 7px;
+}
+button, input {
+    line-height: normal;
+}
+.LoginBase .loginPassword {
+    padding-top: 5px;
+    border: none;
+}
+.standardForm--login>ul>li, .standardForm--login .formSection>li {
+    border: none;
+    padding: 5px 40px;
+    position: relative;
+}
+.standardForm>ul>li, .standardForm .formSection>li {
+    overflow: hidden;
+    border-top: 1px solid #dfdfdf;
+    padding: 15px 21px 15px 27px;
+}
+ul li {
+    list-style: none;
+    padding: 0;
+}
+.standardForm--login input[type="email"], .standardForm--login input[type="number"], .standardForm--login input[type="password"], .standardForm--login input[type="text"], .standardForm--login input[type="url"], .standardForm--login textarea {
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 15px;
+}
+.standardForm input[type="email"], .standardForm input[type="number"], .standardForm input[type="password"], .standardForm input[type="text"], .standardForm input[type="url"], .standardForm textarea {
+    background-color: #f3f3f3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#f5f5f5));
+    background: -webkit-linear-gradient(#f0f0f0, #f5f5f5);
+    background: linear-gradient(#f0f0f0, #f5f5f5);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #d6d3ce;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.12) inset;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12) inset;
+    color: #333;
+    font-size: 14px;
+    padding: 7px;
+}
+button, input {
+    line-height: normal;
+}
+button, input, select, textarea {
+    font-family: "Helvetica Neue","Helvetica","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック",arial,sans-serif;
+    font-size: 100%;
+    margin: 0;
+    vertical-align: middle;
+}
+.LoginBase .loginError {
+    color: #333;
+    margin: 0 40px 14px;
+    border: 1px solid #bd081c;
+    background-color: #ffebe9;
+    display: none;
+    padding: 5px;
+}
+strong, b {
+    font-weight: bold;
+}
+.LoginBase .loginError {
+    color: #333;
+    margin: 0 40px 14px;
+    border: 1px solid #bd081c;
+    background-color: #ffebe9;
+    display: none;
+    padding: 5px;
+}
+
+.LoginBase .businessHint {
+    margin-bottom: 14px;
+}
+.Login .businessHint {
+    padding-left: 40px;
+}
+a {
+    color: #717171;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+}
+.standardForm--login .formFooter {
+    font-size: 14px;
+    padding: 20px 40px;
+}
+.formFooter {
+    background: #f0f0f0;
+    border-radius: 0 0 6px 6px;
+    border-top: 1px solid #dadada;
+    clear: both;
+    padding: 10px 20px;
+}
+.Button.btn.primary, .Button.btn.primaryOnHover:hover, .Button.btn.primaryOnHover:focus, .Button.btn.primaryOnHover.active {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e3262e), to(#ab171e));
+    background-image: -webkit-linear-gradient(#e3262e, #ab171e);
+    background-image: linear-gradient(#e3262e, #ab171e);
+    background-color: #ab171e;
+    border-bottom-color: #820a0f;
+    border-left-color: #9a1015;
+    border-right-color: #9a1015;
+    border-top-color: #af151b;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.34);
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.34);
+    color: #fff;
+    text-shadow: 0 -1px rgba(0,0,0,0.11);
+}
+.Button.btn.rounded {
+    border-radius: 3px;
+}
+.formFooter .btn.Button {
+    margin-left: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.Button.large {
+    font-size: 15px;
+    padding: 10px 18px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, ul {
+    display: block;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+ul li {
+    list-style: none;
+    padding: 0;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.NagNoScript.Module {
+    display: block;
+}
+.NagBase {
+    background-color: #FFF6C8;
+    -webkit-box-shadow: 0 1px 2px rgba(51,51,51,0.15);
+    box-shadow: 0 1px 2px rgba(51,51,51,0.15);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    z-index: 104;
+}
