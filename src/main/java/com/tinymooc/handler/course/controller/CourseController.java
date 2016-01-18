@@ -572,7 +572,7 @@ public class CourseController {
             System.out.println("=================vTitle="+vTitle);
 
             if ( vTitle.equals(lesson.getCourseTitle())) {
-                fileId = CSVUtil.core(new File("D:/New/文件地址列表-2016-01-14.csv"), vTitle);
+                fileId = CSVUtil.core(new File("src/resources/文件地址列表-2016-01-14.csv"), vTitle);
                 v.setTencentVideoId(fileId);
                 videoService.update(v);
                 // FIXME
