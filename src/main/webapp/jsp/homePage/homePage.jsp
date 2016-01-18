@@ -1,23 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%--<link rel="Shortcut Icon" href="/resource/pic/icon.ico"/>--%>
+<script type="text/javascript" src="/resource/bootstrap/js/bootstrap.js" ></script>
+<script type="text/javascript" src="./resource/bootstrap/js/bootstrap-carousel.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-<link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
-
-<%-- 本页面为用户未登录时主页 --%>
-
 <title>萌课网-首页</title>
 </head>
+
 <body class="flats-theme">
 <c:if test="${empty user}">
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
@@ -25,55 +18,29 @@
 <c:if test="${!empty user}">
     <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 </c:if>
-	
-	<section class="container homepage">
-
-		<div class="flat">
-			<ul class="features clearfix">
-				<li>
-					<div class="feature">
-						<i class="feature-icon feature-plan"></i>
-						<div class="title">有计划的学习</div>
-						<div class="note">一系列学习小工具，让你随时记录学习笔记、掌握学习进度。</div>
-					</div>
-				</li>
-				<li>
-					<div class="feature">
-						<i class="feature-icon feature-friend"></i>
-						<div class="title">找到学习的伙伴</div>
-						<div class="note">向老师提问，与同学交流，让学习之路不再寂寞。</div>
-					</div>
-				</li>
-				<li>
-					<div class="feature">
-						<i class="feature-icon feature-share"></i>
-						<div class="title">分享你的知识</div>
-						<div class="note">创建课程，让知识在流动中发光！</div>
-					</div>
-				</li>
-			</ul>
-
-			<div class="signup-bar clearfix">
-				<div class="saying">
-					<div class="text">学习是为了探索这个世界的本质。</div>
-					<div class="speaker">--- 萌课网</div>
-				</div>
-                <c:if test="${empty user}">
-				<div class="signup-btns">
-					<a href="goRegisterPage.htm" class="btn btn btn-large signup-btn">立即注册</a>
-					<div class="connects">
-						已有帐号登录： <a href="#"><img src="/resource/pic/qq_48x48.gif" width="24" height="24"></a>
-                        <a href="#"><img src="/resource/pic/weibo_48x48.png" width="24" height="24"></a>
-                        <a  href="#"><img src="/resource/pic/renren_48x48.gif" width="24" height="24"></a>
-                        <a href=""><img src="/resource/pic/douban_48x48.gif" width="24" height="24"></a>
-					</div>
-				</div>
-                </c:if>
-			</div>
+		<div>
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item"><a href="#"><img src="/resource/pic/info/block_picture_1.jpg" /></a></div>
+                    <div class="item"><a href="#"><img src="/resource/pic/info/block_picture_2.jpg" /></a></div>
+                    <div class="item"><a href="#"><img src="/resource/pic/info/block_picture_3.jpg" /></a></div>
+                    <div class="item"><a href="#"><img src="/resource/pic/info/block_picture_4.jpg" /></a></div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
 		</div>
 
 		<!-- 推荐课程 -->
-
+<section class="container homepage">
 		<div class="flat clearfix">
 			<h2>热门课程 | 瞧瞧大家都在学啥 o(*≧▽≦)ツ</h2>
 			<ul class="cells cells-middle">
@@ -240,29 +207,12 @@
 						class="channel-icon channel-icon-life"></i>求职</a></li>
 				<li class="cell"><a href="goMajorHome.htm?type=动漫"><i
 						class="channel-icon channel-icon-career"></i>动漫</a></li>
-				<li class="cell"><a href="goMajorHome.htm?type=公开课"><i
-						class="channel-icon channel-icon-culture"></i>公开课</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=音乐"><i
+                        class="channel-icon channel-icon-career"></i>音乐</a></li>
 				<li class="cell"><a href="goMajorHome.htm?type=其他"><i
 						class="channel-icon channel-icon-openclass"></i>其他</a></li>
 			</ul>
 		</div>
-
-		<!-- 友情链接 -->
-
-		<div class="flat clearfix">
-			<h2>友情链接</h2>
-			<a href="https://cloud.seu.edu.cn/contest/" target="_blank" class="mrs">云计算创新大赛</a>
-			| <a href="http://news.qq.com/" target="_blank" class="mrs">腾讯新闻</a>
-			| <a href="http://www.qq.com/" target="_blank" class="mrs">QQ</a>
-			| <a href="http://v.qq.com/" target="_blank" class="mrs">腾讯视频</a>
-			| <a href="https://github.com/" target="_blank" class="mrs">
-				GitHub</a> | <a href="http://maven.apache.org/" target="_blank" class="mrs">maven</a>
-			| <a href="http://www.qcloud.com/" target="_blank" class="mrs">腾讯云</a>
-			| <a href="http://www.xmu.edu.cn/" target="_blank" class="mrs">厦门大学</a>
-			|
-		</div>
-
-
 	</section>
 
 	<jsp:include page="/jsp/include/foot.jsp"></jsp:include>

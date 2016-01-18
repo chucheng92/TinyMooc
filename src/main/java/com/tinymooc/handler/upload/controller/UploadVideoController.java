@@ -148,7 +148,7 @@ public class UploadVideoController extends BaseServiceImpl implements BaseServic
             course.setCourse(uploadService.findById(Course.class, courseId));
             course.setCourseIntro(courseIntro);
             course.setCourseState("申请中");
-            course.setCourseTitle(courseTitle);
+            course.setCourseTitle(resourceUrl);
             course.setLessonNum(Integer.parseInt(lessonNum));
             course.setScanNum(0);
             uploadService.save(course);
