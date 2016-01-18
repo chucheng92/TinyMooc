@@ -6,7 +6,7 @@
 <body>
 <div class="menu-mod clearfix">
          <ul class="menus">
-          <li ><a href="myTinyMooc.htm"><i class="feature-icon feature-icon-home"></i>我的萌课</a></li>
+          <li ><a href="turnToHomePage.htm"><i class="feature-icon feature-icon-home"></i>我的首页</a></li>
           <li ><a href="courseList.htm"><i class="feature-icon feature-icon-teach"></i>我的课程</a></li>
           <li ><a href="goNote.htm"><i class="feature-icon feature-icon-note"></i>笔记</a></li>
           <li ><a href="challenge.htm"><i class="feature-icon feature-icon-faq"></i>微挑战</a></li>

@@ -5,9 +5,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+    <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
 
     <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-
+    <link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
     <script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
 
     <%-- 本页面为用户未登录时主页 --%>
@@ -211,8 +215,28 @@
 
             <div class="social">
                 <div class="rightmove">
-                    <a href="goLoginPage.htm" target="_blank" class="scroll">登录</a>
-                    <a href="goRegisterPage.htm" target="_blank" class="scroll">注册</a>
+                    <div class="user-status-bar">
+                        <div class="status-item-wrapper">
+                            <a href="" class="status-item notification-remind"></a>
+                            <a href="" class="remind-number" id="notification-remind-number" style="display:none;">0</a>
+                        </div>
+                        <div class="status-item-wrapper">
+                            <a href="goPrivateMail.htm" class="status-item message-remind"></a>
+                            <c:if test="${sessionScope.sumMail!=0}">
+                                <a href="goPrivateMail.htm" class="remind-number" id="message-remind-number" style="display:block;">${sessionScope.sumMail}</a>
+                            </c:if>
+                        </div>
+                        <div class="status-item-wrapper" id="user-nav-item-wrapper">
+                            <a href="goPersonnal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user"><img src="<c:url value="${user.headImage.imageSmall}"/>" alt="fanfanle" class="avatar" /><span class="nickname">${sessionScope.user.userName}</span></a>
+                            <div class="user-nav-menus">
+                                <a href="goPersonnal.htm?userId=${sessionScope.user.userId}">个人主页</a>
+                                <a href="myTinyMooc.htm">我的萌课</a>
+                                <a href="account.htm">账户设置</a>
+                                <div class="menu-divider"></div>
+                                <a href="logout.htm">退出</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -256,61 +280,6 @@
 
 
 </section><!-- end #home -->
-
-<section id="flavours">
-    <div class="whats-your-gnosh">
-
-
-
-        <a class="flavours-original"></a>
-        <!--<a href="#" class="flavours-dippables"></a>-->
-        <a class="flavours-tapas"></a>
-        <a class="flavours-mm"></a>
-
-        <a href="#" class="arrow-lt-flav"></a>
-        <a href="#" class="arrow-rt-flav"></a>
-
-        <ul id="flav_mm_slide" class="flav-slide">
-            <li class="display-slide">
-                <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215028j60su9u6kkpesyez.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有精心制作的视频课程<br />
-                        </p>
-						</span>
-            </li>
-
-            <li>
-                <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/155616lfv2dbodztbfd1ob.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有实时交互的学习资料<br />
-                        </p>
-						</span>
-            </li>
-
-            <li>
-                <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215112qy4hc96xoiqboxpo.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有循序渐进的学习计划<br />
-                        </p>
-						</span>
-            </li>
-
-            <li>
-                <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215106bh54d3kr58ukkdoz.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有互帮互助的问答社区 <br />
-                        </p>
-						</span>
-            </li>
-
-        </ul>
-    </div>
-
-</section>
 
 
 
@@ -428,6 +397,73 @@
         </div>
 
 
+    </div>
+
+    <div class="why-gnosh-movies">
+    </div>
+    <!-- 笔记、标签 -->
+    <div class="flat clearfix">
+        <h2>课程笔记和热门标签</h2>
+        <div class="flat-main">
+            <h3>推荐笔记 (￣▽￣") </h3>
+            <ul class="picked-notes">
+                <c:forEach items="${noteList}" var="note">
+                    <li class="mbm">
+                        <div class="title">
+                            <a href="">${note.userCourse.course.courseTitle}的笔记</a>
+                        </div>
+                        <div class="summary gray">${note.noteContent}</div>
+                        <div class="metas gray">
+                            <span class="gray">by</span> <span class="thin mrm"><a
+                                href="" class="show-user-card"
+                                title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
+                        </div>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+
+        <!-- 热门标签 -->
+
+        <div class="flat-side">
+            <h3>热门标签 (￣▽￣") </h3>
+
+            <div class="tags">
+                <c:forEach items="${labelList}" var="label">
+                    <a href="#" class="tag">${label.labelName}</a>
+                </c:forEach>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 课程频道 -->
+    <div class="why-gnosh-movies">
+    </div>
+
+    <div class="flat clearfix">
+        <h2>课程频道</h2>
+        <ul class="cells channel-cells">
+            <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
+                    class="channel-icon channel-icon-photography"></i>摄影</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=艺术"><i
+                    class="channel-icon channel-icon-programme"></i>艺术</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=兴趣"><i
+                    class="channel-icon channel-icon-interest"></i>兴趣</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=计算机"><i
+                    class="channel-icon channel-icon-computer"></i>计算机</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=文学"><i
+                    class="channel-icon channel-icon-language"></i>文学</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=求职"><i
+                    class="channel-icon channel-icon-life"></i>求职</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=动漫"><i
+                    class="channel-icon channel-icon-career"></i>动漫</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=公开课"><i
+                    class="channel-icon channel-icon-culture"></i>公开课</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=其他"><i
+                    class="channel-icon channel-icon-openclass"></i>其他</a></li>
+        </ul>
     </div>
 
 </section>
