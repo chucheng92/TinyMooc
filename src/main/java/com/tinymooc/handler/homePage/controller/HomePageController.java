@@ -4,28 +4,21 @@ package com.tinymooc.handler.homePage.controller;
  * Created by 哓哓 on 2015/12/1 0001.
  */
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.tinymooc.common.domain.*;
+import com.tinymooc.handler.video.service.VideoService;
+import com.tinymooc.util.CSVUtil;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import com.tinymooc.handler.attention.service.AttentionService;
 import com.tinymooc.handler.label.service.LabelService;
 import com.tinymooc.handler.user.service.UserService;
-import com.tinymooc.common.domain.Attention;
-import com.tinymooc.common.domain.Course;
-import com.tinymooc.common.domain.Discuss;
-import com.tinymooc.common.domain.Label;
-import com.tinymooc.common.domain.LabelObject;
-import com.tinymooc.common.domain.Level;
-import com.tinymooc.common.domain.Note;
-import com.tinymooc.common.domain.Team;
-import com.tinymooc.common.domain.User;
-import com.tinymooc.common.domain.UserCourse;
-import com.tinymooc.common.domain.UserTeam;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -173,7 +166,7 @@ public class HomePageController {
             Level level = userService.getUserLevel(credit);
             System.out.println("===level===" + level.getLv());
 
-            return new ModelAndView("/homePage/homePage", "level", level);
+            return new ModelAndView("/homePage/userHomePage", "level", level);
         }
 
     }
@@ -193,8 +186,7 @@ public class HomePageController {
         if (user == null) {
             message = "请先登录啊(￣▽￣)";
             return new ModelAndView("/login/login", "message", message);
-        }
-        else {
+        } else {
             System.out.println("=======HomePageController START=========");
             //FIXME
             System.out.println("用户已经登录");
@@ -546,7 +538,6 @@ public class HomePageController {
         return new ModelAndView("/homePage/allcourse");
 
     }
-
 
 		/*---------------------------导航栏专业首页------------------------*/
 

@@ -1,6 +1,5 @@
 package com.tinymooc.handler.course.controller;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,9 +12,9 @@ import com.tinymooc.common.domain.*;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import com.tinymooc.handler.course.service.CourseService;
 import com.tinymooc.handler.label.service.LabelService;
+import com.tinymooc.handler.resource.service.ResourceService;
 import com.tinymooc.handler.user.service.UserService;
 import com.tinymooc.handler.video.service.VideoService;
-import com.tinymooc.util.CSVUtil;
 import com.tinymooc.util.UUIDGenerator;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -34,6 +33,9 @@ public class CourseController {
     private Logger log = LoggerFactory.getLogger(CourseController.class);
     @Autowired
     private VideoService videoService;
+
+    @Autowired
+    private ResourceService resourceService;
 
     @Autowired
     private CourseService courseService;
@@ -560,26 +562,16 @@ public class CourseController {
         lesson.setScanNum(lesson.getScanNum() + 1);
 
         // Test14 准备TencentVideoId
-        String fileId = null;
+        String  resourceObject = courseService.findById(Course.class, childrenId).getCourseId();
+        DetachedCriteria detachedCriteria14 = DetachedCriteria.forClass(Resource.class)
+                .add(Restrictions.eq("resourceObject", resourceObject));
+        Resource temResource = resourceService.queryAllOfCondition(Resource.class, detachedCriteria14).get(0);
+        String fileId = videoService.findById(Video.class, temResource.getResourceId()).getTencentVideoId();
 
-        List<Video> videoList = videoService.queryAll(Video.class);
-
-        for (Video v: videoList) {
-            String vTitle = v.getVideoUrl().substring(0, v.getVideoUrl().lastIndexOf('.'));
-
-            //FIXME
-            System.out.println(v.getVideoUrl().lastIndexOf('.'));
-            System.out.println("=================vTitle="+vTitle);
-
-            if ( vTitle.equals(lesson.getCourseTitle())) {
-                fileId = CSVUtil.core(new File("src/resources/文件地址列表-2016-01-14.csv"), vTitle);
-                v.setTencentVideoId(fileId);
-                videoService.update(v);
-                // FIXME
-                System.out.println("==================fileId="+fileId);
-                break;
-            }
-        }
+        // FIXME
+        System.out.println("======================resourceObject="+resourceObject);
+        // FIXME
+        System.out.println("======================fileId="+fileId);
 
         // FIXME
         log.info("==============程序执行到此============");

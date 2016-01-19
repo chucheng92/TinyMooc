@@ -194,7 +194,7 @@
                                 <li><a href="goMajorHome.htm?type=文学">文学</a></li>
                                 <li><a href="goMajorHome.htm?type=求职">求职</a></li>
                                 <li><a href="goMajorHome.htm?type=动漫">动漫</a></li>
-                                <li><a href="goMajorHome.htm?type=公开课">公开课</a></li>
+                                <li><a href="goMajorHome.htm?type=音乐">音乐</a></li>
                                 <li><a href="goMajorHome.htm?type=其他">其他</a></li>
                             </ul>
                         </div>
@@ -458,8 +458,8 @@
                     class="channel-icon channel-icon-life"></i>求职</a></li>
             <li class="cell"><a href="goMajorHome.htm?type=动漫"><i
                     class="channel-icon channel-icon-career"></i>动漫</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=公开课"><i
-                    class="channel-icon channel-icon-culture"></i>公开课</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=音乐"><i
+                    class="channel-icon channel-icon-culture"></i>音乐</a></li>
             <li class="cell"><a href="goMajorHome.htm?type=其他"><i
                     class="channel-icon channel-icon-openclass"></i>其他</a></li>
         </ul>

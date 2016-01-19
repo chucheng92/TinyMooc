@@ -202,7 +202,7 @@
                                 <li><a href="goMajorHome.htm?type=文学">文学</a></li>
                                 <li><a href="goMajorHome.htm?type=求职">求职</a></li>
                                 <li><a href="goMajorHome.htm?type=动漫">动漫</a></li>
-                                <li><a href="goMajorHome.htm?type=公开课">公开课</a></li>
+                                <li><a href="goMajorHome.htm?type=音乐">音乐</a></li>
                                 <li><a href="goMajorHome.htm?type=其他">其他</a></li>
                             </ul>
                         </div>

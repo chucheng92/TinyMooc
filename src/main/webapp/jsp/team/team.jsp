@@ -159,7 +159,7 @@
                         $("#groups-openSubject").css("display", "none");
                         $("#groups-other").css("display", "none");
                     }
-                    if (a == "公开课") {
+                    if (a == "音乐") {
                         alert(a);
                         $("#groups-video").css("display", "none");
                         $("#groups-art").css("display", "none");
@@ -516,11 +516,11 @@
                 </div>
             </div>
             <div id="groups-openSubject" class="groups-panel">
-                <p>公开课</p>
+                <p>音乐</p>
 
                 <div class="mbl">
                     <ul class="group-cells"><c:forEach items="${hotTeams}" var="team">
-                        <c:if test="${team.type=='公开课'}">
+                        <c:if test="${team.type=='音乐'}">
                             <li style="float:left">
                                 <div class="group-cell">
                                     <div class="pic"><a href="teamHomePage.htm?teamId=${team.teamId}"><img

@@ -238,12 +238,12 @@
                 <c:if test="${!empty resource.link}">
                     ${resource.link.linkUrl}"
                 </c:if>
-                <%--<c:if test="${!empty resource.video}">--%>
-                    <%--&lt;%&ndash;<div class="media-player">&ndash;%&gt;--%>
-                        <%--<iframe src="http://play.video.qcloud.com/iplayer.html?$appid=1251419256&$fileid=${requestScope.fileId}&$autoplay=0&$sw=1280&$sh=720" frameborder="0" width="100%" height="720" scrolling="no"></iframe>--%>
-                        <%--<script src="http://qzonestyle.gtimg.cn/open/qcloud/video/h5/fixifmheight.js" charset="utf-8"></script>--%>
-                    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-                <%--</c:if>--%>
+                <c:if test="${!empty resource.video}">
+                    <%--<div class="media-player">--%>
+                        <iframe src="http://play.video.qcloud.com/iplayer.html?$appid=1251419256&$fileid=${requestScope.fileId}&$autoplay=0&$sw=1280&$sh=720" frameborder="0" width="100%" height="720" scrolling="no"></iframe>
+                        <script src="http://qzonestyle.gtimg.cn/open/qcloud/video/h5/fixifmheight.js" charset="utf-8"></script>
+                    <%--</div>--%>
+                </c:if>
 
 
                 <div class="btn-toolbar mbl clearfix" id="lesson-user-actions">

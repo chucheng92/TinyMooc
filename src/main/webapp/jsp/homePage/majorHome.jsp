@@ -119,7 +119,7 @@
                     <li id="menu-item-1275" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1275"><a href="goMajorHome.htm?type=文学"><span>文学</span></a></li>
                     <li id="menu-item-1276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1276"><a href="goMajorHome.htm?type=求职"><span>求职</span></a></li>
                     <li id="menu-item-1277" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1277"><a href="goMajorHome.htm?type=动漫"><span>动漫</span></a></li>
-                    <li id="menu-item-1278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1278"><a href="goMajorHome.htm?type=公开课"><span>公开课</span></a></li>
+                    <li id="menu-item-1278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1278"><a href="goMajorHome.htm?type=音乐"><span>音乐</span></a></li>
                     <li id="menu-item-1279" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1279"><a href="goMajorHome.htm?type=其他"><span>其他</span></a></li>
                 </ul>
                 </li>

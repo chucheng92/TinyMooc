@@ -1,9 +1,12 @@
 package com.tinymooc.util;
 
+import com.tinymooc.common.domain.Video;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 /**
  * Created by 哓哓 on 2016/1/3 0014.
@@ -11,6 +14,9 @@ import java.io.InputStreamReader;
  */
 public class CSVUtil {
 
+    public static void main(String[] args) {
+
+    }
     public static String format(String str) {
         String regex = "[\\s\"]+";
         String res = str.replaceAll(regex, "");
@@ -30,12 +36,17 @@ public class CSVUtil {
                 fileId = res[0];
                 if (targetTitle.equals(srcTitle)) {
                     break;
+                } else {
+                    fileId = null;
                 }
             }
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return format(fileId);
+        if (fileId !=  null)
+            return format(fileId);
+        else
+            return  null;
     }
 }
