@@ -122,7 +122,7 @@ public class LoginController {
             for (Cookie coo: cookies) {
                 String value = coo.getValue();
                 cooks = value.split("&&");
-                if (cooks.length == 2) {
+               if (cooks.length == 2) {
                     cookieEmail = cooks[0];
                     cookiePswd = cooks[1];
                     exist = true;

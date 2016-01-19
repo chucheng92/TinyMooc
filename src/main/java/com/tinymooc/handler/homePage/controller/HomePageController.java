@@ -173,7 +173,7 @@ public class HomePageController {
             Level level = userService.getUserLevel(credit);
             System.out.println("===level===" + level.getLv());
 
-            return new ModelAndView("/homePage/homePage", "level", level);
+            return new ModelAndView("/homePage/userHomePage", "level", level);
         }
 
     }
@@ -336,7 +336,7 @@ public class HomePageController {
 
     @RequestMapping("turnToHelpPage.htm")
     public ModelAndView turnToHelpPage() {
-        return new ModelAndView("/help/helpLevel");
+        return new ModelAndView("/help/helplevel");
     }
 
 
@@ -466,20 +466,20 @@ public class HomePageController {
 
         dCriteria.add(Restrictions.eq("user", user1));
 
-        List<UserTeam> userTeam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
+        List<UserTeam> userteam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
 
         DetachedCriteria dCriteria2 = DetachedCriteria.forClass(Discuss.class);
 
         dCriteria2.add(Restrictions.eq("user", user1));
 
-        List<Discuss> discussList = userService.queryAllOfCondition(Discuss.class, dCriteria2);
+        List<Discuss> discuss = userService.queryAllOfCondition(Discuss.class, dCriteria2);
 
 
         request.setAttribute("user1", user1);
-        request.setAttribute("userTeam", userTeam);
-        request.setAttribute("discussList", discussList);
+        request.setAttribute("userteam", userteam);
+        request.setAttribute("discuss", discuss);
 
-        return new ModelAndView("/userPage/userGroup");
+        return new ModelAndView("/userPage/usergroup");
 
     }
 
@@ -501,7 +501,7 @@ public class HomePageController {
         request.setAttribute("user1", user1);
         request.setAttribute("user", user);
 
-        return new ModelAndView("/userPage/userNote", "notelist", notelist);
+        return new ModelAndView("/userPage/usernote", "notelist", notelist);
 
     }
 
@@ -512,7 +512,7 @@ public class HomePageController {
         List<Attention> list = attention.queryFans(userId);
         request.setAttribute("user1", user1);
         request.setAttribute("sum", list.size());
-        return new ModelAndView("/userPage/userFans", "list", list);
+        return new ModelAndView("/userPage/userfans", "list", list);
 
     }
 
@@ -524,7 +524,7 @@ public class HomePageController {
         List<Attention> list = attention.queryAttention(userId);
         request.setAttribute("sum", list.size());
         request.setAttribute("user1", user1);
-        return new ModelAndView("/userPage/userFellow", "list", list);
+        return new ModelAndView("/userPage/userfellow", "list", list);
 
     }
 
