@@ -1,22 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
  <%@ taglib prefix="sicd" uri="/sicd-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>标签</title>
-    <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-  <link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-  <link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-  <script type="text/javascript" src="<c:url value="/js/label.js"/>"></script>
-  <link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-  <link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-  <script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
-
+<link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+<script type="text/javascript" src="<c:url value="/resource/js/label.js"/>"></script>
 </head>
 <body class="flats-theme">
 
@@ -67,7 +59,7 @@
       <div class="avatar-mod clearfix">
         <a href="" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
         <div class="infos">
-          <div class="nickname"><a href="" title="${user.nickname}">${user.nickname}</a></div>
+          <div class="nickname"><a href="" title="${user.userName}">${user.userName}</a></div>
           <div class="icons">
            <a class="user-level user-level-6" title="努力升级吧!" href="" target="_blank">${level.lv}级</a>
             <a class="user-level user-level-6">${level.title}</a>
@@ -88,7 +80,7 @@
   </div>
 </section>
 
-<jsp:include page="/jsp/include/foot1.jsp"></jsp:include>
+<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </body>
 </html>

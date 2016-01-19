@@ -15,11 +15,8 @@
 <link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
 <script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
-
 </head>
-
-<body>
+<body class="flats-theme">
 
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>

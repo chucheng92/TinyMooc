@@ -336,7 +336,7 @@ public class HomePageController {
 
     @RequestMapping("turnToHelpPage.htm")
     public ModelAndView turnToHelpPage() {
-        return new ModelAndView("/help/helplevel");
+        return new ModelAndView("/help/helpLevel");
     }
 
 
@@ -466,20 +466,20 @@ public class HomePageController {
 
         dCriteria.add(Restrictions.eq("user", user1));
 
-        List<UserTeam> userteam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
+        List<UserTeam> userTeam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
 
         DetachedCriteria dCriteria2 = DetachedCriteria.forClass(Discuss.class);
 
         dCriteria2.add(Restrictions.eq("user", user1));
 
-        List<Discuss> discuss = userService.queryAllOfCondition(Discuss.class, dCriteria2);
+        List<Discuss> discussList = userService.queryAllOfCondition(Discuss.class, dCriteria2);
 
 
         request.setAttribute("user1", user1);
-        request.setAttribute("userteam", userteam);
-        request.setAttribute("discuss", discuss);
+        request.setAttribute("userTeam", userTeam);
+        request.setAttribute("discussList", discussList);
 
-        return new ModelAndView("/userPage/usergroup");
+        return new ModelAndView("/userPage/userGroup");
 
     }
 
@@ -501,7 +501,7 @@ public class HomePageController {
         request.setAttribute("user1", user1);
         request.setAttribute("user", user);
 
-        return new ModelAndView("/userPage/usernote", "notelist", notelist);
+        return new ModelAndView("/userPage/userNote", "notelist", notelist);
 
     }
 
@@ -512,7 +512,7 @@ public class HomePageController {
         List<Attention> list = attention.queryFans(userId);
         request.setAttribute("user1", user1);
         request.setAttribute("sum", list.size());
-        return new ModelAndView("/userPage/userfans", "list", list);
+        return new ModelAndView("/userPage/userFans", "list", list);
 
     }
 
@@ -524,7 +524,7 @@ public class HomePageController {
         List<Attention> list = attention.queryAttention(userId);
         request.setAttribute("sum", list.size());
         request.setAttribute("user1", user1);
-        return new ModelAndView("/userPage/userfellow", "list", list);
+        return new ModelAndView("/userPage/userFellow", "list", list);
 
     }
 

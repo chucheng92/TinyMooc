@@ -1,20 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>笔记</title>
-<link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-<link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-
-<script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
+<link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 <script type="text/javascript">
 	$(function(){
 		$(".course-info.clearfix").toggle(function(){
@@ -61,25 +54,25 @@
   			</div>
     		<div class="UIImageBlock_Content">
     			<div class="head">
-            		<div class=""><h2>${user1.nickname}</h2></div>
+            		<div class=""><h2>${user1.userName}</h2></div>
    		 		</div>
-   		 		<c:if test="${empty user1.signature}">
+   		 		<c:if test="${empty user1.intro}">
     			<div class="mood">
                 	<a href=""> ^.^ <span class="fsn">设置签名档</span></a>
               	</div>
      		</c:if>
-     		<c:if test="${!empty user1.signature}">
+     		<c:if test="${!empty user1.intro}">
     			<div class="mood">
-                 	<span class="fsn">${user1.signature}</span>
+                 	<span class="fsn">${user1.intro}</span>
               	</div>
      		</c:if>
     
     		</div>
     		
     <div class="nav clearfix">
-      <a href="goPersonnal.htm?userId=${user1.userId}" >主页</a>
+        <a href="goPersonal.htm?userId=${user1.userId}">主页</a>
       <a href="goPersonalTeam.htm?userId=${user1.userId}">小组</a>
-      <a href="goPersonalAtt.htm?userId=${user1.userId}" >好友</a>
+        <a href="goPersonalAttention.htm?userId=${user1.userId}" >好友</a>
       <a href="goPersonalNote.htm?userId=${user1.userId}" class="on">笔记</a>
     </div>
   </div>
@@ -130,7 +123,7 @@
 													<div class="metas">
 														by <a href=""
 															class="show-user-card " data-uid="1359524"
-															>${user.nickname}</a> 
+															>${user.userName}</a>
 															 <span class="mhs digg-rate" id="note-13164-digg-rate" style="display: none;"></span> 
 															 <span class="mhs time">${notes.addDate}</span>
 													</div>
@@ -188,7 +181,7 @@
 													<div class="metas">
 														by <a href=""
 															class="show-user-card " data-uid="1359524"
-															>${user.nickname}</a> 
+															>${user.userName}</a>
 															 <span class="mhs digg-rate" id="note-13164-digg-rate" style="display: none;"></span> 
 															 <span class="mhs time">${notes.addDate}</span>
 													</div>
@@ -207,12 +200,7 @@
 						</ul>
 					</div>
 
-
-
-
  </div>
-
-    
 
 </section>
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
