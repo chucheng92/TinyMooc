@@ -173,7 +173,7 @@ public class HomePageController {
             Level level = userService.getUserLevel(credit);
             System.out.println("===level===" + level.getLv());
 
-            return new ModelAndView("/homePage/userHomePage", "level", level);
+            return new ModelAndView("/homePage/homePage", "level", level);
         }
 
     }
