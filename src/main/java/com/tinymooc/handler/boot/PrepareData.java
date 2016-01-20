@@ -39,7 +39,7 @@ public class PrepareData {
                 //FIXME
                 System.out.println(v.getVideoUrl().lastIndexOf('.'));
                 System.out.println("=================vTitle=" + vTitle);
-                fileId = CSVUtil.core(new File("src/resources/文件地址列表-2016-01-14.csv"), vTitle);
+                fileId = CSVUtil.core(new File("src/resources/videoAddress.csv"), vTitle);
                 // FIXME
                 System.out.println("==================fileId=" + fileId);
 

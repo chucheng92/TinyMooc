@@ -53,7 +53,7 @@ public class LabelTag extends BodyTagSupport {
 		sb.append("</div>");
 
 		// 显示之前已经有的标签们
-		sb.append("<div class=\"previousLabelsTitle\">我添加标签</div>");
+		sb.append("<div class=\"previousLabelsTitle\">我添加的标签</div>");
 		sb.append("<div class=\"tags\">");
 
 		sb.append("<span name=\"addlabelSpan\" id=\"addlabelSpan\">");

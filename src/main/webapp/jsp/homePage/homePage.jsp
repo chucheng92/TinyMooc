@@ -7,8 +7,9 @@
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 
     <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
+    <%--<link rel="stylesheet" type="text/css" href="/resource/bootstrap/css/bootstrap.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="/resource/css/site_v2.css"/>
 
-    <script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
 
     <%-- 本页面为用户未登录时主页 --%>
 
@@ -211,8 +212,8 @@
 
             <div class="social">
                 <div class="rightmove">
-                    <a href="goLoginPage.htm" target="_blank" class="scroll">登录</a>
-                    <a href="goRegisterPage.htm" target="_blank" class="scroll">注册</a>
+                    <a href="goLoginPage.htm" target="_blank" >登录</a>
+                    <a href="goRegisterPage.htm" target="_blank">注册</a>
                 </div>
             </div>
         </nav>
@@ -250,8 +251,9 @@
 
     <article class="news"><h1 style="font-size: 18px;text-transform:none;"></h1>
         <time datetime="2012-05-31">15/12/21</time>
-        <p>让我们把学习回归到最质朴、最纯净的状态，满足人类对未知世界的求知欲。</br>
-            宇宙那么大，我们没弄懂的事情还多着呢。</p>
+        <p><font color="#1e90ff">让我们把学习回归到最质朴、最纯净的状态，满足人类对未知世界的求知欲。</font></br>
+            <font color="#1e90ff">宇宙那么大，我们没弄懂的事情还多着呢。<br/> -- 萌课网</font></p>
+
     </article>
 
 
@@ -306,25 +308,45 @@
                         </p>
 						</span>
             </li>
-
         </ul>
     </div>
 
 </section>
 
-
-
 <section id="why-gnosh">
     <div class="why-gnosh-movies">
     </div>
     <div class="flat clearfix">
-        <h2>热门课程 | 瞧瞧大家都在学啥 o(*≧▽≦)ツ</h2>
+        <h2><strong><font color="#98fb98">课程频道</font></strong></h2>
+        <ul class="cells channel-cells">
+            <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
+                    class="channel-icon channel-icon-photography"></i>摄影</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=艺术"><i
+                    class="channel-icon channel-icon-programme"></i>艺术</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=兴趣"><i
+                    class="channel-icon channel-icon-interest"></i>兴趣</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=计算机"><i
+                    class="channel-icon channel-icon-computer"></i>计算机</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=文学"><i
+                    class="channel-icon channel-icon-language"></i>文学</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=求职"><i
+                    class="channel-icon channel-icon-life"></i>求职</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=动漫"><i
+                    class="channel-icon channel-icon-career"></i>动漫</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=音乐"><i
+                    class="channel-icon channel-icon-culture"></i>音乐</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=其他"><i
+                    class="channel-icon channel-icon-openclass"></i>其他</a></li>
+        </ul>
+    </div>
+    <div class="flat clearfix">
+        <h2><strong><font color="#98fb98">热门课程 | 瞧瞧大家都在学啥 o(*≧▽≦)ツ</font></strong></h2>
         <ul class="cells cells-middle">
-            <c:forEach items="${hotCourseList}" var="hotCourse" varStatus="iter">
+            <c:forEach items="${hotCourseList}" var="hotCourse">
                 <li class="cell">
                     <div class="course-item">
                         <div class="thumb">
-                            <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><img src="<c:url value="/resource/pic/courseLogo/course${iter.count}.jpg"/>"></a>
+                            <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><img src="${hotCourse.course.logoUrl}"/></a>
                         </div>
                         <p class="title">
                             <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
@@ -346,13 +368,13 @@
     </div>
 
     <div class="flat clearfix">
-        <h2>最新课程 | 哇塞，又有新课开放了，感觉飞起来</h2>
+        <h2><strong><font color="#98fb98">最新课程 | 哇塞，又有新课开放了，赶紧学起来</font></strong></h2>
         <ul class="cells cells-middle">
             <c:forEach items="${newCourseList}" var="newCourse" varStatus="iter">
                 <li class="cell">
                     <div class="course-item">
                         <div class="thumb">
-                            <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><img src="<c:url value="/resource/pic/courseLogo/course${iter.count}.jpg"/>"></a>
+                            <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><img src="${newCourse.course.logoUrl}"/></a>
                         </div>
                         <p class="title">
                             <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
@@ -375,17 +397,16 @@
     </div>
 
     <div class="flat clearfix">
-        <h2>话题、小组</h2>
+        <h2><strong><font color="#98fb98">话题、小组</font></strong></h2>
         <div class="flat-main">
             <h3>最新话题</h3>
-
             <div class="discuss-list2">
                 <ul>
                     <c:forEach items="${discussList}" var="discuss">
                         <li>
                             <div class="imageblock clearfix">
                                 <div class="imageblock-image">
-                                    <a href=""class="show-user-card" ><img src="${discuss.user.headImage.imageSmall}" title="${discuss.user.userName}"></a>
+                                    <img src="${discuss.user.headImage.imageSmall}" title="${discuss.user.userName}">
                                 </div>
                                 <div class="imageblock-content">
 
@@ -395,8 +416,8 @@
                                     <p class="metas">
                                         <a href="teamHomePage.htm?teamId=${discuss.team.teamId}" title="来自『${discuss.team.teamName}』小组"
                                            class="mrm">${discuss.team.teamName}</a> by <a
-                                            href=""
-                                            class="show-user-card"  title="${discuss.user.userName}">${discuss.user.userName}</a> <span
+                                            href="goPersonal.htm?userId=${discuss.user.userId}"
+                                            class="show-user-card"  title="${discuss.user.userName}">${discuss.user.userName}</a><span
                                             class="mhm">${discuss.scanNum}次查看</span>
                                         <span class="mls">${discuss.publishDate}</span>
                                     </p>
@@ -405,233 +426,66 @@
                         </li>
                     </c:forEach>
                 </ul>
-
+            </div>
+            <div class="discuss-list2" style="margin-top:15px;">
+                <h3>推荐小组 (￣▽￣")  </h3>
+                <div class="clearfix">
+                    <ul class="grids smallpic-grids">
+                        <c:forEach items="${teamList}" var="team">
+                            <li class="grid"><img src="<c:url value="${team.headImage.imageSmall}"/>" title="${team.teamName}" class="thumb">
+                                <p>
+                                    <a href="teamHomePage.htm?teamId=${team.teamId}" title="${team.teamName}">${team.teamName}</a>
+                                </p>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- 推荐小组 -->
-
-        <div class="flat-side">
-            <h3>推荐小组 (￣▽￣")  </h3>
-            <div class="clearfix">
-                <ul class="grids smallpic-grids">
-                    <c:forEach items="${teamList}" var="team">
-                        <li class="grid"><img src="<c:url value="${team.headImage.imageSmall}"/>" title="${team.teamName}" class="thumb">
-                            <p>
-                                <a href="teamHomePage.htm?teamId=${team.teamId}" title="${team.teamName}">${team.teamName}</a>
-                            </p>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
+    </div>
+    <div class="flat clearfix">
+        <h2><strong><font color="#98fb98">课程笔记和热门标签</font></strong></h2>
+        <div class="flat-main">
+            <h3>推荐笔记 (￣▽￣") </h3>
+            <ul class="picked-notes">
+                <c:forEach items="${noteList}" var="note">
+                    <li class="mbm">
+                        <div class="title">
+                            <a href="">${note.userCourse.course.courseTitle}的笔记</a>
+                        </div>
+                        <div class="summary gray">${note.noteContent}</div>
+                        <div class="metas gray">
+                            <span class="gray">by</span> <span class="thin mrm"><a
+                                href="" class="show-user-card"
+                                title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
+                        </div>
+                    </li>
+                </c:forEach>
+            </ul>
         </div>
 
+        <!-- 热门标签 -->
 
+        <div class="flat-side">
+            <h3>热门标签 (￣▽￣") </h3>
+
+            <div class="tags">
+                <c:forEach items="${labelList}" var="label">
+                    <a href="#" class="tag">${label.labelName}</a>
+                </c:forEach>
+            </div>
+        </div>
     </div>
-
 </section>
 
 
-<footer id="footer">
+<footer id="footer" style="margin-top: 150px;">
     <p>&copy; 2015 TINYMOOC.COM &nbsp;All Rights Reserved.</p>
-
 </footer>
 
 </div><!-- end .wrapper -->
 
-<!-- JavaScript -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
-<script src="http://www.gnosh.co.uk/wp-content/themes/gnosh/home/js/jquery.arctic_scroll.js"></script>
-<script src="http://www.gnosh.co.uk/wp-content/themes/gnosh/home/js/scripts.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".close-btn-popup .close-btn").click(function(){
-            $("#wrapperLayer").hide();
-            $("#darkenLayer").hide();
-        });
-
-        var currentLi=0;
-        var currentLiDip=0;
-        var currentLiTap=0;
-        var currentLiMM=0;
-
-        /* Section Flavours - Category (Original) */
-        $(".flavours-original").click(function(){
-            //photos
-            $(".flav-photos-dippables").css('display','none');
-            $(".flav-photos-tap").css('display','none');
-            $(".flav-photos-mm").css('display','none');
-            $(".flav-photos-originals").css('display','inline-block');
-
-            $("#flav_dipp_slide").css('display','none');
-            $("#flav_tap_slide").css('display','none');
-            $("#flav_mm_slide").css('display','none');
-            $("#flav_orig_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours - Category (Dippables) */
-        $(".flavours-dippables").click(function(){
-            //photos
-            $(".flav-photos-originals").css('display','none');
-            $(".flav-photos-tapas").css('display','none');
-            $(".flav-photos-mm").css('display','none');
-            $(".flav-photos-dippables").css('display','inline-block');
-
-            $("#flav_orig_slide").css('display','none');
-            $("#flav_tap_slide").css('display','none');
-            $("#flav_mm_slide").css('display','none');
-            $("#flav_dipp_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Tapas - Category (Tapas) */
-        $(".flavours-tapas").click(function(){
-            //photos
-            $(".flav-photos-originals").css('display','none');
-            $(".flav-photos-dippables").css('display','none');
-            $(".flav-photos-mm").css('display','none');
-            $(".flav-photos-tapas").css('display','inline-block');
-
-            $("#flav_orig_slide").css('display','none');
-            $("#flav_dipp_slide").css('display','none');
-            $("#flav_mm_slide").css('display','none');
-            $("#flav_tap_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section MM - Category (MM) */
-        $(".flavours-mm").click(function(){
-            //photos
-            $(".flav-photos-originals").css('display','none');
-            $(".flav-photos-dippables").css('display','none');
-            $(".flav-photos-tapas").css('display','none');
-            $(".flav-photos-mm").css('display','inline-block');
-
-            $("#flav_orig_slide").css('display','none');
-            $("#flav_dipp_slide").css('display','none');
-            $("#flav_tap_slide").css('display','none');
-            $("#flav_mm_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours original - Left and Right Arrows */
-        $(".arrow-rt-flav").click(function(){
-            currentLi++;
-            if(currentLi == $("#flav_orig_slide li").size()) currentLi=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            return false;
-        });
-
-        $(".arrow-lt-flav").click(function(){
-            currentLi--;
-            if(currentLi == -1) currentLi=$("#flav_orig_slide li").size()-1;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours Dippables - Left and Right Arrows */
-
-        $(".arrow-rt-flav").click(function(){
-            currentLiDip++;
-            if(currentLiDip == $("#flav_dipp_slide li").size()) currentLiDip=0;
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            return false;
-        });
-        $(".arrow-lt-flav").click(function(){
-            currentLiDip--;
-            if(currentLiDip == -1) currentLiDip=$("#flav_dipp_slide li").size()-1;
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours Tapas - Left and Right Arrows */
-
-        $(".arrow-rt-flav").click(function(){
-            currentLiTap++;
-            if(currentLiTap == $("#flav_tap_slide li").size()) currentLiTap=0;
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            return false;
-        });
-        $(".arrow-lt-flav").click(function(){
-            currentLiTap--;
-            if(currentLiTap == -1) currentLiTap=$("#flav_tap_slide li").size()-1;
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours MM - Left and Right Arrows */
-
-        $(".arrow-rt-flav").click(function(){
-            currentLiMM++;
-            if(currentLiMM == $("#flav_mm_slide li").size()) currentLiMM=0;
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-        $(".arrow-lt-flav").click(function(){
-            currentLiMM--;
-            if(currentLiMM == -1) currentLiMM=$("#flav_mm_slide li").size()-1;
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-    });
-</script>
 </body>
 </html>

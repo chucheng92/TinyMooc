@@ -25,10 +25,10 @@
 	<c:if test="${!empty user.userId}">
 		<jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 	</c:if>
-<section class="container channel">
+<section class="container channel" style="margin-top:60px">
 	<div class="channel-row">
         <div class="flat clearfix">
-            <h2>课程频道</h2>
+            <h2><font color="black">课程频道</font></h2>
             <ul class="cells channel-cells">
                 <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
                         class="channel-icon channel-icon-photography"></i>摄影</a></li>
@@ -55,15 +55,15 @@
 	<div class="channel-row channel-straight-row clearfix">
 		<div class="flat">
 			<div class="clearfix">
-				<h2 class="fl">最新课程</h2>
-				<a href="" class="fr more">» 更多</a>
+				<h2 class="fl"><font color="black">全部课程</font></h2>
+				<a href="" class="fr more"><font color="black">» 更多</font></a>
 			</div>
 			<ul class="cells cells-middle">
 			<c:forEach items="${list1}" var="list1">
 				<li class="cell">
 					<div class="course-item">
 						<div class="thumb">
-							<a href="courseDetailPage.htm?courseId=${list1.course.courseId}"><img src="<c:url value="/resource/pic/course.jpg"/>"></a>
+							<a href="courseDetailPage.htm?courseId=${list1.course.courseId}"><img src="${list1.course.logoUrl}"></a>
 						</div>
 						<p class="title">
 							<a href="courseDetailPage.htm?courseId=${list1.course.courseId}">${list1.course.courseTitle}</a>

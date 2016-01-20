@@ -376,7 +376,7 @@
 		<div class="modal-footer" data-role="footer"></div>
 
 	</div>
-<jsp:include page="/jsp/include/foot1.jsp"></jsp:include>
+<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 </body>
 <script type="text/javascript">
 jQuery(function($){

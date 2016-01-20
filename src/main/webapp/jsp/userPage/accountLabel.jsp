@@ -38,10 +38,15 @@
     	<div class="addLabels" style=" height:200px; width:400px;float:left;" align="left"> 
 						<form action="editLabel.htm" method="post" id="labelForm">
 							<div class="keywords">
+                                当前标签编辑类型：<c:if test="${type=='course'}"><font color="red">课程</font></c:if>
+                                <c:if test="${type=='user'}"><font color="red">用户</font></c:if>
+                                <c:if test="${type=='team'}"><font color="red">小组</font></c:if>
 								<sicd:label previousLabels="${previousLabels}" hotLabels="${labels}"/>
-								
-								<input type="hidden" value="user" name="objectType">
-								<input type="hidden" value="user" name="type">
+								<input type="hidden" value="${type}" name="type">
+                                <input type="hidden" value="${courseId}" name="courseId">
+                                <input type="hidden" value="${teamId}" name="teamId">
+                                <%--${type}--%>
+								<%--<input type="hidden" value="${tagType}" name="type">--%>
 							</div>
 							<br>
 							<button  class="btn btn-success" type="submit" value="" id="checkl" >保存</button>

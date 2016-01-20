@@ -89,7 +89,7 @@ $("#save").click(function(){
           <div class="control-group">
             <label class="control-label">标题</label>
             <div class="controls">
-              <input type="text" name="courseTitle" value="" data-display="标题" placeholder="视频文件本栏请置空，图文请填写标题" />
+              <input type="text" name="courseTitle" value="" data-display="标题" required="required" />
               <input type="hidden" name="courseId" value="${course.courseId}">
             </div>
           </div>

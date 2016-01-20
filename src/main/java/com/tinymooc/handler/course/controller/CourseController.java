@@ -69,7 +69,13 @@ public class CourseController {
      */
     @RequestMapping("createCourse.htm")
     public ModelAndView createCourse(HttpServletRequest req, HttpServletResponse res) {
+        // FIXME
+        System.out.println("================进入CreateCourse.htm=============");
         User user = (User) req.getSession().getAttribute("user");
+        String picUrl = (String)req.getSession().getAttribute("picUrl");
+        // FIXME
+        System.out.println("=================picUrl="+picUrl);
+
         String courseTitle = ServletRequestUtils.getStringParameter(req, "courseTitle", "");
         String courseIntro = ServletRequestUtils.getStringParameter(req, "courseIntro", "");
         String type = ServletRequestUtils.getStringParameter(req, "type", "");
@@ -79,6 +85,10 @@ public class CourseController {
         course.setCourseIntro(courseIntro);
         course.setCourseState("申请中");
         course.setType(type);
+        if (picUrl != null)
+            course.setLogoUrl(picUrl);
+        else
+            course.setLogoUrl("/resource/pic/courseLogo/course1.jpg");
         course.setScanNum(0);
         course.setCourseTitle(courseTitle);
         courseService.save(course);
@@ -88,7 +98,10 @@ public class CourseController {
         userCourse.setCourse(course);
         userCourse.setUser(user);
         courseService.save(userCourse);
+        req.getSession().removeAttribute("picUrl");
 
+        // FIXME
+        System.out.println("================结束CreateCourse.htm=============");
         return new ModelAndView("redirect:courseList.htm");
     }
 
@@ -113,6 +126,8 @@ public class CourseController {
     @RequestMapping("createLesson.htm")
     public ModelAndView createLesson(HttpServletRequest req, HttpServletResponse res) {
         User user = (User) req.getSession().getAttribute("user");
+        if (user == null)
+            return new ModelAndView("redirect:login.htm");
         String courseId = ServletRequestUtils.getStringParameter(req, "courseId", "");
         String courseTitle = ServletRequestUtils.getStringParameter(req, "courseTitle", "");
         String courseIntro = ServletRequestUtils.getStringParameter(req, "courseIntro", "");

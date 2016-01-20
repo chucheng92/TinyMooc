@@ -5,14 +5,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-    <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
 
     <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-    <link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
-    <script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
+    <%--<link rel="stylesheet" type="text/css" href="/resource/bootstrap/css/bootstrap.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="/resource/css/site_v2.css"/>
+
 
     <%-- 本页面为用户未登录时主页 --%>
 
@@ -137,7 +134,7 @@
 
         #contact .food { top: -246px; }
 
-            /* #share .feed { z-index: 1050; } */
+        /* #share .feed { z-index: 1050; } */
         #wrapperLayer{position:fixed;top:0;bottom:0;right:0;z-index:3000;}
         #wrapperLayer img{margin: auto;left: 0;right: 0;position: fixed;top: 0;bottom: 0;/*max-width: 100%;max-height: 100%;*/}
         #darkenLayer{position:fixed;top:0;bottom:0;right:0;z-index:2999;width:100%;height:100%;background:url("http://www.gnosh.co.uk/wp-content/themes/gnosh/images/trans-grey.png");}
@@ -209,7 +206,6 @@
                     <input type="text" class="search-input" value name="keyWord" placeholder="想学什么？搜搜看...">
                     <input type="submit" class="search-btn" value>
                 </form>
-
             </div>
 
             <div class="social">
@@ -226,9 +222,9 @@
                             </c:if>
                         </div>
                         <div class="status-item-wrapper" id="user-nav-item-wrapper">
-                            <a href="goPersonnal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user"><img src="<c:url value="${user.headImage.imageSmall}"/>" alt="fanfanle" class="avatar" /><span class="nickname">${sessionScope.user.userName}</span></a>
+                            <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user"><span class="nickname">${sessionScope.user.userName}</span></a>
                             <div class="user-nav-menus">
-                                <a href="goPersonnal.htm?userId=${sessionScope.user.userId}">个人主页</a>
+                                <a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a>
                                 <a href="myTinyMooc.htm">我的萌课</a>
                                 <a href="account.htm">账户设置</a>
                                 <div class="menu-divider"></div>
@@ -243,431 +239,270 @@
 
 
 
-<section id="home">
-    <!-- All replaced with images in the CSS -->
-    <a data-offset="100" class="scroll why_the_apos hoverable">Why the apostrophe and more about us&hellip;</a>
-    <!--<p class="gourmet_dips">Gourmet dips without the fuss</p>-->
-    <a class="product_award1" target="_blank" >Product Awards</a>
-    <a class="product_award2" target="_blank" >Product Awards</a>
-    <a class="product_award3" >Quality Food Awards</a>
-    <!--<a href="#contact" data-offset="-150" class="share_thoughts hoverable scroll">Share your thoughts with us</a>-->
-    <span class="better_shared">Some things are better shared</span>
-    <a class="scroll whats_your_gnosh hoverable" data-offset-minus="60">What&#8217;s your G&#8217;nosh?</a>
-    <a class="where_to_gnosh hoverable">Where to G&#8217;NOSH?</a>
-    <span class="tomato_dip"></span>
-    <span class="garlic"></span>
-    <span class="pepper"></span>
-    <span class="basil"></span>
-    <a href="#" class="keep_up"></a>
+    <section id="home">
+        <!-- All replaced with images in the CSS -->
+        <a data-offset="100" class="scroll why_the_apos hoverable">Why the apostrophe and more about us&hellip;</a>
+        <!--<p class="gourmet_dips">Gourmet dips without the fuss</p>-->
+        <a class="product_award1" target="_blank" >Product Awards</a>
+        <a class="product_award2" target="_blank" >Product Awards</a>
+        <a class="product_award3" >Quality Food Awards</a>
+        <!--<a href="#contact" data-offset="-150" class="share_thoughts hoverable scroll">Share your thoughts with us</a>-->
+        <span class="better_shared">Some things are better shared</span>
+        <a class="scroll whats_your_gnosh hoverable" data-offset-minus="60">What&#8217;s your G&#8217;nosh?</a>
+        <a class="where_to_gnosh hoverable">Where to G&#8217;NOSH?</a>
+        <span class="tomato_dip"></span>
+        <span class="garlic"></span>
+        <span class="pepper"></span>
+        <span class="basil"></span>
+        <a href="#" class="keep_up"></a>
 
-    <!-- Twitter box -->
-    <div class="twitter">
-        <ul id="tweets">
-        </ul>
-        <div class="extras">
-            <p> FOLLOW TINYMOOC!
-            </p>
+        <!-- Twitter box -->
+        <div class="twitter">
+            <ul id="tweets">
+            </ul>
+            <div class="extras">
+                <p> FOLLOW TINYMOOC!
+                </p>
+            </div>
         </div>
-    </div>
 
 
-    <article class="news"><h1 style="font-size: 18px;text-transform:none;"></h1>
-        <time datetime="2012-05-31">15/12/21</time>
-        <p>让我们把学习回归到最质朴、最纯净的状态，满足人类对未知世界的求知欲。</br>
-            宇宙那么大，我们没弄懂的事情还多着呢。</p>
-    </article>
+        <article class="news"><h1 style="font-size: 18px;text-transform:none;"></h1>
+            <time datetime="2012-05-31">15/12/21</time>
+            <p>让我们把学习回归到最质朴、最纯净的状态，满足人类对未知世界的求知欲。</br>
+                宇宙那么大，我们没弄懂的事情还多着呢。</p>
+        </article>
 
 
-</section><!-- end #home -->
+    </section><!-- end #home -->
+
+    <section id="flavours">
+        <div class="whats-your-gnosh">
 
 
 
-<section id="why-gnosh">
-    <div class="why-gnosh-movies">
-    </div>
-    <div class="flat clearfix">
-        <h2>热门课程 | 瞧瞧大家都在学啥 o(*≧▽≦)ツ</h2>
-        <ul class="cells cells-middle">
-            <c:forEach items="${hotCourseList}" var="hotCourse" varStatus="iter">
-                <li class="cell">
-                    <div class="course-item">
-                        <div class="thumb">
-                            <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><img src="<c:url value="/resource/pic/courseLogo/course${iter.count}.jpg"/>"></a>
-                        </div>
-                        <p class="title">
-                            <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
+            <a class="flavours-original"></a>
+            <!--<a href="#" class="flavours-dippables"></a>-->
+            <a class="flavours-tapas"></a>
+            <a class="flavours-mm"></a>
+
+            <a href="#" class="arrow-lt-flav"></a>
+            <a href="#" class="arrow-rt-flav"></a>
+
+            <ul id="flav_mm_slide" class="flav-slide">
+                <li class="display-slide">
+                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215028j60su9u6kkpesyez.png" class="flav-slide-pics" />
+						<span class="text_wrap">
+						<h2>I am in TINYMOOC.</h2>
+						<p>我们有精心制作的视频课程<br />
                         </p>
-                        <div class="summary">${hotCourse.course.courseIntro}</div>
-                        <p class="metas clearfix">
-                            <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${hotCourse.course.scanNum}</span>
+						</span>
+                </li>
+
+                <li>
+                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/155616lfv2dbodztbfd1ob.png" class="flav-slide-pics" />
+						<span class="text_wrap">
+						<h2>I am in TINYMOOC.</h2>
+						<p>我们有实时交互的学习资料<br />
+                        </p>
+						</span>
+                </li>
+
+                <li>
+                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215112qy4hc96xoiqboxpo.png" class="flav-slide-pics" />
+						<span class="text_wrap">
+						<h2>I am in TINYMOOC.</h2>
+						<p>我们有循序渐进的学习计划<br />
+                        </p>
+						</span>
+                </li>
+
+                <li>
+                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215106bh54d3kr58ukkdoz.png" class="flav-slide-pics" />
+						<span class="text_wrap">
+						<h2>I am in TINYMOOC.</h2>
+						<p>我们有互帮互助的问答社区 <br />
+                        </p>
+						</span>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="why-gnosh">
+        <div class="why-gnosh-movies">
+        </div>
+        <div class="flat clearfix">
+            <h2><strong><font color="#98fb98">课程频道</font></strong></h2>
+            <ul class="cells channel-cells">
+                <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
+                        class="channel-icon channel-icon-photography"></i>摄影</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=艺术"><i
+                        class="channel-icon channel-icon-programme"></i>艺术</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=兴趣"><i
+                        class="channel-icon channel-icon-interest"></i>兴趣</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=计算机"><i
+                        class="channel-icon channel-icon-computer"></i>计算机</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=文学"><i
+                        class="channel-icon channel-icon-language"></i>文学</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=求职"><i
+                        class="channel-icon channel-icon-life"></i>求职</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=动漫"><i
+                        class="channel-icon channel-icon-career"></i>动漫</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=音乐"><i
+                        class="channel-icon channel-icon-culture"></i>音乐</a></li>
+                <li class="cell"><a href="goMajorHome.htm?type=其他"><i
+                        class="channel-icon channel-icon-openclass"></i>其他</a></li>
+            </ul>
+        </div>
+        <div class="flat clearfix">
+            <h2><strong><font color="#98fb98">热门课程 | 瞧瞧大家都在学啥 o(*≧▽≦)ツ</font></strong></h2>
+            <ul class="cells cells-middle">
+                <c:forEach items="${hotCourseList}" var="hotCourse">
+                    <li class="cell">
+                        <div class="course-item">
+                            <div class="thumb">
+                                <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><img src="${hotCourse.course.logoUrl}"/></a>
+                            </div>
+                            <p class="title">
+                                <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
+                            </p>
+                            <div class="summary">${hotCourse.course.courseIntro}</div>
+                            <p class="metas clearfix">
+                                <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${hotCourse.course.scanNum}</span>
 							<span class="fl by">by
 								<a href="#" class="show-user-card" title="">${hotCourse.user.userName}</a>
 							</span>
-                        </p>
-                    </div>
-                </li>
-            </c:forEach>
-        </ul>
-    </div>
-
-    <div class="why-gnosh-movies">
-    </div>
-
-    <div class="flat clearfix">
-        <h2>最新课程 | 哇塞，又有新课开放了，感觉飞起来</h2>
-        <ul class="cells cells-middle">
-            <c:forEach items="${newCourseList}" var="newCourse" varStatus="iter">
-                <li class="cell">
-                    <div class="course-item">
-                        <div class="thumb">
-                            <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><img src="<c:url value="/resource/pic/courseLogo/course${iter.count}.jpg"/>"></a>
-                        </div>
-                        <p class="title">
-                            <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
-                        </p>
-                        <div class="summary">${newCourse.course.courseIntro}</div>
-                        <p class="metas clearfix">
-                            <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${newCourse.course.scanNum}</span>
-							<span class="fl by">by
-								<a href="#" class="show-user-card" title="">${newCourse.user.userName}</a>
-							</span>
-                        </p>
-                    </div>
-                </li>
-            </c:forEach>
-        </ul>
-    </div>
-
-    <!-- 话题、小组 -->
-    <div class="why-gnosh-movies">
-    </div>
-
-    <div class="flat clearfix">
-        <h2>话题、小组</h2>
-        <div class="flat-main">
-            <h3>最新话题(●'?'●)??</h3>
-
-            <div class="discuss-list2">
-                <ul>
-                    <c:forEach items="${discussList}" var="discuss">
-                        <li>
-                            <div class="imageblock clearfix">
-                                <div class="imageblock-image">
-                                    <a href=""class="show-user-card" ><img src="${discuss.user.headImage.imageSmall}" title="${discuss.user.userName}"></a>
-                                </div>
-                                <div class="imageblock-content">
-
-                                    <p class="title">
-                                        <a href="">${discuss.topic}</a>
-                                    </p>
-                                    <p class="metas">
-                                        <a href="" title="来自『${discuss.team.teamName}』小组"
-                                           class="mrm">${discuss.team.teamName}</a> by <a
-                                            href=""
-                                            class="show-user-card"  title="${discuss.user.userName}">${discuss.user.userName}</a> <span
-                                            class="mhm">${discuss.scanNum}次查看</span>
-                                        <span class="mls">${discuss.publishDate}</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                    </c:forEach>
-                </ul>
-
-            </div>
-        </div>
-
-        <!-- 推荐小组 -->
-
-
-        <div class="flat-side">
-            <h3>推荐小组 (￣▽￣")  </h3>
-            <div class="clearfix">
-                <ul class="grids smallpic-grids">
-                    <c:forEach items="${teamList}" var="team">
-                        <li class="grid"><a href=""><img src="<c:url value="${team.headImage.imageSmall}"/>" title="${team.teamName}" class="thumb"></a>
-                            <p>
-                                <a href="" title="${team.teamName}">${team.teamName}</a>
                             </p>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </div>
-
-
-    </div>
-
-    <div class="why-gnosh-movies">
-    </div>
-    <!-- 笔记、标签 -->
-    <div class="flat clearfix">
-        <h2>课程笔记和热门标签</h2>
-        <div class="flat-main">
-            <h3>推荐笔记 (￣▽￣") </h3>
-            <ul class="picked-notes">
-                <c:forEach items="${noteList}" var="note">
-                    <li class="mbm">
-                        <div class="title">
-                            <a href="">${note.userCourse.course.courseTitle}的笔记</a>
-                        </div>
-                        <div class="summary gray">${note.noteContent}</div>
-                        <div class="metas gray">
-                            <span class="gray">by</span> <span class="thin mrm"><a
-                                href="" class="show-user-card"
-                                title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
                         </div>
                     </li>
                 </c:forEach>
             </ul>
         </div>
 
-        <!-- 热门标签 -->
-
-        <div class="flat-side">
-            <h3>热门标签 (￣▽￣") </h3>
-
-            <div class="tags">
-                <c:forEach items="${labelList}" var="label">
-                    <a href="#" class="tag">${label.labelName}</a>
-                </c:forEach>
-            </div>
-
+        <div class="why-gnosh-movies">
         </div>
 
-    </div>
+        <div class="flat clearfix">
+            <h2><strong><font color="#98fb98">最新课程 | 哇塞，又有新课开放了，赶紧学起来</font></strong></h2>
+            <ul class="cells cells-middle">
+                <c:forEach items="${newCourseList}" var="newCourse" varStatus="iter">
+                    <li class="cell">
+                        <div class="course-item">
+                            <div class="thumb">
+                                <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><img src="${newCourse.course.logoUrl}"/></a>
+                            </div>
+                            <p class="title">
+                                <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
+                            </p>
+                            <div class="summary">${newCourse.course.courseIntro}</div>
+                            <p class="metas clearfix">
+                                <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${newCourse.course.scanNum}</span>
+							<span class="fl by">by
+								<a href="#" class="show-user-card" title="">${newCourse.user.userName}</a>
+							</span>
+                            </p>
+                        </div>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
 
-    <!-- 课程频道 -->
-    <div class="why-gnosh-movies">
-    </div>
+        <!-- 话题、小组 -->
+        <div class="why-gnosh-movies">
+        </div>
 
-    <div class="flat clearfix">
-        <h2>课程频道</h2>
-        <ul class="cells channel-cells">
-            <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
-                    class="channel-icon channel-icon-photography"></i>摄影</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=艺术"><i
-                    class="channel-icon channel-icon-programme"></i>艺术</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=兴趣"><i
-                    class="channel-icon channel-icon-interest"></i>兴趣</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=计算机"><i
-                    class="channel-icon channel-icon-computer"></i>计算机</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=文学"><i
-                    class="channel-icon channel-icon-language"></i>文学</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=求职"><i
-                    class="channel-icon channel-icon-life"></i>求职</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=动漫"><i
-                    class="channel-icon channel-icon-career"></i>动漫</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=音乐"><i
-                    class="channel-icon channel-icon-culture"></i>音乐</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=其他"><i
-                    class="channel-icon channel-icon-openclass"></i>其他</a></li>
-        </ul>
-    </div>
+        <div class="flat clearfix">
+            <h2><strong><font color="#98fb98">话题、小组</font></strong></h2>
+            <div class="flat-main">
+                <h3>最新话题</h3>
+                <div class="discuss-list2">
+                    <ul>
+                        <c:forEach items="${discussList}" var="discuss">
+                            <li>
+                                <div class="imageblock clearfix">
+                                    <div class="imageblock-image">
+                                        <img src="${discuss.user.headImage.imageSmall}" title="${discuss.user.userName}">
+                                    </div>
+                                    <div class="imageblock-content">
 
-</section>
+                                        <p class="title">
+                                            <a href="">${discuss.topic}</a>
+                                        </p>
+                                        <p class="metas">
+                                            <a href="teamHomePage.htm?teamId=${discuss.team.teamId}" title="来自『${discuss.team.teamName}』小组"
+                                               class="mrm">${discuss.team.teamName}</a> by <a
+                                                href="goPersonal.htm?userId=${discuss.user.userId}"
+                                                class="show-user-card"  title="${discuss.user.userName}">${discuss.user.userName}</a><span
+                                                class="mhm">${discuss.scanNum}次查看</span>
+                                            <span class="mls">${discuss.publishDate}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
+                <div class="discuss-list2" style="margin-top:15px;">
+                    <h3>推荐小组 (￣▽￣")  </h3>
+                    <div class="clearfix">
+                        <ul class="grids smallpic-grids">
+                            <c:forEach items="${teamList}" var="team">
+                                <li class="grid"><img src="<c:url value="${team.headImage.imageSmall}"/>" title="${team.teamName}" class="thumb">
+                                    <p>
+                                        <a href="teamHomePage.htm?teamId=${team.teamId}" title="${team.teamName}">${team.teamName}</a>
+                                    </p>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推荐小组 -->
+        </div>
+        <div class="flat clearfix">
+            <h2><strong><font color="#98fb98">课程笔记和热门标签</font></strong></h2>
+            <div class="flat-main">
+                <h3>推荐笔记 (￣▽￣") </h3>
+                <ul class="picked-notes">
+                    <c:forEach items="${noteList}" var="note">
+                        <li class="mbm">
+                            <div class="title">
+                                <a href="">${note.userCourse.course.courseTitle}的笔记</a>
+                            </div>
+                            <div class="summary gray">${note.noteContent}</div>
+                            <div class="metas gray">
+                                <span class="gray">by</span> <span class="thin mrm"><a
+                                    href="" class="show-user-card"
+                                    title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
+                            </div>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+
+            <!-- 热门标签 -->
+
+            <div class="flat-side">
+                <h3>热门标签 (￣▽￣") </h3>
+
+                <div class="tags">
+                    <c:forEach items="${labelList}" var="label">
+                        <a href="#" class="tag">${label.labelName}</a>
+                    </c:forEach>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-<footer id="footer">
-    <p>&copy; 2015 TINYMOOC.COM &nbsp;All Rights Reserved.</p>
-
-</footer>
+    <footer id="footer" style="margin-top: 150px;">
+        <p>&copy; 2015 TINYMOOC.COM &nbsp;All Rights Reserved.</p>
+    </footer>
 
 </div><!-- end .wrapper -->
 
-<!-- JavaScript -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
-<script src="http://www.gnosh.co.uk/wp-content/themes/gnosh/home/js/jquery.arctic_scroll.js"></script>
-<script src="http://www.gnosh.co.uk/wp-content/themes/gnosh/home/js/scripts.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".close-btn-popup .close-btn").click(function(){
-            $("#wrapperLayer").hide();
-            $("#darkenLayer").hide();
-        });
-
-        var currentLi=0;
-        var currentLiDip=0;
-        var currentLiTap=0;
-        var currentLiMM=0;
-
-        /* Section Flavours - Category (Original) */
-        $(".flavours-original").click(function(){
-            //photos
-            $(".flav-photos-dippables").css('display','none');
-            $(".flav-photos-tap").css('display','none');
-            $(".flav-photos-mm").css('display','none');
-            $(".flav-photos-originals").css('display','inline-block');
-
-            $("#flav_dipp_slide").css('display','none');
-            $("#flav_tap_slide").css('display','none');
-            $("#flav_mm_slide").css('display','none');
-            $("#flav_orig_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours - Category (Dippables) */
-        $(".flavours-dippables").click(function(){
-            //photos
-            $(".flav-photos-originals").css('display','none');
-            $(".flav-photos-tapas").css('display','none');
-            $(".flav-photos-mm").css('display','none');
-            $(".flav-photos-dippables").css('display','inline-block');
-
-            $("#flav_orig_slide").css('display','none');
-            $("#flav_tap_slide").css('display','none');
-            $("#flav_mm_slide").css('display','none');
-            $("#flav_dipp_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Tapas - Category (Tapas) */
-        $(".flavours-tapas").click(function(){
-            //photos
-            $(".flav-photos-originals").css('display','none');
-            $(".flav-photos-dippables").css('display','none');
-            $(".flav-photos-mm").css('display','none');
-            $(".flav-photos-tapas").css('display','inline-block');
-
-            $("#flav_orig_slide").css('display','none');
-            $("#flav_dipp_slide").css('display','none');
-            $("#flav_mm_slide").css('display','none');
-            $("#flav_tap_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section MM - Category (MM) */
-        $(".flavours-mm").click(function(){
-            //photos
-            $(".flav-photos-originals").css('display','none');
-            $(".flav-photos-dippables").css('display','none');
-            $(".flav-photos-tapas").css('display','none');
-            $(".flav-photos-mm").css('display','inline-block');
-
-            $("#flav_orig_slide").css('display','none');
-            $("#flav_dipp_slide").css('display','none');
-            $("#flav_tap_slide").css('display','none');
-            $("#flav_mm_slide").css('display','block');
-            currentLi=0;
-            currentLiDip=0;
-            currentLiTap=0;
-            currentLiMM=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours original - Left and Right Arrows */
-        $(".arrow-rt-flav").click(function(){
-            currentLi++;
-            if(currentLi == $("#flav_orig_slide li").size()) currentLi=0;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            return false;
-        });
-
-        $(".arrow-lt-flav").click(function(){
-            currentLi--;
-            if(currentLi == -1) currentLi=$("#flav_orig_slide li").size()-1;
-            $("#flav_orig_slide li").hide();
-            $("#flav_orig_slide li:eq("+currentLi+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours Dippables - Left and Right Arrows */
-
-        $(".arrow-rt-flav").click(function(){
-            currentLiDip++;
-            if(currentLiDip == $("#flav_dipp_slide li").size()) currentLiDip=0;
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            return false;
-        });
-        $(".arrow-lt-flav").click(function(){
-            currentLiDip--;
-            if(currentLiDip == -1) currentLiDip=$("#flav_dipp_slide li").size()-1;
-            $("#flav_dipp_slide li").hide();
-            $("#flav_dipp_slide li:eq("+currentLiDip+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours Tapas - Left and Right Arrows */
-
-        $(".arrow-rt-flav").click(function(){
-            currentLiTap++;
-            if(currentLiTap == $("#flav_tap_slide li").size()) currentLiTap=0;
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            return false;
-        });
-        $(".arrow-lt-flav").click(function(){
-            currentLiTap--;
-            if(currentLiTap == -1) currentLiTap=$("#flav_tap_slide li").size()-1;
-            $("#flav_tap_slide li").hide();
-            $("#flav_tap_slide li:eq("+currentLiTap+")").css('display','inline-block');
-            return false;
-        });
-
-        /* Section Flavours MM - Left and Right Arrows */
-
-        $(".arrow-rt-flav").click(function(){
-            currentLiMM++;
-            if(currentLiMM == $("#flav_mm_slide li").size()) currentLiMM=0;
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-        $(".arrow-lt-flav").click(function(){
-            currentLiMM--;
-            if(currentLiMM == -1) currentLiMM=$("#flav_mm_slide li").size()-1;
-            $("#flav_mm_slide li").hide();
-            $("#flav_mm_slide li:eq("+currentLiMM+")").css('display','inline-block');
-            return false;
-        });
-    });
-</script>
 </body>
 </html>

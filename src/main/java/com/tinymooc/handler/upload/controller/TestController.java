@@ -1,16 +1,14 @@
 package com.tinymooc.handler.upload.controller;
 
-
-import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.tinymooc.handler.upload.service.UploadService;
 import com.tinymooc.util.FileUploadUtils;
 import net.sf.json.JSONObject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TestController {
-	
 	@RequestMapping("test.htm")
 	public ModelAndView test() {
 		return new ModelAndView("/test/testxheditors");
@@ -35,7 +32,9 @@ public class TestController {
 
 		JSONObject responseInfo = JSONObject.fromObject("{'err':'','msg':'" + params.get("filedata") + "'}");
 		response.getWriter().write(responseInfo.toString());
-	}
+        // FIXME
+        System.out.println("================responseInfo.toString()"+responseInfo.toString());
+    }
 
 	@RequestMapping("uploadPic.htm")
 	public void uploadpic(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -45,6 +44,11 @@ public class TestController {
 //		String responseInfo = JSONOperator.toJSON("{'err':'','msg':'"
 //				+ params.get("filedata") + "'}");
 		response.getWriter().write(res.toString());
+
+        // FIXME
+        String picUrl = params.get("filedata").toString();
+        System.out.println("==============params.get(filedata)=="+picUrl);
+        request.getSession().setAttribute("picUrl", picUrl);
 	}
 	
 //	@RequestMapping("downloadFile.htm")

@@ -93,7 +93,7 @@
 													<div class="metas">
 														by <a href=""
 															class="show-user-card " data-uid="1359524"
-															>${user.nickname}</a> 
+															>${user.userName}</a>
 															 <span class="mhs digg-rate" id="note-13164-digg-rate" style="display: none;"></span> 
 															 <span class="mhs time">${notes.addDate}</span>
 													</div>
@@ -165,6 +165,6 @@
 	</section>
 	
 	
-	<jsp:include page="/jsp/include/foot1.jsp"></jsp:include>
+	<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 </body>
 </html>
