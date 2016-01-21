@@ -69,8 +69,8 @@
       <file leaf-file-name="HomePageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tinymooc/handler/homePage/controller/HomePageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3955801" vertical-offset="5570" max-vertical-offset="12350">
-              <caret line="338" column="43" selection-start-line="338" selection-start-column="43" selection-end-line="338" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.26961327" vertical-offset="5570" max-vertical-offset="12350">
+              <caret line="328" column="40" selection-start-line="328" selection-start-column="40" selection-end-line="328" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -300,8 +300,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="426" />
-    <option name="y" value="56" />
+    <option name="x" value="295" />
+    <option name="y" value="64" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
@@ -1312,12 +1312,12 @@
       <workItem from="1453199700052" duration="1516000" />
       <workItem from="1453266812906" duration="21304000" />
       <workItem from="1453291516359" duration="10819000" />
-      <workItem from="1453357979109" duration="7879000" />
+      <workItem from="1453357979109" duration="7904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57919000" />
+    <option name="totallyTimeSpent" value="57944000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1340,7 +1340,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="426" y="56" width="1936" height="1096" extended-state="0" />
+    <frame x="295" y="64" width="1936" height="1096" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1827,8 +1827,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tinymooc/handler/homePage/controller/HomePageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3955801" vertical-offset="5570" max-vertical-offset="12350">
-          <caret line="338" column="43" selection-start-line="338" selection-start-column="43" selection-end-line="338" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.26961327" vertical-offset="5570" max-vertical-offset="12350">
+          <caret line="328" column="40" selection-start-line="328" selection-start-column="40" selection-end-line="328" selection-end-column="40" />
           <folding />
         </state>
       </provider>
