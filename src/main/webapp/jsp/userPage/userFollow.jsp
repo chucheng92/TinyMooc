@@ -29,7 +29,7 @@
      		</c:if>
      		<c:if test="${!empty user1.intro}">
     			<div class="mood">
-                 	<span class="fsn">${user1.intro}</span>
+                    <span class="fsn"  style="margin-left: 4px;">${user1.intro}</span>
               	</div>
      		</c:if>
     

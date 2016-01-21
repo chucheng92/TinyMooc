@@ -254,7 +254,7 @@ public class HomePageController {
 
 
     @RequestMapping("recommendTeam.htm")
-    public ModelAndView turnToTuiTeam(HttpServletRequest request) {
+    public ModelAndView recommendTeam(HttpServletRequest request) {
         System.out.println("=====Test Start===========Enter turnToTuiTeam===========");
         User user = (User) request.getSession().getAttribute("user");
         int credit = user.getCredit();

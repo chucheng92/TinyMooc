@@ -24,7 +24,7 @@
                         <div class="tab-bar">
                             <ul class="clearfix">
                                 <li class="active"><a href="myTinyMooc.htm">课程推荐</a></li>
-                                <li ><a href="turnToTuiTeam.htm">小组推荐</a></li>
+                                <li ><a href="recommendTeam.htm">小组推荐</a></li>
 
                             </ul>
                         </div>
@@ -45,8 +45,8 @@
                                             </div>
                                             <div class="summary">${hotCourse.course.courseIntro}</div>
                                             <div class="metas">
-                                                By<a href="goPersonnal.htm?userId=${hotCourse.user.userId}" class="show-user-card" title="${hotCourse.user.userName}">${hotCourse.user.userName}</a>
-                                                &nbsp;&nbsp;浏览量：<a href="">${hotCourse.course.scanNum}</a>
+                                                By&nbsp;<a href="goPersonal.htm?userId=${hotCourse.user.userId}" class="show-user-card" title="${hotCourse.user.userName}">${hotCourse.user.userName}</a>
+                                                &nbsp;&nbsp;浏览量：${hotCourse.course.scanNum}
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                 <div class="divider"></div>
 
                 <ul class="menus">
-                    <li ><a href="turnToHelpPage.htm"><i class="feature-icon feature-icon-coin"></i>金币</a></li>
+                    <li ><a href="recommendTeam.htm"><i class="feature-icon feature-icon-coin"></i>金币</a></li>
                     <li ><a href="account.htm"><i class="feature-icon feature-icon-setting"></i>账户设置</a></li>
                 </ul>
             </div>

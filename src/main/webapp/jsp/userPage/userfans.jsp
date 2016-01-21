@@ -33,7 +33,7 @@
      		</c:if>
      		<c:if test="${!empty user1.intro}">
     			<div class="mood">
-                 	<span class="fsn"  style="margin-left: 10px;">${user1.intro}</span>
+                 	<span class="fsn"  style="margin-left: 20px;">${user1.intro}</span>
               	</div>
      		</c:if>
     <div class="nav clearfix">
@@ -49,7 +49,7 @@
     <div class="normal-main">
       <div class="tabs clearfix mtl mbm">
         <ul>
-          <li ><a href="goPersonalAtt.htm?userId=${user1.userId}">关注的人</a></li>
+          <li ><a href="goPersonalAttention.htm?userId=${user1.userId}">关注的人</a></li>
           <li class="on"><a href="goPersonalFans.htm?userId=${user1.userId}">粉丝</a></li>
         </ul>
       </div>
