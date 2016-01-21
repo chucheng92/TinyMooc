@@ -19,7 +19,7 @@
 <body>
 <div class="footwrapper">
     <footer id="footer">
-        <p>&copy; 2015 TINYMOOC.COM &nbsp;All Rights Reserved.</p>
+        <p>&copy; 2015 TinyMooc.COM &nbsp;All Rights Reserved.</p>
     </footer>
 </div>
 </body>

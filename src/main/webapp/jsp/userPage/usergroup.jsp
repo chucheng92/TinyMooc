@@ -14,7 +14,7 @@
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<section class="content container">
+<section class="content container" style="margin-top: 60px;">
   <div class="container-padding clearfix">
         <div class="UIImageBlock upage-top clearfix">
     		<div class="UIImageBlock_Image">
@@ -45,13 +45,15 @@
   </div>
 
     
-    <div class="mod mtl">
+    <div class="mod mtl discuss-list2">
       <h3>参加的小组</h3>
+        <div class="metas">
               <ul class="grids smallpic-grids">
               	<c:forEach items="${userTeam}" var="team">
-                  <li class="grid"><a href="teamHomePage.htm?teamId=${team.team.teamId}"><img src="<c:url value="${team.team.headImage.imageSmall}"/>" style="width: 70px;height: 70px;"/></a><p><a href="">${team.team.teamName}</a></p></li> 
+                  <li class="grid"><img src="<c:url value="${team.team.headImage.imageSmall}"/>" style="width: 70px;height: 70px;"/><p><a href="teamHomePage.htm?teamId=${team.team.teamId}" title="查看该小组">${team.team.teamName}</a></p></li>
                 </c:forEach>
                 </ul>
+        </div>
      </div>
     
      <div class="mod">
@@ -62,11 +64,11 @@
   			<c:forEach items="${discussList}" var="discuss">
                 <li>
       				<div class="imageblock clearfix">
-        				<div class="imageblock-image"><a href="" class="show-user-card"><img src="<c:url value="${discuss.user.headImage.imageSmall }"/>"></a></div>
+        				<div class="imageblock-image"><img src="<c:url value="${discuss.user.headImage.imageSmall }"/>"></div>
         					<div class="imageblock-content">
           						<p class="title"><a href="">${discuss.topic}</a>
-          				<p class="metas"><a href="" title="" class="mrm">${discuss.team.teamName}</a>
-          				by <a href="goPersonnal.htm?userId=${discuss.user.userId}" class="show-user-card " >${discuss.user.userName}</a>
+          				<p class="metas"><a href="teamHomePage.htm?teamId=${discuss.team.teamId}" title="查看该小组" class="mrm">${discuss.team.teamName}</a>
+          				by <a href="goPersonal.htm?userId=${discuss.user.userId}" class="show-user-card " title="查看该用户">${discuss.user.userName}</a>
             					<span class="mhm">${discuss.scanNum}次查看</span></p>
         					</div>
       				</div>

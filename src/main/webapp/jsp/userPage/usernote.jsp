@@ -36,17 +36,8 @@
 </script>
 </head>
 <body class="lily-theme">
-
-
-
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
-
-
-
-
-
-<section class="content container">
-
+<section class="content container" style="margin-top: 60px;">
   <div class="container-padding clearfix">
     <div class="UIImageBlock upage-top clearfix">
     		<div class="UIImageBlock_Image">

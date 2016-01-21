@@ -53,9 +53,7 @@
     <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 </c:if>
 <section class="container" style="margin-top: 60px;">
-    <div class="group-header"
-         style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
-
+    <div class="group-header" style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
         <div >
             <div class="icon">
                 <img src="<c:url value="${userTeam2.team.headImage.imageSmall}"/>"/>
@@ -246,6 +244,7 @@
 
             </c:if>
         </div>
+    </div>
     </div>
 </section>
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>

@@ -15,7 +15,7 @@
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<section class="container clearfix">
+<section class="container clearfix" style="margin-top: 60px;">
   <div id="me" class="me clearfix">
     <div class="main">
       <div class="wrap">
@@ -28,8 +28,8 @@
   <div class="tabs clearfix">
   <ul>
     <li><a href="account.htm">个人资料</a></li>
-    <li><a href="goaccountavatar.htm">更新头像</a></li>
-    <li><a href="goaccountPassword.htm">修改密码</a></li>
+    <li><a href="goAccountAvatar.htm">更新头像</a></li>
+    <li><a href="goAccountPassword.htm">修改密码</a></li>
     <li class="on"><a href="queryLabel.htm?type=user">添加标签</a></li>
     
   </ul>

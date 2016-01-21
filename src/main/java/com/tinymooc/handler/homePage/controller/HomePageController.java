@@ -331,7 +331,6 @@ public class HomePageController {
         return new ModelAndView("/help/helpLevel");
     }
 
-
     @RequestMapping("howToCreate.htm")
     public ModelAndView howtocreate() {
         return new ModelAndView("/course/howToCreate");
@@ -497,18 +496,18 @@ public class HomePageController {
 
         dCriteria.add(Restrictions.eq("user", user1));
 
-        List<UserTeam> userteam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
+        List<UserTeam> userTeam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
 
         DetachedCriteria dCriteria2 = DetachedCriteria.forClass(Discuss.class);
 
         dCriteria2.add(Restrictions.eq("user", user1));
 
-        List<Discuss> discuss = userService.queryAllOfCondition(Discuss.class, dCriteria2);
+        List<Discuss> discussList = userService.queryAllOfCondition(Discuss.class, dCriteria2);
 
 
         request.setAttribute("user1", user1);
-        request.setAttribute("userteam", userteam);
-        request.setAttribute("discuss", discuss);
+        request.setAttribute("userTeam", userTeam);
+        request.setAttribute("discussList", discussList);
 
         return new ModelAndView("/userPage/userGroup");
 
@@ -555,7 +554,7 @@ public class HomePageController {
         List<Attention> list = attention.queryAttention(userId);
         request.setAttribute("sum", list.size());
         request.setAttribute("user1", user1);
-        return new ModelAndView("/userPage/userFellow", "list", list);
+        return new ModelAndView("/userPage/userFollow", "list", list);
 
     }
 

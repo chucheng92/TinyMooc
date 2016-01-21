@@ -61,7 +61,7 @@
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="content container">
+<section class="content container" style="margin-top: 60px;">
   <div class="container-padding clearfix">
     <div class="user-side">
       <div class="mod uportrait-mod">

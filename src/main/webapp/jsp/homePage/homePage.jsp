@@ -317,8 +317,10 @@
     <div class="why-gnosh-movies">
     </div>
     <div class="flat clearfix">
-        <h2><strong><font color="#98fb98">课程频道</font></strong></h2>
+        <h2><strong>课程频道</strong></h2>
         <ul class="cells channel-cells">
+            <li class="cell"><a href="goCourseHome.htm"><i
+                    class="channel-icon channel-icon-photography"></i>全部</a></li>
             <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
                     class="channel-icon channel-icon-photography"></i>摄影</a></li>
             <li class="cell"><a href="goMajorHome.htm?type=艺术"><i
@@ -340,7 +342,7 @@
         </ul>
     </div>
     <div class="flat clearfix">
-        <h2><strong><font color="#98fb98">热门课程 | 瞧瞧大家都在学啥 o(*≧▽≦)ツ</font></strong></h2>
+        <h2><strong>热门课程 | 瞧瞧大家都在学啥&nbsp;(～￣▽￣)～</strong></h2>
         <ul class="cells cells-middle">
             <c:forEach items="${hotCourseList}" var="hotCourse">
                 <li class="cell">
@@ -355,7 +357,7 @@
                         <p class="metas clearfix">
                             <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${hotCourse.course.scanNum}</span>
 							<span class="fl by">by
-								<a href="#" class="show-user-card" title="">${hotCourse.user.userName}</a>
+								<a href="goPersonal.htm?userId=${hotCourse.user.userId}" class="show-user-card" title="查看该用户">${hotCourse.user.userName}</a>
 							</span>
                         </p>
                     </div>
@@ -368,7 +370,7 @@
     </div>
 
     <div class="flat clearfix">
-        <h2><strong><font color="#98fb98">最新课程 | 哇塞，又有新课开放了，赶紧学起来</font></strong></h2>
+        <h2><strong>最新课程 | 哇塞，又有新课开放了，赶紧学起来&nbsp;(～￣▽￣)～</strong></h2>
         <ul class="cells cells-middle">
             <c:forEach items="${newCourseList}" var="newCourse" varStatus="iter">
                 <li class="cell">
@@ -397,7 +399,7 @@
     </div>
 
     <div class="flat clearfix">
-        <h2><strong><font color="#98fb98">话题、小组</font></strong></h2>
+        <h2><strong>话题、小组&nbsp;╰(￣▽￣)╭</strong></h2>
         <div class="flat-main">
             <h3>最新话题</h3>
             <div class="discuss-list2">
@@ -428,8 +430,8 @@
                 </ul>
             </div>
             <div class="discuss-list2" style="margin-top:15px;">
-                <h3>推荐小组 (￣▽￣")  </h3>
-                <div class="clearfix">
+                <h3>推荐小组 </h3>
+                <div class="metas">
                     <ul class="grids smallpic-grids">
                         <c:forEach items="${teamList}" var="team">
                             <li class="grid"><img src="<c:url value="${team.headImage.imageSmall}"/>" title="${team.teamName}" class="thumb">
@@ -446,9 +448,9 @@
         <!-- 推荐小组 -->
     </div>
     <div class="flat clearfix">
-        <h2><strong><font color="#98fb98">课程笔记和热门标签</font></strong></h2>
+        <h2><strong>课程笔记和热门标签&nbsp;╰(￣▽￣)╭</strong></h2>
         <div class="flat-main">
-            <h3>推荐笔记 (￣▽￣") </h3>
+            <h3>推荐笔记 </h3>
             <ul class="picked-notes">
                 <c:forEach items="${noteList}" var="note">
                     <li class="mbm">
@@ -467,10 +469,8 @@
         </div>
 
         <!-- 热门标签 -->
-
         <div class="flat-side">
-            <h3>热门标签 (￣▽￣") </h3>
-
+            <h3>热门标签 </h3>
             <div class="tags">
                 <c:forEach items="${labelList}" var="label">
                     <a href="#" class="tag">${label.labelName}</a>
