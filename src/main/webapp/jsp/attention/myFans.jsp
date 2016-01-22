@@ -19,7 +19,7 @@ function del(){
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<section class="container clearfix">
+<section class="container clearfix" style="margin-top: 60px;">
   <div id="me" class="me clearfix">
     <div class="main">
       <div class="wrap">

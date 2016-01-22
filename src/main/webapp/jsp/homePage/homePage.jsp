@@ -251,8 +251,8 @@
 
     <article class="news"><h1 style="font-size: 18px;text-transform:none;"></h1>
         <time datetime="2012-05-31">15/12/21</time>
-        <p><font color="#1e90ff">让我们把学习回归到最质朴、最纯净的状态，满足人类对未知世界的求知欲。</font></br>
-            <font color="#1e90ff">宇宙那么大，我们没弄懂的事情还多着呢。<br/> -- 萌课网</font></p>
+        <p>让我们把学习回归到最质朴、最纯净的状态，满足人类对未知世界的求知欲。</br>
+            宇宙那么大，我们没弄懂的事情还多着呢。<br/> -- 萌课网</p>
 
     </article>
 
@@ -448,24 +448,26 @@
         <!-- 推荐小组 -->
     </div>
     <div class="flat clearfix">
-        <h2><strong>课程笔记和热门标签&nbsp;╰(￣▽￣)╭</strong></h2>
+        <h2><strong>课程笔记和热门标签</strong></h2>
         <div class="flat-main">
-            <h3>推荐笔记 </h3>
-            <ul class="picked-notes">
-                <c:forEach items="${noteList}" var="note">
-                    <li class="mbm">
-                        <div class="title">
-                            <a href="">${note.userCourse.course.courseTitle}的笔记</a>
-                        </div>
-                        <div class="summary gray">${note.noteContent}</div>
-                        <div class="metas gray">
-                            <span class="gray">by</span> <span class="thin mrm"><a
-                                href="" class="show-user-card"
-                                title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
-                        </div>
-                    </li>
-                </c:forEach>
-            </ul>
+            <h3>推荐笔记</h3>
+            <div class="discuss-list2">
+                <ul class="picked-notes">
+                    <c:forEach items="${noteList}" var="note">
+                        <li class="mbm">
+                            <div class="metas">
+                                <a href="">${note.userCourse.course.courseTitle}的笔记</a>
+                            </div>
+                            <div class="summary gray">${note.noteContent}</div>
+                            <div class="metas">
+                                <span class="gray">by</span> <span class="thin mrm"><a
+                                    href="goPersonal.htm?userId=${note.userCourse.user.userId}" class="show-user-card"
+                                    title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
+                            </div>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
         </div>
 
         <!-- 热门标签 -->

@@ -13,10 +13,10 @@
 <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
 <script type="text/javascript" src="<c:url value="/resource/js/login.js"/>"></script>
 </head>
-<body class="lily-theme">
+<body class="loginInfo">
 
-<jsp:include page="/jsp/include/head.jsp"></jsp:include>
-<section class="container signup">
+<jsp:include page="/jsp/include/head2.jsp"></jsp:include>
+<section class="container signup" style="margin-top: 60px;">
 	<div class="container-padding clearfix">
   		<h1>请输入您的注册邮箱！</h1>
  	 </div>
@@ -35,6 +35,8 @@
     </div>
 </section>
 
-<jsp:include page="/jsp/include/foot1.jsp"></jsp:include>
+<div style="margin-top: 30% !important; margin-left:400px !important; width:900px;">
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+</div>
 
 </body></html>

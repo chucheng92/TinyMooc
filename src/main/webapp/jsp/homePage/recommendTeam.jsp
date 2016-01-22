@@ -13,7 +13,7 @@
 <body class="flats-theme">
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container clearfix">
+<section class="container clearfix" style="margin-top: 60px;">
   <div id="me" class="me clearfix">
     <div class="main">
       <div class="wrap">
@@ -78,7 +78,7 @@
       <span class="badge badge-warning fss">NEW</span> 创建课程，拿金币，做达人！
     </div>
     <div class="mbm"><a href="createCoursePage.htm" class="btn btn-success btn-large" style="width: 180px;">创建课程</a></div>
-    <div class="clearfix"><a href="/course/howToCreate/" class="fr">如何创建课程？</a></div>
+    <div class="clearfix"><a href="howToCreate.htm" class="fr">如何创建课程？</a></div>
   </div>
 
 
@@ -92,7 +92,7 @@
      	<c:forEach items="${expertList}" var="expert">
         <li style="display:block;">
       <div class="imageblock clearfix">
-        <div class="imageblock-image"><a href="goPersonnal.htm?userId=${expert.userId}" class="show-user-card" ><img src="<c:url value="${expert.headImage.imageMid}"/>" title="${expert.userName}"></a>
+        <div class="imageblock-image"><a href="goPersonal.htm?userId=${expert.userId}" class="show-user-card" ><img src="<c:url value="${expert.headImage.imageMid}"/>" title="${expert.userName}"></a>
 			</div>
         <div class="imageblock-content">
           <div class="mbs"><a href="goPersonnal.htm?userId=${expert.userId}" class="show-user-card " title="${expert.userName}">${expert.userName}</a></div>
@@ -139,15 +139,15 @@
 
        <div class="menu-mod clearfix">
          <ul class="menus">
-          <li class="active"><a href="turnToHomePage.htm"><i class="feature-icon feature-icon-home"></i>我的首页</a></li>
-          <li ><a href="courseList.htm"><i class="feature-icon feature-icon-teach"></i>我的课程</a></li>
+          <li class="active"><a href="myTinyMooc.htm"><i class="feature-icon feature-icon-home"></i>我的首页</a></li>
+          <li ><a href="courseList.htm"><i class="feature-icon feature-icon-teach"></i>课程管理</a></li>
           <li ><a href="goNote.htm"><i class="feature-icon feature-icon-note"></i>笔记</a></li>
-          <li ><a href="challenge.htm"><i class="feature-icon feature-icon-faq"></i>微挑战</a></li>
-          <li ><a href="rank.htm"><i class="feature-icon feature-icon-faq"></i>微排行</a></li>
-          <li ><a href="myrank.htm"><i class="feature-icon feature-icon-faq"></i>我的排行</a></li>
+          <%--<li ><a href="challenge.htm"><i class="feature-icon feature-icon-faq"></i>微挑战</a></li>--%>
+          <%--<li ><a href="rank.htm"><i class="feature-icon feature-icon-faq"></i>微排行</a></li>--%>
+          <%--<li ><a href="myrank.htm"><i class="feature-icon feature-icon-faq"></i>我的排行</a></li>--%>
           <li ><a href="teamPage.htm"><i class="feature-icon feature-icon-group"></i>小组</a></li>
-          <li ><a href="shop.htm"><i class="feature-icon feature-icon-faq"></i>商城</a></li>
-          <li ><a href="myprop.htm"><i class="feature-icon feature-icon-faq"></i>我的道具</a></li>
+          <%--<li ><a href="shop.htm"><i class="feature-icon feature-icon-faq"></i>商城</a></li>--%>
+          <%--<li ><a href="myprop.htm"><i class="feature-icon feature-icon-faq"></i>我的道具</a></li>--%>
           <li ><a href="myFavotite.htm"><i class="feature-icon feature-icon-favorite"></i>收藏夹</a></li>
         </ul>
 

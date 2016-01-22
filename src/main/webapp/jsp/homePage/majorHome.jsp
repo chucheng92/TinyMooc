@@ -151,7 +151,7 @@
                     <p class="metas clearfix">
                         <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${course.course.scanNum}</span>
 							<span class="fl by">by
-								<a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
+								<a href="goPersonal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
 							</span>
                     </p>
                 </div>
@@ -233,7 +233,7 @@
                         <p class="metas clearfix">
                             <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${course.course.scanNum}</span>
 							<span class="fl by">by
-								<a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
+								<a href="goPersonal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
 							</span>
                         </p>
                     </div>

@@ -462,27 +462,28 @@
                 </div>
             </div>
 
-            <!-- 推荐小组 -->
         </div>
         <div class="flat clearfix">
             <h2><strong>课程笔记和热门标签</strong></h2>
             <div class="flat-main">
                 <h3>推荐笔记</h3>
+                <div class="discuss-list2">
                 <ul class="picked-notes">
                     <c:forEach items="${noteList}" var="note">
                         <li class="mbm">
-                            <div class="title">
+                            <div class="metas">
                                 <a href="">${note.userCourse.course.courseTitle}的笔记</a>
                             </div>
                             <div class="summary gray">${note.noteContent}</div>
-                            <div class="metas gray">
+                            <div class="metas">
                                 <span class="gray">by</span> <span class="thin mrm"><a
-                                    href="" class="show-user-card"
+                                    href="goPersonal.htm?userId=${note.userCourse.user.userId}" class="show-user-card"
                                     title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
                             </div>
                         </li>
                     </c:forEach>
                 </ul>
+                </div>
             </div>
 
             <!-- 热门标签 -->

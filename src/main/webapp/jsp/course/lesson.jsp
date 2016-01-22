@@ -167,7 +167,7 @@
 
 <input type="hidden" id="userId1" value="${user.userId}">
 <input type="hidden" id="userId" value="${currentCourse.user.userId}">
-<section class="container course">
+<section class="container course" style="margin-top: 60px;">
 
     <div id="course-main">
         <div id="course-header"
@@ -204,48 +204,25 @@
             </div>
         </div>
 
-        <div id="lessoncontent" class="flat lesson-flat">
+        <div>
 
             <h1>
                 <span class="lesson-index" id="index">章节</span>
                 <span class="lesson-title">${lesson.courseTitle}</span>
             </h1>
-
-            <div class="lesson-toolbar  mbm">
-                <div class="lesson-toolbar-inner">
-                    <div class="lesson-toolbar-main">
-                        <div class="lesson-toolbar-main-inner clearfix">
-
-                            <div class="btn-group fr posrel">
+                            <div style="float: right; margin-bottom: 2px;">
                                 <c:if test="${lessonLearnState=='学习中'}">
                                     <button id="note-open-btn" class="btn btn-small" title="写笔记"
                                             data-open-url="/course/4631/lesson/49296?openNote=1">
                                         <i class="icon-pencil"></i> 写笔记
                                     </button>
                                 </c:if>
-                                <span class="float-new posabs" style="top: -12px; right: 0;"></span>
+                                <%--<span class="float-new posabs" style="top: -12px; right: 0;"></span>--%>
                             </div>
 
-
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="editor-content">
-                <c:if test="${!empty resource.imageText}">
-                    ${resource.imageText.content}
-                </c:if>
-                <c:if test="${!empty resource.link}">
-                    ${resource.link.linkUrl}"
-                </c:if>
-                <c:if test="${!empty resource.video}">
-                    <%--<div class="media-player">--%>
                         <iframe src="http://play.video.qcloud.com/iplayer.html?$appid=1251419256&$fileid=${requestScope.fileId}&$autoplay=0&$sw=1280&$sh=720" frameborder="0" width="100%" height="720" scrolling="no"></iframe>
                         <script src="http://qzonestyle.gtimg.cn/open/qcloud/video/h5/fixifmheight.js" charset="utf-8"></script>
-                    <%--</div>--%>
-                </c:if>
-
-
                 <div class="btn-toolbar mbl clearfix" id="lesson-user-actions">
 				<span class="pull-right">
 			
@@ -272,14 +249,14 @@
                     <c:forEach items="${singleCommentList}" var="cm1">
                         <li class="reply" data-author="${cm1.user.userName}">
                             <div class="who">
-                                <a href="" class="show-user-card"><img src="${cm1.user.headImage.imageMid}"
-                                                                       alt="${cm1.user.userName}"></a>
+                                <img src="${cm1.user.headImage.imageMid}"
+                                                                       alt="${cm1.user.userName}">
                             </div>
                             <div class="mbs">
-                                <strong class="mrs"><a href="" class="show-user-card "
+                                <strong class="mrs"><a href="goPersonal.htm?userId=${cm1.user.userId}" class="show-user-card "
                                                        title="${cm1.user.userName}">${cm1.user.userName}</a></strong>
                                 <span class="said-meta"><fmt:formatDate value="${cm1.commentDate}"
-                                                                        pattern="yyyyy-MM-dd HH:mm"/></span>
+                                                                        pattern="yyyy-MM-dd HH:mm"/></span>
                             </div>
                             <div class="said-content editor-content reply-editor-content">
                                     ${cm1.commentContent}
@@ -293,9 +270,9 @@
                                     <c:if test="${cm2.comment.commentId eq cm1.commentId}">
                                         <li class="reply" data-author="${cm2.user.userName}">
                                             <div class="who">
-                                                <a href="" class="show-user-card"><img
+                                               <img
                                                         src="${cm2.user.headImage.imageMid}" alt="${cm2.user.userName}"
-                                                        width="40px" height="40px"></a>
+                                                        width="40px" height="40px">
                                             </div>
                                             <div class="mbs">
                                                 <strong class="mrs"><a href="" class="show-user-card "
@@ -395,12 +372,11 @@
             <h2>课时简介</h2>
 
             <p>${lesson.courseIntro}</p>
-
-            <p class="stat-bar tac">
-                <span class="stat-item" title="${lesson.scanNum} 查看">查看：<span
-                        class="view-stat-icon"></span>${lesson.scanNum}</span>
-                <span class="stat-item" title="${commentNum} 评论">评论：<span class="comment-stat-icon"></span>${commentNum}</span>
-            </p>
+            <br/>
+            <div>
+               查看：<span>${lesson.scanNum}</span>
+                评论：<span>${commentNum}</span>
+            </div>
         </div>
         <div class="flat lesson-nav" id="lesson-window-list" style="display: block;">
             <h2>课时列表</h2>
@@ -446,7 +422,7 @@
                             <a href="" id="unfollow-user" class="btn btn-small disabled action-ajax fr"> 已关注</a>
                         </c:if>
                     </c:if>
-                    <div class="nickname"><a href="" class="show-user-card" data-uid="1295165"
+                    <div class="nickname"><a href="goPersonal.htm?userId=${currentCourse.user.userId}" class="show-user-card" data-uid="1295165"
                                              title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
                             class="o-ver-icn" title="${currentCourse.user.intro}"></span></a></div>
                     <div>
@@ -467,8 +443,8 @@
             <c:if test="${learned>0}">
                 <h3>${learned}人学过</h3>
                 <c:forEach items="${userEndCoursesList}" var="uc3">
-                    <a href="" title="${uc3.user.userName}"><img src="${uc3.user.headImage.imageMid}"
-                                                                 alt="${uc3.user.userName}的头像" width=24 height=24></a>
+                    <img src="${uc3.user.headImage.imageMid}"
+                                                                 alt="${uc3.user.userName}的头像" width=24 height=24>
                 </c:forEach>
             </c:if>
         </div>
@@ -478,8 +454,8 @@
             <c:if test="${learning>0}">
                 <h3>${learning}人正在学习</h3>
                 <c:forEach items="${userLearnCoursesList}" var="uc2">
-                    <a href="" title="${uc2.user.userName}"><img src="${uc2.user.headImage.imageMid}"
-                                                                 alt="${uc2.user.userName}的头像" width=24 height=24></a>
+                    <img src="${uc2.user.headImage.imageMid}"
+                                                                 alt="${uc2.user.userName}的头像" width=24 height=24>
                 </c:forEach>
             </c:if>
         </div>
