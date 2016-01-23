@@ -2,13 +2,12 @@
          pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />"/>
-    <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-    <script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
     <title>萌课网 - 小组</title>
 
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
@@ -225,6 +224,21 @@
 
 </head>
 <body class="archive category category-gnews category-3">
+=============${message}=========AAAAAAAAAAAAAAAA
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        <%--var message='<%=request.getParameter("message")%>';--%>
+        <%--var message = ${message};--%>
+
+//        if(message==null || message=="" || message=='null'){
+//            alert(message);
+        alert("1321");
+//        }else{
+//            $.scojs_message(message, $.scojs_message.TYPE_OK);
+//        }
+    });
+</script>
 
 <c:if test="${empty user.userId}">
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
@@ -323,9 +337,7 @@
             <ul class="grids smallpic-grids">
                 <c:forEach items="${hotTeams}" var="team" begin="0" end="6">
                     <li class="grid">
-                        <a href="teamHomePage.htm?teamId=${team.teamId}" title="${team.teamName}"><img
-                                src="${team.headImage.imageSmall}" alt="${team.teamName}"></a>
-
+                        <img src="${team.headImage.imageSmall}" alt="${team.teamName}">
                         <div class="mvs"><a href="teamHomePage.htm?teamId=${team.teamId}"
                                             title="${team.teamName}">${team.teamName}</a></div>
                     </li>

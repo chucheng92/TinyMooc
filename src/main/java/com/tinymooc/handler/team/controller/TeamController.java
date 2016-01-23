@@ -42,6 +42,9 @@ public class TeamController {
 
     @RequestMapping("teamPage.htm")
     public ModelAndView teamPage(HttpServletRequest req, HttpServletResponse res) {
+        String message = req.getParameter("message");
+        // FIXME
+        System.out.println("============message========="+message);
         User user = (User) req.getSession().getAttribute("user");
         // 1 我的小组 - 我管理的小组
         DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(UserTeam.class)
@@ -83,7 +86,7 @@ public class TeamController {
         req.setAttribute("hotTeams", hotTeams);
         req.setAttribute("dictionaries", dictionaries);
         req.setAttribute(" discussList", discussList);
-        return new ModelAndView("/team/team");
+        return new ModelAndView("/team/team", "message", message);
     }
 
     @RequestMapping("teamHomePage.htm")
@@ -220,6 +223,7 @@ public class TeamController {
         team.setType(teamType);
         team.setConstruction(0);
         team.setTeamState("申请中");
+        team.setHeadImage(new HeadImage("70328611d330411ca1d438ba70a10ccc"));
         team.setApplyDate(new Date());
         teamService.save(team);
 
@@ -233,7 +237,9 @@ public class TeamController {
         userTeam.setTeam(team);
         userTeam.setUserState("批准");
         teamService.save(userTeam);
-        return new ModelAndView("redirect:teamPage.htm");
+
+        String message = "创建成功，请等待批准";
+        return new ModelAndView("redirect:teamPage.htm", "message", message);
     }
 
 

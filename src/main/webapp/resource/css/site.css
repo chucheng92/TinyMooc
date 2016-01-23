@@ -1549,7 +1549,7 @@ background-position: -30px 0px;
 	margin: 6px 5px; width: 190px; height: 18px; color: rgb(0, 0, 0); overflow: hidden;
 }
 .course-item .title .video {
-	background: url("/resource/img/logo.png") no-repeat 0px 3px; width: 16px; height: 16px; margin-right: 3px; display: inline-block;
+	background: url("/resource/img/hot.jpg") no-repeat 0px 3px; width: 16px; height: 16px; margin-right: 3px; display: inline-block;
 }
 .course-item .title a {
 	color: rgb(102, 102, 102); font-size: 14px; font-weight: bold;

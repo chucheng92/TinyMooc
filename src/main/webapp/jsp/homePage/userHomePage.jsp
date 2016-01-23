@@ -368,7 +368,7 @@
                                 <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><img src="${hotCourse.course.logoUrl}"/></a>
                             </div>
                             <p class="title">
-                                <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
+                                <a style="color: rgb(102, 194, 160); " href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span style="border-radius: 3px;" class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
                             </p>
                             <div class="summary">${hotCourse.course.courseIntro}</div>
                             <p class="metas clearfix">
@@ -396,7 +396,7 @@
                                 <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><img src="${newCourse.course.logoUrl}"/></a>
                             </div>
                             <p class="title">
-                                <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
+                                <a style="color: rgb(102, 194, 160); " href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span style="border-radius: 3px;" class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
                             </p>
                             <div class="summary">${newCourse.course.courseIntro}</div>
                             <p class="metas clearfix">
@@ -501,7 +501,7 @@
     </section>
 
 
-    <footer id="footer" style="margin-top: 150px;">
+    <footer id="footer" style="margin-top: 20%;">
         <p>&copy; 2015 TINYMOOC.COM &nbsp;All Rights Reserved.</p>
     </footer>
 

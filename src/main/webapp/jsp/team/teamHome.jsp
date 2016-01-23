@@ -133,7 +133,7 @@
                             <c:forEach items="${discusses}" var="dis">
                                 <li>
                                     <div class="imageblock clearfix">
-                                        <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
+                                        <div class="imageblock-image"><img src="/resource/img/topic.png" style="border-radius: 3px;">
                                         </div>
                                         <div class="imageblock-content">
 
@@ -149,7 +149,7 @@
                                             </p>
 
                                             <p class="metas">
-                                                by <a href="" class="show-user-card "
+                                                by <a href="goPersonal.htm?userId=${dis.user.userId}" class="show-user-card "
                                                       title="${dis.user.userName}">${dis.user.userName}</a>
                                                 <span class="mhm">${dis.scanNum}</span>
                                             </p>

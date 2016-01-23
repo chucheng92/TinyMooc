@@ -562,19 +562,36 @@ public class HomePageController {
     @SuppressWarnings("unchecked")
     @RequestMapping("goCourseHome.htm")
     public ModelAndView goCourseHome(HttpServletRequest request) {
-        DetachedCriteria dCriteria = DetachedCriteria.forClass(UserCourse.class)
+        // FIXME
+        System.out.println("=============进入goCourseHome=========");
+        String filterType = request.getParameter("filterType");
+        // FIXME
+        System.out.println("=============filterType========="+filterType);
+
+        DetachedCriteria dc = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "创建者")).createCriteria("course")
                 .add(Restrictions.eq("courseState", "批准"))
-                .add(Restrictions.isNull("course"))
-                .addOrder(Order.desc("applyDate"));
+                .add(Restrictions.isNull("course"));
+        if (filterType == null )
+            // 默认
+            dc .addOrder(Order.desc("applyDate"));
+       else if (filterType.equals("grade"))
+               dc.addOrder(Order.desc("totalMark"));
+        else if (filterType.equals("time") )
+              dc .addOrder(Order.desc("approveDate"));
+        else if (filterType.equals("hot") )
+            dc .addOrder(Order.desc("scanNum"));
 
         int pageSize = 12;
-        int totalPage = userService.countTotalPage(dCriteria, pageSize);
+        int totalPage = userService.countTotalPage(dc, pageSize);
         PageHelper.forPage(totalPage, pageSize);
-        List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dCriteria, pageSize);
+        List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dc, pageSize);
         request.setAttribute("list1", list1);
-        return new ModelAndView("/homePage/allcourse");
 
+        // FIXME
+        System.out.println("=============结束goCourseHome=========");
+
+        return new ModelAndView("/homePage/allcourse");
     }
 
 		/*---------------------------导航栏专业首页------------------------*/

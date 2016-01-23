@@ -218,8 +218,6 @@
         <h1>热门课程</h1>
 
         <ul class="cells cells-middle">
-
-
             <c:forEach items="${hotCourseList}" var="course">
                 <li class="cell">
                     <div class="course-item">

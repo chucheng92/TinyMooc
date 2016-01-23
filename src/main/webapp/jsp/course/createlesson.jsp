@@ -42,26 +42,19 @@ $("#save").click(function(){
 </head>
 <body class="flats-theme">
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
-<section class="container ">  
+<section class="container " style="margin-top: 60px;">
   <div id="course-header"  class="flat course-header course-small-header">
   <div class="imageblock clearfix">
-    <div class="imageblock-image">
-      <a href=""><img src="" alt="cs50" width="48" heiht="48" /></a>
-    </div>
     <div class="imageblock-content">
-      <div class="action-bar">
-  
-  </div>
-      <h1 class="mbm"><a href="">${course.courseTitle}</a></h1>
-      <div style="margin-left: -5px;"><div class="clearfix mtm">
-</div>
-</div>
+      <h1 class="mbm"><a href="#">为课程"${course.courseTitle}"添加课时</a></h1>
+      <div style="margin-left: -5px;"><div class="clearfix mtm"></div>
+    </div>
     </div>
   </div>
 </div>
 
 
-  <div class="light-page page-small lesson-form-page" style="">
+  <div class="light-page page-small lesson-form-page">
     <div class="page-head"><h2>添加第${lessons+1}课时</h2></div>
     <div class="page-body clearfix">
       <div class="page-body-main">

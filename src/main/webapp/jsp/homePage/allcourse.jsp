@@ -1,20 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sicd" uri="/sicd-tags"%>	
+<%@taglib prefix="sicd" uri="/sicd-tags"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/bootstrap.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-<link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/resource/js/sea.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
 <title>课程</title>
 </head>
 
@@ -56,6 +48,9 @@
 		<div class="flat">
 			<div class="clearfix">
 				<h2 class="fl"><font color="black">全部课程</font></h2>
+                <div class="discuss-list2">
+                    <span  class="metas" style="margin-left: 10px;">排序:&nbsp;&nbsp;<a href="goCourseHome.htm">默认</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=grade">评分</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=time">最新</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=hot">最热</a></span>
+                </div>
 				<a href="" class="fr more"><font color="black">» 更多</font></a>
 			</div>
 			<ul class="cells cells-middle">
