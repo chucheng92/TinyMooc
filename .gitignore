@@ -1,4 +1,6 @@
 *.iml
+!tinymooc.iml
 !TinyMooc.iml
+/.idea/*
 *.class
 /target/*
