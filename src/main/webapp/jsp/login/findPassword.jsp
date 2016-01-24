@@ -39,5 +39,4 @@
     <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 </div>
 
-</body>
-</html>
+</body></html>

@@ -1,35 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-<div class="menu-mod clearfix">
-         <ul class="menus">
-          <li ><a href="myTinyMooc.htm"><i class="feature-icon feature-icon-home"></i>我的萌课</a></li>
-          <li ><a href="courseList.htm"><i class="feature-icon feature-icon-teach"></i>课程管理</a></li>
-          <li ><a href="goNote.htm"><i class="feature-icon feature-icon-note"></i>笔记</a></li>
-          <%--<li ><a href="challenge.htm"><i class="feature-icon feature-icon-faq"></i>微挑战</a></li>--%>
-          <%--<li ><a href="rank.htm"><i class="feature-icon feature-icon-faq"></i>微排行</a></li>--%>
-          <%--<li ><a href="myrank.htm"><i class="feature-icon feature-icon-faq"></i>我的排行</a></li>--%>
-          <li ><a href="teamPage.htm"><i class="feature-icon feature-icon-group"></i>小组</a></li>
-          <%--<li ><a href="shop.htm"><i class="feature-icon feature-icon-faq"></i>商城</a></li>--%>
-          <%--<li ><a href="myprop.htm"><i class="feature-icon feature-icon-faq"></i>我的道具</a></li>--%>
-          <li ><a href="myFavotite.htm"><i class="feature-icon feature-icon-favorite"></i>收藏夹</a></li>
-        </ul>
+<div class="wrapper">
+    <div class="left">
+        <header>
+            <div class="logo"></div>
 
-        <div class="divider"></div>
+            <div class="avatar-mod clearfix">
+                <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>"/></a>
 
-        <ul class="menus">
-          <li ><a href="myAttention.htm"><i class="feature-icon feature-icon-friend"></i>好友</a></li>
-          <li ><a href="goPrivateMail.htm"><i class="feature-icon feature-icon-message"></i>私信</a></li>
-        </ul>
+                <div class="infos">
+                    <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
+                    <div class="icons">
+                        <a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>
+                        <a class="user-level user-level-6"  href="">${level.title}</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="divider"></div>
+            <div class="stats-mod">
+                <ul class="user-stats clearfix">
+                    <li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>
+                    <li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>
+                </ul>
+            </div>
 
-        <ul class="menus">
-          <li ><a href="turnToHelpPage.htm"><i class="feature-icon feature-icon-coin"></i>金币</a></li>
-          <li class="active"><a href="account.htm"><i class="feature-icon feature-icon-setting"></i>账户设置</a></li>
-        </ul>
-      </div> </body>
-      <html>
+
+            <nav>
+                <ul>
+                    <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
+                    <ul class="sub-menu">
+                        <li id="menu-item-1271" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1273"><a href="myTinyMooc.htm"><span>我的萌课</span></a></li>
+                        <li id="menu-item-1273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1273"><a href="courseList.htm"><span>课程管理</span></a></li>
+                        <li id="menu-item-1270" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1270"><a href="goNote.htm"><span>笔记</span></a></li>
+                        <li id="menu-item-1274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1274"><a href="teamPage.htm"><span>小组</span></a></li>
+                        <li id="menu-item-1272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1272"><a href="myFavotite.htm"><span>收藏夹</span></a></li>
+                        <li id="menu-item-1275" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1275"><a href="myAttention.htm"><span>好友</span></a></li>
+                        <li id="menu-item-1276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1276"><a href="ggoPrivateMail.htm"><span>私信</span></a></li>
+                        <li id="menu-item-1277" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1277"><a href="turnToHelpPage.htm"><span>金币</span></a></li>
+                        <li id="menu-item-1278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1278"><a href="account.htm"><span>账户设置</span></a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    </div>
+</body><html>

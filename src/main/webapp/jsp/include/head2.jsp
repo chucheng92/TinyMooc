@@ -69,6 +69,23 @@
 
         $(function(){
 
+            $("#course1").mouseover(function(){
+
+                $("#menu1").css("display","block");
+
+            });
+            $(".item.course").mouseleave(function(){
+
+                $("#menu1").css("display","none");
+            });
+        });
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(function(){
+
             $("#course").mouseover(function(){
 
                 $("#menu").css("display","block");
@@ -222,29 +239,26 @@
 
             <div class="social">
                 <div class="rightmove">
-                <div class="user-status-bar">
-                    <div class="status-item-wrapper">
-                        <a href="" class="status-item notification-remind"></a>
-                        <a href="" class="remind-number" id="notification-remind-number" style="display:none;">0</a>
-                    </div>
-                    <div class="status-item-wrapper">
-                        <a href="goPrivateMail.htm" class="status-item message-remind"></a>
-                        邮件数:
-                        <c:if test="${sessionScope.sumMail!=0}">
-                            <a href="goPrivateMail.htm" class="remind-number" id="message-remind-number" style="display:block;">${sessionScope.sumMail}</a>
-                        </c:if>
-                    </div>
-                    <div class="status-item-wrapper" id="user-nav-item-wrapper">
-                        <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user">${sessionScope.user.userName}</a>
-                        <div class="user-nav-menus">
-                            <a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a>
-                            <a href="myTinyMooc.htm">我的萌课</a>
-                            <a href="account.htm">账户设置</a>
-                            <div class="menu-divider"></div>
-                            <a href="logout.htm">退出</a>
-                        </div>
-                    </div>
-                </div>
+                    <ul class="header-nav">
+
+                        <li class="item course">
+                            <a>HELLO,</a>
+                            <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="course1">${sessionScope.user.userName}</a>
+
+                            <div class="menus" id="menu1" style="display: none;">
+                                <ul class="clearfix">
+                                    <li><a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a></li>
+                                    <li><a href="myTinyMooc.htm">我的萌课</a></li>
+                                    <li> <a href="goPrivateMail.htm" class="status-item message-remind">邮件：${sessionScope.sumMail}</a></li>
+                                    <li><a href="myTinyMooc.htm">收藏夹</a></li>
+                                    <li><a href="account.htm">账户设置</a></li>
+                                    <li><a href="logout.htm">退出</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+
                 </div>
             </div>
         </nav>

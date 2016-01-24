@@ -8,6 +8,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${currentCourse.course.courseTitle} - 萌课网</title>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
+
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -91,7 +94,7 @@
 
 </head>
 
-<body class="flats-theme">
+<body>
 
 <c:if test="${empty user.userId}">
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>

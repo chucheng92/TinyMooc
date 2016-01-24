@@ -80,6 +80,8 @@
                                     <span id="pwd"></span>
                                 </p>
                                 </div>
+                                <label> <input id="signin_remeberme" tabIndex="3" name="autoLogin" type="checkbox"> 下次自动登录 </label>
+
                             </ul>
                             <div class="loginError"><strong id="errorMessage"></strong></div>
 
@@ -93,7 +95,6 @@
                                    &nbsp;&nbsp;<span style="color: red">${note}</span>
                                 </div>
                                 <br/>
-                                <label> <input id="signin_remeberme" tabIndex="3" name="autoLogin" type="checkbox"> 下次自动登录 </label>
                                 <ul class="auxillaryLinks">
                                     <li>
                                         <a href="goFindPassword.htm">Forgot your password?</a>

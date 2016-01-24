@@ -70,6 +70,23 @@
 
     </script>
 
+    <script type="text/javascript">
+
+        $(function(){
+
+            $("#course1").mouseover(function(){
+
+                $("#menu1").css("display","block");
+
+            });
+            $(".item.course").mouseleave(function(){
+
+                $("#menu1").css("display","none");
+            });
+        });
+
+    </script>
+
     <style>
 
         #home .news h1 , #news .news article h2 {
@@ -109,7 +126,7 @@
             background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
             height:120px;
             width:1100px;
-            margin-top: 130px;
+            margin-top: 50px;
             margin-left: 0px;
         }
 
@@ -210,28 +227,26 @@
 
             <div class="social">
                 <div class="rightmove">
-                    <div class="user-status-bar">
-                        <div class="status-item-wrapper">
-                            <a href="" class="status-item notification-remind"></a>
-                            <a href="" class="remind-number" id="notification-remind-number" style="display:none;">0</a>
-                        </div>
-                        <div class="status-item-wrapper">
-                            <a href="goPrivateMail.htm" class="status-item message-remind"></a>
-                            <c:if test="${sessionScope.sumMail!=0}">
-                                <a href="goPrivateMail.htm" class="remind-number" id="message-remind-number" style="display:block;">${sessionScope.sumMail}</a>
-                            </c:if>
-                        </div>
-                        <div class="status-item-wrapper" id="user-nav-item-wrapper">
-                            <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user"><span class="nickname">${sessionScope.user.userName}</span></a>
-                            <div class="user-nav-menus">
-                                <a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a>
-                                <a href="myTinyMooc.htm">我的萌课</a>
-                                <a href="account.htm">账户设置</a>
-                                <div class="menu-divider"></div>
-                                <a href="logout.htm">退出</a>
+                    <ul class="header-nav">
+
+                        <li class="item course">
+                            <a>HELLO,</a>
+                            <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="course1">${sessionScope.user.userName}</a>
+
+                            <div class="menus" id="menu1" style="display: none;">
+                                <ul class="clearfix">
+                                    <li><a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a></li>
+                                    <li><a href="myTinyMooc.htm">我的萌课</a></li>
+                                    <li> <a href="goPrivateMail.htm" class="status-item message-remind">邮件：${sessionScope.sumMail}</a></li>
+                                    <li><a href="myTinyMooc.htm">收藏夹</a></li>
+                                    <li><a href="account.htm">账户设置</a></li>
+                                    <li><a href="logout.htm">退出</a></li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+
+                    </ul>
+
                 </div>
             </div>
         </nav>
@@ -276,59 +291,6 @@
 
     </section><!-- end #home -->
 
-    <section id="flavours">
-        <div class="whats-your-gnosh">
-
-
-
-            <a class="flavours-original"></a>
-            <!--<a href="#" class="flavours-dippables"></a>-->
-            <a class="flavours-tapas"></a>
-            <a class="flavours-mm"></a>
-
-            <a href="#" class="arrow-lt-flav"></a>
-            <a href="#" class="arrow-rt-flav"></a>
-
-            <ul id="flav_mm_slide" class="flav-slide">
-                <li class="display-slide">
-                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215028j60su9u6kkpesyez.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有精心制作的视频课程<br />
-                        </p>
-						</span>
-                </li>
-
-                <li>
-                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/155616lfv2dbodztbfd1ob.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有实时交互的学习资料<br />
-                        </p>
-						</span>
-                </li>
-
-                <li>
-                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215112qy4hc96xoiqboxpo.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有循序渐进的学习计划<br />
-                        </p>
-						</span>
-                </li>
-
-                <li>
-                    <img src="http://files.bbs.tl.changyou.com/data/attachment/forum/201512/29/215106bh54d3kr58ukkdoz.png" class="flav-slide-pics" />
-						<span class="text_wrap">
-						<h2>I am in TINYMOOC.</h2>
-						<p>我们有互帮互助的问答社区 <br />
-                        </p>
-						</span>
-                </li>
-            </ul>
-        </div>
-
-    </section>
 
     <section id="why-gnosh">
         <div class="why-gnosh-movies">
@@ -358,6 +320,10 @@
                         class="channel-icon channel-icon-openclass"></i>其他</a></li>
             </ul>
         </div>
+
+        <div class="why-gnosh-movies">
+        </div>
+
         <div class="flat clearfix">
             <h2><strong>热门课程 | 瞧瞧大家都在学啥&nbsp;(～￣▽￣)～</strong></h2>
             <ul class="cells cells-middle">
@@ -368,7 +334,7 @@
                                 <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><img src="${hotCourse.course.logoUrl}"/></a>
                             </div>
                             <p class="title">
-                                <a style="color: rgb(102, 194, 160); " href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span style="border-radius: 3px;" class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
+                                <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
                             </p>
                             <div class="summary">${hotCourse.course.courseIntro}</div>
                             <p class="metas clearfix">
@@ -396,7 +362,7 @@
                                 <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><img src="${newCourse.course.logoUrl}"/></a>
                             </div>
                             <p class="title">
-                                <a style="color: rgb(102, 194, 160); " href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span style="border-radius: 3px;" class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
+                                <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
                             </p>
                             <div class="summary">${newCourse.course.courseIntro}</div>
                             <p class="metas clearfix">
@@ -463,6 +429,10 @@
             </div>
 
         </div>
+
+        <div class="why-gnosh-movies">
+        </div>
+
         <div class="flat clearfix">
             <h2><strong>课程笔记和热门标签</strong></h2>
             <div class="flat-main">
@@ -500,10 +470,7 @@
         </div>
     </section>
 
-
-    <footer id="footer" style="margin-top: 20%;">
-        <p>&copy; 2015 TINYMOOC.COM &nbsp;All Rights Reserved.</p>
-    </footer>
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </div><!-- end .wrapper -->
 

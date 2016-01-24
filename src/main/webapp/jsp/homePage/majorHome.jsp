@@ -95,7 +95,7 @@
     <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 </c:if>
 
-
+<div class="movedown"></div>
 <div class="wrapper">
 <div class="left">
     <header>
@@ -218,6 +218,8 @@
         <h1>热门课程</h1>
 
         <ul class="cells cells-middle">
+
+
             <c:forEach items="${hotCourseList}" var="course">
                 <li class="cell">
                     <div class="course-item">
