@@ -35,6 +35,7 @@ public class Course implements java.io.Serializable {
     private Date applyDate;
     private Date approveDate;
     private String courseState;
+    private String logoUrl;
     private Set<UserCourse> userCourses = new HashSet<UserCourse>(0);
     private Set<Course> courses = new HashSet<Course>(0);
 
@@ -175,5 +176,13 @@ public class Course implements java.io.Serializable {
         this.courses = courses;
     }
 
+    @Column(name = "LOGO_URL", length = 1000)
+    public String getLogoUrl() {
+        return logoUrl;
+    }
+
+    public void setLogoUrl(String logoUrl) {
+        this.logoUrl = logoUrl;
+    }
 }
 

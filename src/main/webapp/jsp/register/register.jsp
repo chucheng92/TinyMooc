@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -42,15 +41,12 @@
                 <div class="contents">
                     <div class="Login LoginBase Module" id="Login-5">
 
-                        <form class="standardForm standardForm--login " method="post">
+                        <form class="standardForm standardForm--login " method="post" action="userRegister.htm" name="form1">
 
                             <h1>
                                 Join TINYMOOC                 </h1>
 
                             <div class="socialLogin">
-
-                                <form id="signup-form" class="form signin-form" method="post" action="userRegister.htm" name="form1">
-
                                     <p>
                                         <label for="signup_username" class="required">邮箱</label>
                                         <input type="text" id="signup_username" name="userEmail" required="required" onblur="checkReg(0)">
@@ -75,10 +71,8 @@
                                         <input type="password" id="signup_repassword" name="txtRpewd" required="required" onblur="checkRpwd()">
                                         <span class="help-inline" id="Rpwd"></span>
                                     </p>
-
-                                </form>
                             </div>
-
+                        </form>
                             <div class="formFooter">
 
                                 <div class="formFooterButtons">
@@ -95,7 +89,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </form>
+
                     </div>
                 </div>
             </div>

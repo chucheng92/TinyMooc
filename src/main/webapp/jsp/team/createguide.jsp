@@ -30,7 +30,7 @@
 
   <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container group">
+<section class="container group" style="margin-top: 60px;">
 <div class="container-padding clearfix">
   <h1>创建小组</h1>
   <div class="normal-main">
@@ -63,7 +63,7 @@
     <div class="notice">
       注意事项：<br />
 1、小组主题应为各类知识的交流或分享，不能出现明显广告内容，且不违背国家和地方相关法律法规； <br />
-2、申请小组时请查看<a href="/groups/">现有小组列表</a>，避免出现重合。<br />
+2、申请小组时请查看<a href="teamPage.htm">现有小组列表</a>，避免出现重合。<br />
 3、小组创建后，工作人员将会进行审核，违规小组将被要求进行修改或被删除。
     </div>
 

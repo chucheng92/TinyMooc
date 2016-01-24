@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -44,7 +43,7 @@
                 <div class="contents">
                     <div class="Login LoginBase Module" id="Login-5">
 
-                        <form class="standardForm standardForm--login " method="post">
+                        <form class="standardForm standardForm--login " method="post" action="login.htm">
 
                             <h1>
                                 Log in to TINYMOOC                    </h1>
@@ -86,14 +85,15 @@
 
 
                             <div class="formFooter">
-
                                 <div class="formFooterButtons">
                                     <button class="Button Module btn hasText large primary rounded" id="Button-9" type="submit" tabIndex="4">
 
                                         <span class="buttonText">Log in</span>
                                     </button>
+                                   &nbsp;&nbsp;<span style="color: red">${note}</span>
                                 </div>
-
+                                <br/>
+                                <label> <input id="signin_remeberme" tabIndex="3" name="autoLogin" type="checkbox"> 下次自动登录 </label>
                                 <ul class="auxillaryLinks">
                                     <li>
                                         <a href="goFindPassword.htm">Forgot your password?</a>

@@ -30,7 +30,6 @@
             });
 
         });
-
     </script>
 
     <!-- CSS -->
@@ -202,7 +201,7 @@
                                 <li><a href="goMajorHome.htm?type=文学">文学</a></li>
                                 <li><a href="goMajorHome.htm?type=求职">求职</a></li>
                                 <li><a href="goMajorHome.htm?type=动漫">动漫</a></li>
-                                <li><a href="goMajorHome.htm?type=公开课">公开课</a></li>
+                                <li><a href="goMajorHome.htm?type=音乐">音乐</a></li>
                                 <li><a href="goMajorHome.htm?type=其他">其他</a></li>
                             </ul>
                         </div>
@@ -230,14 +229,15 @@
                     </div>
                     <div class="status-item-wrapper">
                         <a href="goPrivateMail.htm" class="status-item message-remind"></a>
+                        邮件数:
                         <c:if test="${sessionScope.sumMail!=0}">
                             <a href="goPrivateMail.htm" class="remind-number" id="message-remind-number" style="display:block;">${sessionScope.sumMail}</a>
                         </c:if>
                     </div>
                     <div class="status-item-wrapper" id="user-nav-item-wrapper">
-                        <a href="goPersonnal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user"><img src="<c:url value="${user.headImage.imageSmall}"/>" alt="fanfanle" class="avatar" /><span class="nickname">${sessionScope.user.userName}</span></a>
+                        <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user">${sessionScope.user.userName}</a>
                         <div class="user-nav-menus">
-                            <a href="goPersonnal.htm?userId=${sessionScope.user.userId}">个人主页</a>
+                            <a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a>
                             <a href="myTinyMooc.htm">我的萌课</a>
                             <a href="account.htm">账户设置</a>
                             <div class="menu-divider"></div>

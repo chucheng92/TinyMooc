@@ -17,9 +17,12 @@ h3 {
 a {
 	text-decoration: none;
 }
-a:hover {
-	text-decoration: underline;
+
+a:hover, a:active, a:focus {
+    color: #15c288;
+    text-decoration: none !important;
 }
+
 a.gray {
 	color: gray;
 }

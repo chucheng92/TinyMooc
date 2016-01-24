@@ -1,22 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
- <%@ taglib prefix="sicd" uri="/sicd-tags"%> 
+ <%@ taglib prefix="sicd" uri="/sicd-tags"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>创建课程 - 萌课网</title>
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-<link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
  <script type="text/javascript" src="<c:url value="/resource/js/label.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
 </head>
 <body class="flats-theme">
 
@@ -31,7 +25,12 @@
     <div class="page-body clearfix">
 
       <div class="page-body-main">
-        <form id="course-create-form" class="form-horizontal" method="post" action="createCourse.htm" data-widget="validator-bootstrap" data-auto-submit="false" data-auto-focus="false">
+          <div class="control-group" style="margin-left: 120px; width: 85%" >
+              <div class="help-block" style="margin-top:10px">请上传课程封面图，支持jpg,jpeg,gif,png</div>
+              <textarea rows="20" class="xheditors" id="content" name="content" required="required" style="overflow:auto;width:100%"><strong>温馨提示：选择适当的封面图片可以让你的课程更受欢迎哦 []~(￣▽￣)~*。留空系统将采用默认图片，默认显示文字无需删除。</strong></textarea>
+          </div>
+
+          <form id="course-create-form" class="form-horizontal" method="post" action="createCourse.htm" data-widget="validator-bootstrap" data-auto-submit="false" data-auto-focus="false">
           <div class="control-group ui-form-item">
          <label class="control-label ui-label" for="course-title-field">标题</label>
       <div class="controls">
@@ -54,24 +53,22 @@
          margin-right: 5px;
       }
      </style>
-
-    <div class="control-group" id="course-category-control-group">
-        <label class="control-label">专业</label>
-       <div class="controls">
-          <select name="type">
-          <c:forEach items="${dataDicList}" var="data">
-            <option value="${data.dicValue}">${data.dicValue}</option>
-           </c:forEach> 
-          </select>
-       </div>
-    </div> 
-    
-             
-    <div class="control-group">
-            <div class="controls">
-              <button type="submit" class="btn btn-success">提交</button>
+            <div class="control-group" id="course-category-control-group">
+                <label class="control-label">课程分类</label>
+                <div class="controls">
+                    <select name="type">
+                        <c:forEach items="${dataDicList}" var="data">
+                            <option value="${data.dicValue}">${data.dicValue}</option>
+                        </c:forEach>
+                    </select>
+                </div>
             </div>
-          </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-success">提交</button>
+                </div>
+            </div>
         </form>
       </div>
     </div>
@@ -85,3 +82,18 @@
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </body>
+<script type="text/javascript">
+    jQuery(function($){
+        if($('textarea.xheditors').length!=0){
+            $('textarea.xheditors').xheditor({
+                upLinkUrl:"uploadFile.htm",
+                upLinkExt:"zip,rar,txt,doc,docx,pdf,ppt,pptx,pps,ppsx,xlsx,xls,7z",
+                upImgUrl:"uploadPic.htm",
+                upImgExt:"jpg,jpeg,gif,png", tools:'mini',
+                forcePtag:false,
+                html5Upload:false,
+                emotMark:true
+            });
+        }
+    });
+</script>

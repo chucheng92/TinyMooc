@@ -7,11 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />"/>
-
 <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-
 <script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
-<title>萌课网 - 课程</title>
+<title>萌课网 - 课程分类</title>
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
@@ -97,21 +95,17 @@
     <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 </c:if>
 
-<div class="movedown">
-</div>
 
 <div class="wrapper">
-
 <div class="left">
-
     <header>
         <div class="movedown"></div>
         <div class="logo" ></div>
-
         <nav>
             <ul>
                 <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major"><a href="turnToHomePage.htm"></a></li>
                 <ul class="sub-menu">
+                    <li id="menu-item-1271" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1273"><a href="goCourseHome.htm"><span>全部课程</span></a></li>
                     <li id="menu-item-1273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1273"><a href="goMajorHome.htm?type=摄影"><span>摄影</span></a></li>
                     <li id="menu-item-1270" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1270"><a href="goMajorHome.htm?type=艺术"><span>艺术</span></a></li>
                     <li id="menu-item-1274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1274"><a href="goMajorHome.htm?type=兴趣"><span>兴趣</span></a></li>
@@ -119,7 +113,7 @@
                     <li id="menu-item-1275" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1275"><a href="goMajorHome.htm?type=文学"><span>文学</span></a></li>
                     <li id="menu-item-1276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1276"><a href="goMajorHome.htm?type=求职"><span>求职</span></a></li>
                     <li id="menu-item-1277" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1277"><a href="goMajorHome.htm?type=动漫"><span>动漫</span></a></li>
-                    <li id="menu-item-1278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1278"><a href="goMajorHome.htm?type=公开课"><span>公开课</span></a></li>
+                    <li id="menu-item-1278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1278"><a href="goMajorHome.htm?type=音乐"><span>音乐</span></a></li>
                     <li id="menu-item-1279" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1279"><a href="goMajorHome.htm?type=其他"><span>其他</span></a></li>
                 </ul>
                 </li>
@@ -148,7 +142,7 @@
             <li class="cell">
                 <div class="course-item">
                     <div class="thumb">
-                        <a href="#"><img src="<c:url value="/resource/pic/course.jpg"/>"></a>
+                        <a href="#"><img src="${course.course.logoUrl}"></a>
                     </div>
                     <p class="title">
                         <a href="#">${course.course.courseTitle}</a>
@@ -157,7 +151,7 @@
                     <p class="metas clearfix">
                         <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${course.course.scanNum}</span>
 							<span class="fl by">by
-								<a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
+								<a href="goPersonal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
 							</span>
                     </p>
                 </div>
@@ -177,7 +171,7 @@
                     <li>
                         <div class="imageblock clearfix">
                             <div class="imageblock-image">
-                                <a href=""class="show-user-card" ><img src="${discuss.user.headImage.imageSmall}" title="${discuss.user.userName}"></a>
+                              <img src="${discuss.user.headImage.imageSmall}" title="${discuss.user.userName}">
                             </div>
                             <div class="imageblock-content">
 
@@ -187,7 +181,7 @@
                                 <p class="metas">
                                     <a href="" title="来自『${discuss.team.teamName}』小组"
                                        class="mrm">${discuss.team.teamName}</a> by <a
-                                        href=""
+                                        href="goPersonal.htm?userId=${discuss.user.userId}"
                                         class="show-user-card"  title="${discuss.user.userName}">${discuss.user.userName}</a> <span
                                         class="mhm">${discuss.scanNum}次查看</span>
                                     <span class="mls">${discuss.publishDate}</span>
@@ -230,7 +224,7 @@
                 <li class="cell">
                     <div class="course-item">
                         <div class="thumb">
-                            <a href="courseDetailPage.htm?courseId=${course.course.courseId}"><img src="<c:url value="/resource/pic/course.jpg"/>"></a>
+                            <a href="courseDetailPage.htm?courseId=${course.course.courseId}"><img src="${course.course.logoUrl}"></a>
                         </div>
                         <p class="title">
                             <a href="courseDetailPage.htm?courseId=${course.course.courseId}">${course.course.courseTitle}</a>
@@ -239,7 +233,7 @@
                         <p class="metas clearfix">
                             <span title="查看次数" style="float: right;"><i class="icon-signal"></i>${course.course.scanNum}</span>
 							<span class="fl by">by
-								<a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
+								<a href="goPersonal.htm?userId=${course.user.userId}" class="show-user-card" title="">${course.user.userName}</a>
 							</span>
                         </p>
                     </div>

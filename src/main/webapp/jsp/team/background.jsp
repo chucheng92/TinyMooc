@@ -69,7 +69,7 @@ $(function(){
             <li><a href="http://www.howzhi.com/channel/life">生活</a></li>
             <li><a href="http://www.howzhi.com/channel/career">职场</a></li>
             <li><a href="http://www.howzhi.com/channel/culture">文化</a></li>
-            <li><a href="http://www.howzhi.com/channel/openclass">公开课</a></li>
+            <li><a href="http://www.howzhi.com/channel/openclass">音乐</a></li>
           </ul>
         </div>
       </li>

@@ -22,7 +22,7 @@
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container group">
+<section class="container group" style="margin-top: 60px;">
 <div class="container-padding clearfix">
   <h1>创建公开小组</h1>
 

@@ -93,10 +93,8 @@ public class TeamController {
         // FIXME
         System.out.println("==============teamId" + teamId + "===============");
         User user = (User) req.getSession().getAttribute("user");
-        String message = "";
         if (user == null) {
-            message = "请先登录啊(￣▽￣)";
-            return new ModelAndView("/team/teamHome", "message", message);
+            return new ModelAndView("redirect:login.htm");
         }
         Team team = teamService.findById(Team.class, teamId);
 
