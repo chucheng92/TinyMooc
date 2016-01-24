@@ -10,6 +10,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>${userTeam2.team.teamName} - 萌课网</title>
   <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
  
  <script type="text/javascript">
 $(function(){
@@ -40,7 +42,7 @@ $(function(){
 </script>
 
 </head>
-<body class="lily-theme">
+<body>
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
@@ -90,7 +92,7 @@ $(function(){
             <c:forEach items="${discusses}" var="dis">
                 <li>
                       <div class="imageblock clearfix">
-                          <div class="imageblock-image"><img src="/resource/img/topic.png" style="border-radius: 3px;">
+                          <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
                           </div>
                            <div class="imageblock-content">
          
@@ -104,7 +106,7 @@ $(function(){
                                           </c:if>  
                                            </p>
                                            <p class="metas">
-                                              by <a href="goPersonal.htm?userId=${dis.user.userId}" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
+                                              by <a href="" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
                                             <span class="mhm">${dis.scanNum}</span>
                                                 
                                     </p>

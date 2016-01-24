@@ -8,9 +8,13 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>修改密码 - ${user.userName}的帐号 - 萌课网</title>
   <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-  
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
+
+
 </head>
-<body class="flats-theme">
+
+<body class="archive category category-gnews category-3">
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
@@ -36,76 +40,85 @@
 	  }));
 </script>
 
-<section class="container clearfix" style="margin-top: 60px;">
-  <div id="me" class="me clearfix">
-    <div class="main">
-      <div class="wrap"><div class="main-head">
-  <h2>帐户设置</h2>
-</div>
+<div class="movedown"></div>
 
-    <div class="mod">
+<div class="wrapper">
+    <div class="left">
+        <header>
+            <div class="movedown"></div>
+            <div class="side">
 
-  <div class="tabs clearfix">
-  <ul>
-    <li ><a href="goAccount.htm">个人资料</a></li>
-    <li><a href="goAccountAvatar.htm">更新头像</a></li>
-    <li class="on"><a href="goAccountPassword.htm">修改密码</a></li>
-    <li><a href="queryLabel.htm?type=user">添加标签</a></li>
-  </ul>
-</div>  
-      
-    <form id="form1" class="form account-profile-form" method="post" action="revisePassword.htm">
-    
-      <p>
-         <label for="form_oldPassword" class="required" required="required">当前密码:</label>
-         <input type="password" id="form_oldPassword" name="oldPassword" />
-      </p>
-        
-       <p>
-         <label for="form_newPassword" class="required" required="required">新密码:</label>
-         <input type="password" id="form_newPassword" name="newPassword" />
-       </p>
-    
-       <p>
-          <label for="form_newPasswordConfirm" class="required" required="required">确认密码:</label>
-          <input type="password" id="form_newPasswordConfirm" name="newPasswordConfirm"  />
-       </p>
-    
-       <p class="actions">
-          
-          <button id="save"  class="btn btn-success">保存</button>
-       </p>
-  
-  </form>
-</div>
-</div>
+                <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
+
+            </div>
+        </header>
+
+        <div class="garlic"></div>
+
     </div>
-    <div class="side">
 
-      <div class="avatar-mod clearfix">
-        <a href="user.jsp" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
-        <div class="infos">
-          <div class="nickname"><a>${user.userName}</a></div>
-          <div class="icons">
-              <a class="user-level user-level-6" title="努力升级吧!" href="" target="_blank">${level.lv}级</a>
-            <a class="user-level user-level-6">${level.title}</a>
-          </div>
+    <div class="right-container">
+        <div class="right-top-banner gnews-banner-major">
+            <div></div>
         </div>
-      </div>
+        <div class="right-top"></div>
+        <div class="right">
 
-      <div class="stats-mod">
-          <ul class="user-stats clearfix">
-            <li><a href=""><strong>240</strong>学分</a></li>
-            <li><a href=""><strong>2</strong>金币</a></li>
-          </ul>
-      </div>
 
-      <jsp:include page="/jsp/include/leftside.jsp"></jsp:include> 
-    </div>
-  </div>
-</section>
+            <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
+                <div class="main-head">
+                    <h2>帐户设置</h2>
+                </div>
 
-<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+                <div class="mod">
+
+                    <div class="tabs clearfix">
+                        <ul>
+                            <li ><a href="goAccount.htm">个人资料</a></li>
+                            <li><a href="goAccountAvatar.htm">更新头像</a></li>
+                            <li class="on"><a href="goAccountPassword.htm">修改密码</a></li>
+                            <li><a href="queryLabel.htm?type=user">添加标签</a></li>
+                        </ul>
+                    </div>
+
+                    <form id="form1" class="form account-profile-form" method="post" action="revisePassword.htm">
+
+                        <p>
+                            <label for="form_oldPassword" class="required" required="required">当前密码:</label>
+                            <input type="password" id="form_oldPassword" name="oldPassword" />
+                        </p>
+
+                        <p>
+                            <label for="form_newPassword" class="required" required="required">新密码:</label>
+                            <input type="password" id="form_newPassword" name="newPassword" />
+                        </p>
+
+                        <p>
+                            <label for="form_newPasswordConfirm" class="required" required="required">确认密码:</label>
+                            <input type="password" id="form_newPasswordConfirm" name="newPasswordConfirm"  />
+                        </p>
+
+                        <p class="actions">
+
+                            <button id="save"  class="btn btn-success">保存</button>
+                        </p>
+
+                    </form>
+                </div>
+
+            </article>
+
+            <div class="movedown2"></div>
+
+        </div> <!-- end .right -->
+        <div class="right-bottom"></div>
+
+        <div class="movedown"></div>
+
+    </div> <!-- end .right-container -->
+
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+</div>
 
 </body>
 </html>

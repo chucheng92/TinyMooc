@@ -393,18 +393,7 @@ textarea.placeholder {
 .flats-theme .header {
 	margin-bottom: 20px;
 }
-.flat {
-    padding: 12px;
-    overflow: hidden;
 
-    margin-bottom: 20px;
-}
-.flat-main {
-	width: 640px; float: left;
-}
-.flat-side {
-	width: 300px; float: right;
-}
 .flat-close {
 	display: none;
 }
@@ -1549,7 +1538,7 @@ background-position: -30px 0px;
 	margin: 6px 5px; width: 190px; height: 18px; color: rgb(0, 0, 0); overflow: hidden;
 }
 .course-item .title .video {
-	background: url("/resource/img/hot.jpg") no-repeat 0px 3px; width: 16px; height: 16px; margin-right: 3px; display: inline-block;
+	background: url("/resource/img/logo.png") no-repeat 0px 3px; width: 16px; height: 16px; margin-right: 3px; display: inline-block;
 }
 .course-item .title a {
 	color: rgb(102, 102, 102); font-size: 14px; font-weight: bold;
@@ -2479,7 +2468,7 @@ i.kaixin {
 	width: 480px; float: right;
 }
 .channel-main {
-	width: 660px; float: left;
+	width: 520px; float: left;
 }
 .channel-side {
 	width: 300px; float: right;
@@ -2742,9 +2731,7 @@ i.kaixin {
 .blackboard-mod li em {
 	color: rgb(170, 170, 170); margin-left: 5px;
 }
-.checkin-mod {
-	background: rgb(246, 246, 246);
-}
+
 .checkin-mod .saying {
 	padding-bottom: 10px; border-bottom-color: rgb(227, 227, 227); border-bottom-width: 1px; border-bottom-style: solid;
 }
@@ -4020,4 +4007,17 @@ ul.lessons-sort li {
 }
 .partner-logins .login-douban {
 	background-position: 0px -60px;
+}
+.flat {
+    padding: 12px;
+    overflow: hidden;
+    margin-left:30px;
+    margin-bottom: 20px;
+}
+.flat-main {
+    width: 800px; float: left;
+    margin: auto;
+}
+.flat-side {
+    width: 300px; float: left;
 }

@@ -30,21 +30,21 @@
               <textarea rows="20" class="xheditors" id="content" name="content" required="required" style="overflow:auto;width:100%"><strong>温馨提示：选择适当的封面图片可以让你的课程更受欢迎哦 []~(￣▽￣)~*。留空系统将采用默认图片，默认显示文字无需删除。</strong></textarea>
           </div>
 
-          <form style="margin-top: 20px;" id="course-create-form" class="form-horizontal" method="post" action="createCourse.htm" data-widget="validator-bootstrap" data-auto-submit="false" data-auto-focus="false">
+          <form id="course-create-form" class="form-horizontal" method="post" action="createCourse.htm" data-widget="validator-bootstrap" data-auto-submit="false" data-auto-focus="false">
           <div class="control-group ui-form-item">
-            <label class="control-label ui-label" for="course-title-field">标题</label>
-             <div class="controls">
-                 <input id="course-title-field" class="input-with-feedback" style="height: 30px;" type="text" name="courseTitle" data-display="标题" required />
-                 <div class="help-block">给课程取个通俗易懂的标题</div>
-             </div>
-         </div>
+         <label class="control-label ui-label" for="course-title-field">标题</label>
+      <div class="controls">
+        <input id="course-title-field" class="input-with-feedback" type="text" name="courseTitle" data-display="标题" required />
+       <div class="help-block">给课程取个通俗易懂的标题</div>
+     </div>
+    </div>
   
     <div class="control-group">
        <label class="control-label" for="course-summary-field">简介</label>
        <div class="controls">
       <textarea id="course-summary-field" class="input-with-feedback mceEditor" rows="5" name="courseIntro" style="width:100%;"></textarea>
       <div class="help-block">请简述课程的内容</div>
-       </div>
+    </div>
      </div>
 
      <style type="text/css">

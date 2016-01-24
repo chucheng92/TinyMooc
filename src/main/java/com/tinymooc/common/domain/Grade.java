@@ -18,10 +18,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "grade", catalog = "tinymooc")
 public class Grade implements java.io.Serializable {
+
     private String gradeId;
     private User user;
     private String gradeObject;
-    private Double mark;
+    private Integer mark;
 
     public Grade() {
     }
@@ -30,7 +31,7 @@ public class Grade implements java.io.Serializable {
         this.gradeId = gradeId;
     }
 
-    public Grade(String gradeId, User user, String gradeObject, Double mark) {
+    public Grade(String gradeId, User user, String gradeObject, Integer mark) {
         this.gradeId = gradeId;
         this.user = user;
         this.gradeObject = gradeObject;
@@ -66,12 +67,12 @@ public class Grade implements java.io.Serializable {
         this.gradeObject = gradeObject;
     }
 
-    @Column(name = "MARK", columnDefinition="double(3,2) default '0.00'")
-    public Double getMark() {
+    @Column(name = "MARK")
+    public Integer getMark() {
         return this.mark;
     }
 
-    public void setMark(Double mark) {
+    public void setMark(Integer mark) {
         this.mark = mark;
     }
 

@@ -58,5 +58,24 @@
     width: 316px;
     height: 240px;
     background: url(/resource/img/.png) no-repeat;
-    margin-left: -10px;
+margin-left: -10px;
+}
+.middle-container .gnews-banner-major div {
+    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/10/000355r0m6u912u90o60ma.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:50px;
+    top: -30px;
+}
+.middle-container .gnews-banner-major {
+    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/222633qyln1ybu4xnu4o68.png) no-repeat;
+    background-position: 450px 0px;
+    margin-top: 20px;
+}
+.gnews-menu-major-board a {
+    float: left;
+    height: 12px;
+    width: 188px;
+    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/24/005912gsp9zypdps8gzg2g.png) no-repeat;
 }

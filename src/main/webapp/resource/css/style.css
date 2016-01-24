@@ -474,7 +474,19 @@ body {
     text-decoration: none;
     font-size: 13px;
 }
-
+#header nav .social .menus a {
+    color:#938f8f;
+    float:left;
+    width:100px;
+    height:26px;
+    text-indent:0px;
+    margin-left:20px;
+    text-decoration: none;
+    font-size: 13px;
+}
+#header nav .social p {
+    width:50px;
+}
 #home {
     position:relative;
     height:1020px;
@@ -938,7 +950,6 @@ body {
 }
 #why-gnosh {
     position:relative;
-    height:2000px;
 }
 #why-gnosh h1 {
     display:block;
@@ -1640,13 +1651,6 @@ input[disabled='disabled'], textarea[disabled='disabled'], button[disabled='disa
     font-size: 0px;
     display:inline-block;
 }
-
-.left {
-    width: 188px;
-    float: left;
-    margin-right: 50px;
-    position: relative;
-}
 .back {
     margin-bottom: 6px;
     color: #000;
@@ -1697,7 +1701,7 @@ li {
 }
 #header nav .pages .header-nav li.item .menus ul li{
     margin: 6px 5px;
-    width: 100px;
+    width: 70px;
     float: left;
 }
 #header nav .pages {
@@ -1713,7 +1717,14 @@ li {
     height:26px;
     display: inline-block;
 }
-
+#header nav .pages .header-nav li.item .menus a {
+    text-decoration:none;
+    text-transform:lowercase;
+    margin-left:10px;
+    height:26px;
+    width:70px;
+    display: inline-block;
+}
 #header nav .pages a:link, #header nav .pages a:visited { color:#938f8f; }
 #header nav .pages a:hover, #header nav .pages a:active, #header nav .pages a:focus { color:#7d3d1c; }
 
@@ -1802,14 +1813,9 @@ li {
     background-position: -316px -195px;
 }
 
-.right-container {
-    float: left;
-    width: 592px;
-    position: relative;
-}
 .right-top-banner {
     float: left;
-    width: 580px;
+    width: 780px;
     height: 115px;
 }
 .right-top {
@@ -1923,6 +1929,109 @@ nav, .widget-content a, .widget-content h1 {
 #footer small a {
     color:#cccccc;
     text-decoration:none;
+}
+
+#header nav .social .header-nav li.item .menus {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    left: 0px;
+    top: 27px;
+    width: 100px;
+    display: none;
+    position: absolute;
+    z-index: 1500;
+    margin-left:100px;
+}
+#header nav .social .header-nav li.item .menus ul li{
+    margin: 6px 5px;
+    width: 70px;
+    float: left;
+}
+#header nav .social .header-nav li.item a {
+    text-decoration:none;
+    text-transform:lowercase;
+    margin-left:10px;
+    height:26px;
+    width:50px;
+    display: inline-block;
+}
+#header nav .social .header-nav li.item .menus a {
+    text-decoration:none;
+    text-transform:lowercase;
+    margin-left:10px;
+    height:26px;
+    width:70px;
+    display: inline-block;
+}
+.left {
+    width: 188px;
+    float: left;
+    margin-right: 50px;
+    position: relative;
+}
+.right-container {
+    float: left;
+    width: 592px;
+    position: relative;
+}
+.my-left {
+    width: 168px;
+    float: left;
+    position: relative;
+}
+.my-middle {
+    float: left;
+    width: 592px;
+    position: relative;
+}
+.my-right {
+    width: 160px;
+    float: left;
+    position: relative;
+    margin-left: 40px;
+}
+.middle-container {
+    float: left;
+    width: 780px;
+    position: relative;
+    margin-left: 50px;
+}
+.middle-top {
+    float: left;
+    width: 846px;
+    height: 51px;
+    background: url(/resource/img/topboard.png) no-repeat;
+
+}
+.middle-bottom {
+    width: 846px;
+    float: left;
+    background: url(/resource/img/bottomboard.png) no-repeat;
+    height: 130px;
+
+
+}
+.middle {
+    color: #6f6f6f;
+    float: left;
+    width: 780px;
+    background: #fff;
+    border-left: 1px solid #9f9e9e;
+    border-right: 1px solid #9f9e9e;
+    margin: 0 0px 0 4px;
+    padding: 0 30px 0 30px;
+}
+.nickname a {
+    font-family: 'Microsoft YaHei', å¾®è½¯é›…é»‘, 'Microsoft JhengHei', åŽæ–‡é»‘ä½“, STHeiti, Georgia, 'Times New Roman', Times, serif;
+    font-size:30px;
+}
+.btn-bar a {
+    color: #ffffff;
 }
 /* STOCKISTS END */
 

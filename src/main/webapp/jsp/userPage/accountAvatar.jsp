@@ -7,7 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>头像更换-萌课网</title>
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-    <%-- 头像上传--%>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
+
+<%-- 头像上传--%>
     <script type="text/javascript">
         $(function() {
             function preview1(file) {
@@ -121,125 +124,131 @@
     </script>
 
 </head>
-<body class="flats-theme">
+
+
+<body class="archive category category-gnews category-3">
 	<jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-	<section class="container clearfix" style="margin-top: 60px;">
-		<div id="me" class="me clearfix">
-			<div class="main">
-				<div class="wrap">
-					<div class="main-head">
-						<h2>帐户设置</h2>
-					</div>
+    <div class="movedown"></div>
 
-					<div class="mod">
+    <div class="wrapper">
+        <div class="left">
+            <header>
+                <div class="movedown"></div>
+                <div class="side">
 
-						<div class="tabs clearfix">
-							<ul>
-    							    <li ><a href="account.htm">个人资料</a></li>
-                                    <li class="on"><a href="goAccountAvatar.htm">更新头像</a></li>
-                                    <li><a href="goAccountPassword.htm">修改密码</a></li>
-                                    <li><a href="queryLabel.htm?type=user">添加标签</a></li>
-    
-  							</ul>
-						</div>
+                    <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
 
-						<h2>你当前的头像</h2>
-                        
-						<div id="view" class="row-fluid" style="">
-							<ul class="thumbnails">
-								<li class="span3"><a href="#" class="thumbnail" id="view1">
-										<img id="userimg1"
-										src="<c:url value="${user.headImage.imageLarge}"/>"
-										class="mrm" />
-										
-								</a></li>
-								<li class="span2"><a href="#" class="thumbnail" id="view2">
-										<img id="userimg2"
-										src="<c:url value="${user.headImage.imageMid}"/>"
-										class="mrm" />
-								</a></li>
-								<li class="span1"><a href="#" class="thumbnail" id="view3">
-										<img id="userimg3"
-										src="<c:url value="${user.headImage.imageSmall}"/>" />
-								</a></li>
-							</ul>
-						</div>
+                </div>
+            </header>
 
-						<h2>这个头像我不喜欢，我要换换</h2>
+            <div class="garlic"></div>
 
-						<p id="showsavesuccess"></p>
+        </div>
 
-						<div id="preview" class="" style="display: none">
-							<h2>预览</h2>
-							<ul class="thumbnails">
-								<li><span class="" id="preview1"
-									style="border-style: none; border: 0px">
+        <div class="right-container">
+            <div class="right-top-banner gnews-banner-major">
+                <div></div>
+            </div>
+            <div class="right-top"></div>
+            <div class="right">
+
+
+                <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
+                    <div class="main-head">
+                        <h2>帐户设置</h2>
+                    </div>
+
+                    <div class="mod">
+
+                        <div class="tabs clearfix">
+                            <ul>
+                                <li ><a href="account.htm">个人资料</a></li>
+                                <li class="on"><a href="goAccountAvatar.htm">更新头像</a></li>
+                                <li><a href="goAccountPassword.htm">修改密码</a></li>
+                                <li><a href="queryLabel.htm?type=user">添加标签</a></li>
+
+                            </ul>
+                        </div>
+
+                        <h2>你当前的头像</h2>
+
+                        <div id="view" class="row-fluid" style="">
+                            <ul class="thumbnails">
+                                <li class="span3"><a href="#" class="thumbnail" id="view1">
+                                    <img id="userimg1"
+                                         src="<c:url value="${user.headImage.imageLarge}"/>"
+                                         class="mrm" />
+
+                                </a></li>
+                                <li class="span2"><a href="#" class="thumbnail" id="view2">
+                                    <img id="userimg2"
+                                         src="<c:url value="${user.headImage.imageMid}"/>"
+                                         class="mrm" />
+                                </a></li>
+                                <li class="span1"><a href="#" class="thumbnail" id="view3">
+                                    <img id="userimg3"
+                                         src="<c:url value="${user.headImage.imageSmall}"/>" />
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <h2>这个头像我不喜欢，我要换换</h2>
+
+                        <p id="showsavesuccess"></p>
+
+                        <div id="preview" class="" style="display: none">
+                            <h2>预览</h2>
+                            <ul class="thumbnails">
+                                <li><span class="" id="preview1"
+                                          style="border-style: none; border: 0px">
 										<canvas id="cutimage1" width="200"  height="150"></canvas>
 								</span></li>
-								<li><span class="" id="preview2"
-									style="border-style: none; border: 0px">
+                                <li><span class="" id="preview2"
+                                          style="border-style: none; border: 0px">
 										<canvas id="cutimage2" width="100"  height="100"></canvas>
 								</span></li>
-								<li><span class="" id="preview3"
-									style="border-style: none; border: 0px">
+                                <li><span class="" id="preview3"
+                                          style="border-style: none; border: 0px">
 										<canvas id="cutimage3" width="60"  height="60"></canvas>
 								</span></li>
-							</ul>
-						</div>
-
-
-						<form class="form" method="post" enctype="multipart/form-data"
-							action="">
-							<p>
-								从你的电脑中选择你喜欢的图片: <br /> <br /><input type='file' name="avatar"
-                                       size="50" />
-                                <br /> <span class="assist-text">你可以上传JPG、JPEG、GIF、PNG或BMP文件。</span>
-							</p>
-							<p>
-								<input type="hidden" name="objectId" id="bb"
-									value="ololololololololololololol">
-							</p>
-						</form>
-						
-						
-
-                       
-						<button id="savecanvas" class="btn btn-success">保存</button>
-
-					</div>
-				</div>
-			</div>
-
-            <div class="side">
-                <div class="avatar-mod clearfix">
-                    <a href="user.jsp" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
-                    <div class="infos">
-                        <div class="nickname"><a>${user.userName}</a></div>
-                        <div class="icons">
-                            <a class="user-level user-level-6" title="努力升级吧!" href="" target="_blank">${level.lv}级</a>
-                            <a class="user-level user-level-6">${level.title}</a>
-
+                            </ul>
                         </div>
+
+
+                        <form class="form" method="post" enctype="multipart/form-data"
+                              action="">
+                            <p>
+                                从你的电脑中选择你喜欢的图片: <br /> <br /><input type='file' name="avatar"
+                                                                    size="50" />
+                                <br /> <span class="assist-text">你可以上传JPG、JPEG、GIF、PNG或BMP文件。</span>
+                            </p>
+                            <p>
+                                <input type="hidden" name="objectId" id="bb"
+                                       value="ololololololololololololol">
+                            </p>
+                        </form>
+
+
+
+
+                        <button id="savecanvas" class="btn btn-success">保存</button>
+
                     </div>
-                </div>
 
-                <div class="stats-mod">
-                    <ul class="user-stats clearfix">
-                        <li><a href=""><strong>${user.credit}</strong>学分</a></li>
-                        <li><a href=""><strong>${user.gold}</strong>金币</a></li>
-                    </ul>
-                </div>
+                </article>
 
-                <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
-            </div>
+                <div class="movedown2"></div>
 
-		</div>
-	</section>
+            </div> <!-- end .right -->
+            <div class="right-bottom"></div>
 
+            <div class="movedown"></div>
 
+        </div> <!-- end .right-container -->
 
-	<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+        <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+    </div>
 
 </body>
 </html>

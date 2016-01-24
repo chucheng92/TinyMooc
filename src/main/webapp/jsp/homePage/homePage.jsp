@@ -105,11 +105,19 @@
             margin-left: -66px;
         }
 
-        .why-gnosh-movies{
+        .why-gnosh-movies1{
             background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
             height:120px;
             width:1100px;
             margin-top: 130px;
+            margin-left: 0px;
+        }
+
+        .why-gnosh-movies{
+            background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
+            height:120px;
+            width:1100px;
+            margin-top: 50px;
             margin-left: 0px;
         }
 
@@ -314,33 +322,9 @@
 </section>
 
 <section id="why-gnosh">
-    <div class="why-gnosh-movies">
+    <div class="why-gnosh-movies1">
     </div>
-    <div class="flat clearfix">
-        <h2><strong>课程频道</strong></h2>
-        <ul class="cells channel-cells">
-            <li class="cell"><a href="goCourseHome.htm"><i
-                    class="channel-icon channel-icon-photography"></i>全部</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
-                    class="channel-icon channel-icon-photography"></i>摄影</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=艺术"><i
-                    class="channel-icon channel-icon-programme"></i>艺术</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=兴趣"><i
-                    class="channel-icon channel-icon-interest"></i>兴趣</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=计算机"><i
-                    class="channel-icon channel-icon-computer"></i>计算机</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=文学"><i
-                    class="channel-icon channel-icon-language"></i>文学</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=求职"><i
-                    class="channel-icon channel-icon-life"></i>求职</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=动漫"><i
-                    class="channel-icon channel-icon-career"></i>动漫</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=音乐"><i
-                    class="channel-icon channel-icon-culture"></i>音乐</a></li>
-            <li class="cell"><a href="goMajorHome.htm?type=其他"><i
-                    class="channel-icon channel-icon-openclass"></i>其他</a></li>
-        </ul>
-    </div>
+
     <div class="flat clearfix">
         <h2><strong>热门课程 | 瞧瞧大家都在学啥&nbsp;(～￣▽￣)～</strong></h2>
         <ul class="cells cells-middle">
@@ -351,7 +335,7 @@
                             <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><img src="${hotCourse.course.logoUrl}"/></a>
                         </div>
                         <p class="title">
-                            <a style="color: rgb(102, 194, 160); " href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span style="border-radius: 3px;" class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
+                            <a href="courseDetailPage.htm?courseId=${hotCourse.course.courseId}"><span class="video" title="视频课程"></span>${hotCourse.course.courseTitle}</a>
                         </p>
                         <div class="summary">${hotCourse.course.courseIntro}</div>
                         <p class="metas clearfix">
@@ -379,7 +363,7 @@
                             <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><img src="${newCourse.course.logoUrl}"/></a>
                         </div>
                         <p class="title">
-                            <a style="color: rgb(102, 194, 160);" href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span style="border-radius: 3px;" class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
+                            <a href="courseDetailPage.htm?courseId=${newCourse.course.courseId}"><span class="video" title="视频课程"></span>${newCourse.course.courseTitle}</a>
                         </p>
                         <div class="summary">${newCourse.course.courseIntro}</div>
                         <p class="metas clearfix">
@@ -447,45 +431,10 @@
 
         <!-- 推荐小组 -->
     </div>
-    <div class="flat clearfix">
-        <h2><strong>课程笔记和热门标签</strong></h2>
-        <div class="flat-main">
-            <h3>推荐笔记</h3>
-            <div class="discuss-list2">
-                <ul class="picked-notes">
-                    <c:forEach items="${noteList}" var="note">
-                        <li class="mbm">
-                            <div class="metas">
-                                <a href="">${note.userCourse.course.courseTitle}的笔记</a>
-                            </div>
-                            <div class="summary gray">${note.noteContent}</div>
-                            <div class="metas">
-                                <span class="gray">by</span> <span class="thin mrm"><a
-                                    href="goPersonal.htm?userId=${note.userCourse.user.userId}" class="show-user-card"
-                                    title="${note.userCourse.user.userName}">${note.userCourse.user.userName}</a></span>
-                            </div>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </div>
 
-        <!-- 热门标签 -->
-        <div class="flat-side">
-            <h3>热门标签 </h3>
-            <div class="tags">
-                <c:forEach items="${labelList}" var="label">
-                    <a href="#" class="tag">${label.labelName}</a>
-                </c:forEach>
-            </div>
-        </div>
-    </div>
 </section>
 
-
-<footer id="footer" style="margin-top: 20%;">
-    <p>&copy; 2015 TINYMOOC.COM &nbsp;All Rights Reserved.</p>
-</footer>
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </div><!-- end .wrapper -->
 

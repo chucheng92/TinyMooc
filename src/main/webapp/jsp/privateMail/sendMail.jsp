@@ -6,82 +6,92 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>写私信 - 萌课网</title>
-<script type="text/javascript" src="<c:url value="/resource/js/sendMail.js"/>"></script>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
+
+    <script type="text/javascript" src="<c:url value="/resource/js/sendMail.js"/>"></script>
 </head>
-<body class="flats-theme">
+
+
+<body class="archive category category-gnews category-3">
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container clearfix" style="margin-top: 60px;">
-  <div id="me" class="me clearfix">
-    <div class="main">
-      <div class="wrap">
-    <div class="main-head">
-      <a href="goPrivateMail.htm" class="fr">« 返回私信箱</a>
-      <h2>写私信</h2>
-    </div>
 
-    <div class="mod">
-	<%--<div class="alert alert-error" id="name"></div>改用scojs错误提示--%>
+<div class="movedown"></div>
 
-      <form class="form-horizontal" method="post" id="message-form" action="sendMail.htm" name="form1">
-        <div class="control-group">
-          <label class="control-label required" for="message_receivers">收件人:</label>
-          <div class="controls">
-            <input type="text" id="message_receivers" value="请填写对方的用户名" name="userName" required="required" class="input input-xlarge" onblur="checkReg()">
-            
-          </div>
-        </div>
+<div class="wrapper">
+    <div class="left">
+        <header>
+            <div class="movedown"></div>
+            <div class="side">
 
-        <div class="control-group">
-          <label class="control-label required" for="message_message">内容:</label>
-          <div class="controls">
-            <textarea id="message_message" name="context" required="required" rows="8" class="input input-xxlarge" maxlength="1000"></textarea>
-          </div>
-        </div>
+                <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
 
-        <div class="control-group">
-          
-          <div class="controls">
-            <button type="submit" class="btn btn-success" onclick="validate()">发送</button>
-          </div>
-        </div>
+            </div>
+        </header>
 
-      </form>
+        <div class="garlic"></div>
 
     </div>
 
+    <div class="right-container">
+        <div class="right-top-banner gnews-banner-major">
+            <div></div>
+        </div>
+        <div class="right-top"></div>
+        <div class="right">
 
 
+            <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
+                <div class="main-head">
+                    <a href="goPrivateMail.htm" class="fr">« 返回私信箱</a>
+                    <h2>写私信</h2>
+                </div>
+
+                <div class="mod">
+                    <%--<div class="alert alert-error" id="name"></div>改用scojs错误提示--%>
+
+                    <form class="form-horizontal" method="post" id="message-form" action="sendMail.htm" name="form1">
+                        <div class="control-group">
+                            <label class="control-label required" for="message_receivers">收件人:</label>
+                            <div class="controls">
+                                <input type="text" id="message_receivers" value="请填写对方的用户名" name="userName" required="required" class="input input-xlarge" onblur="checkReg()">
+
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label required" for="message_message">内容:</label>
+                            <div class="controls">
+                                <textarea id="message_message" name="context" required="required" rows="8" class="input input-xlarge" maxlength="1000"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+
+                            <div class="controls">
+                                <button type="submit" class="btn btn-success" onclick="validate()">发送</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </article>
+
+            <div class="movedown2"></div>
+
+        </div> <!-- end .right -->
+        <div class="right-bottom"></div>
+
+        <div class="movedown"></div>
+
+    </div> <!-- end .right-container -->
+
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </div>
-    </div>
-      <div class="side">
-
-      <div class="avatar-mod clearfix">
-        <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
-        <div class="infos">
-          <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
-          <div class="icons">
-            <a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>
-			<a class="user-level user-level-6"  href="">${level.title}</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="stats-mod">
-          <ul class="user-stats clearfix">
-            <li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>
-            <li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>
-          </ul>
-      </div>
-
-          <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
-
-    </div>
-  </div>
-</section>
-
-<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </body></html>

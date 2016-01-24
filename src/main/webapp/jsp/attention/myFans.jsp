@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>我的粉丝 - 萌课网</title>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
+
+    <title>我的粉丝 - 萌课网</title>
 
 <script type="text/javascript">
 function del(){
@@ -13,93 +16,102 @@ function del(){
 }
 </script>
 </head>
-<body class="flats-theme">
 
+
+<body class="archive category category-gnews category-3">
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<section class="container clearfix" style="margin-top: 60px;">
-  <div id="me" class="me clearfix">
-    <div class="main">
-      <div class="wrap">
-<div class="mod">
-  
-<div class="tab-bar">
-  <ul class="clearfix">
-      <li><a href="myAttention.htm">关注的人</a></li>
-      <li class="active"><a href="#">粉丝</a></li>
-  </ul>
-</div></div>
+<div class="movedown"></div>
 
-<div class="mod">
+<div class="wrapper">
+    <div class="left">
 
-  <p class="mbm">
-    <span class="gray">共${sum}人</span>
-  </p>
+        <header>
+            <div class="movedown"></div>
+            <div class="side">
 
-  <ul class="friend-list list vlist mbl" id="friend-list">
-  <c:forEach items="${fansList}" var="fans">
-     <li class="item lightitem item-border">
-        <div class="imageblock clearfix mvm">
-          <div class="imageblock-image"><a href="" class="show-user-card" data-uid="1360073"><img src="<c:url value="${fans.userByUserId.headImage.imageMid}"/>"></a>
-			</div>
-          <div class="imageblock-content">
-            <div class="user-relation">
-             <c:if test="${fans.attentionEach=='互粉'}">
-                 	<p>
-                 	 相互关注
-                  	 </p>
-                  	 </c:if>
-                  	 <c:if test="${empty fans.attentionEach}">
-                 	<p>
-                        <a href="addAttention1.htm?userBid=${fans.userByUserId.userId}" class="follow-opt">关注</a>
-                     </p>
-                  	 </c:if>
-                    <c:if test="${fans.attentionEach=='互粉'}">
-              <p class="extra">
-                <a href="delAttention1.htm?type=1&userBid=${fans.userByUserId.userId}" class="unfollow-opt">取消关注</a>
-               </p>
-                </c:if>
+                <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
+
             </div>
-            <p> <span class="fr counter"></span>  <span class="fsm"><a href="" class="show-user-card " data-uid="1360073" title="fatherfox">${fans.userByUserId.userName}</a></span></p>
-          </div>
-        </div>
-      </li>
-      </c:forEach>
-         </ul>
+        </header>
 
-  
-</div>
-
-</div>
-</div>
-     <div class="side">
-
-      <div class="avatar-mod clearfix">
-        <a href="goPersonnal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
-        <div class="infos">
-          <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
-          <div class="icons">
-            <a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>
-			<a class="user-level user-level-6"  href="">${level.title}</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="stats-mod">
-          <ul class="user-stats clearfix">
-            <li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>
-            <li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>
-          </ul>
-      </div>
-
-         <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
+        <div class="garlic"></div>
 
     </div>
-  </div>
-</section>
 
-<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+    <div class="right-container">
+        <div class="right-top-banner gnews-banner-major">
+            <div></div>
+        </div>
+        <div class="right-top"></div>
+        <div class="right">
+
+
+            <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
+                <div class="mod">
+
+                    <div class="tab-bar">
+                        <ul class="clearfix">
+                            <li><a href="myAttention.htm">关注的人</a></li>
+                            <li class="active"><a href="#">粉丝</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mod">
+
+                    <p class="mbm">
+                        <span class="gray">共${sum}人</span>
+                    </p>
+
+                    <ul class="friend-list list vlist mbl" id="friend-list">
+                        <c:forEach items="${fansList}" var="fans">
+                            <li class="item lightitem item-border">
+                                <div class="imageblock clearfix mvm">
+                                    <div class="imageblock-image"><a href="" class="show-user-card" data-uid="1360073"><img src="<c:url value="${fans.userByUserId.headImage.imageMid}"/>"></a>
+                                    </div>
+                                    <div class="imageblock-content">
+                                        <div class="user-relation">
+                                            <c:if test="${fans.attentionEach=='互粉'}">
+                                                <p>
+                                                    相互关注
+                                                </p>
+                                            </c:if>
+                                            <c:if test="${empty fans.attentionEach}">
+                                                <p>
+                                                    <a href="addAttention1.htm?userBid=${fans.userByUserId.userId}" class="follow-opt">关注</a>
+                                                </p>
+                                            </c:if>
+                                            <c:if test="${fans.attentionEach=='互粉'}">
+                                                <p class="extra">
+                                                    <a href="delAttention1.htm?type=1&userBid=${fans.userByUserId.userId}" class="unfollow-opt">取消关注</a>
+                                                </p>
+                                            </c:if>
+                                        </div>
+                                        <p> <span class="fr counter"></span>  <span class="fsm"><a href="" class="show-user-card " data-uid="1360073" title="fatherfox">${fans.userByUserId.userName}</a></span></p>
+                                    </div>
+                                </div>
+                            </li>
+                        </c:forEach>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <div class="movedown2"></div>
+
+        </div> <!-- end .right -->
+        <div class="right-bottom"></div>
+
+        <div class="movedown"></div>
+
+    </div> <!-- end .right-container -->
+
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+
+</div>
 
 </body></html>
