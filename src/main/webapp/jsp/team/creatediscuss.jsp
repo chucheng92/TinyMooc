@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]><html class="ie ie6"><![endif]-->
 <!--[if IE 7]><html class="ie ie7"><![endif]-->
@@ -8,16 +9,9 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> 发言 -${team.teamName}- 好知网</title>
-  <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
- <script type="text/javascript" src="<c:url value="/js/xheditor/xheditor-1.1.6-zh-cn.js"/>"></script>
+  <title> 发言 -${team.teamName}- 萌课网</title>
+  <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+ <script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
  <script type="text/javascript">
 $(function(){
 
@@ -52,7 +46,7 @@ $(function(){
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container discussion-form-container">
+<section class="container discussion-form-container" style="margin-top: 60px;">
 
   <div class="container-padding clearfix">
   
@@ -92,17 +86,17 @@ $(function(){
 
 
 <footer class="footer container">
-  <div style="padding: 0px 28px;">
-    <div class="fl footer-links">
-      <a href="">关于微课程</a>
-      <a href="">微课程达人</a>
-      <a href="">联系我们</a>
-      <a href="">友情链接</a>
-      <a href="">意见反馈</a>
-      <br>
-      <span class="copyright">©2013 MicroCourses.COM <a href="#">陕ICP备1102461-7</a> </span>
+    <div style="padding: 0px 28px;">
+        <div class="fl footer-links">
+            <a href="">关于萌课</a>
+            <a href="">萌课达人</a>
+            <a href="">联系我们</a>
+            <a href="">友情链接</a>
+            <a href="">意见反馈</a>
+            <br>
+            <span class="copyright">©2016 TinyMooc.COM <a href="#">闽ICP备1102461-7</a> </span>
+        </div>
     </div>
-  </div>
 </footer>
 
 </body>

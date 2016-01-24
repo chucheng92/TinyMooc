@@ -13,7 +13,7 @@
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<section class="container clearfix">
+<section class="container clearfix" style="margin-top: 60px;">
   <div id="me" class="me clearfix">
     <div class="main">
       <div class="wrap">
@@ -41,7 +41,7 @@
  	<c:forEach items="${list}" var="list">
    <li class="item lightitem item-border">
         	<div class="imageblock clearfix mvm">
-        	<div class="imageblock-image"><a href="" class="show-user-card"><img src="<c:url value="${list.userByAttentionedUserId.headImage.imageMid}"/>"></a>
+        	<div class="imageblock-image"><img src="<c:url value="${list.userByAttentionedUserId.headImage.imageMid}"/>">
 </div>
          	<div class="imageblock-content">
                 <div class="user-relation">

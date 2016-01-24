@@ -8,7 +8,7 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> 分享 - 产品经理小组 - 好知网</title>
+  <title> 分享 - 产品经理小组 - 萌课网</title>
   <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
   <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
   <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
@@ -70,7 +70,7 @@ $(function(){
 							<li><a href="">生活</a></li>
 							<li><a href="">职场</a></li>
 							<li><a href="">文化</a></li>
-							<li><a href="">公开课</a></li>
+							<li><a href="">音乐</a></li>
 						</ul>
 					</div></li>
 				<li class="item"><a href="<c:url value="/jsp/team/team.jsp"/>" class="trigger">小组</a></li>

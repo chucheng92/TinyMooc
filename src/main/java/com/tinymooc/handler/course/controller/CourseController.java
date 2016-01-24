@@ -1,6 +1,5 @@
 package com.tinymooc.handler.course.controller;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,9 +12,9 @@ import com.tinymooc.common.domain.*;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import com.tinymooc.handler.course.service.CourseService;
 import com.tinymooc.handler.label.service.LabelService;
+import com.tinymooc.handler.resource.service.ResourceService;
 import com.tinymooc.handler.user.service.UserService;
 import com.tinymooc.handler.video.service.VideoService;
-import com.tinymooc.util.CSVUtil;
 import com.tinymooc.util.UUIDGenerator;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -34,6 +33,9 @@ public class CourseController {
     private Logger log = LoggerFactory.getLogger(CourseController.class);
     @Autowired
     private VideoService videoService;
+
+    @Autowired
+    private ResourceService resourceService;
 
     @Autowired
     private CourseService courseService;
@@ -67,7 +69,13 @@ public class CourseController {
      */
     @RequestMapping("createCourse.htm")
     public ModelAndView createCourse(HttpServletRequest req, HttpServletResponse res) {
+        // FIXME
+        System.out.println("================进入CreateCourse.htm=============");
         User user = (User) req.getSession().getAttribute("user");
+        String picUrl = (String)req.getSession().getAttribute("picUrl");
+        // FIXME
+        System.out.println("=================picUrl="+picUrl);
+
         String courseTitle = ServletRequestUtils.getStringParameter(req, "courseTitle", "");
         String courseIntro = ServletRequestUtils.getStringParameter(req, "courseIntro", "");
         String type = ServletRequestUtils.getStringParameter(req, "type", "");
@@ -77,6 +85,10 @@ public class CourseController {
         course.setCourseIntro(courseIntro);
         course.setCourseState("申请中");
         course.setType(type);
+        if (picUrl != null)
+            course.setLogoUrl(picUrl);
+        else
+            course.setLogoUrl("/resource/pic/courseLogo/course1.jpg");
         course.setScanNum(0);
         course.setCourseTitle(courseTitle);
         courseService.save(course);
@@ -86,7 +98,10 @@ public class CourseController {
         userCourse.setCourse(course);
         userCourse.setUser(user);
         courseService.save(userCourse);
+        req.getSession().removeAttribute("picUrl");
 
+        // FIXME
+        System.out.println("================结束CreateCourse.htm=============");
         return new ModelAndView("redirect:courseList.htm");
     }
 
@@ -111,6 +126,8 @@ public class CourseController {
     @RequestMapping("createLesson.htm")
     public ModelAndView createLesson(HttpServletRequest req, HttpServletResponse res) {
         User user = (User) req.getSession().getAttribute("user");
+        if (user == null)
+            return new ModelAndView("redirect:login.htm");
         String courseId = ServletRequestUtils.getStringParameter(req, "courseId", "");
         String courseTitle = ServletRequestUtils.getStringParameter(req, "courseTitle", "");
         String courseIntro = ServletRequestUtils.getStringParameter(req, "courseIntro", "");
@@ -306,7 +323,7 @@ public class CourseController {
         System.out.println("Test 7===============labelObjectList =" + labelObjectList.size());
 
         // Test 8
-        // 该门课程的评分
+        // 该门课程的评分同时写回Course表的totalMark中
         DetachedCriteria detachedCriteria8 = DetachedCriteria.forClass(Grade.class).add(Restrictions.eq("gradeObject", courseId));
         List<Grade> gradeList = courseService.queryAllOfCondition(Grade.class, detachedCriteria8);
         double userGrade = 0.0;
@@ -316,6 +333,8 @@ public class CourseController {
         } else {
             userGrade = 0.0;
         }
+        course.setTotalMark(userGrade);
+        courseService.update(course);
         // FIXME
         System.out.println("Test 8===============userGrade=" + userGrade);
 
@@ -384,10 +403,6 @@ public class CourseController {
             picSuffix = Integer.parseInt(currentCourse.getCourse().getCourseId().substring(0, 7), 16) % 10;
         }
 
-        // Test13
-        // FIXME
-        System.out.println("Test 13============picSuffix=" + picSuffix);
-
         // 封装信息
         req.setAttribute("currentCourse", currentCourse);
         req.setAttribute("fansNum", fansNum);
@@ -403,7 +418,7 @@ public class CourseController {
         req.setAttribute("labelList", labelObjectList);
         req.setAttribute("currentCourseState", currentCourseState);
         req.setAttribute("lessonList", lessonList);
-        return new ModelAndView("/course/courseDetailPage", "picSuffix", picSuffix);
+        return new ModelAndView("/course/courseDetailPage");
     }
 
     /**
@@ -560,26 +575,16 @@ public class CourseController {
         lesson.setScanNum(lesson.getScanNum() + 1);
 
         // Test14 准备TencentVideoId
-        String fileId = null;
+        String  resourceObject = courseService.findById(Course.class, childrenId).getCourseId();
+        DetachedCriteria detachedCriteria14 = DetachedCriteria.forClass(Resource.class)
+                .add(Restrictions.eq("resourceObject", resourceObject));
+        Resource temResource = resourceService.queryAllOfCondition(Resource.class, detachedCriteria14).get(0);
+        String fileId = videoService.findById(Video.class, temResource.getResourceId()).getTencentVideoId();
 
-        List<Video> videoList = videoService.queryAll(Video.class);
-
-        for (Video v: videoList) {
-            String vTitle = v.getVideoUrl().substring(0, v.getVideoUrl().lastIndexOf('.'));
-
-            //FIXME
-            System.out.println(v.getVideoUrl().lastIndexOf('.'));
-            System.out.println("=================vTitle="+vTitle);
-
-            if ( vTitle.equals(lesson.getCourseTitle())) {
-                fileId = CSVUtil.core(new File("src/resources/文件地址列表-2016-01-14.csv"), vTitle);
-                v.setTencentVideoId(fileId);
-                videoService.update(v);
-                // FIXME
-                System.out.println("==================fileId="+fileId);
-                break;
-            }
-        }
+        // FIXME
+        System.out.println("======================resourceObject="+resourceObject);
+        // FIXME
+        System.out.println("======================fileId="+fileId);
 
         // FIXME
         log.info("==============程序执行到此============");

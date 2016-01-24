@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]><html class="ie ie6"><![endif]-->
 <!--[if IE 7]><html class="ie ie7"><![endif]-->
@@ -8,15 +8,8 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>${userTeam2.team.teamName} - 好知网</title>
-  <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
+  <title>${userTeam2.team.teamName} - 萌课网</title>
+  <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
  
  <script type="text/javascript">
 $(function(){
@@ -52,16 +45,18 @@ $(function(){
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<section class="container">
-  <div class="group-header" style="background-image:url(<c:url value="/pic/imagehead/group-header.jpg"></c:url>)">
+<section class="container" style="margin-top: 60px;">
+  <div class="group-header" style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
 
-  <div class="head">
-    <div class="icon"><img src="${userTeam2.team.headImage.imageSmall}"  alt="${userTeam2.team.teamName}"  /></div>
-    <div class="infos">
-      <h1>${userTeam2.team.teamName}</h1>
-      <span>${memberNum}个成员</span>
-    </div>
-  </div>
+      <div class="icon">
+          <img src="<c:url value="${userTeam2.team.headImage.imageSmall}"/>"/>
+      </div>
+      <div>
+          <div class="infos" align="center">
+              <h1>小组名：${userTeam2.team.teamName}</h1>
+              <span>一共<font color="red">${memberNum}</font>个成员</span>
+          </div>
+      </div>
   
   <ul class="hnav">
     <li><a href="teamHomePage.htm?teamId=${userTeam2.team.teamId}">小组首页</a></li>
@@ -95,7 +90,7 @@ $(function(){
             <c:forEach items="${discusses}" var="dis">
                 <li>
                       <div class="imageblock clearfix">
-                          <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
+                          <div class="imageblock-image"><img src="/resource/img/topic.png" style="border-radius: 3px;">
                           </div>
                            <div class="imageblock-content">
          
@@ -105,11 +100,11 @@ $(function(){
                                  </c:if>
                                           <a href="discussDetailPage.htm?discussId=${dis.discussId}">${dis.topic}</a>
                                           <c:if test="${dis.essence=='精华'}">
-                                          <img src='<c:url value="/pic/elite-s.png"></c:url>' width="16" height="14" title="精华贴" />
+                                          <img src='<c:url value="/resource/pic/elite-s.png"></c:url>' width="16" height="14" title="精华贴" />
                                           </c:if>  
                                            </p>
                                            <p class="metas">
-                                              by <a href="" class="show-user-card " title="${dis.user.nickname}">${dis.user.nickname}</a>
+                                              by <a href="goPersonal.htm?userId=${dis.user.userId}" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
                                             <span class="mhm">${dis.scanNum}</span>
                                                 
                                     </p>
@@ -130,13 +125,13 @@ $(function(){
 <footer class="footer container">
   <div style="padding: 0px 28px;">
     <div class="fl footer-links">
-      <a href="">关于微课程</a>
-      <a href="">微课程达人</a>
+      <a href="">关于萌课</a>
+      <a href="">萌课达人</a>
       <a href="">联系我们</a>
       <a href="">友情链接</a>
       <a href="">意见反馈</a>
       <br>
-      <span class="copyright">©2013 MicroCourses.COM <a href="#">陕ICP备1102461-7</a> </span>
+      <span class="copyright">©2016 TinyMooc.COM <a href="#">闽ICP备1102461-7</a> </span>
     </div>
   </div>
 </footer>

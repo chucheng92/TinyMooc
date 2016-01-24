@@ -1,0 +1,61 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/mysql-connector-java-5.1.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/marswork-core-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-facet-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/mail-1.4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/asm-3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/javassist-3.15.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-codec-1.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-memory-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-asm-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-web-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-lang-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/antlr-2.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-analyzers-common-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/marswork-dataaccess-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/json-lib-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-context-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/ezmorph-1.0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-queries-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-orm-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/analyzer-2012FF_u1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-beanutils-1.8.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-sandbox-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-context-support-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-tx-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-beans-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-aop-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-core-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/jakarta-regexp-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-logging-1.1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-pool-1.5.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-expression-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-fileupload-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/activation-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-jdbc-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/commons-dbcp-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/jta-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-webmvc-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/spring-core-3.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/aspectjweaver-1.7.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/hibernate-core-4.2.3.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-demo-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/xml-apis-1.0.b2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/lucene-queryparser-4.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/jboss-logging-3.1.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/tinymooc/WEB-INF/lib/cglib-2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

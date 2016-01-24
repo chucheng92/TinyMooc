@@ -30,7 +30,7 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService 
         String sql="select avg(mark) from Grade where GRADE_OBJECT='"+ObjId+"'";
 		double avgGrade=(double) getCurrentSession().createQuery(sql).uniqueResult();
 		
-		double userGrade = avgGrade+5.0;
+		double userGrade = avgGrade+4.9;
 
         return userGrade;
 	}

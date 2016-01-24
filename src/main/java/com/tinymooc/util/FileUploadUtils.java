@@ -10,22 +10,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import com.marswork.core.configwizard.ConfigItemManifest;
 import com.marswork.core.exceptions.config.PropertiesNotFoundException;
 
 public class FileUploadUtils
 {
-  public static final HashMap UploadFile(HttpServletRequest request, HttpServletResponse response, String filepaths)
-    throws Exception
-  {
+  public static final HashMap UploadFile(HttpServletRequest request, HttpServletResponse response, String filepaths) throws Exception  {
     HashMap params = new HashMap();
     String pathtype = "images";
     if (!(filepaths.equals("")))
@@ -83,9 +78,7 @@ public class FileUploadUtils
     return params;
   }
 
-  public static final String mkdirFile(String readPath, String filepath, boolean withDate)
-    throws Exception
-  {
+  public static final String mkdirFile(String readPath, String filepath, boolean withDate) throws Exception {
     String upfile = "/upfiles/";
     String savePhotoPath = readPath + 
       upfile + 
@@ -97,6 +90,8 @@ public class FileUploadUtils
     if (!(savePhotoDir.isDirectory()))
       savePhotoDir.mkdirs();
 
+    // FIXME
+      System.out.println("================savePhotoPath=========="+savePhotoPath);
     return savePhotoPath;
   }
 

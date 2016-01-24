@@ -1,21 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>登录-微课程</title>
+<title>帮助-创建课程</title>
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-<link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-<script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resource/js/bootstrap.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/resource/css/scojs.css"/>">
-<script type="text/javascript" src="<c:url value="/resource/js/sco.message.js"/>"></script>
+
 </head>
 
 <body class="loginInfo">
@@ -35,7 +27,7 @@
 	});
 </script>
 
-<section class="container homepage">
+<section class="container homepage" style="margin-top: 60px;">
 
     <div id="lessoncontent" class="flat lesson-flat">
 
@@ -54,10 +46,11 @@
 <p>1、创建课程的入口仍然在首页——点击“创建课程”按钮</p>
 
 <h2>第二步：添加课程信息</h2>
-<p>1、添加课程标题（标题不宜过长，否则在首页显示会不完整）</p>
-<p>2、添加课时简介（课时简介为课程的整体摘要，并非课程正文）</p>
-<p>3、选择分类（按造课程内容选择对应的分类）</p>
-<p>4、课程创建完成后，在课程页面右边有一个课程发布引导，可以根据引导来完善课程。
+<p>1、添加课程封面（支持jpg、png、jpeg等，留空将采用默认图片）</p>
+<p>2、添加课程标题（标题不宜过长，否则在首页显示会不完整）</p>
+<p>3、添加课时简介（课时简介为课程的整体摘要，并非课程正文）</p>
+<p>4、选择分类（按造课程内容选择对应的分类）</p>
+<p>5、课程创建完成后，在课程页面右边有一个课程发布引导，可以根据引导来完善课程。
 其中未完成的步骤会显示灰色，已完成步骤会变成绿色。</p>
 <h2>第三步：等待审核通过</h2>
 <p>1、完成</p>
@@ -67,8 +60,9 @@
     </div>
 </section>
 
+<div style="margin-top: 300px !important; margin-left:400px !important; width:900px;">
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
-
+</div>
 
 </body>
 </html>

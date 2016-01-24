@@ -12,7 +12,7 @@
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container clearfix">
+<section class="container clearfix" style="margin-top: 60px;">
   <div id="me" class="me clearfix">
     <div class="main">
       <div class="wrap">
@@ -59,7 +59,7 @@
       <div class="side">
 
       <div class="avatar-mod clearfix">
-        <a href="goPersonnal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
+        <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
         <div class="infos">
           <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
           <div class="icons">

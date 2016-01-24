@@ -100,13 +100,13 @@
     <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 </c:if>
 
-<section class="container course">
+<section class="container course" style="margin-top: 60px;">
     <div id="course-main">
         <div id="course-header" class="flat course-header course-large-header">
 
             <div class="imagblock clearfix">
                 <div class="imageblock-image posrel">
-                    <img src="/resource/pic/courseLogo/course${picSuffix}.jpg" alt="${currentCourse.course.courseTitle}"
+                    <img src="${currentCourse.course.logoUrl}" alt="${currentCourse.course.courseTitle}"
                          width=190 height=140/>
                 </div>
                 <div class="imageblock-content">
@@ -170,7 +170,7 @@
                     <c:if test="${empty labelList}">
                         <b>暂时没有标签</b>
                         <c:if test="${user.userId eq currentCourse.user.userId}">
-                            <a href="">（添加标签）</a>
+                            <a href="queryLabel.htm?type=course&courseId=${currentCourse.course.courseId}">（添加标签）</a>
                         </c:if>
                     </c:if>
                     <c:if test="${!empty labelList}">

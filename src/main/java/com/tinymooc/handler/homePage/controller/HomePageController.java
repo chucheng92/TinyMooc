@@ -4,28 +4,21 @@ package com.tinymooc.handler.homePage.controller;
  * Created by 哓哓 on 2015/12/1 0001.
  */
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.tinymooc.common.domain.*;
+import com.tinymooc.handler.video.service.VideoService;
+import com.tinymooc.util.CSVUtil;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import com.tinymooc.handler.attention.service.AttentionService;
 import com.tinymooc.handler.label.service.LabelService;
 import com.tinymooc.handler.user.service.UserService;
-import com.tinymooc.common.domain.Attention;
-import com.tinymooc.common.domain.Course;
-import com.tinymooc.common.domain.Discuss;
-import com.tinymooc.common.domain.Label;
-import com.tinymooc.common.domain.LabelObject;
-import com.tinymooc.common.domain.Level;
-import com.tinymooc.common.domain.Note;
-import com.tinymooc.common.domain.Team;
-import com.tinymooc.common.domain.User;
-import com.tinymooc.common.domain.UserCourse;
-import com.tinymooc.common.domain.UserTeam;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -134,7 +127,7 @@ public class HomePageController {
         //热门标签
         DetachedCriteria dCriteria4 = DetachedCriteria.forClass(Label.class);
         dCriteria4.addOrder(Order.desc("frequency"));
-        List<Label> labelList = userService.queryMaxNumOfCondition(Label.class, dCriteria4, 15);
+        List<Label> labelList = userService.queryMaxNumOfCondition(Label.class, dCriteria4, 20);
 
         //最新笔记
         DetachedCriteria dCriteria5 = DetachedCriteria.forClass(Note.class);
@@ -173,7 +166,7 @@ public class HomePageController {
             Level level = userService.getUserLevel(credit);
             System.out.println("===level===" + level.getLv());
 
-            return new ModelAndView("/homePage/homePage", "level", level);
+            return new ModelAndView("/homePage/userHomePage", "level", level);
         }
 
     }
@@ -193,8 +186,7 @@ public class HomePageController {
         if (user == null) {
             message = "请先登录啊(￣▽￣)";
             return new ModelAndView("/login/login", "message", message);
-        }
-        else {
+        } else {
             System.out.println("=======HomePageController START=========");
             //FIXME
             System.out.println("用户已经登录");
@@ -262,7 +254,7 @@ public class HomePageController {
 
 
     @RequestMapping("recommendTeam.htm")
-    public ModelAndView turnToTuiTeam(HttpServletRequest request) {
+    public ModelAndView recommendTeam(HttpServletRequest request) {
         System.out.println("=====Test Start===========Enter turnToTuiTeam===========");
         User user = (User) request.getSession().getAttribute("user");
         int credit = user.getCredit();
@@ -336,9 +328,8 @@ public class HomePageController {
 
     @RequestMapping("turnToHelpPage.htm")
     public ModelAndView turnToHelpPage() {
-        return new ModelAndView("/help/helplevel");
+        return new ModelAndView("/help/helpLevel");
     }
-
 
     @RequestMapping("howToCreate.htm")
     public ModelAndView howtocreate() {
@@ -352,31 +343,70 @@ public class HomePageController {
 
     @RequestMapping("editLabel.htm")
     public ModelAndView editLabel(HttpServletRequest request) {
+        User user = (User) request.getSession().getAttribute("user");
+        if (user == null)
+            return new ModelAndView("redirect:login.htm");
 
         String labels = request.getParameter("keyWordsHidden");
         System.out.println("#####################labels@@@@@@@@@:" + labels);
-        User user = (User) request.getSession().getAttribute("user");
-        String objectId = user.getUserId();
-        String objectType = request.getParameter("objectType");
 
-        labelService.saveObjectLabels(labels, objectId, objectType);
-
+        String objectId = null;
         String type = request.getParameter("type");
+        String courseId = request.getParameter("courseId");
+        String teamId = request.getParameter("teamId");
 
-        return new ModelAndView("redirect:queryLabel.htm", "type", type);
+        if (type.equals("user")) {
+            objectId = user.getUserId();
+        } else if (type.equals("course")) {
+            objectId = courseId;
+        } else if (type.equals("team")) {
+            objectId = teamId;
+        } else {
+            objectId = user.getUserId();
+        }
+
+        // FIXME
+        System.out.println("==================type="+type);
+        System.out.println("==================courseId="+courseId);
+        System.out.println("==================objectId="+objectId);
+
+        labelService.saveObjectLabels(labels, objectId, type);
+
+        return new ModelAndView("forward:queryLabel.htm");
     }
 
     @RequestMapping("queryLabel.htm")
     public ModelAndView queryLabel(HttpServletRequest request) {
+        User user = (User) request.getSession().getAttribute("user");
+        if (user == null)
+            return new ModelAndView("redirect:login.htm");
 
         String type = request.getParameter("type");
-        User user = (User) request.getSession().getAttribute("user");
-        labels = labelService.getTenHotLabels();
-        previousLabels = labelService.getObjectLabels(user.getUserId(), type);
-        ModelMap map = new ModelMap();
+        String courseId = request.getParameter("courseId");
+        String teamId = request.getParameter("teamId");
 
+        // FIXME
+        System.out.println("==================type="+type);
+
+        labels = labelService.getTenHotLabels();
+        if (type.equals("user")) {
+            previousLabels = labelService.getObjectLabels(user.getUserId(), type);
+        } else if (type.equals("course")) {
+            previousLabels = labelService.getObjectLabels(courseId, type);
+        } else if (type.equals("team")) {
+            previousLabels = labelService.getObjectLabels(teamId, type);
+        } else {
+            previousLabels = labelService.getObjectLabels(user.getUserId(), type);
+        }
+
+        ModelMap map = new ModelMap();
         map.put("labels", labels);
         map.put("previousLabels", previousLabels);
+
+        request.setAttribute("courseId", courseId);
+        request.setAttribute("teamId", teamId);
+        request.setAttribute("type", type);
+
         return new ModelAndView("/userPage/accountLabel", map);
     }
 
@@ -466,20 +496,20 @@ public class HomePageController {
 
         dCriteria.add(Restrictions.eq("user", user1));
 
-        List<UserTeam> userteam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
+        List<UserTeam> userTeam = userService.queryAllOfCondition(UserTeam.class, dCriteria);
 
         DetachedCriteria dCriteria2 = DetachedCriteria.forClass(Discuss.class);
 
         dCriteria2.add(Restrictions.eq("user", user1));
 
-        List<Discuss> discuss = userService.queryAllOfCondition(Discuss.class, dCriteria2);
+        List<Discuss> discussList = userService.queryAllOfCondition(Discuss.class, dCriteria2);
 
 
         request.setAttribute("user1", user1);
-        request.setAttribute("userteam", userteam);
-        request.setAttribute("discuss", discuss);
+        request.setAttribute("userTeam", userTeam);
+        request.setAttribute("discussList", discussList);
 
-        return new ModelAndView("/userPage/usergroup");
+        return new ModelAndView("/userPage/userGroup");
 
     }
 
@@ -501,7 +531,7 @@ public class HomePageController {
         request.setAttribute("user1", user1);
         request.setAttribute("user", user);
 
-        return new ModelAndView("/userPage/usernote", "notelist", notelist);
+        return new ModelAndView("/userPage/userNote", "notelist", notelist);
 
     }
 
@@ -512,7 +542,7 @@ public class HomePageController {
         List<Attention> list = attention.queryFans(userId);
         request.setAttribute("user1", user1);
         request.setAttribute("sum", list.size());
-        return new ModelAndView("/userPage/userfans", "list", list);
+        return new ModelAndView("/userPage/userFans", "list", list);
 
     }
 
@@ -524,7 +554,7 @@ public class HomePageController {
         List<Attention> list = attention.queryAttention(userId);
         request.setAttribute("sum", list.size());
         request.setAttribute("user1", user1);
-        return new ModelAndView("/userPage/userfellow", "list", list);
+        return new ModelAndView("/userPage/userFollow", "list", list);
 
     }
 
@@ -532,21 +562,37 @@ public class HomePageController {
     @SuppressWarnings("unchecked")
     @RequestMapping("goCourseHome.htm")
     public ModelAndView goCourseHome(HttpServletRequest request) {
-        DetachedCriteria dCriteria = DetachedCriteria.forClass(UserCourse.class)
+        // FIXME
+        System.out.println("=============进入goCourseHome=========");
+        String filterType = request.getParameter("filterType");
+        // FIXME
+        System.out.println("=============filterType========="+filterType);
+
+        DetachedCriteria dc = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "创建者")).createCriteria("course")
                 .add(Restrictions.eq("courseState", "批准"))
-                .add(Restrictions.isNull("course"))
-                .addOrder(Order.desc("applyDate"));
+                .add(Restrictions.isNull("course"));
+        if (filterType == null )
+            // 默认
+            dc .addOrder(Order.desc("applyDate"));
+       else if (filterType.equals("grade"))
+               dc.addOrder(Order.desc("totalMark"));
+        else if (filterType.equals("time") )
+              dc .addOrder(Order.desc("approveDate"));
+        else if (filterType.equals("hot") )
+            dc .addOrder(Order.desc("scanNum"));
 
         int pageSize = 12;
-        int totalPage = userService.countTotalPage(dCriteria, pageSize);
+        int totalPage = userService.countTotalPage(dc, pageSize);
         PageHelper.forPage(totalPage, pageSize);
-        List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dCriteria, pageSize);
+        List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dc, pageSize);
         request.setAttribute("list1", list1);
+
+        // FIXME
+        System.out.println("=============结束goCourseHome=========");
+
         return new ModelAndView("/homePage/allcourse");
-
     }
-
 
 		/*---------------------------导航栏专业首页------------------------*/
 

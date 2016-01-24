@@ -1,35 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${userTeam2.team.teamName} - 萌课网</title>
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />"/>
-    <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-    <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-    <link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
-    <script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
-    <link rel="stylesheet" href="<c:url value="/resource/css/scojs.css"/>">
-    <script type="text/javascript" src="<c:url value="/resource/js/sco.message.js"/>"></script>
-
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var message = "${requestScope.message}";
-            if (message == null || message == 'null' || message == "") {
-
-            } else {
-                $.scojs_message(message, $.scojs_message.TYPE_OK);
-            }
-        });
-    </script>
-
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
     <script type="text/javascript">
         $(function () {
             $(".btn.btn-info.btn-small").click(function () {
@@ -62,34 +41,27 @@
                     location.href = "constructTeam.htm?teamId=" + teamId + "&gold=" + gold;
                 }
             });
-
-
         });
     </script>
 </head>
 
-<c:if test="${empty user}" >
-    <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
-    <body class="loginInfo">
-    <h1>&nbsp;&nbsp;温馨提示: 请登录后再查看小组信息哦(●'◡'●)</h1>
-    <div style='visibility:hidden; clear: both; display: block; height: 40px; overflow:hidden'></div>
-    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
-    </body>
-</c:if>
-
-<c:if test="${!empty user}">
 <body class="lily-theme">
-<jsp:include page="/jsp/include/head2.jsp"></jsp:include>
-
-<section class="container">
-    <div class="group-header"
-         style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
-
-        <div class="head">
-            <div class="icon"><img src="<c:url value="${userTeam2.team.headImage.imageSmall}"/>"/></div>
-            <div class="infos">
-                <h1>${userTeam2.team.teamName}</h1>
-                <span>${memberNum}个成员</span>
+<c:if test="${empty user.userId}">
+    <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
+</c:if>
+<c:if test="${!empty user.userId}">
+    <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
+</c:if>
+<section class="container" style="margin-top: 60px;">
+    <div class="group-header" style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
+        <div >
+            <div class="icon">
+                <img src="<c:url value="${userTeam2.team.headImage.imageSmall}"/>"/>
+            </div>
+            <div>
+            <div class="infos" align="center">
+                <h1>小组名：${userTeam2.team.teamName}</h1>
+                <span>一共<font color="red">${memberNum}</font>个成员</span>
             </div>
         </div>
 
@@ -161,7 +133,7 @@
                             <c:forEach items="${discusses}" var="dis">
                                 <li>
                                     <div class="imageblock clearfix">
-                                        <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
+                                        <div class="imageblock-image"><img src="/resource/img/topic.png" style="border-radius: 3px;">
                                         </div>
                                         <div class="imageblock-content">
 
@@ -177,7 +149,7 @@
                                             </p>
 
                                             <p class="metas">
-                                                by <a href="" class="show-user-card "
+                                                by <a href="goPersonal.htm?userId=${dis.user.userId}" class="show-user-card "
                                                       title="${dis.user.userName}">${dis.user.userName}</a>
                                                 <span class="mhm">${dis.scanNum}</span>
                                             </p>
@@ -273,9 +245,9 @@
             </c:if>
         </div>
     </div>
+    </div>
 </section>
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 </body>
-</c:if>
 
 </html>

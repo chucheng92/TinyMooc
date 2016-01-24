@@ -3,93 +3,253 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
-$(function(){
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript">
+        $(function(){
 
-	$("#course").mouseover(function(){
+            $("#course").mouseover(function(){
 
-			$("#menu").css("display","block");
+                $("#menu").css("display","block");
 
-		});
-	$(".item.course").mouseleave(function(){
+            });
+            $(".item.course").mouseleave(function(){
 
-		$("#menu").css("display","none");
+                $("#menu").css("display","none");
 
-	});
-	$("#user").mouseover(function(){
+            });
+            $("#user").mouseover(function(){
 
-		$(".user-nav-menus").css("display","block");
+                $(".user-nav-menus").css("display","block");
 
-	});
-	$(".status-item-wrapper").mouseleave(function(){
+            });
+            $(".status-item-wrapper").mouseleave(function(){
 
-		$(".user-nav-menus").css("display","none");
+                $(".user-nav-menus").css("display","none");
 
-	});
-	
-});
+            });
 
-</script>
+        });
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/site.css"/>
+    <link href="<%=request.getContextPath()%>/resource/css/fonts.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28918139-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29176033-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(function(){
+
+            $("#course").mouseover(function(){
+
+                $("#menu").css("display","block");
+
+            });
+            $(".item.course").mouseleave(function(){
+
+                $("#menu").css("display","none");
+            });
+        });
+
+    </script>
+
+    <style>
+
+        #home .news h1 , #news .news article h2 {
+            font-weight: normal;
+        }
+
+        #footer {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        #flavours .text p {
+            padding-right: 50px;
+        }
+
+        #home .better_shared {
+            z-index: 1000 !important;
+        }
+
+        #share .beetroot {
+            height: 411px !important;;
+        }
+
+        #news .news article p {
+            margin-bottom: 1em;
+        }
+
+        .whats-your-gnosh{
+            background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/21/213915rgplghygcgrg4yjr.png") top left no-repeat;
+            height:1046px;
+            width:1100px;
+            margin-top: -92px;
+            margin-left: -66px;
+        }
+
+        .why-gnosh-movies{
+            background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
+            height:120px;
+            width:1100px;
+            margin-top: 130px;
+            margin-left: 0px;
+        }
+
+        .flavours-original:hover{
+
+            z-index: 1021;
+        }
+
+        .flavours-tapas:hover{
+
+            z-index: 1021;
+        }
+
+        .flavours-mm:hover{
+
+            z-index: 1021;
+        }
+    </style>
+
+    <style type="text/css">
+        #share #dsq-comments p { width: 100%; position: static; }
+
+        #contact .food { top: -246px; }
+
+            /* #share .feed { z-index: 1050; } */
+        #wrapperLayer{position:fixed;top:0;bottom:0;right:0;z-index:3000;}
+        #wrapperLayer img{margin: auto;left: 0;right: 0;position: fixed;top: 0;bottom: 0;/*max-width: 100%;max-height: 100%;*/}
+        #darkenLayer{position:fixed;top:0;bottom:0;right:0;z-index:2999;width:100%;height:100%;background:url("http://www.gnosh.co.uk/wp-content/themes/gnosh/images/trans-grey.png");}
+        .close-btn-popup{position: fixed;z-index: 3001;width: 780px;font-size: 21px;height: 580px;left: 0;right: 0;top: 0;bottom: 0;margin: auto;margin-right: auto;text-align: right;padding: 10px;}
+        .close-btn{text-decoration: none;color: white;position: relative;z-index: 1;position: relative;z-index: 1;font-family: "Calvert MT","Calvert MT W01",arial,sans-serif;}
+        .arrow-lt-flav{z-index:20;background: url("<%=request.getContextPath()%>/resource/img/arrow-left.png");position: absolute;
+            top:558px;margin-left: -31px;padding-left:38px;padding-top: 50px;}
+        .arrow-rt-flav{z-index:20;background: url("<%=request.getContextPath()%>/resource/img/arrow-right.png");position: absolute;
+            top:560px;margin-left: 524px;padding-left:38px;padding-top: 50px;}
+        .find-out-lnk{position: absolute;bottom: 0;right: 0;margin-bottom: 15px;width: 186px;height: 34px;margin-right: 28px;}
+        .flav-photos-tapas{position: absolute;margin-left: -350px;margin-top: 404px;display:none;}
+        .flav-photos-originals{position: absolute;margin-left: -350px;margin-top: 404px;display:none;}
+        .flav-photos-dippables{position: absolute;margin-left: -350px;margin-top: 404px;display:none;}
+        .flav-photos-mm{position: absolute;margin-left: -350px;margin-top: 404px;display:inline-block;}
+        .flav-slide{list-style: none;position: absolute;margin-top: 340px;width: 500px;margin-left: 500px;}
+        .flav-slide .text_wrap h2{text-align:center;color: #652D16;font-size: 19px;line-height: 22px;margin-bottom: 9px;font-weight: normal;width:400px;}
+        .flav-slide .text_wrap p{text-align:center;color: #554E4E;font-size: 24px;line-height: 30px;margin-bottom: 10px;width:400px;}
+        .flav-slide-pics{position: absolute;margin-left: 0px;margin-top: 50px;}
+        .flav-slide li{display:none;}
+        .flav-slide .display-slide{display:inline-block;}
+        .flav-slide .text_wrap{position: absolute;margin-top: 388px;}
+        .no-list{list-style:none;}
+        #flav_orig_slide{display:none;}
+        #flav_dipp_slide{display:none;}
+        #flav_tap_slide{display:none;}
+    </style>
+
 </head>
 <body>
-<header class="header" id="header">
 
-  <div class="container">
-    <a class="logo" href="/index.jsp"><img src="<c:url value="/resource/pic/logo.png" />" width="80"
-				height="26"><em></em></a>
+<div class="wrapper">
+    <header id="header">
 
-			<ul class="header-nav">
-				<li class="item"><a href="/turnToHomePage.htm" class="trigger">首页</a></li>
-                <li class="item"><a href="/myTinyMooc.htm" class="trigger">我的萌课</a></li>
-				<li class="item course"><a href="goCourseHome.htm" class="trigger" id="course">课程<span
-						class="down-triangle"></span></a>
-					<div class="menus" id="menu">
-						<ul class="clearfix">
-                            <li><a href="goMajorHome.htm?type=摄影">摄影</a></li>
-                            <li><a href="goMajorHome.htm?type=艺术">艺术</a></li>
-                            <li><a href="goMajorHome.htm?type=兴趣">兴趣</a></li>
-                            <li><a href="goMajorHome.htm?type=计算机">计算机</a></li>
-                            <li><a href="goMajorHome.htm?type=文学">文学</a></li>
-                            <li><a href="goMajorHome.htm?type=求职">求职</a></li>
-                            <li><a href="goMajorHome.htm?type=动漫">动漫</a></li>
-                            <li><a href="goMajorHome.htm?type=音乐">音乐</a></li>
-                            <li><a href="goMajorHome.htm?type=其他">其他</a></li>
-						</ul>
-					</div></li>
-				<li class="item"><a href="teamPage.htm" class="trigger">小组</a></li>
-			</ul>
+        <nav>
+            <div class="pages">
+                <ul class="header-nav">
 
-			<form class="search-form" action="MulsearchByKey.htm" method="post">
-				<input type="text" class="search-input" value="" name="keyWord"
-					placeholder="想学什么?搜搜看..."> <input type="submit"
-					class="search-btn" value="">
-			</form>
+                    <li class="item">
+                        <a href="http://localhost:8092/turnToHomePage.htm" target="_blank" class="scroll">首页</a>
+                    </li>
 
-    <div class="user-status-bar">
-          <div class="status-item-wrapper">
-        <a href="" class="status-item notification-remind"></a>
-        <a href="" class="remind-number" id="notification-remind-number" style="display:none;">0</a>
-      </div>
-      <div class="status-item-wrapper">
-        <a href="goPrivateMail.htm" class="status-item message-remind"></a>
-        <c:if test="${sessionScope.sumMail!=0}">
-        <a href="goPrivateMail.htm" class="remind-number" id="message-remind-number" style="display:block;">${sessionScope.sumMail}</a>
-        </c:if>
-      </div>
-      <div class="status-item-wrapper" id="user-nav-item-wrapper">
-        <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user"><img src="<c:url value="${user.headImage.imageSmall}"/>" alt="fanfanle" class="avatar" /><span class="nickname">${sessionScope.user.userName}</span></a>
-        <div class="user-nav-menus">
-        <a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a>
-         <a href="myTinyMooc.htm">我的萌课</a>
-          <a href="account.htm">账户设置</a>
-          <div class="menu-divider"></div>
-          <a href="logout.htm">退出</a>
-        </div>
-      </div>
-        </div>
-  </div>
-</header>
+                    <li class="item course">
+                        <a href="goCourseHome.htm" class="scroll" data-offset="30" id="course">课程
+                            <span class="down-triangle"></span>
+                        </a>
+                        <div class="menus" id="menu" style="display: none;">
+                            <ul class="clearfix">
+                                <li><a href="goMajorHome.htm?type=摄影">摄影</a></li>
+                                <li><a href="goMajorHome.htm?type=艺术">艺术</a></li>
+                                <li><a href="goMajorHome.htm?type=兴趣">兴趣</a></li>
+                                <li><a href="goMajorHome.htm?type=计算机">计算机</a></li>
+                                <li><a href="goMajorHome.htm?type=文学">文学</a></li>
+                                <li><a href="goMajorHome.htm?type=求职">求职</a></li>
+                                <li><a href="goMajorHome.htm?type=动漫">动漫</a></li>
+                                <li><a href="goMajorHome.htm?type=音乐">音乐</a></li>
+                                <li><a href="goMajorHome.htm?type=其他">其他</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <a href="teamPage.htm" class="" data-offset="-40">小组</a>
+                    </li>
+                </ul>
+
+                <form class="search-form" action="MulsearchByKey.htm" method="post">
+                    <input type="text" class="search-input" value name="keyWord" placeholder="想学什么？搜搜看...">
+                    <input type="submit" class="search-btn" value>
+                </form>
+
+
+            </div>
+
+            <div class="social">
+                <div class="rightmove">
+                <div class="user-status-bar">
+                    <div class="status-item-wrapper">
+                        <a href="" class="status-item notification-remind"></a>
+                        <a href="" class="remind-number" id="notification-remind-number" style="display:none;">0</a>
+                    </div>
+                    <div class="status-item-wrapper">
+                        <a href="goPrivateMail.htm" class="status-item message-remind"></a>
+                        邮件数:
+                        <c:if test="${sessionScope.sumMail!=0}">
+                            <a href="goPrivateMail.htm" class="remind-number" id="message-remind-number" style="display:block;">${sessionScope.sumMail}</a>
+                        </c:if>
+                    </div>
+                    <div class="status-item-wrapper" id="user-nav-item-wrapper">
+                        <a href="goPersonal.htm?userId=${sessionScope.user.userId}" class="status-item user-nav-item" id="user">${sessionScope.user.userName}</a>
+                        <div class="user-nav-menus">
+                            <a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a>
+                            <a href="myTinyMooc.htm">我的萌课</a>
+                            <a href="account.htm">账户设置</a>
+                            <div class="menu-divider"></div>
+                            <a href="logout.htm">退出</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+
 </body>
 </html>

@@ -70,7 +70,7 @@ $(function(){
 							<li><a href="">生活</a></li>
 							<li><a href="">职场</a></li>
 							<li><a href="">文化</a></li>
-							<li><a href="">公开课</a></li>
+							<li><a href="">音乐</a></li>
 						</ul>
 					</div></li>
 				<li class="item"><a href="<c:url value="/jsp/team/team.jsp"/>" class="trigger">小组</a></li>

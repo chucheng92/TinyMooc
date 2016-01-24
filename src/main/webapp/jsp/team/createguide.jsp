@@ -6,7 +6,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>创建小组 - 萌课网</title>
-   <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+<link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
 <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
 <link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
@@ -18,10 +18,10 @@
 </head>
 <c:if test="${empty user}" >
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
-    <body class="loginInfo">
+    <body class="loginInfo" style="margin-top: 60px;">
         <h1>&nbsp;&nbsp;温馨提示: 请登录后再进行小组申请哦(●'◡'●)</h1>
-        <div style='visibility:hidden; clear: both; display: block; height: 40px; overflow:hidden'></div>
-        <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+        <div style="visibility:hidden; clear: both; display: block; height: 550px; overflow:hidden"></div>
+        <div style="margin-left: 25%"><jsp:include page="/jsp/include/foot.jsp"></jsp:include></div>
     </body>
 </c:if>
 
@@ -30,7 +30,7 @@
 
   <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container group">
+<section class="container group" style="margin-top: 60px;">
 <div class="container-padding clearfix">
   <h1>创建小组</h1>
   <div class="normal-main">
@@ -63,7 +63,7 @@
     <div class="notice">
       注意事项：<br />
 1、小组主题应为各类知识的交流或分享，不能出现明显广告内容，且不违背国家和地方相关法律法规； <br />
-2、申请小组时请查看<a href="/groups/">现有小组列表</a>，避免出现重合。<br />
+2、申请小组时请查看<a href="teamPage.htm">现有小组列表</a>，避免出现重合。<br />
 3、小组创建后，工作人员将会进行审核，违规小组将被要求进行修改或被删除。
     </div>
 

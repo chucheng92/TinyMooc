@@ -1,23 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ include file="/resource/jspf/commons.jspf"%>
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>头像更换-萌课网</title>
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-<link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
-<script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/resource/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/site_v3.css"/>">
-<link rel="stylesheet" href="<c:url value="/resource/css/scojs.css"/>">
-<script type="text/javascript" src="<c:url value="/resource/js/sco.message.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resource/js/ga.js"/>"></script>
-
     <%-- 头像上传--%>
     <script type="text/javascript">
         $(function() {
@@ -135,7 +124,7 @@
 <body class="flats-theme">
 	<jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-	<section class="container clearfix">
+	<section class="container clearfix" style="margin-top: 60px;">
 		<div id="me" class="me clearfix">
 			<div class="main">
 				<div class="wrap">
