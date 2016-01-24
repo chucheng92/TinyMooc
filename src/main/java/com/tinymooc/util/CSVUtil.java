@@ -6,7 +6,8 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by 哓哓 on 2016/1/14 0014.
+ * Created by 哓哓 on 2016/1/3 0014.
+ * 处理CSV文件读取
  */
 public class CSVUtil {
 
