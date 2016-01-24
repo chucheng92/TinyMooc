@@ -1,6 +1,8 @@
 *.iml
 !tinymooc.iml
 !TinyMooc.iml
-.idea/*
+.idea/
 *.class
 /target/*
+
+.idea/workspace.xml
