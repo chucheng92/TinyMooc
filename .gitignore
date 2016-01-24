@@ -1,5 +1,4 @@
 *.iml
 !TinyMooc.iml
-!tinymood.iml
 *.class
 /target/*

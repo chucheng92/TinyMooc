@@ -57,7 +57,7 @@
     </div>
 
     <div class="right-container">
-        <div class="right-top-banner gnews-banner-major">
+        <div class="right-top-banner gnews-banner-account">
             <div></div>
         </div>
         <div class="right-top"></div>

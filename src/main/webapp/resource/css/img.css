@@ -79,3 +79,56 @@ margin-left: -10px;
     width: 188px;
     background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/24/005912gsp9zypdps8gzg2g.png) no-repeat;
 }
+
+.gnews-banner-mail {
+    background: url(/resource/img/tmail.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+}
+.gnews-banner-mail div {
+    background: url(/resource/img/mail.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner-account {
+    background: url(/resource/img/taccount.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+}
+.gnews-banner-account div {
+    background: url(/resource/img/account.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner-note {
+    background: url(/resource/img/tnote.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+}
+.gnews-banner-note div {
+    background: url(/resource/img/note.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner-friendlist {
+    background: url(/resource/img/tfriendlist.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+}
+.gnews-banner-friendlist div {
+    background: url(/resource/img/friendlist.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}

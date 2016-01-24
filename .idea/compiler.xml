@@ -23,11 +23,9 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="tinymooc" />
-        <module name="TinyMooc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TinyMooc" target="1.7" />
       <module name="tinymooc" target="1.7" />
     </bytecodeTargetLevel>
   </component>

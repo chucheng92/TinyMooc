@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="TinyMooc:war">
+  <artifact type="war" name="tinymooc:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="tinymooc.war">
-      <element id="artifact" artifact-name="TinyMooc:war exploded" />
+      <element id="artifact" artifact-name="tinymooc:war exploded" />
     </root>
   </artifact>
 </component>
