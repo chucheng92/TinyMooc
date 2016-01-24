@@ -95,7 +95,7 @@
     <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 </c:if>
 
-
+<div class="movedown"></div>
 <div class="wrapper">
 <div class="left">
     <header>

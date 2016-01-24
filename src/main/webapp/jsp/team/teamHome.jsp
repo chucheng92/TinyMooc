@@ -9,6 +9,8 @@
     <title>${userTeam2.team.teamName} - 萌课网</title>
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
     <script type="text/javascript">
         $(function () {
             $(".btn.btn-info.btn-small").click(function () {
@@ -45,7 +47,7 @@
     </script>
 </head>
 
-<body class="lily-theme">
+<body>
 <c:if test="${empty user.userId}">
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
 </c:if>

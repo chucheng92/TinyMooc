@@ -10,6 +10,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>${userTeam2.team.teamName} - 萌课网</title>
   <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
  
  <script type="text/javascript">
 $(function(){
@@ -40,7 +42,7 @@ $(function(){
 </script>
 
 </head>
-<body class="lily-theme">
+<body>
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
