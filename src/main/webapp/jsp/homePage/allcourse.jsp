@@ -43,7 +43,7 @@
             <div class="middle">
 
 
-                <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
+                <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables">
                     <h2><font color="black">课程频道</font></h2>
                     <ul class="cells channel-cells">
                         <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
@@ -68,11 +68,14 @@
                     <hr class="custom-hr">
                 </article>
 
-                <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
+                <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables">
                     <div class="channel-row channel-straight-row clearfix">
                         <div class="flat">
                             <div class="clearfix">
                                 <h2 class="fl"><font color="black">全部课程</font></h2>
+                                <div class="discuss-list2">
+                                    <span  class="metas" style="margin-left: 10px;">排序:&nbsp;&nbsp;<a href="goCourseHome.htm">默认</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=grade">评分</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=time">最新</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=hot">最热</a></span>
+                                </div>
                                 <a href="" class="fr more"><font color="black">» 更多</font></a>
                             </div>
                             <ul class="cells cells-middle">
