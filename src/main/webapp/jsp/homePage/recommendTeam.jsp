@@ -38,7 +38,7 @@
     </div>
 
     <div class="my-middle">
-        <div class="right-top-banner gnews-banner">
+        <div class="right-top-banner gnews-banner-mytinymooc">
             <div></div>
         </div>
         <div class="right-top"></div>
@@ -97,6 +97,7 @@
     <div class="my-right">
         <header>
             <div class="movedown"></div>
+
             <div class="main-side">
 
                 <div class="mod checkin-mod clearfix" id="checkin-mod" style="">
@@ -108,6 +109,9 @@
                     </div>
                 </div>
 
+                <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
+
+
 
                 <div class="mod">
                     <div class="mod-head"><h3><span>创建课程</span></h3></div>
@@ -118,8 +122,9 @@
                     <div class="clearfix"><a href="howToCreate.htm" class="fr">如何创建课程？</a></div>
                 </div>
 
+                <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
 
-
+                <%--达人列表 expertList--%>
                 <div class="mod">
                     <div class="mod-head">
                         <a href="javascript:;" id="change-recommend-daren-btn" class="more">换一组</a>
@@ -129,16 +134,22 @@
                         <c:forEach items="${expertList}" var="expert">
                             <li style="display:block;">
                                 <div class="imageblock clearfix">
-                                    <div class="imageblock-image"><a href="goPersonal.htm?userId=${expert.userId}" class="show-user-card" ><img src="<c:url value="${expert.headImage.imageMid}"/>" title="${expert.userName}"></a>
+                                    <div class="imageblock-image">
+                                        <a href="goPersonal.htm?userId=${expert.userId}" class="show-user-card" >
+                                            <img src="<c:url value="${expert.headImage.imageSmall}"/>" title="${expert.userName}"></a>
                                     </div>
                                     <div class="imageblock-content">
-                                        <div class="mbs"><a href="goPersonnal.htm?userId=${expert.userId}" class="show-user-card " title="${expert.userName}">${expert.userName}</a></div>
+                                        <div class="mbs"><a href="goPersonal.htm?userId=${expert.userId}" class="show-user-card " title="${expert.userName}">${expert.userName}</a></div>
                                     </div>
                                 </div>
                             </li>
                         </c:forEach>
                     </ul>
                 </div>
+
+                <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
+
+                <%--标签列表 labelList--%>
                 <div class="mod">
                     <div class="mod-head">
                         <h3><span>热门标签</span></h3>

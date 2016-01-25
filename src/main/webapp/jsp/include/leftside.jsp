@@ -8,7 +8,6 @@
 <div class="wrapper">
     <div class="left">
         <header>
-            <div class="logo"></div>
 
             <div class="avatar-mod clearfix">
                 <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>"/></a>

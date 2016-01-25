@@ -337,12 +337,13 @@ textarea.placeholder {
 }
 .mod {
 	margin-bottom: 15px;
+    margin-top:40px;
 }
 .mod h2 {
 	margin: 0px 0px 10px; padding: 0px; border: currentColor; color: rgb(51, 51, 51); line-height: 1; font-size: 14px; font-weight: bold;
 }
 .mod h3 {
-	margin: 0px 0px 10px; padding: 0px; border: currentColor; color: rgb(51, 51, 51); line-height: 1; font-size: 14px; font-weight: bold;
+	margin: 0px 0px 10px; padding: 0px; border: currentColor; color: #ffffff; line-height: 1; font-size: 14px; font-weight: bold;
 }
 .mod h2.tabbed a {
 	padding: 0px 10px 4px 0px; color: rgb(221, 221, 221); font-weight: normal; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 2px; border-bottom-style: solid;
@@ -3417,7 +3418,7 @@ img {
 	width: 640px; float: right;
 }
 .normal-main {
-	width: 640px; float: left;
+	width: 524px; float: left;
 }
 .normal-side {
 	width: 260px; float: right;
@@ -3571,13 +3572,13 @@ img {
 	width: 690px; border-left-color: rgb(238, 238, 238); border-left-width: 1px; border-left-style: solid; float: right;
 }
 .uinfo-mod {
-	padding: 0px 5px; font-size: 12px;
+	padding: 0px 5px; font-size: 12px;color: #ffffff;
 }
 .uinfo-mod .info-item {
 	padding: 5px 0px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted; word-break: break-all;
 }
 .uinfo-mod .info-item-name {
-	color: rgb(153, 153, 153);
+	color: #ffffff;
 }
 .uinfo-mod .daren-about {
 	background: rgb(249, 249, 249); padding: 8px 10px;
@@ -3611,6 +3612,9 @@ img {
 }
 .upage-content .course-cards li {
 	margin-right: 30px;
+}
+.upage-content .mod h3 {
+    color: #111111;
 }
 .feeds li {
 	border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid;

@@ -66,42 +66,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="img.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/img.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43437862" vertical-offset="1649" max-vertical-offset="2533">
+              <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="120" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="34062" max-vertical-offset="34731">
-              <caret line="2022" column="21" selection-start-line="2022" selection-start-column="21" selection-end-line="2022" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/user.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="4114">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/img.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="831" max-vertical-offset="1462">
-              <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myTinyMooc.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/homePage/myTinyMooc.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="2907">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="62" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="33864" max-vertical-offset="34748">
+              <caret line="1992" column="13" selection-start-line="1992" selection-start-column="13" selection-end-line="1992" selection-end-column="13" />
+              <folding>
+                <marker date="1453655639016" expanded="true" signature="48990:49011" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,18 +91,98 @@
       <file leaf-file-name="site.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/site.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="67888" max-vertical-offset="68493">
-              <caret line="4016" column="12" selection-start-line="4016" selection-start-column="12" selection-end-line="4016" selection-end-column="12" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="58208" max-vertical-offset="68561">
+              <caret line="3424" column="1" selection-start-line="3424" selection-start-column="1" selection-end-line="3424" selection-end-column="1" />
+              <folding>
+                <marker date="1453658235223" expanded="true" signature="8977:9016" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="86757:86786" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="86792:86822" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="86830:86853" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="86859:86886" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="86894:86919" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="86961:87017" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87044:87103" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87203:87224" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87234:87309" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87322:87353" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87378:87392" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87410:87446" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87539:87565" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87596:87729" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87741:87754" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87774:87808" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87879:87919" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="87990:88081" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88094:88110" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88118:88141" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88151:88182" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88202:88227" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88296:88323" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88353:88364" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88384:88406" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88508:88531" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88594:88613" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88632:88656" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88715:88738" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88759:88778" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88793:88828" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88878:88914" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="88974:88984" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89003:89049" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89074:89094" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89261:89308" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89332:89365" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89462:89493" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89508:89529" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89577:89608" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89675:89679" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89702:89730" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89950:89958" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="89977:90003" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90025:90064" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90176:90212" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90387:90435" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90464:90588" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90603:90699" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90823:90880" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90909:90947" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="90987:91030" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91064:91099" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91136:91161" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91192:91274" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91311:91332" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91346:91413" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91429:91493" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91512:91526" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91540:91563" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91643:91696" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91716:91787" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="91800:92009" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="92025:92154" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="92173:92241" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="92333:92466" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="92481:92584" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="92593:92627" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="92838:92990" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93013:93038" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93143:93181" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93210:93307" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93322:93365" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93495:93574" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93593:93643" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93665:93691" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93707:93748" placeholder="{...}" />
+                <marker date="1453658235223" expanded="true" signature="93781:93795" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leftside.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/include/leftside.jsp">
+      <file leaf-file-name="courseDetailPage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/course/courseDetailPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5168919" vertical-offset="0" max-vertical-offset="986">
-              <caret line="18" column="122" selection-start-line="18" selection-start-column="122" selection-end-line="18" selection-end-column="122" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="5967">
+              <caret line="12" column="0" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,21 +206,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/tinymooc/handler/label/tag/LabelTag.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tinymooc/handler/upload/controller/UploadVideoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tinymooc/handler/course/controller/CourseController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/course/createLesson.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tinymooc/handler/boot/PrepareData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tinymooc/handler/team/controller/TeamController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/team/creatediscuss.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/user.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/team/team.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/userNote.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/userGroup.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/help/helpLevel.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/include/foot.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/course/courseCreate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/userFollow.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/userFans.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tinymooc/handler/homePage/controller/HomePageController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/team/createPublicTeam.jsp" />
@@ -178,28 +235,41 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resource/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/css/site_v2.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/course/howToCreate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/img.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/course/myCourse.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/privateMail/mailList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/attention/myAttention.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/attention/myFans.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/homePage/recommendTeam.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/note/myNote.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/privateMail/sendMail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/account.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountAvatar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountLabel.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountPassword.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountUserName.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/course/myCourse.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/site.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/homePage/myTinyMooc.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/attention/myFans.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/note/myNote.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/include/leftside.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/attention/myAttention.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/homePage/myTinyMooc.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/homePage/recommendTeam.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/userfans.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/userFollow.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/usernote.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/userPage/usergroup.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/site.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/img.css" />
       </list>
     </option>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:\tinymooc\maven3.1.0\apache-maven-3.1.0" />
+        <option name="userSettingsFile" value="E:\tinymooc\maven3.1.0\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -248,8 +318,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-44" />
-    <option name="y" value="204" />
+    <option name="x" value="161" />
+    <option name="y" value="15" />
     <option name="width" value="1780" />
     <option name="height" value="1022" />
   </component>
@@ -304,6 +374,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -406,6 +477,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tinymooc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TinyMooc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="jsp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -437,6 +538,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tinymooc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TinyMooc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="team" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -520,7 +651,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -862,11 +992,15 @@
       <workItem from="1453618760140" duration="524000" />
       <workItem from="1453619297426" duration="1983000" />
       <workItem from="1453640323105" duration="276000" />
+      <workItem from="1453641971240" duration="2085000" />
+      <workItem from="1453651786939" duration="5702000" />
+      <workItem from="1453659380769" duration="553000" />
+      <workItem from="1453695955867" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85149000" />
+    <option name="totallyTimeSpent" value="93811000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -889,7 +1023,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-44" y="204" width="1780" height="1022" extended-state="0" />
+    <frame x="161" y="15" width="1780" height="1022" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -901,12 +1035,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11860465" sideWeight="0.5525727" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.118023254" sideWeight="0.5525727" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25842696" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16453488" sideWeight="0.522673" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19709302" sideWeight="0.522673" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18974751" sideWeight="0.47607654" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -914,12 +1047,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2575251" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1041,27 +1175,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/course/courseDetailPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.625" vertical-offset="0" max-vertical-offset="8073">
-          <caret line="12" column="0" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/course/lesson.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.90625" vertical-offset="0" max-vertical-offset="11293">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/team/teamHome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.625" vertical-offset="0" max-vertical-offset="5980">
-          <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/team/discuss.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4375" vertical-offset="966" max-vertical-offset="3381">
@@ -1130,31 +1243,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/privateMail/mailList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.03125" vertical-offset="506" max-vertical-offset="2277">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/homePage/majorHome.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5528455" vertical-offset="2279" max-vertical-offset="7406">
           <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/attention/myFans.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.71875" vertical-offset="920" max-vertical-offset="2806">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/homePage/recommendTeam.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.34375" vertical-offset="552" max-vertical-offset="3841">
-          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1165,101 +1257,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/note/myNote.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1875" vertical-offset="943" max-vertical-offset="3703">
-          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/privateMail/sendMail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5625" vertical-offset="517" max-vertical-offset="2346">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/account.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1875" vertical-offset="1035" max-vertical-offset="4278">
-          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountAvatar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.71875" vertical-offset="3289" max-vertical-offset="5957">
-          <caret line="144" column="38" selection-start-line="144" selection-start-column="38" selection-end-line="144" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountLabel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1875" vertical-offset="575" max-vertical-offset="2461">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountPassword.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.09375" vertical-offset="942" max-vertical-offset="2967">
-          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountRevise.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3726">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountUserName.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.71875" vertical-offset="1219" max-vertical-offset="2806">
-          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/userFollow.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.5625" vertical-offset="690" max-vertical-offset="2024">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/usergroup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="43.125" vertical-offset="1380" max-vertical-offset="2139">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/usernote.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.875" vertical-offset="759" max-vertical-offset="4738">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/userfans.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7479675" vertical-offset="276" max-vertical-offset="2070">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/course/courses.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.90625" vertical-offset="0" max-vertical-offset="1886">
           <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/attention/myAttention.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2074">
-          <caret line="17" column="0" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1270,58 +1271,276 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/img.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="831" max-vertical-offset="1462">
-          <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/homePage/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.32066116" vertical-offset="415" max-vertical-offset="1020">
           <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/site.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/privateMail/mailList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="67888" max-vertical-offset="68493">
-          <caret line="4016" column="12" selection-start-line="4016" selection-start-column="12" selection-end-line="4016" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="-3.3392856" vertical-offset="425" max-vertical-offset="1683">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/style.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/privateMail/sendMail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34062" max-vertical-offset="34731">
-          <caret line="2022" column="21" selection-start-line="2022" selection-start-column="21" selection-end-line="2022" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="544" max-vertical-offset="1734">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/user.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/account.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="4114">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="0.1722973" vertical-offset="918" max-vertical-offset="3162">
+          <caret line="60" column="57" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/homePage/myTinyMooc.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountUserName.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="2907">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.3733108" vertical-offset="901" max-vertical-offset="2074">
+          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountRevise.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1199324" vertical-offset="663" max-vertical-offset="2754">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1722973" vertical-offset="918" max-vertical-offset="2193">
+          <caret line="60" column="57" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountLabel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1722973" vertical-offset="578" max-vertical-offset="1819">
+          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/accountAvatar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1722973" vertical-offset="2431" max-vertical-offset="4403">
+          <caret line="149" column="61" selection-start-line="149" selection-start-column="61" selection-end-line="149" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/attention/myFans.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1150" max-vertical-offset="2806">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/note/myNote.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1472" max-vertical-offset="3703">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/course/lesson.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.71875" vertical-offset="230" max-vertical-offset="11293">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/team/teamHome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.71875" vertical-offset="253" max-vertical-offset="5980">
+          <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/course/courseDetailPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="8073">
+          <caret line="12" column="0" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/include/leftside.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5168919" vertical-offset="0" max-vertical-offset="986">
-          <caret line="18" column="122" selection-start-line="18" selection-start-column="122" selection-end-line="18" selection-end-column="122" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="1311">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="45540" max-vertical-offset="47012">
+          <caret line="1992" column="13" selection-start-line="1992" selection-start-column="13" selection-end-line="1992" selection-end-column="13" />
+          <folding>
+            <marker date="1453655639016" expanded="true" signature="48990:49011" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/attention/myAttention.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5027027" vertical-offset="2436" max-vertical-offset="2806">
+          <caret line="114" column="6" selection-start-line="17" selection-start-column="0" selection-end-line="114" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/homePage/recommendTeam.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6891892" vertical-offset="2919" max-vertical-offset="4094">
+          <caret line="138" column="97" selection-start-line="138" selection-start-column="97" selection-end-line="138" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/homePage/myTinyMooc.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67027026" vertical-offset="2926" max-vertical-offset="4025">
+          <caret line="138" column="90" selection-start-line="138" selection-start-column="90" selection-end-line="138" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/userfans.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3933" max-vertical-offset="4393">
+          <caret line="182" column="6" selection-start-line="15" selection-start-column="0" selection-end-line="182" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/userFollow.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3933" max-vertical-offset="4347">
+          <caret line="180" column="6" selection-start-line="14" selection-start-column="0" selection-end-line="180" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/usernote.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6829" max-vertical-offset="7199">
+          <caret line="305" column="0" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/usergroup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35945946" vertical-offset="3777" max-vertical-offset="4485">
+          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/userPage/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62702703" vertical-offset="6001" max-vertical-offset="6371">
+          <caret line="271" column="7" selection-start-line="271" selection-start-column="7" selection-end-line="271" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="58208" max-vertical-offset="68561">
+          <caret line="3424" column="1" selection-start-line="3424" selection-start-column="1" selection-end-line="3424" selection-end-column="1" />
+          <folding>
+            <marker date="1453658235223" expanded="true" signature="8977:9016" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="86757:86786" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="86792:86822" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="86830:86853" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="86859:86886" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="86894:86919" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="86961:87017" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87044:87103" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87203:87224" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87234:87309" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87322:87353" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87378:87392" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87410:87446" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87539:87565" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87596:87729" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87741:87754" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87774:87808" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87879:87919" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="87990:88081" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88094:88110" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88118:88141" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88151:88182" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88202:88227" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88296:88323" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88353:88364" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88384:88406" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88508:88531" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88594:88613" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88632:88656" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88715:88738" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88759:88778" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88793:88828" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88878:88914" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="88974:88984" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89003:89049" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89074:89094" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89261:89308" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89332:89365" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89462:89493" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89508:89529" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89577:89608" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89675:89679" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89702:89730" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89950:89958" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="89977:90003" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90025:90064" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90176:90212" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90387:90435" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90464:90588" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90603:90699" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90823:90880" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90909:90947" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="90987:91030" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91064:91099" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91136:91161" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91192:91274" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91311:91332" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91346:91413" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91429:91493" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91512:91526" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91540:91563" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91643:91696" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91716:91787" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="91800:92009" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="92025:92154" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="92173:92241" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="92333:92466" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="92481:92584" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="92593:92627" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="92838:92990" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93013:93038" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93143:93181" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93210:93307" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93322:93365" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93495:93574" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93593:93643" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93665:93691" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93707:93748" placeholder="{...}" />
+            <marker date="1453658235223" expanded="true" signature="93781:93795" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/img.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43437862" vertical-offset="1649" max-vertical-offset="2533">
+          <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="120" selection-end-column="15" />
           <folding />
         </state>
       </provider>
