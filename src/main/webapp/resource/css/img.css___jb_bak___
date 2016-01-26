@@ -84,14 +84,14 @@ margin-left: -10px;
     background: url(/resource/img/tmail.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 .gnews-banner-mail div {
     background: url(/resource/img/mail.png) no-repeat;
     width: 316px;
     height: 205px;
     position: absolute;
-    left:-40px;
+    left:-20px;
     top: -30px;
 }
 .gnews-banner-account {

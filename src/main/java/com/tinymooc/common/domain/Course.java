@@ -41,7 +41,7 @@ public class Course implements java.io.Serializable {
     public Course(String courseId, Course course, String courseTitle,
                   String courseIntro, String type, Integer scanNum,
                   Integer lessonNum, Date applyDate, Date approveDate,
-                  String courseState, Set<UserCourse> userCourses, Set<Course> courses) {
+                  String courseState, String logoUrl, Double totalMark, Set<UserCourse> userCourses, Set<Course> courses) {
         this.courseId = courseId;
         this.course = course;
         this.courseTitle = courseTitle;
@@ -52,6 +52,8 @@ public class Course implements java.io.Serializable {
         this.applyDate = applyDate;
         this.approveDate = approveDate;
         this.courseState = courseState;
+        this.logoUrl = logoUrl;
+        this.totalMark = totalMark;
         this.userCourses = userCourses;
         this.courses = courses;
     }

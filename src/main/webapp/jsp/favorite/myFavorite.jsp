@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
-<%@taglib prefix="sicd" uri="/sicd-tags"%>
-<%@ include file="/resource/jspf/commons.jspf" %>
+<%@taglib prefix="sicd" uri="/sicd-tags"%> 
+<%@ include file="/resource/jspf/commons.jspf"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,7 +9,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>我的收藏夹 - 萌课网</title>
   <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-
 <script type="text/javascript">
   $(function(){
        $("a.url").click(function(){
@@ -82,7 +81,7 @@
       <div class="avatar-mod clearfix">
         <a href="user.jsp" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
         <div class="infos">
-          <div class="nickname"><a href="user.jsp" title="fanfanle">${user.nickname}</a></div>
+          <div class="nickname"><a href="user.jsp" title="fanfanle">${user.userName}</a></div>
           <div class="icons">
             <a class="user-level user-level-6" title="努力升级吧!" href="turnToHelpPage.htm" target="_blank">${level.lv}级</a>
             <a class="user-level user-level-6">${level.title}</a>
@@ -100,14 +99,14 @@
 
       <div class="menu-mod clearfix">
          <ul class="menus">
-          <li ><a href="myTinyMooc.htm"><i class="feature-icon feature-icon-home"></i>我的萌课</a></li>
+          <li ><a href=myTinyMooc.htm"><i class="feature-icon feature-icon-home"></i>我的萌课</a></li>
           <li ><a href="courseList.htm"><i class="feature-icon feature-icon-teach"></i>课程管理</a></li>
           <li ><a href="goNote.htm"><i class="feature-icon feature-icon-note"></i>笔记</a></li>
           <%--<li ><a href="challenge.htm"><i class="feature-icon feature-icon-faq"></i>微挑战</a></li>--%>
           <%--<li ><a href="rank.htm"><i class="feature-icon feature-icon-faq"></i>微排行</a></li>--%>
           <%--<li ><a href="myrank.htm"><i class="feature-icon feature-icon-faq"></i>我的排行</a></li>--%>
           <li ><a href="teamPage.htm"><i class="feature-icon feature-icon-group"></i>小组</a></li>
-          <li ><a href="shop.htm"><i class="feature-icon feature-icon-faq"></i>商城</a></li>
+          <%--<li ><a href="shop.htm"><i class="feature-icon feature-icon-faq"></i>商城</a></li>--%>
           <%--<li ><a href="myprop.htm"><i class="feature-icon feature-icon-faq"></i>我的道具</a></li>--%>
           <li ><a href="myFavorite.htm"><i class="feature-icon feature-icon-favorite"></i>收藏夹</a></li>
         </ul>

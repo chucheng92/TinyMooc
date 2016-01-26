@@ -27,23 +27,23 @@
             <div class="movedown"></div>
             <div class="side">
 
-                <div class="avatar-mod clearfix">
-                    <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
-                    <div class="infos">
-                        <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
-                        <div class="icons">
-                            <a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>
-                            <a class="user-level user-level-6"  href="">${level.title}</a>
-                        </div>
-                    </div>
-                </div>
+                <%--<div class="avatar-mod clearfix">--%>
+                    <%--<a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>--%>
+                    <%--<div class="infos">--%>
+                        <%--<div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>--%>
+                        <%--<div class="icons">--%>
+                            <%--<a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>--%>
+                            <%--<a class="user-level user-level-6"  href="">${level.title}</a>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
 
-                <div class="stats-mod">
-                    <ul class="user-stats clearfix">
-                        <li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>
-                        <li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>
-                    </ul>
-                </div>
+                <%--<div class="stats-mod">--%>
+                    <%--<ul class="user-stats clearfix">--%>
+                        <%--<li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>--%>
+                        <%--<li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>--%>
+                    <%--</ul>--%>
+                <%--</div>--%>
 
                 <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
 
@@ -84,7 +84,7 @@
 
                             <li class="msg-row">
                                 <div class="imageblock clearfix">
-                                    <div class="imageblock-image"><a href="http://www.howzhi.com/u/1359470/"><img src="<c:url value="${reply.userBySenderId.headImage.imageMid}"/>" class="img"></a></div>
+                                    <div class="imageblock-image"><img src="<c:url value="${reply.userBySenderId.headImage.imageSmall}"/>" class="img"></div>
                                     <div class="imageblock-content">
                                         <div class="mbs"><a href="#" class="fr mls">回复</a><span class="time fr"><fmt:formatDate value="${reply.sendDate}" pattern="yyyy/MM/dd:HH:mm:ss"/></span><a href="#">${reply.userBySenderId.userName} TO ${reply.userByReceiverId.userName}</a></div>
                                         <div class="editor-content">${reply.content}</div>
