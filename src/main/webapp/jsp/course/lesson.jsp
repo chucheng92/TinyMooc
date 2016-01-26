@@ -14,6 +14,17 @@
 
     <script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
 
+    <style type="text/css">
+        .why-gnosh-movies2{
+            background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
+            height:50px;
+            width:670px;
+            margin-bottom: 30px;
+            margin-top: -10px;
+            margin-left: 0px;
+        }
+    </style>
+
     <script type="text/javascript">
         $(function () {
 
@@ -174,44 +185,10 @@
 <section class="container course" style="margin-top: 60px;">
 
     <div id="course-main">
-        <div id="course-header"
-             class="flat course-header course-small-header">
-            <div class="imageblock clearfix">
-                <div class="imageblock-image">
-                    <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}" target="_blank"><img
-                            src="/resource/pic/huoban.png" width="48" heiht="48"
-                            alt="${currentCourse.course.courseTitle}"></a>
-                </div>
-                <div class="imageblock-content">
-
-                    <h1 class="mbm">
-                        <a href="courseDetailPage.htm?courseId=${currentCourse.course.courseId}" target="_blank">${currentCourse.course.courseTitle}</a>
-                    </h1>
-
-                    <div style="margin-left: -5px;">
-                        <div class="clearfix mtm">
-
-                            <div class="pills" style="margin-bottom: 0px">
-                                <a href="">学员(${studentNum})</a>
-                            </div>
-                        </div>
-                        <div class="action-bar">
-                            <c:if test="${currentCourse.user.userId ne user.userId}">
-                                <p>本课时的进度</p>
-                                <button class="btn btn-large btn-success" id="start"
-                                        onclick="test()">${lessonLearnState}</button>
-                            </c:if>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <div>
-
             <h1>
-                <span class="lesson-index" id="index">章节</span>
+                <span class="lesson-index" id="index">Java入门到精通</span>
                 <span class="lesson-title">${lesson.courseTitle}</span>
             </h1>
                             <div style="float: right; margin-bottom: 2px;">
@@ -243,8 +220,13 @@
             </div>
         </div>
 
+        <div class="why-gnosh-movies2">
+        </div>
+
         <c:if test="${commentNum eq 0}">
-            <h3>暂时还没有评论</h3>
+            <div class="notuntil">
+                <h3>暂时还没有评论</h3>
+            </div>
         </c:if>
         <c:if test="${commentNum>0}">
             <div class="flat">
@@ -253,7 +235,7 @@
                     <c:forEach items="${singleCommentList}" var="cm1">
                         <li class="reply" data-author="${cm1.user.userName}">
                             <div class="who">
-                                <img src="${cm1.user.headImage.imageMid}"
+                                <img src="${cm1.user.headImage.imageSmall}"
                                                                        alt="${cm1.user.userName}">
                             </div>
                             <div class="mbs">
@@ -372,6 +354,38 @@
     </div>
     <div id="course-side">
 
+        <div class="flat">
+            <h3>课程创建人</h3>
+
+            <div class="course-author-block imageblock clearfix">
+                <div class="imageblock-image"><a href="goPersonnal.htm?userId=${currentCourse.user.userId}"
+                                                 class="show-user-card"><img
+                        src="${currentCourse.user.headImage.imageMid}" alt="${currentCourse.user.userName}"></a>
+                </div>
+                <div class="imageblock-content">
+
+                    <c:if test="${currentCourse.user.userId ne user.userId}">
+                        <c:if test="${isAttention==0}">
+                            <a href="" class="btn btn-small action-ajax fr"><i class="icon-plus"></i> 关注TA</a>
+                        </c:if>
+                        <c:if test="${isAttention==1}">
+                            <a href="" class="btn btn-small disabled action-ajax fr"><i class="icon-plus"></i> 已关注</a>
+                        </c:if>
+                    </c:if>
+                    <div class="userName"><a href="goPersonnal.htm?userId=${currentCourse.user.userId}"
+                                             class="show-user-card"
+                                             title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
+                            class="o-ver-icn"></span></a></div>
+                    <div>
+                        <a href="" class="stats"><em>课程&nbsp;0${creatorCourseNum} </em></a>
+                        <a href="" class="stats"><em>粉丝&nbsp;${fansNum} </em></a>
+                        <a href="" class="stats"><em>关注&nbsp;${followNum} </em></a>
+                    </div>
+                </div>
+                <div class="mtm gray">${currentCourse.user.intro}</div>
+            </div>
+        </div>
+
         <div class="flat lesson-summary-flat">
             <h2>课时简介</h2>
 
@@ -401,47 +415,6 @@
             </div>
         </div>
 
-
-        <div class="flat">
-            <h3>课程创建人</h3>
-
-            <div class="course-author-block imageblock clearfix">
-                <div class="imageblock-image">
-                    <a href="" class="show-user-card" data-uid="7800"><img
-                            src="${currentCourse.user.headImage.imageMid}"></a>
-                </div>
-                <div class="imageblock-content">
-
-                    <c:if test="${user.userId!=currentCourse.user.userId}">
-                        <c:if test="${isAttention==0}">
-                            <button id="follow-user" class="btn btn-small action-ajax fr"><i class="icon-plus"></i> 关注TA
-                            </button>
-                            <a href="" id="unfollow-user" class="btn btn-small disabled action-ajax fr"
-                               style="display: none;">已关注</a>
-                        </c:if>
-                        <c:if test="${isAttention==1}">
-                            <button id="follow-user" class="btn btn-small action-ajax fr" style="display: none;"><i
-                                    class="icon-plus"></i> 关注TA
-                            </button>
-                            <a href="" id="unfollow-user" class="btn btn-small disabled action-ajax fr"> 已关注</a>
-                        </c:if>
-                    </c:if>
-                    <div class="nickname"><a href="goPersonal.htm?userId=${currentCourse.user.userId}" class="show-user-card" data-uid="1295165"
-                                             title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
-                            class="o-ver-icn" title="${currentCourse.user.intro}"></span></a></div>
-                    <div>
-                        <a href="/u/tsingyuan/library?tab=created" class="stats"><em>4</em> 课程</a>
-                        <a href="/u/tsingyuan/fans" class="stats">
-                            <em>${fansNum}</em> 粉丝</a>
-                        <a href="/u/tsingyuan/fans" class="stats">
-                            <em>${followNum}</em> 好友</a>
-                    </div>
-                    <div class="mtm gray">${currentCourse.user.intro}</div>
-                </div>
-
-            </div>
-        </div>
-
         <div class="flat">
             <c:if test="${learned==0}">暂无用户学过</c:if>
             <c:if test="${learned>0}">
@@ -466,7 +439,11 @@
 
     </div>
 </section>
-<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+
+<div class="wrapper">
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+</div>
+
 </body>
 <script type="text/javascript">
     jQuery(function ($) {

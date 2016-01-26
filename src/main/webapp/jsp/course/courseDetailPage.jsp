@@ -11,6 +11,16 @@
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
 
+    <style type="text/css">
+        .why-gnosh-movies2{
+            background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
+            height:50px;
+            width:1100px;
+            margin-bottom: 30px;
+            margin-top: -10px;
+            margin-left: 0px;
+        }
+    </style>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -86,10 +96,6 @@
             </c:if>
         });
 
-        //$("#status").children("li.lili").each(function(){
-        //var a=$(this).children(".lesson-learned-status").html();
-        //alert("a");
-        //});
     </script>
 
 </head>
@@ -209,6 +215,9 @@
                 </div>
             </div>
 
+            <div class="why-gnosh-movies2">
+            </div>
+
             <div>
                 <div class="clearfix mtm">
                     <div class="pills" style="margin-bottom:0px">
@@ -303,7 +312,7 @@
                     <c:forEach items="${userLearnCourseList}" var="course">
                         <li class="grid">
                             <a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card"><img
-                                    src="${course.user.headImage.imageMid}" title="${course.user.userName}"></a>
+                                    src="${course.user.headImage.imageSmall}" title="${course.user.userName}"></a>
 
                             <div><a href="" class="show-user-card"
                                     title="${course.user.userName}">${course.user.userName}</a></div>
@@ -317,16 +326,16 @@
             <h2>已完成该课程的学员</h2>
             <ul class="grids smallpic-grids">
                 <c:if test="${empty userEndCourseList}">
-                    暂无用户学完此课程
+                    <p>暂无用户学完此课程</p>
                 </c:if>
                 <c:if test="${!empty userEndCourseList}">
                     <c:forEach items="${userEndCourseList}" var="course">
                         <li class="grid">
                             <a href="" class="show-user-card"><img src="${course.user.userName}"
-                                                                   alt="${course.user.headImage.imageMid}"></a>
+                                                                   alt="${course.user.headImage.imageSmall}"></a>
 
                             <div><a href="" class="show-user-card"
-                                    title="${course.user.headImage.imageMid}">${course.user.headImage.imageMid}</a>
+                                    title="${course.user.headImage.imageSmall}">${course.user.headImage.imageSmall}</a>
                             </div>
                         </li>
                     </c:forEach>
@@ -340,7 +349,9 @@
     </div>
 </section>
 
-<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+<div class="wrapper">
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+</div>
 
 </body>
 </html>

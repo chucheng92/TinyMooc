@@ -138,7 +138,7 @@
 
                 <hr class="custom-hr">
 
-                <div class="normal-main">
+                <div class="normal-main-1">
                     <div class="tabs clearfix mtl mbm">
                         <ul>
                             <li class="on"><a href="goPersonalAtt.htm?userId=${user1.userId}">关注的人</a></li>
