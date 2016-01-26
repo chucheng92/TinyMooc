@@ -66,12 +66,9 @@
                     2、申请小组时请查看<a href="teamPage.htm">现有小组列表</a>，避免出现重合。<br />
                     3、小组创建后，工作人员将会进行审核，违规小组将被要求进行修改或被删除。
                 </div>
-
             </div>
-
         </div>
     </section>
-
     <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
     </body>
 </c:if>

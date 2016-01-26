@@ -77,7 +77,6 @@
 
                 </div>
 
-
                 <div class="mod">
                     <h3>关注</h3>
 
@@ -156,7 +155,7 @@
 
                             <div class="imageblock clearfix mvm">
                                 <li >
-                                    <div class="imageblock-image"><img src="${fans.userByUserId.headImage.imageMid}" title="${fans.userByUserId.userName}"></div><div style="clear:both;"></div>
+                                    <div class="imageblock-image"><img src="${fans.userByUserId.headImage.imageSmall}" title="${fans.userByUserId.userName}"></div><div style="clear:both;"></div>
                                 </li>
                                 <li>
                                     <a href="goPersonal.htm?userId=${fans.userByUserId.userId}" class="show-user-card"  title="${fans.userByUserId.userName}"> <span class="fsm">${fans.userByUserId.userName}</span></a>
@@ -181,6 +180,5 @@
     <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </div>
-
 </body>
 </html>
