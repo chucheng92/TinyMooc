@@ -148,3 +148,11 @@ margin-left: -10px;
     margin-top: 20px;
     margin-left: 80px;
 }
+.gnews-banner-team div {
+    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/003637u4e9rwur4wtqqr0l.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}

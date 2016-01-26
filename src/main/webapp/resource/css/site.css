@@ -2155,7 +2155,7 @@ i.kaixin {
 	line-height: 16px;
 }
 .discuss-list2 .title a {
-	color: rgb(68, 68, 68); font-size: 14px; vertical-align: middle;
+	color:#FFFFE3; font-size: 14px; vertical-align: middle;
 }
 .discuss-list2 .title img {
 	vertical-align: middle;
@@ -4072,4 +4072,13 @@ ul.lessons-sort li {
     float: left;
     margin-left: 80px;
 
+}
+.turnmiddle {
+    margin-left: 40px;
+}
+.membercol h2 {
+    color: #ffffff;
+}
+.membercol p {
+    color: #8f8f8f;
 }

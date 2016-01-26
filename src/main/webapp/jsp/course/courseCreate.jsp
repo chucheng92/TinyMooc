@@ -49,7 +49,7 @@
                             <div class="control-group ui-form-item">
                                 <label class="control-label ui-label" for="course-title-field">标题</label>
                                 <div class="controls">
-                                    <input id="course-title-field" class="input-with-feedback" type="text" name="courseTitle" data-display="标题" required />
+                                    <input style="height: 30px;" id="course-title-field" class="input-with-feedback" type="text" name="courseTitle" data-display="标题" required />
                                     <div class="help-block">给课程取个通俗易懂的标题</div>
                                 </div>
                             </div>

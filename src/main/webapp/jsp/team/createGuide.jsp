@@ -23,13 +23,12 @@
 <c:if test="${empty user}" >
     <body>
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
-    <section id="registersuc">
+    <section id="registersuc" style="margin-top: 60px;">
         <div class="register-suc">
         </div>
 
         <div class="register-suc">
             <h2><strong>温馨提示: 请登录后再进行小组申请哦(●'◡'●)</strong></h2>
-
         </div>
     </section>
 
