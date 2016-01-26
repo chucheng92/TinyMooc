@@ -92,7 +92,7 @@ $(function(){
             <c:forEach items="${discusses}" var="dis">
                 <li>
                       <div class="imageblock clearfix">
-                          <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
+                          <div class="imageblock-image"><a href="" class="show-user-card"><img src="<c:url value="${dis.user.headImage.imageSmall}"></c:url>"/></a>
                           </div>
                            <div class="imageblock-content">
          

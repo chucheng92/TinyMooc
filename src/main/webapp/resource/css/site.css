@@ -4059,3 +4059,17 @@ ul.lessons-sort li {
 .UIImageBlock_Content_1 .nav{
     margin-top: 50px;
 }
+.register-suc h2{
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 250px;
+    height: 400px;
+    border-bottom-width: 0px;
+}
+.normal-main-middle {
+    width: 616px;
+    float: left;
+    margin-left: 80px;
+
+}

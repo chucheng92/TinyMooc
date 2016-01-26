@@ -1,34 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/resource/jspf/commons.jspf"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>${userTeam2.team.teamName}的小组成员
- - 好知网</title>
- <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
- 
-
-
+  <title>${userTeam2.team.teamName}的小组成员- 萌课网</title>
+ <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 </head>
 <body class="lily-theme">
 
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
-
-
-
-
-
-<section class="container">
-  <div class="group-header" style="background-image:url(<c:url value="/pic/imagehead/group-header.jpg"></c:url>)">
+<section class="container" style="margin-top: 60px;">
+  <div class="group-header" style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
 
   <div class="head">
     <div class="icon"><img src="${userTeam2.team.headImage.imageSmall}"  alt="${userTeam2.team.teamName}"  /></div>
@@ -53,8 +38,8 @@
      <div class="mod member-grid">
       <h2>组长</h2>
       <ul class="grids smallpic-grids user-grids">
-        <li class="grid"><a href=""><img src="" alt="${userTeam2.user.nickname}"></a>
-        <p><a href="" title="${userTeam2.user.nickname}">${userTeam2.user.nickname}</a></p></li>
+        <li class="grid"><a href=""><img src="${userTeam2.user.headImage.imageSmall}" alt="${userTeam2.user.userName}"></a>
+        <p><a href="" title="${userTeam2.user.userName}">${userTeam2.user.userName}</a></p></li>
        </ul>
     </div>
   <c:if test="${!empty userTeams2}">
@@ -63,12 +48,12 @@
       <ul class="grids smallpic-grids user-grids">
       <c:forEach items="${userTeams2}" var="ut">       
        <li class="grid">
-        <a href=""><img src="" alt="${ut.user.nickname}"></a>
-        <p><a href="#" title="herriyi">${ut.user.nickname}</a></p>
+        <a href=""><img src="${ut.user.headImage}" alt="${ut.user.userName}"></a>
+        <p><a href="#" title="herriyi">${ut.user.userName}</a></p>
         <c:if test="${userTeam.userPosition=='组长'}">
         <p>
-          <a href="addApplyUser.htm?userTeamId=${ut.userTeamId}" class="opt" title="把${ut.user.nickname}加入小组">加</a>
-          <a href="kickOutTeam.htm?userTeamId=${ut.userTeamId}" class="opt" title="把${ut.user.nickname}移除列表">除</a>
+          <a href="addApplyUser.htm?userTeamId=${ut.userTeamId}" class="opt" title="把${ut.user.userName}加入小组">加</a>
+          <a href="kickOutTeam.htm?userTeamId=${ut.userTeamId}" class="opt" title="把${ut.user.userName}移除列表">除</a>
         </p>
         </c:if>
        </li>
@@ -83,12 +68,12 @@
     <c:forEach items="${userTeams}" var="uts">
        <c:if test="${uts.userPosition=='组员'}">
        <li class="grid">
-        <a href=""><img src="${uts.user.headImage.imageMid}" alt="${uts.user.nickname}"></a>
-        <p><a href="#" title="${uts.user.nickname}">${uts.user.nickname}</a></p>
+        <a href=""><img src="${uts.user.headImage.imageMid}" alt="${uts.user.userName}"></a>
+        <p><a href="#" title="${uts.user.userName}">${uts.user.userName}</a></p>
          <c:if test="${userTeam.userPosition=='组长'}">
         <p>
-          <a href="kickOutTeam.htm?userTeamId=${uts.userTeamId}" class="opt" title="把${uts.user.nickname}踢出小组">踢</a>
-          <a href="banTeamUser.htm?userTeamId=${uts.userTeamId}" class="opt" title="把${uts.user.nickname}封禁">黑</a>
+          <a href="kickOutTeam.htm?userTeamId=${uts.userTeamId}" class="opt" title="把${uts.user.userName}踢出小组">踢</a>
+          <a href="banTeamUser.htm?userTeamId=${uts.userTeamId}" class="opt" title="把${uts.user.userName}封禁">黑</a>
         </p>
         </c:if>
         </li>
@@ -117,7 +102,7 @@
   </section>
 
 
-<jsp:include page="/jsp/include/foot1.jsp"></jsp:include>
+<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 
 </body>

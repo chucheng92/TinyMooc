@@ -13,16 +13,22 @@
 <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
 <script type="text/javascript" src="<c:url value="/resource/js/register.js"/>"></script>
 </head>
-<body class="lily-theme">
+<body>
 
 <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
-<section class="container signup" style="margin-top: 60px;">
 
-	<div class="container-padding clearfix">
-  		<h1>${verify}</h1>
- 	 </div>
+<section id="registersuc">
+    <div class="register-suc">
+    </div>
+
+    <div class="register-suc">
+        <h2><strong>${verify}</strong></h2>
+
+    </div>
 </section>
 
-<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+<div class="wrapper">
+    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
+</div>
 
 </body></html>
