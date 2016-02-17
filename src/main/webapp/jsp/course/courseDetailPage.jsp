@@ -121,7 +121,10 @@
                         if (msg == "true") {
                             $("#follow-user").css("display", "none");
                             $("#unfollow-user").css("display", "inline-block");
-                        } else {
+                        } else if (msg == "login") {
+                            alert("请登录");
+                        }
+                        else {
                             $("#follow-user").css("display", "none");
                             $("#unfollow-user").css("display", "inline-block");
                         }
@@ -140,6 +143,42 @@
                             $("#unfollow-user").css("display", "none");
                         } else {
 
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <%-- 收藏课程 --%>
+    <script type="text/javascript">
+        $(function () {
+            // a为ok代表已经收藏 no代表尚未收藏
+            var a = $("#add").val();
+            var courseId = $("#cancel").val();
+            var url = $("#url").val();
+            if (a == "no") {
+                $("#add-course").css("display", "inline-block");
+                $("#cancel-course").css("display", "none");
+            }
+            if (a == "ok") {
+                $("#add-course").css("display", "none");
+                $("#cancel-course").css("display", "inline-block");
+            }
+            $("#add-course").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "createFavorite.htm",
+                    data: {"courseId" : courseId,"url":url},
+                    success: function (msg) {
+                        if (msg == "true") {
+                            $("#add-course").css("display", "none");
+                            $("#cancel-course").css("display", "inline-block");
+                        } else if (msg == "login") {
+                            alert("请登录");
+                        } else {
+                            $("#add-course").css("display", "none");
+                            $("#cancel-course").css("display", "inline-block");
                         }
                     }
                 });
@@ -237,6 +276,27 @@
                         </c:forEach>
                     </c:if>
                 </div>
+                <%-- 收藏课程--%>
+                <c:if test="${!empty user}">
+                <c:if test="${isFavorite==0}">
+                    <div class="fr" id="cancel-course-opts">
+                        <a href="javascript:;" id="add-course" class="btn btn-small disabled action-ajax fr" style="display: inline-block;"><i class="icon-plus"></i>收藏本课程</a>
+                        <a href="javascript:;" id="cancel-course" class="btn btn-small disabled action-ajax fr" style="display: none;">已收藏</a>
+                        <input type="hidden" name="aa" value="no" id="add">
+                        <input type="hidden" name="bb" value="${currentCourse.course.courseId}" id="cancel">
+                        <input type="hidden" name="cc" value="courseDetailPage.htm?courseId=${currentCourse.course.courseId}" id="url">
+                    </div>
+                    </c:if>
+                    <c:if test="${isFavorite==1}">
+                        <div class="fr" id="follow-user-opts">
+                            <%--<a href="javascript:;" id="add-course" class="btn btn-small disabled action-ajax fr" style="display: none;"><i class="icon-plus"></i>收藏本课程</a>--%>
+                            <a href="javascript:;" id="cancel-course" class="btn btn-small disabled action-ajax fr" style="display: inline-block;">已收藏</a>
+                            <%--<input type="hidden" name="aa" value="ok" id="add">--%>
+                            <%--<input type="hidden" name="bb" value="${currentCourse.course.courseId}" id="cancel">--%>
+                        </div>
+                    </c:if>
+                    </c:if>
+                    <%-- 收藏课程--%>
             </div>
 
 
@@ -328,9 +388,9 @@
                 </div>
                 <div class="imageblock-content">
 
+
                     <c:if test="${currentCourse.user.userId ne user.userId}">
                     <c:if test="${isAttention==0}">
-                    <div class="fr" id="follow-user-opts">
                         <div class="fr" id="follow-user-opts">
                             <a href="javascript:;" id="follow-user" class="btn btn-small disabled action-ajax fr" style="display: inline-block;"><i class="icon-plus"></i> 关注TA</a>
                             <a href="javascript:;" id="unfollow-user" class="btn btn-small disabled action-ajax fr" style="display: none;">已关注 | 取消 </a>

@@ -12,6 +12,7 @@ import com.tinymooc.common.domain.*;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import com.tinymooc.handler.attention.service.AttentionService;
 import com.tinymooc.handler.course.service.CourseService;
+import com.tinymooc.handler.favorite.service.FavoriteService;
 import com.tinymooc.handler.label.service.LabelService;
 import com.tinymooc.handler.resource.service.ResourceService;
 import com.tinymooc.handler.user.service.UserService;
@@ -48,7 +49,10 @@ public class CourseController {
     private UserService userService;
 
     @Autowired
-    private AttentionService attention;
+    private AttentionService attentionService;
+
+    @Autowired
+    private FavoriteService  favoriteService;
 
     private String labels;
 
@@ -279,16 +283,25 @@ public class CourseController {
         // Test 5
         // 查询关注者为登录用户，被关注者为课程创建者的关注信息
         // 查询当前用户与创建者的关注信息
-        DetachedCriteria detachedCriteria5 = DetachedCriteria.forClass(Attention.class)
+        DetachedCriteria detachedCriteria5_1 = DetachedCriteria.forClass(Attention.class)
                 .add(Restrictions.eq("userByUserId", user))
                 .add(Restrictions.eq("userByAttentionedUserId", currentCourse.getUser()));
-        List<Attention> attentionOfCurrentToCreator = (List<Attention>) courseService.queryAllOfCondition(Attention.class, detachedCriteria5);
+        List<Attention> attentionOfCurrentToCreator = (List<Attention>) courseService.queryAllOfCondition(Attention.class, detachedCriteria5_1);
         // 当前用户是否关注创建者
         int isAttention = 0;
         if (!attentionOfCurrentToCreator.isEmpty()) {
             isAttention = 1;
         }
+        // 当前用户是否收藏本课程
+        DetachedCriteria detachedCriteria5_2 = DetachedCriteria.forClass(Favorite.class)
+                .add(Restrictions.eq("user", user))
+                .add(Restrictions.eq("courseId", course.getCourseId()));
+        List<Favorite> favoriteOfCurrentCourse = (List<Favorite>) favoriteService.queryAllOfCondition(Favorite.class, detachedCriteria5_2);
 
+        int isFavorite = 0;
+        if (!favoriteOfCurrentCourse.isEmpty()) {
+            isFavorite = 1;
+        }
         // FIXME
         System.out.println("Test 5===============attentionOfCurrentToCreator.size=" + attentionOfCurrentToCreator.size());
 
@@ -415,6 +428,7 @@ public class CourseController {
         req.setAttribute("studentNum", studentNum);
         req.setAttribute("creatorCourseNum", creatorCourseNum);
         req.setAttribute("isAttention", isAttention);
+        req.setAttribute("isFavorite", isFavorite);
         req.setAttribute("userLearnCourseList", userLearnCourseList);
         req.setAttribute("userEndCourseList", userEndCourseList);
         req.setAttribute("user", user);
