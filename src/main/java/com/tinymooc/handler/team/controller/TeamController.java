@@ -412,7 +412,7 @@ public class TeamController {
         String teamId = ServletRequestUtils.getStringParameter(req, "teamId", "");
         Team team = teamService.findById(Team.class, teamId);
         req.setAttribute("team", team);
-        return new ModelAndView("/team/createDiscuss");
+        return new ModelAndView("/team/creatediscuss");
     }
 
     @CheckAuthority(name = "发表话题")
@@ -589,7 +589,7 @@ public class TeamController {
         inform.setInformType("话题");
         inform.setInformState("未处理");
         teamService.save(inform);
-        return new ModelAndView("/include/outSuccess");
+        return new ModelAndView("/common/outSuccess");
     }
 
     @RequestMapping("editDiscussPage.htm")
@@ -603,7 +603,7 @@ public class TeamController {
         ImageText text = texts.get(0);
         req.setAttribute("discuss", discuss);
         req.setAttribute("text", text);
-        return new ModelAndView("/team/editDiscuss");
+        return new ModelAndView("/team/editdiscuss");
     }
 
     @RequestMapping("updateDiscuss.htm")

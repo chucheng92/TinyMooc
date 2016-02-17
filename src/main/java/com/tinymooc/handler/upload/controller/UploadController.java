@@ -50,7 +50,7 @@ public class UploadController {
 		
 		String PathToService=uploadPath+"/tinymooc/src/main/webapp/resource/pic/imagehead/";
 
-		//path:D:\eclipse_workplace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Supper_Microlecture\
+
 
         // FIXME
         System.out.println("===============uploadPath============="+uploadPath);
@@ -80,7 +80,7 @@ public class UploadController {
 		JSONObject jsonObject=JSONObject.fromObject(jsn);
 		String img1=((String)jsonObject.get("data1")).substring(22);
 		img1=img1.replaceAll("_", "+");
-		String img2=jsonObject.get("data3").toString().substring(22);
+		String img2=jsonObject.get("data2").toString().substring(22);
 		img2=img2.replaceAll("_", "+");
 		String img3=jsonObject.get("data3").toString().substring(22);
 		img3=img3.replaceAll("_", "+");
@@ -101,10 +101,13 @@ public class UploadController {
 	        System.out.println(uploadPath+uploadPath1);
 			File folder1 = new File(uploadPath+uploadPath1);
 			//检查文件存在与否
-			if (!folder1.exists())
+			if (folder1.exists())
+                folder1.delete();
 				folder1.createNewFile();
 			File folder1S=new File(PathToService+user.getUserId()+"1.jpg");
-			 if(!folder1S.exists())folder1S.createNewFile();
+			 if(folder1S.exists())
+                 folder1S.delete();
+                 folder1S.createNewFile();
 		        // 创建文件输出流对象   
 			    OutputStream d1 = new FileOutputStream(folder1);
 		        // 写入输出流   
@@ -112,6 +115,7 @@ public class UploadController {
 		        d1.flush();
 		        // 关闭输出流   
 		        d1.close();
+
 		        OutputStream d1S = new FileOutputStream(folder1S);
 		        d1S.write(b1);
 		        d1S.flush();
@@ -130,10 +134,13 @@ public class UploadController {
 			        System.out.println(uploadPath+uploadPath2);
 					File folder2 = new File(uploadPath+uploadPath2);
 					//检查目录存在与否
-					if (!folder2.exists())
+					if (folder2.exists())
+                        folder2.delete();
 						folder2.createNewFile();
 					File folder2S=new File(PathToService+user.getUserId()+"2.jpg");
-					 if(!folder2S.exists())folder2S.createNewFile();
+					 if(folder2S.exists())
+                         folder2S.delete();
+                         folder2S.createNewFile();
 					 
 				        // 创建文件输出流对象   
 					    FileOutputStream d2 = new FileOutputStream(folder2);   
@@ -158,10 +165,13 @@ public class UploadController {
 					        System.out.println(uploadPath+uploadPath3);
 							File folder3 = new File(uploadPath+uploadPath3);
 							//检查目录存在与否
-							if (!folder3.exists())
+							if (folder3.exists())
+                                folder3.delete();
 								folder3.createNewFile();
 							File folder3S=new File(PathToService+user.getUserId()+"3.jpg");
-							 if(!folder3S.exists())folder3S.createNewFile();
+							 if(folder3S.exists())
+                                 folder3S.delete();
+                                 folder3S.createNewFile();
 						        // 创建文件输出流对象   
 							    FileOutputStream d3 = new FileOutputStream(folder3);   
 						        // 写入输出流   
