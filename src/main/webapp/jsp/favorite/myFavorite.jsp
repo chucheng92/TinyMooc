@@ -31,7 +31,7 @@
 	  });
 </script>
 </head>
-<body class="flats-theme">
+<body class="flats-theme" style="margin-top: 60px">
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 

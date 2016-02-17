@@ -1556,7 +1556,7 @@ background-position: -30px 0px;
 	color: rgb(153, 153, 153);
 }
 .course-item .metas .view {
-	background: url("/resource/img/logo.png") no-repeat 0px 0px; color: rgb(120, 192, 66); padding-left: 16px;
+	background:  no-repeat 0px 0px; color: rgb(120, 192, 66); padding-left: 16px;
 }
 .course-item .metas .learn {
 	background: url("/resource/img/logo.png") no-repeat 0px 0px; color: rgb(120, 192, 66); padding-left: 16px;

@@ -186,20 +186,40 @@
 
     <div id="course-main">
 
+
+                <%--<div class="imageblock-image">--%>
+                    <%--<a href=""><img src=""width="48" heiht="48" alt="${userCourse.course.courseTitle}"></a>--%>
+                <%--</div>--%>
+                <%--<div class="imageblock-content">--%>
+
+                    <%--<h1 class="mbm">--%>
+                        <%--<a href="">${userCourse.course.courseTitle}</a>--%>
+                    <%--</h1>--%>
+
+                    <%--<div style="margin-left: -5px;">--%>
+                        <%--<div class="clearfix mtm">--%>
+
+                            <%--<div class="pills" style="margin-bottom: 0px">--%>
+                                <%--<a href="">学员(${students})</a>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
         <div>
             <h1>
-                <span class="lesson-index" id="index">Java入门到精通</span>
-                <span class="lesson-title">${lesson.courseTitle}</span>
+                <span class="lesson-title">课程名：${lesson.courseTitle}</span>
             </h1>
-                            <div style="float: right; margin-bottom: 2px;">
-                                <c:if test="${lessonLearnState=='学习中'}">
-                                    <button id="note-open-btn" class="btn btn-small" title="写笔记"
-                                            data-open-url="/course/4631/lesson/49296?openNote=1">
-                                        <i class="icon-pencil"></i> 写笔记
-                                    </button>
-                                </c:if>
-                                <%--<span class="float-new posabs" style="top: -12px; right: 0;"></span>--%>
-                            </div>
+            <div class="action-bar" style="float: right;margin-bottom: 5px">
+                <c:if test="${userCourse.user.userId ne user.userId}">
+                    <button class="btn btn-large btn-success" id="start" onclick="test()">${lessonLearnState}</button>
+                </c:if>
+            </div>
+            <div>
+                <c:if test="${lessonLearnState=='学习中'}">
+                    <button id="note-open-btn" class="btn btn-small" title="写笔记"
+                            data-open-url="/course/4631/lesson/49296?openNote=1">
+                        <i class="icon-pencil"></i> 写笔记
+                    </button>
+                </c:if>
+            </div>
 
             <div class="editor-content">
                         <iframe src="http://play.video.qcloud.com/iplayer.html?$appid=1251419256&$fileid=${requestScope.fileId}&$autoplay=0&$sw=1280&$sh=720" frameborder="0" width="100%" height="720" scrolling="no"></iframe>
@@ -377,9 +397,9 @@
                                              title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
                             class="o-ver-icn"></span></a></div>
                     <div>
-                        <a href="" class="stats"><em>课程&nbsp;0${creatorCourseNum} </em></a>
-                        <a href="" class="stats"><em>粉丝&nbsp;${fansNum} </em></a>
-                        <a href="" class="stats"><em>关注&nbsp;${followNum} </em></a>
+                        <a href="#" class="stats">课程&nbsp;0${creatorCourseNum}</a>
+                        <a href="#" class="stats">粉丝&nbsp;${fansNum}</a>
+                        <a href="#" class="stats">关注&nbsp;${followNum}</a>
                     </div>
                 </div>
                 <div class="mtm gray">${currentCourse.user.intro}</div>

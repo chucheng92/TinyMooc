@@ -222,10 +222,9 @@
                             <c:forEach items="${currentCourseList}" var="course">
                                 <li>
                                     <div class="course-item">
-                                        <div class="thumb"><img src="${course.course.logoUrl}"/></div>
-                                        <p class="title"><a href="" title="新版课程创建指南">${course.course.courseTitle}</a></p>
+                                        <div class="thumb"><a href="courseDetailPage.htm?courseId=${course.course.courseId}"> <img src="${course.course.logoUrl}"/></a></div>
+                                        <p class="title"><a href="courseDetailPage.htm?courseId=${course.course.courseId}">${course.course.courseTitle}</a></p>
                                         <p class="metas clearfix">
-
                                             <span class="fr view mrm" title="查看次数">浏览次数：${course.course.scanNum}</span>
                                         </p>
                                     </div>

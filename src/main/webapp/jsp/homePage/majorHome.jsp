@@ -15,15 +15,6 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/site.css"/>
 
-<link rel="pingback" href="http://www.gnosh.co.uk/xmlrpc.php" />
-<link rel="shortcut icon" href="http://www.gnosh.co.uk/wp-content/themes/gnosh/favicon.ico" />
-
-
-<!-- Make the HTML5 elements work in IE. -->
-<!--[if IE]>
-<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
 <!-- The mountain of stuff WP puts in -->
 <script type="text/javascript">
     window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.gnosh.co.uk\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.1"}};
@@ -43,47 +34,6 @@
         padding: 0 !important;
     }
 </style>
-<link rel='https://api.w.org/' href='http://www.gnosh.co.uk/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.gnosh.co.uk/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.gnosh.co.uk/wp-includes/wlwmanifest.xml" />
-
-<link href="http://fast.fonts.com/cssapi/bfe6ca8b-d36b-4009-a944-3c1f5bcd40c3.css" rel="stylesheet" type="text/css" />
-
-<!-- GOOGLE ANALYTICS -->
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-28918139-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-</script>
-
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-29176033-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-
-<link rel="stylesheet" href="http://www.gnosh.co.uk/wp-content/themes/gnosh/js/jquery.fancybox.css?v=2.0.6" type="text/css" media="screen" />
-<style type="text/css">
-    .dsq-global-toolbar-left { display: none; }
-</style>
-<!--[if IE]>
-<style type="text/css">
-    .social { margin-top: 0; }
-</style>
-<![endif]-->
 
 </head>
 <body class="archive category category-gnews category-3">
@@ -142,10 +92,10 @@
             <li class="cell">
                 <div class="course-item">
                     <div class="thumb">
-                        <a href="#"><img src="${course.course.logoUrl}"></a>
+                        <a href="courseDetailPage.htm?courseId=${course.course.courseId}"><img src="${course.course.logoUrl}"></a>
                     </div>
                     <p class="title">
-                        <a href="#">${course.course.courseTitle}</a>
+                        <a href="courseDetailPage.htm?courseId=${course.course.courseId}">${course.course.courseTitle}</a>
                     </p>
                     <div class="summary">${course.course.courseIntro}</div>
                     <p class="metas clearfix">
@@ -199,7 +149,7 @@
         <h3>${type}的相关小组</h3>
         <ul class="grids smallpic-grids">
             <c:forEach items="${teamList}" var="team">
-                <li class="grid"><a href=""><img src="<c:url value="/resource/pic/team.jpg"/>" title="${team.teamName}" class="thumb"></a>
+                <li class="grid"><a href=""><img src="<c:url value="/resource/pic/huoban.png"/>" title="${team.teamName}" class="thumb"></a>
                     <p>
                         <a href="" title="${team.teamName}">${teamt.teamName}</a>
                     </p>
@@ -266,52 +216,5 @@
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 </div>
 
-
-<!-- JavaScript -->
-<!-- <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://www.gnosh.co.uk/wp-content/themes/gnosh/js/jquery-1.7.2.min.js"><\/script>')</script>
-<script src="http://www.gnosh.co.uk/wp-content/themes/gnosh/js/scripts.js"></script>
-
-<script type='text/javascript' src='http://www.gnosh.co.uk/wp-includes/js/wp-embed.min.js?ver=4.4.1'></script>
-
-<!-- 29 queries. 0.161 seconds. -->
-
-<script>
-    $('.popup').click(function(event) {
-        var width  = 575,
-                height = 400,
-                left   = ($(window).width()  - width)  / 2,
-                top    = ($(window).height() - height) / 2,
-                url    = this.href,
-                opts   = 'status=1' +
-                        ',width='  + width  +
-                        ',height=' + height +
-                        ',top='    + top    +
-                        ',left='   + left;
-
-        window.open(url, 'twitter', opts);
-
-        return false;
-    });
-</script>
-
-<script type="text/javascript" src="http://www.gnosh.co.uk/wp-content/themes/gnosh/js/jquery.fancybox.pack.js?v=2.0.6"></script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        $(".fancybox").fancybox({
-            prevEffect : 'none',
-            nextEffect : 'none',
-            helpers: {
-                title : {
-                    type : 'inside'
-                }
-            }
-        });
-
-    });
-</script>
 </body>
 </html>
