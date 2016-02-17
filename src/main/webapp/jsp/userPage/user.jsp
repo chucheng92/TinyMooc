@@ -222,7 +222,7 @@
                             <c:forEach items="${currentCourseList}" var="course">
                                 <li>
                                     <div class="course-item">
-                                        <div class="thumb"><a href=""><img src="/resource/pic/daa.jpg"></a></div>
+                                        <div class="thumb"><img src="${course.course.logoUrl}"/></div>
                                         <p class="title"><a href="" title="新版课程创建指南">${course.course.courseTitle}</a></p>
                                         <p class="metas clearfix">
 
