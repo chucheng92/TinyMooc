@@ -48,7 +48,7 @@ public class UploadController {
 		//设置基本路径
 		String uploadPath=request.getSession().getServletContext().getRealPath("/")+"";
 		
-		String PathToService=uploadPath+"/tinymooc/src/main/webapp/resource/pic/imagehead/";
+		String PathToService=uploadPath+"/resource/pic/imagehead/";
 
 
 
