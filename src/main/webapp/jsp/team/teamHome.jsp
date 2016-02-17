@@ -120,7 +120,7 @@
                         <span class="mr10">创建于<fmt:formatDate value="${userTeam2.team.applyDate}"
                                                               pattern="yyyy年MM月dd日 "/></span>
                                 &nbsp;&nbsp;&nbsp;
-                        <span>组长：<a href="#" class="show-user-card "
+                        <span>组长：<a href="goPersonal.htm?userId=${userTeam2.user.userId}" class="show-user-card "
                                     title="${userTeam2.user.userName}">${userTeam2.user.userName}</a></span>
                             </p>
 
