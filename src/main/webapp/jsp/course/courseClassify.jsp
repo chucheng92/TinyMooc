@@ -275,7 +275,7 @@
 
 </section>
 
-<jsp:include page="/jsp/include/foot1.jsp"></jsp:include>
+<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </body>
 </html>

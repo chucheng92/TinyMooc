@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>注册成功</title>
+<title>注册成功 - 萌课网</title>
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
 <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
@@ -13,23 +13,17 @@
 <link rel="stylesheet" href="<c:url value="/resource/css/site.css"/>">
 
 </head>
-<body>
+<body class="lily-theme">
 
 <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
+<section class="container signup" style="margin-top: 60px;">
 
-<section id="registersuc">
-    <div class="register-suc">
-    </div>
-
-    <div class="register-suc">
-        <h2><strong>${note}</strong></h2>
-
-    </div>
+	<div class="container-padding clearfix">
+  		<h1>${note}</h1>
+ 	 </div>
 </section>
 
-<div class="wrapper">
-    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
-</div>
+<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </body></html>
 

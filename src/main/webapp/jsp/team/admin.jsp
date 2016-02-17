@@ -19,8 +19,6 @@
   <link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
     <script type="text/javascript" src="<c:url value="/js/label.js"/>"></script>
    <script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
  
  <script type="text/javascript">
 $(function(){
@@ -51,100 +49,89 @@ $(function(){
 </script>
 
 </head>
+<body class="lily-theme">
 
 
-<body class="archive category category-gnews category-3">
-
+<header class="header" id="header">
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<div class="movedown"></div>
+<section class="container">
+  <div class="group-header" style="background-image:url(<c:url value="/pic/imagehead/group-header.jpg"></c:url>)">
 
-<div class="wrapper">
+  <div class="head">
+    <div class="icon"><img src=""  alt="${userTeam2.team.teamName}"  /></div>
+    <div class="infos">
+      <h1>${userTeam2.team.teamName}</h1>
+      <span>${memberNum}个成员</span>
+    </div>
+  </div>
+  
+  <ul class="hnav">
+    <li><a href="teamHomePage.htm?teamId=${userTeam2.team.teamId}">小组首页</a></li>
+    <li><a href="discussPage.htm?teamId=${userTeam2.team.teamId}">讨论区</a></li>  
+    <li><a href="membersAdminPage.htm?teamId=${userTeam2.team.teamId}">成员</a></li>
+    <c:if test="${userTeam.userPosition=='组长'}">
+    <li class="this"><a href="manageTeam.htm?teamId=${userTeam2.team.teamId}">管理</a></li>  
+    </c:if>   
+  </ul>
 
-    <div class="middle-container">
-        <div class="right-top-banner gnews-banner-team">
-            <div></div>
-        </div>
-        <div class="middle-top"></div>
-        <div class="middle">
-
-
-            <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
-                <div class="group-header" style="background-image:url(<c:url value="/pic/imagehead/group-header.jpg"></c:url>)">
-                <div class="head">
-                    <div class="infos">
-                        <h1>${userTeam2.team.teamName}</h1>
-                        <span>${memberNum}个成员</span>
-                    </div>
-                </div>
-
-                <ul class="hnav">
-                    <li><a href="teamHomePage.htm?teamId=${userTeam2.team.teamId}">小组首页</a></li>
-                    <li><a href="discussPage.htm?teamId=${userTeam2.team.teamId}">讨论区</a></li>
-                    <li><a href="membersAdminPage.htm?teamId=${userTeam2.team.teamId}">成员</a></li>
-                    <c:if test="${userTeam.userPosition=='组长'}">
-                        <li class="this"><a href="manageTeam.htm?teamId=${userTeam2.team.teamId}">管理</a></li>
-                    </c:if>
-                </ul>
-
-        </div>
-        <div class="container-padding clearfix">
-            <div class="mod">
-                <div class="tab-nav clearfix">
-                    <ul>
-                        <li class="this"><a href="admin.jsp">基本设置</a></li>
-                        <li><a href="goteampicture.htm?teamId=${userTeam2.team.teamId}">图标设置</a></li>
-                    </ul>
-                </div>
-
-                <form id="group-base-form" class="form group-base-form" method="post" action="updateTeamInfo.htm">
-
-                    <p>
-                        <label for="groupbase_name" class="required">小组名称:</label>
-
-                        <input type="text" id="teamName" name="teamName" required="required"    class="wide" value="${userTeam2.team.teamName}" />
-
-                    </p>
-                    <p>
-                        <label for="groupbase_about" class="required">小组介绍:</label>
-                        <textarea id="teamIntro" name="teamIntro" required="required"    class="wide low mceEditor">${userTeam2.team.teamIntro}</textarea>
-                    </p>
-                    <input type="hidden" name="teamId" value="${userTeam2.team.teamId}"/>
-
-
-                    <p><label for="groupbase_about" class="required">标签:</label></p>
-                    <div class="mod">
-                        <div class="addLabels" style=" height:200px; width:400px;float:left;" align="left">
-                            <div class="keywords">
-                                <sicd:label previousLabels="${previousLabels}" hotLabels="${labels}"/>
-                            </div>
-                            <br>
-                            <button  class="btn btn-success" type="submit" value="" id="checkl" >保存</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-            </article>
-
-
-            <div class="movedown2"></div>
-
-        </div> <!-- end .right -->
-        <div class="middle-bottom"></div>
-
-        <div class="movedown"></div>
-
-    </div> <!-- end .right-container -->
-
-    <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
-
+</div> 
+ <div class="container-padding clearfix">
+  <div class="mod">
+  <div class="tab-nav clearfix">
+  <ul>
+    <li class="this"><a href="admin.jsp">基本设置</a></li>
+    <li><a href="goteampicture.htm?teamId=${userTeam2.team.teamId}">图标设置</a></li>
+  </ul>
 </div>
+      
+    <form id="group-base-form" class="form group-base-form" method="post" action="updateTeamInfo.htm">
+      
+      <p>
+        <label for="groupbase_name" class="required">小组名称:</label>
+        
+                  <input type="text" id="teamName" name="teamName" required="required"    class="wide" value="${userTeam2.team.teamName}" />
+                
+      </p>
+      <p>
+        <label for="groupbase_about" class="required">小组介绍:</label>
+        <textarea id="teamIntro" name="teamIntro" required="required"    class="wide low mceEditor">${userTeam2.team.teamIntro}</textarea>
+      </p>
+       <input type="hidden" name="teamId" value="${userTeam2.team.teamId}"/> 
+       
+      
+        <p><label for="groupbase_about" class="required">标签:</label></p>
+        <div class="mod">
+    	<div class="addLabels" style=" height:200px; width:400px;float:left;" align="left"> 		
+			<div class="keywords">
+			<sicd:label previousLabels="${previousLabels}" hotLabels="${labels}"/>
+			</div>
+			<br>
+				<button  class="btn btn-success" type="submit" value="" id="checkl" >保存</button>		
+		</div> 
+  	</div>
+           
+    </form>
+    </div>
+  </div>
 
-</body>
+</section>
+
+<footer class="footer container">
+  <div style="padding: 0px 28px;">
+    <div class="fl footer-links">
+      <a href="">关于微课程</a>
+      <a href="">微课程达人</a>
+      <a href="">联系我们</a>
+      <a href="">友情链接</a>
+      <a href="">意见反馈</a>
+      <br>
+      <span class="copyright">©2013 MicroCourses.COM <a href="#">陕ICP备1102461-7</a> </span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -84,7 +84,6 @@ margin-left: -10px;
     background: url(/resource/img/tmail.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
-    margin-left: 40px;
 }
 .gnews-banner-mail div {
     background: url(/resource/img/mail.png) no-repeat;
@@ -104,14 +103,13 @@ margin-left: -10px;
     width: 316px;
     height: 205px;
     position: absolute;
-    left:30px;
+    left:-40px;
     top: -30px;
 }
 .gnews-banner-note {
     background: url(/resource/img/tnote.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
-    margin-left: 30px;
 }
 .gnews-banner-note div {
     background: url(/resource/img/note.png) no-repeat;
@@ -119,7 +117,7 @@ margin-left: -10px;
     height: 205px;
     position: absolute;
     left:-40px;
-    top: 0px;
+    top: -30px;
 }
 .gnews-banner-friendlist {
     background: url(/resource/img/tfriendlist.png) no-repeat;
@@ -128,28 +126,6 @@ margin-left: -10px;
 }
 .gnews-banner-friendlist div {
     background: url(/resource/img/friendlist.png) no-repeat;
-    width: 316px;
-    height: 205px;
-    position: absolute;
-    left:-40px;
-    top: -30px;
-}
-.gnews-banner-mytinymooc div{
-    background: url(/resource/img/mytinymooc.png) no-repeat;
-    width: 520px;
-    height: 150px;
-    position: absolute;
-    left:100px;
-    top: -15px;
-}
-.gnews-banner-team {
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/08/231737vo18nzcdd85e7s7u.png) no-repeat;
-    background-position: 260px 0px;
-    margin-top: 20px;
-    margin-left: 80px;
-}
-.gnews-banner-team div {
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/003637u4e9rwur4wtqqr0l.png) no-repeat;
     width: 316px;
     height: 205px;
     position: absolute;

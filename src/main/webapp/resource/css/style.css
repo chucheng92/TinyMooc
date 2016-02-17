@@ -1974,14 +1974,13 @@ nav, .widget-content a, .widget-content h1 {
     margin-right: 50px;
     position: relative;
 }
-
 .right-container {
     float: left;
     width: 592px;
     position: relative;
 }
 .my-left {
-    width: 188px;
+    width: 168px;
     float: left;
     position: relative;
 }
@@ -1991,7 +1990,7 @@ nav, .widget-content a, .widget-content h1 {
     position: relative;
 }
 .my-right {
-    width: 140px;
+    width: 160px;
     float: left;
     position: relative;
     margin-left: 40px;
@@ -2031,10 +2030,8 @@ nav, .widget-content a, .widget-content h1 {
     font-family: 'Microsoft YaHei', å¾®è½¯é›…é»‘, 'Microsoft JhengHei', åŽæ–‡é»‘ä½“, STHeiti, Georgia, 'Times New Roman', Times, serif;
     font-size:30px;
 }
-.btn-bar {
+.btn-bar a {
     color: #ffffff;
 }
-
-
 /* STOCKISTS END */
 

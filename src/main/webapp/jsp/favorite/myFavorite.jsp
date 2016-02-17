@@ -35,14 +35,14 @@
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
-<section class="container clearfix" style="margin-top:60px;">
+<section class="container clearfix">
   <div id="me" class="me clearfix">
     <div class="main">
       <div class="wrap">
 
+         
 
-
- <div class="mod">
+ <div class="mod">    
      <table class="datagrid">
         <thead>
           <th colspan="2">名称</th>
@@ -124,12 +124,12 @@
           <li ><a href="turnToHelpPage.htm"><i class="feature-icon feature-icon-coin"></i>金币</a></li>
           <li ><a href="account.htm"><i class="feature-icon feature-icon-setting"></i>账户设置</a></li>
         </ul>
-      </div>
+      </div> 
 
 
     </div>
   </div>
-
+  
 </section>
 
 

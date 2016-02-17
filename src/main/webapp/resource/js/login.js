@@ -2,6 +2,7 @@ var req;
 var flag1=false;
 var flag2=false;
 var ff=false;
+
 function checkReg(){  
     //获取表单提交的内容  
 			
@@ -46,11 +47,18 @@ function checkReg1(){
 			
 	   		ff=true;
 	   		
-	   		
+
     }
 function validate1(){
+    var varEmail=document.form1.userEmail;
+
 	if(ff){
-			window.location.href="findPassword.htm?userEmail="+varEmail.value;
+
+
+        <!--	window.location.href="findPassword.htm?userEmail=13646029214@163.com";
+           -->
+            window.location.href="findPassword.htm?userEmail="+varEmail.value;
+
 			
 		}
 }

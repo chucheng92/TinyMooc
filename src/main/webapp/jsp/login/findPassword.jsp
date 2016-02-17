@@ -17,10 +17,10 @@
 
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 <section class="container signup" style="margin-top: 60px;">
-	<div class="container-padding clearfix">
-  		<h1>请输入您的注册邮箱！</h1>
- 	 </div>
-	<div class="normal-main">
+  <div class="container-padding clearfix">
+      <h1>请输入您的注册邮箱！</h1>
+   </div>
+  <div class="normal-main">
   <form id="signup-form" class="form signin-form" method="post" action="" name="form1">
       
     <p>

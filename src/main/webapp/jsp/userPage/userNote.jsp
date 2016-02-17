@@ -154,10 +154,10 @@
 
 
                         <div class="nav clearfix">
-                            <a href="goPersonal.htm?userId=${user1.userId}">主页</a>
+                            <a href="goPersonal.htm?userId=${user1.userId}" class="on">主页</a>
                             <a href="goPersonalTeam.htm?userId=${user1.userId}">小组</a>
                             <a href="goPersonalAttention.htm?userId=${user1.userId}">好友</a>
-                            <a href="goPersonalNote.htm?userId=${user1.userId}"  class="on">笔记</a>
+                            <a href="goPersonalNote.htm?userId=${user1.userId}">笔记</a>
                         </div>
                     </div>
                 </div>

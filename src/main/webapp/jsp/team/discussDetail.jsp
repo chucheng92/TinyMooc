@@ -176,8 +176,8 @@ $().ready(function(){
       <div class="said-meta mbm mtl clearfix">
         <span class="gray fl">
         <input type="hidden" id="obid" value="${discuss.discussId}">
-        <a href="" class="show-user-card " title="${discuss.user.nickname}">
-        ${discuss.user.nickname}</a>发表于<fmt:formatDate value="${discuss.publishDate}" pattern="yyyy年MM月dd日 HH时mm分"/></span>
+        <a href="" class="show-user-card " title="${discuss.user.userName}">
+        ${discuss.user.userName}</a>发表于<fmt:formatDate value="${discuss.publishDate}" pattern="yyyy年MM月dd日 HH时mm分"/></span>
       </div>
       <div class="said-meta mbm">
       <c:if test="${user.userId eq userTeam.user.userId}">         
@@ -217,12 +217,12 @@ $().ready(function(){
       <h3>${commentNum} 回复</h3>
       <ul class="discuss-replies" style="border: 1px solid;border-color:#DDDDDD ">
       <c:forEach items="${comments}" var="cm1">
-          <li class="reply" data-author="${cm1.user.nickname}">
+          <li class="reply" data-author="${cm1.user.userName}">
              <div class="who">
-                <a href="" class="show-user-card"><img src="${cm1.user.headImage.imageMid}" alt="${cm1.user.nickname}"></a>
+                <a href="" class="show-user-card"><img src="${cm1.user.headImage.imageMid}" alt="${cm1.user.userName}"></a>
              </div>
           <div class="mbs">
-              <strong class="mrs"><a href="" class="show-user-card " title="${cm1.user.nickname}">${cm1.user.nickname}</a></strong>
+              <strong class="mrs"><a href="" class="show-user-card " title="${cm1.user.userName}">${cm1.user.userName}</a></strong>
               <span class="said-meta"><fmt:formatDate value="${cm1.commentDate}" pattern="yy-MM-dd HH:mm"/></span>
           </div>
           <div class="said-content editor-content reply-editor-content">
@@ -235,12 +235,12 @@ $().ready(function(){
           <ul class="discuss-replies" style="border: 1px solid;border-color:#DDDDDD ">   
           <c:forEach items="${comments2}" var="cm2"> 
            <c:if test="${cm2.comment.commentId eq cm1.commentId}">
-           <li class="reply" data-author="${cm2.user.nickname}">
+           <li class="reply" data-author="${cm2.user.userName}">
              <div class="who">
-                <a href="" class="show-user-card"><img src="${cm2.user.headImage.imageMid}" alt="${cm2.user.nickname}" width="40px" height="40px"></a>
+                <a href="" class="show-user-card"><img src="${cm2.user.headImage.imageMid}" alt="${cm2.user.userName}" width="40px" height="40px"></a>
              </div>
               <div class="mbs">
-                <strong class="mrs"><a href="" class="show-user-card " title="${cm2.user.nickname}">${cm2.user.nickname}</a></strong>
+                <strong class="mrs"><a href="" class="show-user-card " title="${cm2.user.userName}">${cm2.user.userName}</a></strong>
                 <span class="said-meta"><fmt:formatDate value="${cm2.commentDate}" pattern="yyyy-MM-dd HH:mm"/></span>
               </div>
              <div class="said-content editor-content reply-editor-content">
@@ -291,7 +291,7 @@ $().ready(function(){
       <h3>话题作者</h3>
       
         <div class="owner-block imageblock clearfix">
-             <div class="imageblock-image"><a href="" class="show-user-card"><img src="${discuss.user.headImage.imageMid}" alt="${discuss.user.nickname}"></a>
+             <div class="imageblock-image"><a href="" class="show-user-card"><img src="${discuss.user.headImage.imageMid}" alt="${discuss.user.userName}"></a>
              </div>
               <div class="imageblock-content">
                   <c:if test="${discuss.user.userId ne user.userId}">
@@ -305,13 +305,13 @@ $().ready(function(){
                   </c:if>
                   </c:if>
 
-                  <div  class="nickname"><a href="" class="show-user-card " title="${discuss.user.nickname}">${discuss.user.nickname}</a></div>
+                  <div  class="nickname"><a href="" class="show-user-card " title="${discuss.user.userName}">${discuss.user.userName}</a></div>
                   <div>
                             <a href="" class="stats"><em>${courseNum}</em> 课程</a>
                              <a href="" class="stats"><em>${fansNum}</em> 粉丝</span></a>
                   </div>
                  </div>
-                 <div class="mtm gray">${discuss.user.signature}</div>
+                 <div class="mtm gray">${discuss.user.userName}</div>
               </div>
        </div>
         <div class="flat">
