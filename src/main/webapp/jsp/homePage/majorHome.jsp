@@ -151,7 +151,7 @@
             <c:forEach items="${teamList}" var="team">
                 <li class="grid"><a href=""><img src="<c:url value="/resource/pic/huoban.png"/>" title="${team.teamName}" class="thumb"></a>
                     <p>
-                        <a href="" title="${team.teamName}">${teamt.teamName}</a>
+                        <a href="teamHomePage.htm?teamId=${team.teamId}" title="${team.teamName}">${team.teamName}</a>
                     </p>
                 </li>
             </c:forEach>

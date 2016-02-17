@@ -12,10 +12,10 @@
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
 
     <style type="text/css">
-        .why-gnosh-movies2{
+        .why-gnosh-movies2 {
             background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
-            height:50px;
-            width:1100px;
+            height: 50px;
+            width: 1100px;
             margin-bottom: 30px;
             margin-top: -10px;
             margin-left: 0px;
@@ -29,7 +29,7 @@
             var a = $("#aa").val();
 
             var stars = $("#star > li");
-            $("#showb1").css({"width": stepW * a/2});
+            $("#showb1").css({"width": stepW * a / 2});
             $("#showb").css("width", 0);
             stars.each(function (i) {
                 $(stars[i]).click(function (e) {
@@ -82,8 +82,8 @@
     <script type="text/javascript">
         $("#start").live("click", function () {
             <c:if test="${empty user}">
-                $.scojs_message("登录后才可以加入学习计划哦(づ￣3￣)づ╭❤～", $.scojs_message.TYPE_OK);
-                return false;
+            $.scojs_message("登录后才可以加入学习计划哦(づ￣3￣)づ╭❤～", $.scojs_message.TYPE_OK);
+            return false;
             </c:if>
             <c:if test="${!empty user}">
             if ($("#start").html() == "学习中") {
@@ -98,6 +98,54 @@
 
     </script>
 
+    <script type="text/javascript">
+        $(function () {
+            // a为ok代表已经关注 no代表尚未关注
+            var a = $("#att").val();
+            var userId = $("#btt").val();
+
+            if (a == "no") {
+                $("#follow-user").css("display", "inline-block");
+                $("#unfollow-user").css("display", "none");
+            }
+            if (a == "ok") {
+                $("#follow-user").css("display", "none");
+                $("#unfollow-user").css("display", "inline-block");
+            }
+            $("#follow-user").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "addAttention.htm",
+                    data: "userBid=" + userId,
+                    success: function (msg) {
+                        if (msg == "true") {
+                            $("#follow-user").css("display", "none");
+                            $("#unfollow-user").css("display", "inline-block");
+                        } else {
+                            $("#follow-user").css("display", "none");
+                            $("#unfollow-user").css("display", "inline-block");
+                        }
+                    }
+
+                });
+            });
+            $("#unfollow-user").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "delAttention.htm",
+                    data: "userBid=" + userId,
+                    success: function (msg) {
+                        if (msg == "delOk") {
+                            $("#follow-user").css("display", "inline-block");
+                            $("#unfollow-user").css("display", "none");
+                        } else {
+
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -141,7 +189,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <span><fmt:formatNumber type="number" value="${userGrade}" pattern="0.0" maxFractionDigits="1"/></span>
+                                <span><fmt:formatNumber type="number" value="${userGrade}" pattern="0.0"
+                                                        maxFractionDigits="1"/></span>
                             </c:if>
                             <c:if test="${userGrade==0.0}">
                                 <span>还没有人评分，快去评分吧</span>
@@ -251,7 +300,8 @@
                             <li class="lili">
                                 <span class="lesson-index">L${vs.index+1}</span>
                                 <span class="lesson-title"><a
-                                        href="lessonPage.htm?childrenId=${lesson.course.courseId}" target="_blank">${lesson.course.courseTitle}</a></span>
+                                        href="lessonPage.htm?childrenId=${lesson.course.courseId}"
+                                        target="_blank">${lesson.course.courseTitle}</a></span>
                                 <span class="lesson-learned-status">
                                         ${lesson.learnState}
                                 </span>
@@ -273,80 +323,90 @@
             <h3>课程创建人</h3>
 
             <div class="course-author-block imageblock clearfix">
-                <div class="imageblock-image"><a href="goPersonnal.htm?userId=${currentCourse.user.userId}"
-                                                 class="show-user-card"><img
-                        src="${currentCourse.user.headImage.imageMid}" alt="${currentCourse.user.userName}"></a>
+                <div class="imageblock-image"><img
+                        src="${currentCourse.user.headImage.imageMid}" alt="${currentCourse.user.userName}">
                 </div>
                 <div class="imageblock-content">
 
                     <c:if test="${currentCourse.user.userId ne user.userId}">
-                        <c:if test="${isAttention==0}">
-                            <a href="" class="btn btn-small action-ajax fr"><i class="icon-plus"></i> 关注TA</a>
+                    <c:if test="${isAttention==0}">
+                    <div class="fr" id="follow-user-opts">
+                        <div class="fr" id="follow-user-opts">
+                            <a href="javascript:;" id="follow-user" class="btn btn-small disabled action-ajax fr" style="display: inline-block;"><i class="icon-plus"></i> 关注TA</a>
+                            <a href="javascript:;" id="unfollow-user" class="btn btn-small disabled action-ajax fr" style="display: none;">已关注 | 取消 </a>
+                            <input type="hidden" name="aa" value="no" id="att">
+                            <input type="hidden" name="bb" value="${currentCourse.user.userId}" id="btt">
+                        </div>
                         </c:if>
                         <c:if test="${isAttention==1}">
-                            <a href="" class="btn btn-small disabled action-ajax fr"><i class="icon-plus"></i> 已关注</a>
+                            <div class="fr" id="follow-user-opts">
+                                <a href="javascript:;" id="follow-user" class="btn btn-small disabled action-ajax fr" style="display: none;"><i class="icon-plus"></i> 关注TA</a>
+                                <a href="javascript:;" id="unfollow-user" class="btn btn-small disabled action-ajax fr" style="display: inline-block;">已关注 | 取消 </a>
+                                <input type="hidden" name="aa" value="ok" id="att">
+                                <input type="hidden" name="bb" value="${currentCourse.user.userId}" id="btt">
+                            </div>
                         </c:if>
-                    </c:if>
-                    <div class="userName"><a href="goPersonnal.htm?userId=${currentCourse.user.userId}"
-                                             class="show-user-card"
-                                             title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
-                            class="o-ver-icn"></span></a></div>
-                    <div>
-                        <a href="" class="stats"><em>课程&nbsp;${creatorCourseNum}</em></a>
-                        <a href="" class="stats"><em>粉丝&nbsp;${fansNum} </em></a>
-                        <a href="" class="stats"><em>关注&nbsp;${followNum} </em></a>
+                        </c:if>
+                        <div class="userName"><a href="goPersonal.htm?userId=${currentCourse.user.userId}"
+                                                 class="show-user-card"
+                                                 title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
+                                class="o-ver-icn"></span></a></div>
+                        <div>
+                            <a href="#" class="stats">课程&nbsp;${creatorCourseNum}</a>
+                            <a href="#" class="stats">粉丝&nbsp;${fansNum}</a>
+                            <a href="#" class="stats">关注&nbsp;${followNum}</a>
+                        </div>
                     </div>
+                    <div class="mtm gray">${currentCourse.user.intro}</div>
                 </div>
-                <div class="mtm gray">${currentCourse.user.intro}</div>
+            </div>
+
+
+            <div class="flat">
+                <h2>最近加入的学员</h2>
+                <ul class="grids smallpic-grids">
+                    <c:if test="${empty userLearnCourseList}">
+                        暂无用户学习此课程
+                    </c:if>
+                    <c:if test="${!empty userLearnCourseList}">
+                        <c:forEach items="${userLearnCourseList}" var="course">
+                            <li class="grid">
+                                <a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card"><img
+                                        src="${course.user.headImage.imageSmall}" title="${course.user.userName}"></a>
+
+                                <div><a href="" class="show-user-card"
+                                        title="${course.user.userName}">${course.user.userName}</a></div>
+                            </li>
+                        </c:forEach>
+                    </c:if>
+                </ul>
+            </div>
+
+            <div class="flat">
+                <h2>已完成该课程的学员</h2>
+                <ul class="grids smallpic-grids">
+                    <c:if test="${empty userEndCourseList}">
+                        <p>暂无用户学完此课程</p>
+                    </c:if>
+                    <c:if test="${!empty userEndCourseList}">
+                        <c:forEach items="${userEndCourseList}" var="course">
+                            <li class="grid">
+                                <a href="" class="show-user-card"><img src="${course.user.userName}"
+                                                                       alt="${course.user.headImage.imageSmall}"></a>
+
+                                <div><a href="" class="show-user-card"
+                                        title="${course.user.headImage.imageSmall}">${course.user.headImage.imageSmall}</a>
+                                </div>
+                            </li>
+                        </c:forEach>
+                    </c:if>
+                </ul>
+            </div>
+
+            <div>
+
             </div>
         </div>
-
-
-        <div class="flat">
-            <h2>最近加入的学员</h2>
-            <ul class="grids smallpic-grids">
-                <c:if test="${empty userLearnCourseList}">
-                    暂无用户学习此课程
-                </c:if>
-                <c:if test="${!empty userLearnCourseList}">
-                    <c:forEach items="${userLearnCourseList}" var="course">
-                        <li class="grid">
-                            <a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card"><img
-                                    src="${course.user.headImage.imageSmall}" title="${course.user.userName}"></a>
-
-                            <div><a href="" class="show-user-card"
-                                    title="${course.user.userName}">${course.user.userName}</a></div>
-                        </li>
-                    </c:forEach>
-                </c:if>
-            </ul>
-        </div>
-
-        <div class="flat">
-            <h2>已完成该课程的学员</h2>
-            <ul class="grids smallpic-grids">
-                <c:if test="${empty userEndCourseList}">
-                    <p>暂无用户学完此课程</p>
-                </c:if>
-                <c:if test="${!empty userEndCourseList}">
-                    <c:forEach items="${userEndCourseList}" var="course">
-                        <li class="grid">
-                            <a href="" class="show-user-card"><img src="${course.user.userName}"
-                                                                   alt="${course.user.headImage.imageSmall}"></a>
-
-                            <div><a href="" class="show-user-card"
-                                    title="${course.user.headImage.imageSmall}">${course.user.headImage.imageSmall}</a>
-                            </div>
-                        </li>
-                    </c:forEach>
-                </c:if>
-            </ul>
-        </div>
-
-        <div>
-
-        </div>
-    </div>
 </section>
 
 <div class="wrapper">

@@ -142,7 +142,7 @@ $(function(){
 							<c:forEach items="${teamList}" var="team">
 								<tr>
 								
-									<td style="text-align:center;"><img alt="" src="<c:url value="${team.headImage.imageMid}"/>"></td>
+									<td style="text-align:center;"><img alt="" src="<c:url value="${team.headImage.imageSmall}"/>"></td>
 									<td style="text-align:center;"><c:out value="${team.teamName}"/></td>
 									<td style="text-align:center;"><c:out value="${team.teamIntro}"/></td>
 									<td style="text-align:center;"><c:out value="${team.construction}"/></td>

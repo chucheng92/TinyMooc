@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.tinymooc.authority.annotation.CheckAuthority;
 import com.tinymooc.common.domain.*;
 import com.tinymooc.common.tag.pageTag.PageHelper;
+import com.tinymooc.handler.attention.service.AttentionService;
 import com.tinymooc.handler.course.service.CourseService;
 import com.tinymooc.handler.label.service.LabelService;
 import com.tinymooc.handler.resource.service.ResourceService;
@@ -45,6 +46,9 @@ public class CourseController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private AttentionService attention;
 
     private String labels;
 

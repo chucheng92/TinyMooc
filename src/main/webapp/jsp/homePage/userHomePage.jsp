@@ -414,7 +414,7 @@
                     <c:forEach items="${noteList}" var="note">
                         <li class="mbm">
                             <div class="metas">
-                                <a href="">${note.userCourse.course.courseTitle}的笔记</a>
+                                <a href="#">${note.userCourse.course.courseTitle}的笔记</a>
                             </div>
                             <div class="summary gray">${note.noteContent}</div>
                             <div class="metas">

@@ -99,59 +99,9 @@
                     $(this).addClass("current");
                 }
             });
-
-
-            $("#follow-user").click(function () {
-                var userId1 = $("#userId1").val();
-                var userId = $("#userId").val();
-                alert(userId);
-                if (userId1 == "") {
-                    alert("请先登录");
-                    return false;
-                } else {
-                    $.ajax({
-                        type: "post",
-                        url: "addAttention.htm",
-                        data: "userBid=" + userId,
-                        success: function (msg) {
-                            if (msg == "ok") {
-                                $("#follow-user").css("display", "none");
-                                $("#unfollow-user").css("display", "inline-block");
-                            }
-                            if (msg == "no") {
-                            }
-
-                        }
-
-                    });
-                }
-
-
-            });
-            $("#unfollow-user").click(function () {
-                var userId = $("#userId").val();
-                $.ajax({
-                    type: "post",
-                    url: "delAttention.htm",
-                    data: "userBid=" + userId,
-                    success: function (msg) {
-                        if (msg == "ok") {
-                            $("#follow-user").css("display", "inline-block");
-                            $("#unfollow-user").css("display", "none");
-                        }
-                        if (msg == "no") {
-                        }
-
-                    }
-
-                });
-
-            });
-
-
         });
-
     </script>
+
     <script type="text/javascript">
         function test() {
             <c:if test="${empty user}">
@@ -166,10 +116,56 @@
             }
             </c:if>
         }
-
     </script>
 
+    <script type="text/javascript">
+        $(function () {
+            // a为ok代表已经关注 no代表尚未关注
+            var a = $("#att").val();
+            var userId = $("#btt").val();
 
+            if (a == "no") {
+                $("#follow-user").css("display", "inline-block");
+                $("#unfollow-user").css("display", "none");
+            }
+            if (a == "ok") {
+                $("#follow-user").css("display", "none");
+                $("#unfollow-user").css("display", "inline-block");
+            }
+            $("#follow-user").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "addAttention.htm",
+                    data: "userBid=" + userId,
+                    success: function (msg) {
+                        if (msg == "true") {
+                            $("#follow-user").css("display", "none");
+                            $("#unfollow-user").css("display", "inline-block");
+                        } else {
+                            $("#follow-user").css("display", "none");
+                            $("#unfollow-user").css("display", "inline-block");
+                        }
+                    }
+
+                });
+            });
+            $("#unfollow-user").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "delAttention.htm",
+                    data: "userBid=" + userId,
+                    success: function (msg) {
+                        if (msg == "delOk") {
+                            $("#follow-user").css("display", "inline-block");
+                            $("#unfollow-user").css("display", "none");
+                        } else {
+
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -385,13 +381,25 @@
                 <div class="imageblock-content">
 
                     <c:if test="${currentCourse.user.userId ne user.userId}">
-                        <c:if test="${isAttention==0}">
-                            <a href="" class="btn btn-small action-ajax fr"><i class="icon-plus"></i> 关注TA</a>
+                    <c:if test="${isAttention==0}">
+                    <div class="fr" id="follow-user-opts">
+                        <div class="fr" id="follow-user-opts">
+                            <a href="javascript:;" id="follow-user" class="btn btn-small disabled action-ajax fr" style="display: inline-block;"><i class="icon-plus"></i> 关注TA</a>
+                            <a href="javascript:;" id="unfollow-user" class="btn btn-small disabled action-ajax fr" style="display: none;">已关注 | 取消 </a>
+                            <input type="hidden" name="aa" value="no" id="att">
+                            <input type="hidden" name="bb" value="${currentCourse.user.userId}" id="btt">
+                        </div>
                         </c:if>
                         <c:if test="${isAttention==1}">
-                            <a href="" class="btn btn-small disabled action-ajax fr"><i class="icon-plus"></i> 已关注</a>
+                            <div class="fr" id="follow-user-opts">
+                                <a href="javascript:;" id="follow-user" class="btn btn-small disabled action-ajax fr" style="display: none;"><i class="icon-plus"></i> 关注TA</a>
+                                <a href="javascript:;" id="unfollow-user" class="btn btn-small disabled action-ajax fr" style="display: inline-block;">已关注 | 取消 </a>
+                                <input type="hidden" name="aa" value="ok" id="att">
+                                <input type="hidden" name="bb" value="${currentCourse.user.userId}" id="btt">
+                            </div>
                         </c:if>
-                    </c:if>
+                        </c:if>
+
                     <div class="userName"><a href="goPersonnal.htm?userId=${currentCourse.user.userId}"
                                              class="show-user-card"
                                              title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
