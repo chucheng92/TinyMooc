@@ -40,6 +40,11 @@ public class AttentionController {
 
         String userBid = request.getParameter("userBid");
         User user = (User)request.getSession().getAttribute("user");
+        if (user == null) {
+            pw.print("login");
+            pw.close();
+            return;
+        }
         String userAid = user.getUserId();
 
         // FIXME

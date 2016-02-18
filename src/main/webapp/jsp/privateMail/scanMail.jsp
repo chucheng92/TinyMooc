@@ -27,6 +27,7 @@
             <div class="movedown"></div>
             <div class="side">
 
+<<<<<<< HEAD
                 <div class="avatar-mod clearfix">
                     <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
                     <div class="infos">
@@ -47,6 +48,10 @@
 
                 <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
 
+=======
+                <jsp:include page="/jsp/include/leftside.jsp"></jsp:include>
+
+>>>>>>> refs/remotes/origin/dev
             </div>
         </header>
 
@@ -60,6 +65,22 @@
         </div>
         <div class="right-top"></div>
         <div class="right">
+<<<<<<< HEAD
+
+
+            <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
+                <div class="main-head">
+
+                    <div class="fr">
+                        <a href="goPrivateMail.htm">« 返回私信箱</a>
+                        <span class="gray mhs">|</span>
+                        <a href="" onclick="return confirm(&#39;真的要删除整个私信会话吗？&#39;);">全部删除</a>
+                    </div>
+                    <h2>
+                        与${sender.userName}的会话<span class="mls">(共有${num}条)</span>
+
+                    </h2>
+=======
 
 
             <article class="post-1702 post type-post status-publish format-standard hentry category-gnews category-uncategorized tag-asparagus tag-delicious tag-eating-grilled tag-food tag-healthy tag-recipe tag-seasonal tag-variety tag-vegetables" id="post-1702">
@@ -76,8 +97,15 @@
                     </h2>
 
                 </div>
+>>>>>>> refs/remotes/origin/dev
 
+                </div>
 
+                <div class="mod">
+                    <ul class="msg-list mbl">
+                        <c:forEach items="${list}" var="reply">
+
+<<<<<<< HEAD
                 <div class="mod">
                     <ul class="msg-list mbl">
                         <c:forEach items="${list}" var="reply">
@@ -88,6 +116,14 @@
                                     <div class="imageblock-content">
                                         <div class="mbs"><a href="#" class="fr mls">回复</a><span class="time fr"><fmt:formatDate value="${reply.sendDate}" pattern="yyyy/MM/dd:HH:mm:ss"/></span><a href="#">${reply.userBySenderId.userName} TO ${reply.userByReceiverId.userName}</a></div>
                                         <div class="editor-content">${reply.content}</div>
+=======
+                            <li class="msg-row">
+                                <div class="imageblock clearfix">
+                                    <div class="imageblock-image"><img src="<c:url value="${reply.userBySenderId.headImage.imageSmall}"/>" class="img"></div>
+                                    <div class="imageblock-content">
+                                        <div class="mbs"><a href="#" class="fr mls">回复</a><span class="time fr"><fmt:formatDate value="${reply.sendDate}" pattern="yyyy/MM/dd:HH:mm:ss"/></span><a href="#">${reply.userBySenderId.userName} TO ${reply.userByReceiverId.userName}</a></div>
+                                        <div class="editor-content" style="color: #000">${reply.content}</div>
+>>>>>>> refs/remotes/origin/dev
                                     </div>
                                 </div>
                             </li>

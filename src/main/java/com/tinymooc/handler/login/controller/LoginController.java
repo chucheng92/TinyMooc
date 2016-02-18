@@ -1,5 +1,6 @@
 package com.tinymooc.handler.login.controller;
 
+import com.tinymooc.common.domain.Level;
 import com.tinymooc.common.domain.User;
 import com.tinymooc.handler.login.service.LoginService;
 
@@ -68,6 +69,10 @@ public class LoginController {
             //log.info("====avatar={}===", avatar);
             int credit = userInfo.getCredit();
             // FIXME
+            System.out.println("========credit=====" + credit);
+            Level level = userService.getUserLevel(credit);
+            System.out.println("===level===" + level.getLv());
+            // FIXME
             //log.info("====credit={}===", credit);
 
             // 封装数据
@@ -75,7 +80,7 @@ public class LoginController {
             hs.setAttribute("user", userInfo);
             hs.setAttribute("startTime", new Date());
             hs.setAttribute("sumMail", sumMail);
-
+            hs.setAttribute("level", level);
             // FIXME
             System.out.println("=========LoginController -> autoLogin====="+ autoLogin);
             // 自动登录时效 一周
@@ -137,12 +142,11 @@ public class LoginController {
                 if (!userId.equals("no-such-person")) {
                     int sumMail = pmService.sumMail(userId);
                     userInfo = loginService.findById(User.class, userId);
-
-                    //int credit = userInfo.getCredit();
+                    int credit = userInfo.getCredit();
 
                     // FIXME
-                    //log.info("======credit={}======", credit);
-                    //Level level = userService.getUserLevel(credit);
+                    log.info("======credit={}======", credit);
+                    Level level = userService.getUserLevel(credit);
 
                     HttpSession hs= request.getSession();
                     // 封装到session
@@ -152,7 +156,7 @@ public class LoginController {
                     hs.setAttribute("user", userInfo);
                     hs.setAttribute("startTime", new Date());
                     hs.setAttribute("sumMail", sumMail);
-                    //request.setAttribute("level", level);
+                   hs.setAttribute("level", level);
                     System.out.println("========cookie LoginController1=======");
 
                     Calendar cal = Calendar.getInstance();

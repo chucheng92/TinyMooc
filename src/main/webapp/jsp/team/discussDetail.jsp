@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]><html class="ie ie6"><![endif]-->
 <!--[if IE 7]><html class="ie ie7"><![endif]-->
@@ -9,18 +10,9 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> ${discuss.topic} - ${discuss.team.teamName} - 好知网</title>
-  <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<link rel="stylesheet" type="text/css"href="<c:url value="/js/fancybox/jquery.fancybox-1.3.4.css"/>"/>
-<script type="text/javascript" src="<c:url value="/js/fancybox/jquery.fancybox-1.3.4.pack.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
- <script type="text/javascript" src="<c:url value="/js/xheditor/xheditor-1.1.6-zh-cn.js"/>"></script> 
+  <title> ${discuss.topic} - ${discuss.team.teamName} - 萌课网</title>
+  <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+ <script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
  <script type="text/javascript">
 $(function(){
 
@@ -57,45 +49,26 @@ $(function(){
 			$(this).html("回复");
 			}
 		});
-	$("#save").click(function(){
-          $("#form1").submit();
-		});
-
+    $("#save").click(function () {
+        <c:if test="${empty user}">
+        alert("登陆后才可以发表回复(づ￣3￣)づ╭❤～");
+        return false;
+        </c:if>
+        <c:if test="${!empty user}">
+        if ($("#content").val() == "") {
+            alert("内容不能为空");
+            return false;
+        } else {
+            $("#form1").submit();
+        }
+        </c:if>
+    });
 	$(".btn.btn-success").live("click",function(){
-		//alert("aa");
-	     $(this).parent().parent().children(".form1.reply-form").submit();
+            $(this).parent().parent().children(".form1.reply-form").submit();
 	});
 });
-
-
 </script>
 
-<script type="text/javascript" >
-$().ready(function(){
-	$('#favorite').click(function(e){
-		var title=$("title").html();
-		var url=window.location.href;
-		var objectId=$("#obid").val();
-		url=url.replace("&","%26");		
-		//alert(title+"||"+url)		
-	   	e.preventDefault();
-	   	$.fancybox( 
-	   	{href:'addFavorite.htm?url='+url+"&title="+title+"&objectId="+objectId,   		
-		   	title:'添加收藏',type:'iframe',
-	   		onComplete: function() {
-	    		   parent.$("#fancybox-title").css({'top':'-15px', 'bottom':'auto'});
-	    		 }
-	   	},{
-	   		    hideOnOverlayClick:false,
-	   		    width:700,
-	    		height:150,
-	    		autoScale:true,
-	    		scrolling:'no'
-	   	}		 
-	   	 );
-	    });
-});
-</script>
 
 <script type="text/javascript" >
 $().ready(function(){
@@ -176,8 +149,8 @@ $().ready(function(){
       <div class="said-meta mbm mtl clearfix">
         <span class="gray fl">
         <input type="hidden" id="obid" value="${discuss.discussId}">
-        <a href="" class="show-user-card " title="${discuss.user.nickname}">
-        ${discuss.user.nickname}</a>发表于<fmt:formatDate value="${discuss.publishDate}" pattern="yyyy年MM月dd日 HH时mm分"/></span>
+        <a href="" class="show-user-card " title="${discuss.user.userName}">
+        ${discuss.user.userName}</a>发表于<fmt:formatDate value="${discuss.publishDate}" pattern="yyyy年MM月dd日 HH时mm分"/></span>
       </div>
       <div class="said-meta mbm">
       <c:if test="${user.userId eq userTeam.user.userId}">         
@@ -199,12 +172,12 @@ $().ready(function(){
        <c:if test="${user.userId eq discuss.user.userId}">       
       <span class="mls"><a href="" class="opt" id="edit">编辑</a></span>
       </c:if>
-      <c:if test="${flag eq 0}">
-      <span class="mls"><a href="" id="favorite" class="opt">收藏</a></span>
-      </c:if>
-      <c:if test="${flag eq 1}">
-      <span class="mls"><a href="" id="cancle" class="opt">已收藏</a></span>
-      </c:if>
+      <%--<c:if test="${flag eq 0}">--%>
+      <%--<span class="mls"><a href="" id="favorite" class="opt">收藏</a></span>--%>
+      <%--</c:if>--%>
+      <%--<c:if test="${flag eq 1}">--%>
+      <%--<span class="mls"><a href="" id="cancle" class="opt">已收藏</a></span>--%>
+      <%--</c:if>--%>
       <span class="mls"><a href="" id="inform" class="opt" id="inform">举报</a></span>
       </div>
     </div>
@@ -217,12 +190,12 @@ $().ready(function(){
       <h3>${commentNum} 回复</h3>
       <ul class="discuss-replies" style="border: 1px solid;border-color:#DDDDDD ">
       <c:forEach items="${comments}" var="cm1">
-          <li class="reply" data-author="${cm1.user.nickname}">
+          <li class="reply" data-author="${cm1.user.userName}">
              <div class="who">
-                <a href="" class="show-user-card"><img src="${cm1.user.headImage.imageMid}" alt="${cm1.user.nickname}"></a>
+                <a href="" class="show-user-card"><img src="${cm1.user.headImage.imageSmall}" alt="${cm1.user.userName}"></a>
              </div>
           <div class="mbs">
-              <strong class="mrs"><a href="" class="show-user-card " title="${cm1.user.nickname}">${cm1.user.nickname}</a></strong>
+              <strong class="mrs"><a href="" class="show-user-card " title="${cm1.user.userName}">${cm1.user.userName}</a></strong>
               <span class="said-meta"><fmt:formatDate value="${cm1.commentDate}" pattern="yy-MM-dd HH:mm"/></span>
           </div>
           <div class="said-content editor-content reply-editor-content">
@@ -235,12 +208,12 @@ $().ready(function(){
           <ul class="discuss-replies" style="border: 1px solid;border-color:#DDDDDD ">   
           <c:forEach items="${comments2}" var="cm2"> 
            <c:if test="${cm2.comment.commentId eq cm1.commentId}">
-           <li class="reply" data-author="${cm2.user.nickname}">
+           <li class="reply" data-author="${cm2.user.userName}">
              <div class="who">
-                <a href="" class="show-user-card"><img src="${cm2.user.headImage.imageMid}" alt="${cm2.user.nickname}" width="40px" height="40px"></a>
+                <a href="" class="show-user-card"><img src="${cm2.user.headImage.imageMid}" alt="${cm2.user.userName}" width="40px" height="40px"></a>
              </div>
               <div class="mbs">
-                <strong class="mrs"><a href="" class="show-user-card " title="${cm2.user.nickname}">${cm2.user.nickname}</a></strong>
+                <strong class="mrs"><a href="" class="show-user-card " title="${cm2.user.userName}">${cm2.user.userName}</a></strong>
                 <span class="said-meta"><fmt:formatDate value="${cm2.commentDate}" pattern="yyyy-MM-dd HH:mm"/></span>
               </div>
              <div class="said-content editor-content reply-editor-content">
@@ -255,13 +228,13 @@ $().ready(function(){
           <div style="display: none;" class="frame">
           <form id="form2" class="form1 reply-form" method="post" action="createContent.htm">
             <p class="text">
-            <textarea class="xheditors" name="content" style="padding-left: 0px" required="required"></textarea>
+            <textarea class="xheditors" id="content2" name="content" style="padding-left: 0px" required="required"></textarea>
             <input type="hidden" name="discussId" value="${discuss.discussId}" />
             <input type="hidden" name="parentId" value="${cm1.commentId}" />
             </p>
           </form>
             <p align="right">          
-               <button class="btn btn-success">回复</button>
+               <button class="btn btn-success" id="inner-save">回复</button>
             </p>
            </div>         
           </div>
@@ -291,7 +264,7 @@ $().ready(function(){
       <h3>话题作者</h3>
       
         <div class="owner-block imageblock clearfix">
-             <div class="imageblock-image"><a href="" class="show-user-card"><img src="${discuss.user.headImage.imageMid}" alt="${discuss.user.nickname}"></a>
+             <div class="imageblock-image"><a href="" class="show-user-card"><img src="${discuss.user.headImage.imageMid}" alt="${discuss.user.userName}"></a>
              </div>
               <div class="imageblock-content">
                   <c:if test="${discuss.user.userId ne user.userId}">
@@ -305,13 +278,13 @@ $().ready(function(){
                   </c:if>
                   </c:if>
 
-                  <div  class="nickname"><a href="" class="show-user-card " title="${discuss.user.nickname}">${discuss.user.nickname}</a></div>
+                  <div  class="nickname"><a href="" class="show-user-card " title="${discuss.user.userName}">${discuss.user.userName}</a></div>
                   <div>
                             <a href="" class="stats"><em>${courseNum}</em> 课程</a>
                              <a href="" class="stats"><em>${fansNum}</em> 粉丝</span></a>
                   </div>
                  </div>
-                 <div class="mtm gray">${discuss.user.signature}</div>
+                 <div class="mtm gray">${discuss.user.userName}</div>
               </div>
        </div>
         <div class="flat">

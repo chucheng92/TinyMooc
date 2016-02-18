@@ -250,7 +250,11 @@
                                     <li><a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a></li>
                                     <li><a href="myTinyMooc.htm">我的萌课</a></li>
                                     <li> <a href="goPrivateMail.htm" class="status-item message-remind">邮件：${sessionScope.sumMail}</a></li>
+<<<<<<< HEAD
                                     <li><a href="myTinyMooc.htm">收藏夹</a></li>
+=======
+                                    <li><a href="myFavorite.htm">收藏夹</a></li>
+>>>>>>> refs/remotes/origin/dev
                                     <li><a href="account.htm">账户设置</a></li>
                                     <li><a href="logout.htm">退出</a></li>
                                 </ul>

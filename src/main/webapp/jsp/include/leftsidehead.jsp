@@ -8,7 +8,7 @@
    <div class="avatar-mod clearfix">
         <a href="user.jsp" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>" /></a>
         <div class="infos">
-          <div class="nickname"><a href="user.jsp" title="fanfanle">${user.nickname}</a></div>
+          <div class="nickname"><a href="user.jsp" title="fanfanle">${user.userName}</a></div>
           <div class="icons">
             <a class="user-level user-level-6" title="努力升级吧!" href="/help/helplevel.jsp" target="_blank">${level.lv}级</a>${level.title}
 

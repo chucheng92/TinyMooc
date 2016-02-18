@@ -111,7 +111,7 @@
 									</div>
 								</div>
 								<div class="metas">
-									by <a href="" class="show-user-card ">${note.userCourse.user.nickname}</a>
+									by <a href="" class="show-user-card ">${note.userCourse.user.userName}</a>
 									<span class="mhs time">${note.addDate}</span>
 								</div>
 

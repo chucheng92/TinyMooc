@@ -117,7 +117,7 @@
 
                <c:forEach items="${users}" var="user">
                     <tr>  
-					<td><a href="goPersonnal.htm?userId=${user.userId}">${user.nickname}</a></td>					
+					<td><a href="goPersonnal.htm?userId=${user.userId}">${user.userName}</a></td>					
 					<td><c:out value="${user.intro}"></c:out></td>					
 					</tr>
 				</c:forEach>
@@ -135,7 +135,7 @@
                     <tr>  
 					<td><a href="teamHomePage.htm?teamId=${userTeam.team.teamId}">${userTeam.team.teamName}</a>
 					<td><c:out value="${userTeam.team.teamIntro}"></c:out></td>						
-					<td><c:out value="${userTeam.user.nickname}"></c:out></td>	
+					<td><c:out value="${userTeam.user.userName}"></c:out></td>	
 					<td><fmt:formatDate value="${userTeam.team.applyDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>					
 					</tr>
 				</c:forEach>
@@ -153,7 +153,7 @@
                     <tr>  
 					<td><a href="courseDetailPage.htm?courseId=${userCourse.course.courseId}">${userCourse.course.courseTitle}</a></td>					
 					<td><c:out value="${userCourse.course.courseIntro}"></c:out></td>
-					<td><c:out value="${userCourse.user.nickname}"></c:out></td>	
+					<td><c:out value="${userCourse.user.userName}"></c:out></td>	
 					<td><fmt:formatDate value="${userCourse.course.applyDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>					
 					</tr>
 				</c:forEach>
@@ -169,7 +169,7 @@
                <c:forEach items="${discusses}" var="discuss">
                     <tr>  
 					<td><a href="discussDetailPage.htm?discussId=${discuss.discussId}">${discuss.topic}</a></td>					
-					<td><c:out value="${discuss.user.nickname}"></c:out></td>	
+					<td><c:out value="${discuss.user.userName}"></c:out></td>	
 					<td><fmt:formatDate value="${discuss.publishDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>					
 					</tr>
 				</c:forEach>
@@ -221,7 +221,7 @@
 
 </section>
 
-<jsp:include page="/jsp/include/foot1.jsp"></jsp:include>
+<jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 
 </body>
 </html>

@@ -25,10 +25,11 @@ public class Favorite implements java.io.Serializable {
 
     private String favoriteId;
     private User user;
-    private String favoriteName;
+    private String courseId;
     private String url;
     private Date favoriteDate;
-    private String objectId;
+    private String courseName;
+//    private String objectId;
 
     public Favorite() {
     }
@@ -37,14 +38,14 @@ public class Favorite implements java.io.Serializable {
         this.favoriteId = favoriteId;
     }
 
-    public Favorite(String favoriteId, User user, String favoriteName,
-                    String url, Date favoriteDate, String objectId) {
+    public Favorite(String favoriteId, User user, String courseId,
+                    String url, Date favoriteDate, String courseName) {
         this.favoriteId = favoriteId;
         this.user = user;
-        this.favoriteName = favoriteName;
+        this.courseId = courseId;
         this.url = url;
         this.favoriteDate = favoriteDate;
-        this.objectId = objectId;
+        this.courseName = courseName;
     }
 
     @Id
@@ -67,13 +68,13 @@ public class Favorite implements java.io.Serializable {
         this.user = user;
     }
 
-    @Column(name = "FAVORITE_NAME", length = 100)
-    public String getFavoriteName() {
-        return this.favoriteName;
+    @Column(name = "COURSE_ID", length = 100)
+    public String getCourseId() {
+        return this.courseId;
     }
 
-    public void setFavoriteName(String favoriteName) {
-        this.favoriteName = favoriteName;
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
     }
 
     @Column(name = "URL", length = 500)
@@ -95,14 +96,13 @@ public class Favorite implements java.io.Serializable {
         this.favoriteDate = favoriteDate;
     }
 
-    @Column(name = "OBJECT_ID", length = 32)
-    public String getObjectId() {
-        return this.objectId;
+    @Column(name = "COURSE_NAME", length = 1000)
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
-
 }
 

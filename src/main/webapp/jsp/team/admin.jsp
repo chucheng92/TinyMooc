@@ -9,17 +9,9 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> 基本信息设置 - 起风了的小组管理 - 好知网</title>
-  <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-    <link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-   <link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-  <link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-  <link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-    <script type="text/javascript" src="<c:url value="/js/label.js"/>"></script>
-   <script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
- 
+  <title> 基本信息设置 - 萌课网</title>
+  <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+    <%@ include file="/resource/jspf/commons.jspf" %>
  <script type="text/javascript">
 $(function(){
 
@@ -57,11 +49,11 @@ $(function(){
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
 
 
-<section class="container">
-  <div class="group-header" style="background-image:url(<c:url value="/pic/imagehead/group-header.jpg"></c:url>)">
+<section class="container" style="margin-top: 60px;">
+  <div class="group-header" style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
 
   <div class="head">
-    <div class="icon"><img src=""  alt="${userTeam2.team.teamName}"  /></div>
+    <div class="icon"><img src="${userTeam2.team.headImage.imageSmall}"  alt="${userTeam2.team.teamName}"  /></div>
     <div class="infos">
       <h1>${userTeam2.team.teamName}</h1>
       <span>${memberNum}个成员</span>
@@ -122,13 +114,13 @@ $(function(){
 <footer class="footer container">
   <div style="padding: 0px 28px;">
     <div class="fl footer-links">
-      <a href="">关于微课程</a>
-      <a href="">微课程达人</a>
-      <a href="">联系我们</a>
-      <a href="">友情链接</a>
-      <a href="">意见反馈</a>
+      <a href="#">关于微课程</a>
+      <a href="#">微课程达人</a>
+      <a href="#">联系我们</a>
+      <a href="#">友情链接</a>
+      <a href="#">意见反馈</a>
       <br>
-      <span class="copyright">©2013 MicroCourses.COM <a href="#">陕ICP备1102461-7</a> </span>
+      <span class="copyright">©2015 TinyMooc.COM <a href="#">闽ICP备1102461-7</a> </span>
     </div>
   </div>
 </footer>

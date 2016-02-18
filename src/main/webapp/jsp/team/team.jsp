@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<<<<<<< HEAD
+=======
+<%@ include file="/resource/jspf/commons.jspf" %>
+>>>>>>> refs/remotes/origin/dev
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -225,7 +229,19 @@
 
 </head>
 <body class="archive category category-gnews category-3">
+<<<<<<< HEAD
 
+=======
+<script type="text/javascript">
+    $(document).ready(function () {
+        var message='<%=request.getParameter("message")%>';
+        if(message==null || message=='null'){
+        }else{
+            $.scojs_message(message, $.scojs_message.TYPE_OK);
+        }
+    });
+</script>
+>>>>>>> refs/remotes/origin/dev
 <c:if test="${empty user.userId}">
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
 </c:if>
@@ -257,20 +273,11 @@
                             <div class="gray">我管理的小组</div>
 
                             <ul class="grids smallpic-grids">
-                                <c:forEach items="${userTeam1}" var="userteam">
-                                    <%--<c:if test="${userteam.userPosition=='组长'}">--%>
+                                <c:forEach items="${userTeam1}" var="team">
                                     <li class="grid">
-                                        <a href="teamHomePage.htm?teamId=${userteam.team.teamId}" title=""><img
-                                                src="${userteam.team.headImage.imageSmall}"
-                                                alt="${userteam.team.teamName}"/></a>
-
-                                        <div class="mvs">
-                                            <a href="teamHomePage.htm?teamId=${userteam.team.teamId}"
-                                               title="${userteam.team.teamName}">
-                                                <c:out value="${userteam.team.teamName}"></c:out>
-                                            </a></div>
+                                       <img src="${team.team.headImage.imageSmall}" alt="${team.team.teamName}"/>
+                                        <a href="teamHomePage.htm?teamId=${team.team.teamId}" title="${team.team.teamName}">${team.team.teamName}</a>
                                     </li>
-                                    <%--</c:if>--%>
                                 </c:forEach>
                             </ul>
                         </c:if>

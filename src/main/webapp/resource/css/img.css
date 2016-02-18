@@ -1,5 +1,5 @@
 .gnews-banner div {
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/003637u4e9rwur4wtqqr0l.png) no-repeat;
+    background: url(/resource/img/003637u4e9rwur4wtqqr0l.png) no-repeat;
     width: 316px;
     height: 205px;
     position: absolute;
@@ -7,7 +7,7 @@
     top: -30px;
 }
 .gnews-banner {
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/08/231737vo18nzcdd85e7s7u.png) no-repeat;
+    background: url(/resource/img/231737vo18nzcdd85e7s7u.png) no-repeat;
     background-position: 260px 0px;
     margin-top: 20px;
 }
@@ -15,7 +15,7 @@
     float: left;
     width: 218px;
     height: 78px;
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/08/235155zqscfap0cu0afkfo.png) no-repeat;
+    background: url(/resource/img/235155zqscfap0cu0afkfo.png) no-repeat;
 
     margin-bottom: 20px;
 }
@@ -23,21 +23,21 @@
     float: left;
     height: 72px;
     width: 188px;
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/000244u7li6fs60yiymine.png) no-repeat;
+    background: url(/resource/img/000244u7li6fs60yiymine.png) no-repeat;
 }
 .gnews-menu-major a {
     float: left;
     height: 72px;
     width: 188px;
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/223204dyasahehzeseskhk.png) no-repeat;
+    background: url(/resource/img/223204dyasahehzeseskhk.png) no-repeat;
 }
 .gnews-banner-major {
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/222633qyln1ybu4xnu4o68.png) no-repeat;
+    background: url(/resource/img/222633qyln1ybu4xnu4o68.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
 }
 .gnews-banner-major div {
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/10/000355r0m6u912u90o60ma.png) no-repeat;
+    background: url(/resource/img/000355r0m6u912u90o60ma.png) no-repeat;
     width: 316px;
     height: 205px;
     position: absolute;
@@ -50,18 +50,25 @@
 .custom-hr {
     width: 100%;
     height: 5px;
-    background: url(http://www.gnosh.co.uk/wp-content/themes/gnosh/images/hr-break.jpg) no-repeat;
+    background: url(/resource/img/hr-break.jpg) no-repeat;
 }
 .garlic {
     position: relative;
     float: left;
     width: 316px;
     height: 240px;
+<<<<<<< HEAD
     background: url(/resource/img/.png) no-repeat;
 margin-left: -10px;
 }
 .middle-container .gnews-banner-major div {
     background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/10/000355r0m6u912u90o60ma.png) no-repeat;
+=======
+    margin-left: -10px;
+}
+.middle-container .gnews-banner-major div {
+    background: url(/resource/img/000355r0m6u912u90o60ma.png) no-repeat;
+>>>>>>> refs/remotes/origin/dev
     width: 316px;
     height: 205px;
     position: absolute;
@@ -69,7 +76,11 @@ margin-left: -10px;
     top: -30px;
 }
 .middle-container .gnews-banner-major {
+<<<<<<< HEAD
     background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/222633qyln1ybu4xnu4o68.png) no-repeat;
+=======
+    background: url(/resource/img/222633qyln1ybu4xnu4o68.png) no-repeat;
+>>>>>>> refs/remotes/origin/dev
     background-position: 450px 0px;
     margin-top: 20px;
 }
@@ -77,13 +88,21 @@ margin-left: -10px;
     float: left;
     height: 12px;
     width: 188px;
+<<<<<<< HEAD
     background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/24/005912gsp9zypdps8gzg2g.png) no-repeat;
+=======
+    background: url(/resource/img/005912gsp9zypdps8gzg2g.png) no-repeat;
+>>>>>>> refs/remotes/origin/dev
 }
 
 .gnews-banner-mail {
     background: url(/resource/img/tmail.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
+<<<<<<< HEAD
+=======
+    margin-left: 40px;
+>>>>>>> refs/remotes/origin/dev
 }
 .gnews-banner-mail div {
     background: url(/resource/img/mail.png) no-repeat;
@@ -103,13 +122,21 @@ margin-left: -10px;
     width: 316px;
     height: 205px;
     position: absolute;
+<<<<<<< HEAD
     left:-40px;
+=======
+    left:30px;
+>>>>>>> refs/remotes/origin/dev
     top: -30px;
 }
 .gnews-banner-note {
     background: url(/resource/img/tnote.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
+<<<<<<< HEAD
+=======
+    margin-left: 30px;
+>>>>>>> refs/remotes/origin/dev
 }
 .gnews-banner-note div {
     background: url(/resource/img/note.png) no-repeat;
@@ -117,7 +144,11 @@ margin-left: -10px;
     height: 205px;
     position: absolute;
     left:-40px;
+<<<<<<< HEAD
     top: -30px;
+=======
+    top: 0px;
+>>>>>>> refs/remotes/origin/dev
 }
 .gnews-banner-friendlist {
     background: url(/resource/img/tfriendlist.png) no-repeat;
@@ -131,4 +162,43 @@ margin-left: -10px;
     position: absolute;
     left:-40px;
     top: -30px;
+<<<<<<< HEAD
+=======
+}
+.gnews-banner-mytinymooc div{
+    background: url(/resource/img/mytinymooc.png) no-repeat;
+    width: 520px;
+    height: 150px;
+    position: absolute;
+    left:100px;
+    top: -15px;
+}
+.gnews-banner-team {
+    background: url(/resource/img/231737vo18nzcdd85e7s7u.png) no-repeat;
+    background-position: 260px 0px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.gnews-banner-team div {
+    background: url(/resource/img/003637u4e9rwur4wtqqr0l.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner-help {
+    background: url(/resource/img/help1.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.gnews-banner-help div {
+    background: url(/resource/img/help.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:50px;
+    top: -40px;
+>>>>>>> refs/remotes/origin/dev
 }

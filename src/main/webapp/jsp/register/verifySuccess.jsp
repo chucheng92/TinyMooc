@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>激活成功</title>
+<title>激活成功 - 萌课网</title>
 <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.css"/>" media="screen">
 <script type="text/javascript" src="<c:url value="/resource/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
@@ -16,8 +16,12 @@
 <body class="lily-theme">
 
 <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
+<<<<<<< HEAD
 <section class="container signup">
 
+=======
+<section class="container signup" style="margin-top: 60px;">
+>>>>>>> refs/remotes/origin/dev
 	<div class="container-padding clearfix">
   		<h1>${verify}</h1>
  	 </div>

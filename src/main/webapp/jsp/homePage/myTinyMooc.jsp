@@ -36,7 +36,11 @@
     </div>
 
     <div class="my-middle">
+<<<<<<< HEAD
         <div class="right-top-banner gnews-banner">
+=======
+        <div class="right-top-banner gnews-banner-mytinymooc">
+>>>>>>> refs/remotes/origin/dev
             <div></div>
         </div>
         <div class="right-top"></div>
@@ -105,11 +109,19 @@
                         <div class="point-num"></div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
 
 
 
+=======
+
+                <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
+
+
+
+>>>>>>> refs/remotes/origin/dev
                 <div class="mod">
                     <div class="mod-head"><h3><span>创建课程</span></h3></div>
                     <div class="gray mbs tar">
@@ -119,7 +131,13 @@
                     <div class="clearfix"><a href="howToCreate.htm" class="fr">如何创建课程？</a></div>
                 </div>
 
+<<<<<<< HEAD
                 <%--达人列表 expertList--%>
+=======
+                <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
+
+            <%--达人列表 expertList--%>
+>>>>>>> refs/remotes/origin/dev
                 <div class="mod">
                     <div class="mod-head">
                         <a href="javascript:;" id="change-recommend-daren-btn" class="more">换一组</a>
@@ -131,7 +149,11 @@
                                 <div class="imageblock clearfix">
                                     <div class="imageblock-image">
                                         <a href="goPersonal.htm?userId=${expert.userId}" class="show-user-card" >
+<<<<<<< HEAD
                                             <img src="<c:url value="${expert.headImage.imageMid}"/>" title="${expert.userName}"></a>
+=======
+                                            <img src="<c:url value="${expert.headImage.imageSmall}"/>" title="${expert.userName}"></a>
+>>>>>>> refs/remotes/origin/dev
                                     </div>
                                     <div class="imageblock-content">
                                         <div class="mbs"><a href="goPersonal.htm?userId=${expert.userId}" class="show-user-card " title="${expert.userName}">${expert.userName}</a></div>
@@ -142,6 +164,7 @@
                     </ul>
                 </div>
 
+<<<<<<< HEAD
                 <%--标签列表 labelList--%>
                 <div class="mod">
                     <div class="mod-head">
@@ -154,6 +177,22 @@
                     </div>
                 </div>
 
+=======
+                <li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-4 gnews-menu-major-board"><a href="turnToHomePage.htm"></a></li>
+
+            <%--标签列表 labelList--%>
+                <div class="mod">
+                    <div class="mod-head">
+                        <h3><span>热门标签</span></h3>
+                    </div>
+                    <div class="tags">
+                        <c:forEach items="${labelList}" var="label">
+                            <a href="" class="tag">${label.labelName}</a>
+                        </c:forEach>
+                    </div>
+                </div>
+
+>>>>>>> refs/remotes/origin/dev
             </div>
         </header>
     </div>

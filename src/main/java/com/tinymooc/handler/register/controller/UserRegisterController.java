@@ -141,30 +141,32 @@ public class UserRegisterController {
 		
 	}
 
-	@RequestMapping("findPassword.htm")
-	public ModelAndView findPassword(HttpServletRequest request ,HttpServletResponse response)throws Exception{
-		 
-		String userEmail=request.getParameter("userEmail");
-		System.out.println(userEmail);
-		SendMailService email = new SendMailService("smtp.163.com", 25, 0, true, "initialran@163.com","19920104tr",true);
-		System.out.println(userEmail);
-		String url="尊敬的用户您好，点击链接跳转到密码重置页面重置您的密码<br><a href='http://localhost:8888/microlecture/goChangePasswordPage.htm?userEmail="+userEmail+"'>重置密码</a><br>";
-		
-		try {
-			email.sendEmail(
-				"initialran@163.com",
-				"微课程",
-					userEmail,
-					"找回密码",url
-					);
-			
-		} catch (Exception e) {
-		e.printStackTrace();System.out.println("send fail");
-		}
-		System.out.println("*************************************");
-		request.setAttribute("findpswd", "系统已经给您的注册邮箱发送了找回密码的链接，请尽快查看");
-		return new ModelAndView("redirect:turnToHomePage.htm");
-	}
+    @RequestMapping("findPassword.htm")
+    public ModelAndView findPassword(HttpServletRequest request ,HttpServletResponse response)throws Exception{
+
+        String userEmail=request.getParameter("userEmail");
+        System.out.println(userEmail);
+        SendMailService email = new SendMailService("smtp.163.com", 25, 0, true, "initialran@163.com","19920104tr",true);
+        System.out.println(userEmail);
+        String url="尊敬的用户您好，点击链接跳转到密码重置页面重置您的密码<br><a href='http://localhost:8092/goChangePasswordPage.htm?userEmail="+userEmail+"'>重置密码</a><br>";
+
+        try {
+            email.sendEmail(
+                    "initialran@163.com",
+                    "微课程",
+                    userEmail,
+                    "找回密码",url
+            );
+            request.setAttribute("note", "尊敬的用户，系统已经给您的注册邮箱发送了找回密码的链接，请尽快查请前邮箱查看。");
+        } catch (Exception e) {
+            e.printStackTrace();System.out.println("send fail");
+            request.setAttribute("note", "尊敬的用户,很不幸的消息，由于网络故障，注册验证邮件发送失败。");
+        }
+        System.out.println("*************************************");
+        //request.setAttribute("findpswd", "系统已经给您的注册邮箱发送了找回密码的链接，请尽快查看");
+        return new ModelAndView("/register/sendEmailSuccess");
+        //return new ModelAndView("redirect:turnToHomePage.htm");
+    }
 	
 	@RequestMapping("goChangePasswordPage.htm")
 	public ModelAndView goChangePasswordPage(HttpServletRequest request,HttpServletResponse response) throws Exception{

@@ -27,34 +27,6 @@
 
     <script type="text/javascript">
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-28918139-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-29176033-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-
-    <script type="text/javascript">
-
         $(function(){
 
             $("#course").mouseover(function(){
@@ -65,6 +37,23 @@
             $(".item.course").mouseleave(function(){
 
                 $("#menu").css("display","none");
+            });
+        });
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(function(){
+
+            $("#course1").mouseover(function(){
+
+                $("#menu1").css("display","block");
+
+            });
+            $(".item.course").mouseleave(function(){
+
+                $("#menu1").css("display","none");
             });
         });
 
@@ -238,7 +227,11 @@
                                     <li><a href="goPersonal.htm?userId=${sessionScope.user.userId}">个人主页</a></li>
                                     <li><a href="myTinyMooc.htm">我的萌课</a></li>
                                     <li> <a href="goPrivateMail.htm" class="status-item message-remind">邮件：${sessionScope.sumMail}</a></li>
+<<<<<<< HEAD
                                     <li><a href="myTinyMooc.htm">收藏夹</a></li>
+=======
+                                    <li><a href="myFavorite..htm">收藏夹</a></li>
+>>>>>>> refs/remotes/origin/dev
                                     <li><a href="account.htm">账户设置</a></li>
                                     <li><a href="logout.htm">退出</a></li>
                                 </ul>
@@ -396,7 +389,7 @@
                                     <div class="imageblock-content">
 
                                         <p class="title">
-                                            <a href="">${discuss.topic}</a>
+                                            <a href="discussDetailPage.htm?discussId=${discuss.discussId}"><span style="color: rgb(102, 194, 160)">${discuss.topic}</span></a>
                                         </p>
                                         <p class="metas">
                                             <a href="teamHomePage.htm?teamId=${discuss.team.teamId}" title="来自『${discuss.team.teamName}』小组"
@@ -442,7 +435,7 @@
                     <c:forEach items="${noteList}" var="note">
                         <li class="mbm">
                             <div class="metas">
-                                <a href="">${note.userCourse.course.courseTitle}的笔记</a>
+                                <a href="#">${note.userCourse.course.courseTitle}的笔记</a>
                             </div>
                             <div class="summary gray">${note.noteContent}</div>
                             <div class="metas">
