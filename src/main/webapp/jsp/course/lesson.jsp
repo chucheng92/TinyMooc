@@ -466,6 +466,7 @@
         </div>
 
     </div>
+        </div>
 </section>
 
 <div class="wrapper">

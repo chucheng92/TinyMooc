@@ -166,7 +166,7 @@
                                     <c:forEach items="${discusses}" var="dis">
                                         <li>
                                             <div class="imageblock clearfix">
-                                                <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
+                                                <div class="imageblock-image"><img src="${dis.user.headImage.imageSmall}">
                                                 </div>
                                                 <div class="imageblock-content">
 
@@ -174,7 +174,7 @@
                                                         <c:if test="${dis.top==1}">
                                                             <span class="stick-flag mrs">[置顶]</span>
                                                         </c:if>
-                                                        <a href="discussDetailPage.htm?discussId=${dis.discussId}">${dis.topic}</a>
+                                                        <a href="discussDetailPage.htm?discussId=${dis.discussId}"><span style="color: rgb(102, 194, 160)">${dis.topic}</span></a>
                                                         <c:if test="${dis.essence=='精华'}">
                                                             <img src='<c:url value="/resource/pic/elite-s.png"></c:url>'
                                                                  width="16" height="14" title="精华贴"/>
@@ -182,9 +182,9 @@
                                                     </p>
 
                                                     <p class="metas">
-                                                        by <a href="" class="show-user-card "
+                                                        by <a href="goPersonal.htm?userId=${dis.user.userId}" class="show-user-card "
                                                               title="${dis.user.userName}">${dis.user.userName}</a>
-                                                        <span class="mhm">${dis.scanNum}</span>
+                                                        <span class="mhm">浏览量：${dis.scanNum}</span>
                                                     </p>
                                                 </div>
                                             </div>

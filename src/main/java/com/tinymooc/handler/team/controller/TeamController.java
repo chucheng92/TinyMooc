@@ -469,9 +469,9 @@ public class TeamController {
                 .add(Restrictions.eq("userPosition", "组长"))
                 .createCriteria("team")
                 .add(Restrictions.eq("teamId", discuss.getTeam().getTeamId()));
-        DetachedCriteria criteria6 = DetachedCriteria.forClass(Favorite.class)
-                .add(Restrictions.eq("user", user2))
-                .add(Restrictions.eq("objectId", discuss.getDiscussId()));
+//        DetachedCriteria criteria6 = DetachedCriteria.forClass(Favorite.class)
+//                .add(Restrictions.eq("user", user2))
+//                .add(Restrictions.eq("objectId", discuss.getDiscussId()));
         DetachedCriteria criteria7 = DetachedCriteria.forClass(Comment.class)
                 .add(Restrictions.eq("commentObject", discussId))
                 .add(Restrictions.isNull("comment"))
@@ -487,7 +487,7 @@ public class TeamController {
         List<Resource> resources = (List<Resource>) teamService.queryAllOfCondition(Resource.class, criteria3);
         List<UserCourse> userCourses = (List<UserCourse>) teamService.queryAllOfCondition(UserCourse.class, criteria4);
         List<UserTeam> userTeams = (List<UserTeam>) teamService.queryAllOfCondition(UserTeam.class, criteria5);
-        List<Favorite> favorites = (List<Favorite>) teamService.queryAllOfCondition(Favorite.class, criteria6);
+//        List<Favorite> favorites = (List<Favorite>) teamService.queryAllOfCondition(Favorite.class, criteria6);
         List<Comment> comments = (List<Comment>) teamService.queryAllOfCondition(Comment.class, criteria7);
         List<Comment> comments2 = (List<Comment>) teamService.queryAllOfCondition(Comment.class, criteria8);
         List<Attention> attentions2 = (List<Attention>) teamService.queryAllOfCondition(Attention.class, criteria9);
@@ -500,10 +500,10 @@ public class TeamController {
             at = 1;
         }
 
-        int flag = 1;
-        if (favorites.isEmpty()) {
-            flag = 0;
-        }
+//        int flag = 1;
+//        if (favorites.isEmpty()) {
+//            flag = 0;
+//        }
         int commentNum = comments.size() + comments2.size();
         discuss.setScanNum(discuss.getScanNum() + 1);
         teamService.update(discuss);
@@ -515,7 +515,7 @@ public class TeamController {
         req.setAttribute("resource", resource);
         req.setAttribute("courseNum", courseNum);
         req.setAttribute("userTeam", userTeam);
-        req.setAttribute("flag", flag);
+//        req.setAttribute("flag", flag);
         req.setAttribute("comments", comments);
         req.setAttribute("comments2", comments2);
         req.setAttribute("commentNum", commentNum);

@@ -49,45 +49,26 @@ $(function(){
 			$(this).html("回复");
 			}
 		});
-	$("#save").click(function(){
-          $("#form1").submit();
-		});
-
+    $("#save").click(function () {
+        <c:if test="${empty user}">
+        alert("登陆后才可以发表回复(づ￣3￣)づ╭❤～");
+        return false;
+        </c:if>
+        <c:if test="${!empty user}">
+        if ($("#content").val() == "") {
+            alert("内容不能为空");
+            return false;
+        } else {
+            $("#form1").submit();
+        }
+        </c:if>
+    });
 	$(".btn.btn-success").live("click",function(){
-		//alert("aa");
-	     $(this).parent().parent().children(".form1.reply-form").submit();
+            $(this).parent().parent().children(".form1.reply-form").submit();
 	});
 });
-
-
 </script>
 
-<script type="text/javascript" >
-$().ready(function(){
-	$('#favorite').click(function(e){
-		var title=$("title").html();
-		var url=window.location.href;
-		var objectId=$("#obid").val();
-		url=url.replace("&","%26");		
-		//alert(title+"||"+url)		
-	   	e.preventDefault();
-	   	$.fancybox( 
-	   	{href:'addFavorite.htm?url='+url+"&title="+title+"&objectId="+objectId,   		
-		   	title:'添加收藏',type:'iframe',
-	   		onComplete: function() {
-	    		   parent.$("#fancybox-title").css({'top':'-15px', 'bottom':'auto'});
-	    		 }
-	   	},{
-	   		    hideOnOverlayClick:false,
-	   		    width:700,
-	    		height:150,
-	    		autoScale:true,
-	    		scrolling:'no'
-	   	}		 
-	   	 );
-	    });
-});
-</script>
 
 <script type="text/javascript" >
 $().ready(function(){
@@ -191,12 +172,12 @@ $().ready(function(){
        <c:if test="${user.userId eq discuss.user.userId}">       
       <span class="mls"><a href="" class="opt" id="edit">编辑</a></span>
       </c:if>
-      <c:if test="${flag eq 0}">
-      <span class="mls"><a href="" id="favorite" class="opt">收藏</a></span>
-      </c:if>
-      <c:if test="${flag eq 1}">
-      <span class="mls"><a href="" id="cancle" class="opt">已收藏</a></span>
-      </c:if>
+      <%--<c:if test="${flag eq 0}">--%>
+      <%--<span class="mls"><a href="" id="favorite" class="opt">收藏</a></span>--%>
+      <%--</c:if>--%>
+      <%--<c:if test="${flag eq 1}">--%>
+      <%--<span class="mls"><a href="" id="cancle" class="opt">已收藏</a></span>--%>
+      <%--</c:if>--%>
       <span class="mls"><a href="" id="inform" class="opt" id="inform">举报</a></span>
       </div>
     </div>
@@ -211,7 +192,7 @@ $().ready(function(){
       <c:forEach items="${comments}" var="cm1">
           <li class="reply" data-author="${cm1.user.userName}">
              <div class="who">
-                <a href="" class="show-user-card"><img src="${cm1.user.headImage.imageMid}" alt="${cm1.user.userName}"></a>
+                <a href="" class="show-user-card"><img src="${cm1.user.headImage.imageSmall}" alt="${cm1.user.userName}"></a>
              </div>
           <div class="mbs">
               <strong class="mrs"><a href="" class="show-user-card " title="${cm1.user.userName}">${cm1.user.userName}</a></strong>
@@ -247,13 +228,13 @@ $().ready(function(){
           <div style="display: none;" class="frame">
           <form id="form2" class="form1 reply-form" method="post" action="createContent.htm">
             <p class="text">
-            <textarea class="xheditors" name="content" style="padding-left: 0px" required="required"></textarea>
+            <textarea class="xheditors" id="content2" name="content" style="padding-left: 0px" required="required"></textarea>
             <input type="hidden" name="discussId" value="${discuss.discussId}" />
             <input type="hidden" name="parentId" value="${cm1.commentId}" />
             </p>
           </form>
             <p align="right">          
-               <button class="btn btn-success">回复</button>
+               <button class="btn btn-success" id="inner-save">回复</button>
             </p>
            </div>         
           </div>
