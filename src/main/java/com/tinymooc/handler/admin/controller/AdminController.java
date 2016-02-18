@@ -152,15 +152,70 @@ public class AdminController {
 		return new ModelAndView("/admin/userManage", "userList", userList);}
 	}
 
-    @RequestMapping("deleUser.htm")
-    public  ModelAndView deleUser(HttpServletRequest req,HttpServletResponse res){
-        String userId = ServletRequestUtils.getStringParameter(req, "userId",
-                "");
-        User userDe = admin.findById(User.class, userId);
-        System.out.println("删除的用户为：    " + userId );
-        System.out.println("删除的用户为：    " + userDe);
-        return new ModelAndView("redirect:turnToUserManage.htm");
-    }
+//    @RequestMapping("deleUser.htm")
+//    public  ModelAndView deleUser(HttpServletRequest req,HttpServletResponse res){
+//        String userId = ServletRequestUtils.getStringParameter(req, "userId",
+//                "");
+//        User user = admin.findById(User.class, userId);
+//
+//
+//        System.out.println("删除的用户为：    " + userId );
+//        //获取comment表中，该用户（user）关联的对象
+//        List<Comment> commentList = admin.queryAllOfCondition(Comment.class,  DetachedCriteria.forClass(Comment.class).add(Restrictions.eq("user",user))) ;
+//        for(int i = 0; i <commentList.size() ;i ++) {
+//            admin.delete(commentList.get(i));
+//        }
+//
+//        //获取favorite表中，该用户（user）关联的对象
+//        List<Favorite> favoriteList = admin.queryAllOfCondition(Favorite.class,  DetachedCriteria.forClass(Favorite.class).add(Restrictions.eq("user",user))) ;
+//        for(int i = 0; i <favoriteList.size() ;i ++) {
+//            admin.delete(favoriteList.get(i));
+//        }
+//
+//        //获取grade表中，该用户（user）关联的对象
+//        List<Grade> gradeList = admin.queryAllOfCondition(Grade.class,  DetachedCriteria.forClass(Grade.class).add(Restrictions.eq("user",user))) ;
+//        for(int i = 0; i <gradeList.size() ;i ++) {
+//            admin.delete(gradeList.get(i));
+//        }
+//
+//        //获取inform表中，该用户（user）关联的对象
+//        List<Inform> InformList = admin.queryAllOfCondition(Inform.class,  DetachedCriteria.forClass(Inform.class).add(Restrictions.eq("user",user))) ;
+//        for(int i = 0; i <InformList.size() ;i ++) {
+//            admin.delete(InformList.get(i));
+//        }
+//
+//        //获取Discuss表中，该用户（user）关联的对象
+//        List<Discuss> DiscussList = admin.queryAllOfCondition(Discuss.class,  DetachedCriteria.forClass(Discuss.class).add(Restrictions.eq("user",user))) ;
+//        for(int i = 0; i <DiscussList.size() ;i ++) {
+//            admin.delete(DiscussList.get(i));
+//        }
+//
+//        //获取UserTeam表中，该用户（user）关联的对象
+//        List<UserTeam> UserTeamList = admin.queryAllOfCondition(UserTeam.class,  DetachedCriteria.forClass(UserTeam.class).add(Restrictions.eq("user",user))) ;
+//        for(int i = 0; i <UserTeamList.size() ;i ++) {
+//            admin.delete(UserTeamList.get(i));
+//        }
+//
+//        //获取UserCourse表中，该用户（user）关联的对象
+//        List<UserCourse> UserCourseList = admin.queryAllOfCondition(UserCourse.class,  DetachedCriteria.forClass(UserCourse.class).add(Restrictions.eq("user",user))) ;
+//        for(int i = 0; i <UserCourseList.size() ;i ++) {
+//            admin.delete(UserCourseList.get(i));
+//        }
+//
+//
+//
+//        //删除该用户
+//        admin.delete(user);
+//
+//
+//
+//
+//
+//
+//
+//
+//        return new ModelAndView("redirect:turnToUserManage.htm");
+//    }
 	@RequestMapping("activateAccount.htm")
 	public ModelAndView activateAccount(HttpServletRequest req,
 			HttpServletResponse res) {
@@ -467,7 +522,7 @@ public class AdminController {
 		detachedCriteria.add(Restrictions.eq("userPosition", "组长"));
 
       //   DetachedCriteria.forClass(Discuss.class).add(Restrictions.eq("team",team));
-
+		//获取userTeam表中，该小组（team）关联的对象
 		List<UserTeam> userlist= admin.queryMaxNumOfCondition(UserTeam.class, detachedCriteria, 1);
           //获取discuss表中，该小组（team）关联的对象
         List<Discuss> discussList = admin.queryAllOfCondition(Discuss.class,  DetachedCriteria.forClass(Discuss.class).add(Restrictions.eq("team",team))) ;

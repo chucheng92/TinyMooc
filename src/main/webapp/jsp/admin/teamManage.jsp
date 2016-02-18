@@ -135,7 +135,7 @@ $(function(){
 									<th>建设度</th>	
 									<th>类型</th>								
 									<th>状态</th>
-									<th>批准/禁止</th>
+									<th>批准<=>禁止</th>
 									<th>删除</th>
 								</tr>
 							</thead>
@@ -172,7 +172,8 @@ $(function(){
 										</div>
 
 									</td>
-									<td>  <a class="btn success" href="alterTeamState.htm?teamId=${team.teamId}&type=3">删除小组</a>
+									<td style="text-align:center;">
+									  <a class="btn success" href="alterTeamState.htm?teamId=${team.teamId}&type=3">删除小组</a>
 									</td>
 								</tr>
 								</c:forEach>							

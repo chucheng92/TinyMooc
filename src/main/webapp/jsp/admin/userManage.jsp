@@ -136,7 +136,8 @@ $(function(){
 									<th>学分</th>	
 									<th>金币</th>								
 									<th>状态</th>
-									<th>操作</th>
+									<th>激活<=>锁定</th>
+									<th>删除</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -166,7 +167,10 @@ $(function(){
 												<li><a href="#" class="lock">锁定</a></li>
 											</ul>
 										</div>
-											<a class="btn success" href="deleUser.htm?userId=${user.userId}">删除用户</a>
+											
+									</td>
+									<td style="text-align:center;">
+									<a class="btn success" href="deleUser.htm?userId=${user.userId}">删除用户</a>
 									</td>
 								</tr>
 								</c:forEach>							
