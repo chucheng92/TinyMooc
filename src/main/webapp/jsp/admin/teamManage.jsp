@@ -91,7 +91,7 @@ $(function(){
 					<a href="#"><i class="icon icon-file"></i> <span>网站信息维护</span> <span class="label">6</span></a>
 					<ul>
 						<li><a href="showInformList.htm">举报管理</a></li>
-						<li><a href="turnToAnnouncementManage.htm">公告管理</a></li>
+						<li><a href="#">公告管理</a></li>
 						<li><a href="turnToLogManage.htm">日志管理</a></li>
 						<li><a href="turnToDictionaryManage.htm">数据字典维护</a></li>
 						<li><a href="sensitiveWorlList.htm">敏感词汇管理</a></li>
@@ -135,7 +135,8 @@ $(function(){
 									<th>建设度</th>	
 									<th>类型</th>								
 									<th>状态</th>
-									<th>操作</th>
+									<th>批准<=>禁止</th>
+									<th>删除</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -167,7 +168,12 @@ $(function(){
 											<ul class="dropdown-menu" >
 												<li><a href="#" class="lock">封禁</a></li>
 											</ul>
+											
 										</div>
+
+									</td>
+									<td style="text-align:center;">
+									  <a class="btn success" href="alterTeamState.htm?teamId=${team.teamId}&type=3">删除小组</a>
 									</td>
 								</tr>
 								</c:forEach>							

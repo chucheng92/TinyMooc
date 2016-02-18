@@ -92,7 +92,7 @@ $(function(){
 					<a href="#"><i class="icon icon-file"></i> <span>网站信息维护</span> <span class="label">6</span></a>
 					<ul>
 						<li><a href="showInformList.htm">举报管理</a></li>
-						<li><a href="turnToAnnouncementManage.htm">公告管理</a></li>
+						<li><a href="#">公告管理</a></li>
 						<li><a href="turnToLogManage.htm">日志管理</a></li>
 						<li><a href="turnToDictionaryManage.htm">数据字典维护</a></li>
 						<li><a href="sensitiveWorlList.htm">敏感词汇管理</a></li>
@@ -136,7 +136,8 @@ $(function(){
 									<th>学分</th>	
 									<th>金币</th>								
 									<th>状态</th>
-									<th>操作</th>
+									<th>激活<=>锁定</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -166,8 +167,9 @@ $(function(){
 												<li><a href="#" class="lock">锁定</a></li>
 											</ul>
 										</div>
-											<a class="btn success" href="deleUser.htm?userId=${user.userId}">删除用户</a>
+											
 									</td>
+									
 								</tr>
 								</c:forEach>							
 							</tbody>
