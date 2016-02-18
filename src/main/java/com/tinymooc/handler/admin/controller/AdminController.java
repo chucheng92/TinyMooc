@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.tinymooc.common.domain.*;
 import com.tinymooc.handler.course.service.CourseService;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -15,24 +16,6 @@ import com.tinymooc.authority.annotation.CheckAuthority;
 import com.tinymooc.handler.admin.service.AdminService;
 import com.tinymooc.handler.privateMail.PrivateMailService;
 
-import com.tinymooc.common.domain.Announcement; // 添加于2015.12.19
-import com.tinymooc.common.domain.FriendliLink;   //   添加于2015.12.19
-import com.tinymooc.common.domain.OperationLog;    //添加于2015.12.19
-import com.tinymooc.common.domain.Authority;
-import com.tinymooc.common.domain.Course;
-import com.tinymooc.common.domain.DataDic;
-
-import com.tinymooc.common.domain.Inform;
-import com.tinymooc.common.domain.Level;
-import com.tinymooc.common.domain.LevelAuthority;
-import com.tinymooc.common.domain.Message;
-import com.tinymooc.common.domain.Note;
-import com.tinymooc.common.domain.Rule;
-import com.tinymooc.common.domain.SensitiveWords;
-import com.tinymooc.common.domain.Team;
-import com.tinymooc.common.domain.User;
-import com.tinymooc.common.domain.UserCourse;
-import com.tinymooc.common.domain.UserTeam;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import com.tinymooc.util.UUIDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -482,9 +465,12 @@ public class AdminController {
 		
 		detachedCriteria.add(Restrictions.eq("team", team));
 		detachedCriteria.add(Restrictions.eq("userPosition", "组长"));
-		
+
+      //   DetachedCriteria.forClass(Discuss.class).add(Restrictions.eq("team",team));
+
 		List<UserTeam> userlist= admin.queryMaxNumOfCondition(UserTeam.class, detachedCriteria, 1);
-		
+          //获取discuss表中，该小组（team）关联的对象
+        List<Discuss> discussList = admin.queryAllOfCondition(Discuss.class,  DetachedCriteria.forClass(Discuss.class).add(Restrictions.eq("team",team))) ;
 		User user1=userlist.get(0).getUser();
 		int gold=user1.getGold();
 		int credit=user1.getCredit();
@@ -514,6 +500,18 @@ public class AdminController {
 			sendAmail(user1, "小组被封禁", "-3", "-30");
 			return new ModelAndView("redirect:turnToTeamManage.htm");
 		}
+
+         if(type.equals("3")) {
+                 System.out.println("删除该小组  :" + teamId);
+             //1、删除discuss表中 <== teamId
+                for(int i = 0; i <discussList.size() ;i ++) {
+                    admin.delete(discussList.get(i));
+                }
+              //2、删除userteam表 <== teamId
+               admin.delete(userlist.get(0));
+             //3、删除team
+             admin.delete(team);
+         }
         
 		return new ModelAndView("redirect:turnToTeamManage.htm");
 		
