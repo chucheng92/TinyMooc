@@ -141,7 +141,7 @@
 									class="fr view mrm" title="查看次数">3820</span> <span
 									class="fl by">by <a href="http://www.howzhi.com/u/walk/"
 									class="show-user-card " data-uid="40" title="轻步而来">轻步而来<span
-										class="p-ver-icn" title="好知个人认证"></span></a></span>
+										class="p-ver-icn" title="萌课个人认证"></span></a></span>
 							</p>
 						</div>
 					</li>

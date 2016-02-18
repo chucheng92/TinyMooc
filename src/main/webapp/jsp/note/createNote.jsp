@@ -81,7 +81,7 @@
 							<div class="lesson-toolbar-main-inner clearfix">
 								<div class="btn-group fl">
 									<a class="btn btn-small  active"
-										href="./第1课 像素（1） - 突破平面 深度剖析PS - 好知网_files/第1课 像素（1） - 突破平面 深度剖析PS - 好知网.htm">课时</a><a
+										href="./第1课 像素（1） - 突破平面 深度剖析PS - 萌课网_files/第1课 像素（1） - 突破平面 深度剖析PS - 萌课网.htm">课时</a><a
 										class="btn btn-small "
 										href="http://www.howzhi.com/course/4631/lesson/49296/notes">笔记(2)</a>
 								</div>

@@ -49,7 +49,7 @@
                         <div class="title"><a href="">C#零基础入门教程</a></div>
                         <div class="description">    本课程由有着8年软件开发经验，4年软件开发教学工作的苏老师亲自授课，课程注重于实战，对每一个知识点的讲解循序渐进、由浅入深，使学生能够快乐学习并在学习过...</div>
                         <div class="metas">
-                            <span class="fr">by <a href="/u/7413/" class="show-user-card" data-uid="7413" title="Cross">Cross<span class="p-ver-icn" title="好知个人认证"></span></a></span>
+                            <span class="fr">by <a href="/u/7413/" class="show-user-card" data-uid="7413" title="Cross">Cross<span class="p-ver-icn" title="萌课个人认证"></span></a></span>
                             <div class="stats">30639查看<span class="mhs">|</span>816人学习</div>
                         </div>
                         <div class="members" style="">
@@ -65,7 +65,7 @@
                         <div class="title"><a href="">Android开发视频教程第一季(Mars)</a></div>
                         <div class="description">更新： 更新了新的地址，清晰度提高很多了。 Mars出品的强调实战的android开发教程其他几季教程：第二季教程  第三季教程  第四季教程...</div>
                         <div class="metas">
-                            <span class="fr">by <a href="/u/walk/" class="show-user-card" data-uid="40" title="轻步而来">轻步而来<span class="p-ver-icn" title="好知个人认证"></span></a></span>
+                            <span class="fr">by <a href="/u/walk/" class="show-user-card" data-uid="40" title="轻步而来">轻步而来<span class="p-ver-icn" title="萌课个人认证"></span></a></span>
                             <div class="stats">134393查看<span class="mhs">|</span>2811人学习</div>
                         </div>
                         <div class="members" style="display:none;">
@@ -112,7 +112,7 @@
                   <div class="imageblock-image"><a href="/u/walk/" class="show-user-card" data-uid="40"><img src="http://f1.howzhi.com/avatar/2011/09-02/0411120db572808521.jpg" alt="轻步而来"></a>
 </div>
                   <div class="imageblock-content">
-                    <div class="mbm"><a href="/u/walk/" class="show-user-card" data-uid="40" title="轻步而来">轻步而来<span class="p-ver-icn" title="好知个人认证"></span></a></div>
+                    <div class="mbm"><a href="/u/walk/" class="show-user-card" data-uid="40" title="轻步而来">轻步而来<span class="p-ver-icn" title="萌课个人认证"></span></a></div>
                     <a href="javascript:;" class="flat-btn follow-btn" data-uid="40">+ 关注</a>
                   </div>
                 </div>
@@ -215,7 +215,7 @@
             <p class="metas clearfix">
            <span class="fr learn" title="学员人数">348</span>
            <span class="fr view mrm" title="查看次数">4581</span>
-            <span class="fl by">by <a href="/u/tsingyuan/" class="show-user-card" data-uid="1295165" title="清源教育">清源教育<span class="o-ver-icn" title="好知品牌机构认证"></span></a></span>
+            <span class="fl by">by <a href="/u/tsingyuan/" class="show-user-card" data-uid="1295165" title="清源教育">清源教育<span class="o-ver-icn" title="萌课品牌机构认证"></span></a></span>
           </p>
         </div>
         </li>

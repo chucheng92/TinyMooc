@@ -9,7 +9,7 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> 基本信息设置 - 起风了的小组管理 - 好知网</title>
+  <title> 基本信息设置 - 起风了的小组管理 - 萌课网</title>
   <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
   <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
   <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>

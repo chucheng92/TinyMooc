@@ -8,7 +8,7 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> 头部背景图片设置 - 起风了的小组管理 - 好知网</title>
+  <title> 头部背景图片设置 - 起风了的小组管理 - 萌课网</title>
   
   <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
   <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
@@ -53,7 +53,7 @@ $(function(){
 <header class="header" id="header">
 
   <div class="container">
-    <a href="http://www.howzhi.com/me/" class="logo"><img src="/bundles/topxiaweb/img/base/logo.png?169" width="55" height="26" /><em>好知</em></a>
+    <a href="http://www.howzhi.com/me/" class="logo"><img src="/bundles/topxiaweb/img/base/logo.png?169" width="55" height="26" /><em>萌课</em></a>
 
     <ul class="header-nav">
       <li class="item"><a href="http://www.howzhi.com/me/" class="trigger">首页</a></li>

@@ -91,7 +91,7 @@ $(function(){
 					<a href="#"><i class="icon icon-file"></i> <span>网站信息维护</span> <span class="label">6</span></a>
 					<ul>
 						<li><a href="showInformList.htm">举报管理</a></li>
-						<li><a href="turnToAnnouncementManage.htm">公告管理</a></li>
+						<li><a href="#">公告管理</a></li>
 						<li><a href="turnToLogManage.htm">日志管理</a></li>
 						<li><a href="turnToDictionaryManage.htm">数据字典维护</a></li>
 						<li><a href="sensitiveWorlList.htm">敏感词汇管理</a></li>

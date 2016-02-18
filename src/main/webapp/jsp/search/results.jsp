@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<	%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -190,7 +190,7 @@
   	      	 <li class="item lightitem item-border">                                                          
                  <div class="search-course-item imageblock clearfix pvl">
 	             <a href="http://www.howzhi.com/course/pingpang/" class="imageblock-image" target="_blank">
-	             <img src="./搜索  体育 - 好知网_files/091110ea5c7b189121.jpg">
+	             <img src="./搜索  体育 - 萌课网_files/091110ea5c7b189121.jpg">
 	             </a>
 	             <div class="imageblock-content">
 		         <div class="fsm mbs">[课程] 

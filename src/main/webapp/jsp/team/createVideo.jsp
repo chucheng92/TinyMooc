@@ -171,18 +171,18 @@ $(function(){
   <div class="fl footer-links">
     <span class="copyright">©2011 HOWZHI.COM <a href="http://www.miibeian.gov.cn/">浙ICP备1102461-7</a> </span>
     <br>
-    <a href="http://www.howzhi.com/info/about">关于好知</a>
-    <a href="http://www.howzhi.com/daren/">好知达人</a>
-    <a href="http://www.howzhi.com/info/contact">联系我们</a>
-    <a href="http://www.howzhi.com/info/links">友情链接</a>
-    <a href="http://www.howzhi.com/group/feedback/">意见反馈</a>
+    <a href="">关于萌课</a>
+    <a href="">萌课达人</a>
+    <a href="">联系我们</a>
+    <a href="">友情链接</a>
+    <a href="">意见反馈</a>
   </div>
   <div class="fr tar about">
     关注我们：
-    <a href="http://weibo.com/howzhicom" title="好知网(新浪微博)" target="_blank">新浪</a>
-    <a href="http://t.qq.com/howzhicom" title="好知网(腾讯微博)" target="_blank">腾讯</a>
-    <a href="http://site.douban.com/124522/" title="豆瓣小站" target="_blank">豆瓣</a>
-    <a href="http://page.renren.com/600915196" title="人人网" class="noborder" target="_blank">人人</a>
+    <a href="" title="萌课网(新浪微博)" target="_blank">新浪</a>
+    <a href="" title="萌课网(腾讯微博)" target="_blank">腾讯</a>
+    <a href="" title="豆瓣小站" target="_blank">豆瓣</a>
+    <a href="" title="人人网" class="noborder" target="_blank">人人</a>
   </div>  
 </footer>
 

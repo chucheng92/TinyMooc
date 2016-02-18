@@ -66,7 +66,7 @@
 					<a href="#"><i class="icon icon-file"></i> <span>网站信息维护</span> <span class="label">6</span></a>
 					<ul>
 						<li><a href="showInformList.htm">举报管理</a></li>
-						<li><a href="turnToAnnouncementManage.htm">公告管理</a></li>
+						<li><a href="#">公告管理</a></li>
 						<li><a href="turnToLogManage.htm">日志管理</a></li>
 						<li><a href="turnToDictionaryManage.htm">数据字典维护</a></li>
 						<li><a href="sensitiveWorlList.htm">敏感词汇管理</a></li>
@@ -105,10 +105,10 @@
 							<thead>
 								<tr>
 									<th>课程标题</th>
-									<th>父课程标题</th>
+								
 									<th>课程简介</th>
 									<th>课程类型</th>	
-									<th>课时数</th>
+									
 									<th>申请时间</th>
 									<th>状态</th>
 									<th>操作</th>
@@ -118,10 +118,10 @@
 							<c:forEach items="${courseList}" var="courseList">
 								<tr>
 									<td style="text-align:center;"><c:out value="${courseList.courseTitle}"/></td>
-									<td style="text-align:center;"><c:out value="${courseList.course.courseTitle}"/></td>
+									
 									<td style="text-align:center;"><c:out value="${courseList.courseIntro}"/></td>
 									<td style="text-align:center;"><c:out value="${courseList.type}"/></td>
-									<td style="text-align:center;"><c:out value="${courseList.lessonNum}"/></td>
+									
 									<td style="text-align:center;"><c:out value="${courseList.applyDate}"/></td>
 									<td style="text-align:center;"><span class="label label-success">封禁</span></td>
 									<td style="text-align:center;">

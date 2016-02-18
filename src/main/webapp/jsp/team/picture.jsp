@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> 图标设置 - 起风了的小组管理 - 好知网</title>
+  <title> 图标设置 - 起风了的小组管理 - 萌课网</title>
   <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
   
   <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
