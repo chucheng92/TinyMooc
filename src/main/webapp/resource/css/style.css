@@ -56,7 +56,7 @@ hr {
     width: 100%;
     border: none;
     height: 10px;
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/215754al7o08bokbcsww7b.png) no-repeat;
+    background: url(/resource/img/215754al7o08bokbcsww7b.png) no-repeat;
     margin: 10px 0;
     padding: 0;
     z-index:99;
@@ -70,7 +70,7 @@ html {
 }
 body {
     font-size:1.2em;
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/21/214130cnu36f99665f3667.jpg') #403a3a;
+    background:url(/resource/img/214130cnu36f99665f3667.jpg) #403a3a;
     -webkit-font-smoothing:antialiased;
 }
 
@@ -88,103 +88,103 @@ body {
     margin:0 auto;
 }
 .img_gnosh_logo {
-    background:url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png") 0px 0px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) 0px 0px no-repeat;
     display:block;
     width:696px;
     height:312px;
 }
 .img_gourmet_dips {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') 0px -371px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) 0px -371px no-repeat;
     display:block;
     width:515px;
     height:276px;
 }
 .img_header_news_panel_bg {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') -698px 0px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -698px 0px no-repeat;
     display:block;
     width:500px;
     height:146px;
 }
 .img_header_twitter_panel_bg {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') 0px -649px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) 0px -649px no-repeat;
     display:block;
     width:194px;
     height:308px;
 }
 .img_keep_up {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/135335ql45u4zlmzkmph4u.png') no-repeat;
+    background:url(/resource/img/135335ql45u4zlmzkmph4u.png) no-repeat;
     display:block;
     width:497px;
     height:180px;
 }
 .img_nav_bg {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') 0px -314px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) 0px -314px no-repeat;
     display:block;
     width:618px;
     height:55px;
 }
 .img_share_thoughts_us {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') -752px -649px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -752px -649px no-repeat;
     display:block;
     width:88px;
     height:122px;
 }
 .img_share_thoughts_us_hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') -842px -649px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -842px -649px no-repeat;
     display:block;
     width:88px;
     height:122px;
 }
 .img_somethings_better_shared {
-    background:url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png") -698px -531px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -698px -531px no-repeat;
     display:block;
     width:298px;
     height:86px;
 }
 .img_whats_your_gnosh {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/140308n2frfvcp1ncvvzfp.png') no-repeat;
+    background:url(/resource/img/140308n2frfvcp1ncvvzfp.png) no-repeat;
     display:block;
     width:175px;
     height:203px;
 }
 .img_whats_your_gnosh_hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/140308n2frfvcp1ncvvzfp.png') no-repeat;
+    background:url(/resource/img/140308n2frfvcp1ncvvzfp.png) no-repeat;
     display:block;
     width:175px;
     height:203px;
 }
 .img_whats_your_text_bg {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') -698px -304px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -698px -304px no-repeat;
     display:block;
     width:355px;
     height:225px;
 }
 .img_where_to_gnosh {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/145423vul3tblua1h5lrba.png') no-repeat;
+    background:url(/resource/img/145423vul3tblua1h5lrba.png) no-repeat;
     display:block;
     width:119px;
     height:131px;
 }
 .img_where_to_gnosh_hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/145423vul3tblua1h5lrba.png') no-repeat;
+    background:url(/resource/img/145423vul3tblua1h5lrba.png) no-repeat;
     display:block;
     width:119px;
     height:131px;
 }
 .img_why_the_apos_more_about_us {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/23/155944th2bvbbhi653eklc.png') no-repeat;
+    background:url(/resource/img/155944th2bvbbhi653eklc.png) no-repeat;
     display:block;
     width:210px;
     height:222px;
 }
 .img_why_the_apos_more_about_us_hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/23/155944th2bvbbhi653eklc.png') no-repeat;
+    background:url(/resource/img/155944th2bvbbhi653eklc.png) no-repeat;
     display:block;
     width:210px;
     height:222px;
 }
 .img_basil {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/151536sw00ru3aylagi4u6.png') no-repeat;
+    background:url(/resource/img/151536sw00ru3aylagi4u6.png) no-repeat;
     display:block;
     width:463px;
     height:473px;
@@ -196,13 +196,13 @@ body {
     height:229px;
 }
 .img_pepper {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/150122bmbtgmthrlv3mmjt.png') no-repeat;
+    background:url(/resource/img/150122bmbtgmthrlv3mmjt.png) no-repeat;
     display:block;
     width:656px;
     height:466px;
 }
 .img_tomato_dip {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/160511zp6kma2euk2mymre.png') no-repeat;
+    background:url(/resource/img/160511zp6kma2euk2mymre.png) no-repeat;
     display:block;
     width:514px;
     height:325px;
@@ -438,7 +438,7 @@ body {
 #header { position:relative; }
 #header h1 {
     text-indent:-5000px;
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/140832wwpp6lmi9ae2pe2a.png') no-repeat;
+    background:url(/resource/img/140832wwpp6lmi9ae2pe2a.png) no-repeat;
     display:block;
     width:696px;
     height:400px;
@@ -447,7 +447,7 @@ body {
     left:4px;
 }
 #header nav {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/012827bir9zewsm68g6zec.png') no-repeat;
+    background:url(/resource/img/012827bir9zewsm68g6zec.png) no-repeat;
     display:block;
     width:618px;
     height:55px;
@@ -492,7 +492,7 @@ body {
     height:1020px;
 }
 #home .why_the_apos {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/23/155944th2bvbbhi653eklc.png') no-repeat;
+    background:url(/resource/img/155944th2bvbbhi653eklc.png) no-repeat;
     display:block;
     width:210px;
     height:222px;
@@ -502,13 +502,13 @@ body {
     text-indent:-5000px;
 }
 #home .why_the_apos.hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/23/155944th2bvbbhi653eklc.png') no-repeat;
+    background:url(/resource/img/155944th2bvbbhi653eklc.png) no-repeat;
     display:block;
     width:210px;
     height:222px;
 }
 #home .gourmet_dips {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') 0px -371px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) 0px -371px no-repeat;
     display:block;
     width:515px;
     height:276px;
@@ -518,7 +518,7 @@ body {
     text-indent:-5000px;
 }
 #home .share_thoughts {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') -752px -649px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -752px -649px no-repeat;
     display:block;
     width:88px;
     height:122px;
@@ -575,13 +575,13 @@ body {
     z-index: 10;
 }
 #home .share_thoughts.hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') -842px -649px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -842px -649px no-repeat;
     display:block;
     width:88px;
     height:122px;
 }
 #home .better_shared {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/134609imxov6krqkb96b6z.png') no-repeat;
+    background:url(/resource/img/134609imxov6krqkb96b6z.png) no-repeat;
     display:block;
     width:298px;
     height:86px;
@@ -592,7 +592,7 @@ body {
     z-index:1050;
 }
 #home .whats_your_gnosh {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/140308n2frfvcp1ncvvzfp.png') no-repeat;
+    background:url(/resource/img/140308n2frfvcp1ncvvzfp.png) no-repeat;
     display:block;
     width:175px;
     height:203px;
@@ -603,13 +603,13 @@ body {
     z-index:1030;
 }
 #home .whats_your_gnosh.hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/140308n2frfvcp1ncvvzfp.png') no-repeat;
+    background:url(/resource/img/140308n2frfvcp1ncvvzfp.png) no-repeat;
     display:block;
     width:175px;
     height:203px;
 }
 #home .where_to_gnosh {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/145423vul3tblua1h5lrba.png') no-repeat;
+    background:url(/resource/img/145423vul3tblua1h5lrba.png) no-repeat;
     display:block;
     width:119px;
     height:131px;
@@ -620,7 +620,7 @@ body {
     z-index:1030;
 }
 #home .where_to_gnosh.hover {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/145423vul3tblua1h5lrba.png') no-repeat;
+    background:url(/resource/img/145423vul3tblua1h5lrba.png) no-repeat;
     display:block;
     width:119px;
     height:131px;
@@ -630,7 +630,7 @@ body {
     position:absolute;
     top:44px;
     right:-200px;
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/160511zp6kma2euk2mymre.png') no-repeat;
+    background:url(/resource/img/160511zp6kma2euk2mymre.png) no-repeat;
     display:block;
     width:514px;
     height:325px;
@@ -650,7 +650,7 @@ body {
     position:absolute;
     top:477px;
     left:199px;
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/150122bmbtgmthrlv3mmjt.png') no-repeat;
+    background:url(/resource/img/150122bmbtgmthrlv3mmjt.png) no-repeat;
     display:block;
     width:656px;
     height:466px;
@@ -661,7 +661,7 @@ body {
     position:absolute;
     top:792px;
     left:642px;
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/151536sw00ru3aylagi4u6.png') no-repeat;
+    background:url(/resource/img/151536sw00ru3aylagi4u6.png) no-repeat;
     display:block;
     width:463px;
     height:473px;
@@ -672,7 +672,7 @@ body {
     position:absolute;
     top:767px;
     left:19px;
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/135335ql45u4zlmzkmph4u.png') no-repeat;
+    background:url(/resource/img/135335ql45u4zlmzkmph4u.png) no-repeat;
     display:block;
     width:497px;
     height:180px;
@@ -685,7 +685,7 @@ body {
     height:180px !important;
 }
 #home .twitter {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/135713h44y7ioi4lzhmzal.png') no-repeat;
+    background:url(/resource/img/135713h44y7ioi4lzhmzal.png) no-repeat;
     display:block;
     width:194px;
     height:330px;
@@ -723,7 +723,7 @@ body {
 #home .twitter .extras a.left { float:left; }
 #home .twitter .extras a.right { float:right; }
 #home .news {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/135848p4kbudm0arzngznd.png') no-repeat;
+    background:url(/resource/img/135848p4kbudm0arzngznd.png) no-repeat;
     display:block;
     width:500px;
     height:146px;
@@ -903,7 +903,7 @@ body {
     z-index:1040;
 }
 #flavours .text {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/011925dh61v6ia6f1fz1el.png') -698px -304px no-repeat;
+    background:url(/resource/img/011925dh61v6ia6f1fz1el.png) -698px -304px no-repeat;
     display:block;
     width:355px;
     height:225px;
@@ -1488,7 +1488,7 @@ input[disabled='disabled'], textarea[disabled='disabled'], button[disabled='disa
 .no_bg, .no_bg * { background-image:none !important; }
 .no_bg img { display:none; }
 
-#header nav .social { width: 210px; position: absolute; margin-left: 700px; background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201512/21/232420dn9ihiy5anaizihq.png); margin-top: 0; height: 51px; padding: 2px 0 0 10px;}
+#header nav .social { width: 210px; position: absolute; margin-left: 700px; background: url(/resource/img/232420dn9ihiy5anaizihq.png); margin-top: 0; height: 51px; padding: 2px 0 0 10px;}
 
 #where .garlic {
     position: absolute;
@@ -1611,7 +1611,7 @@ input[disabled='disabled'], textarea[disabled='disabled'], button[disabled='disa
 }
 
 .flavours-tapas {
-    background: url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/170939sg5ksouyuk5npulm.png')no-repeat;
+    background: url(/resource/img/170939sg5ksouyuk5npulm.png)no-repeat;
     padding-right: 190px;
     padding-top: 126px;
     left: 525px;
@@ -1621,7 +1621,7 @@ input[disabled='disabled'], textarea[disabled='disabled'], button[disabled='disa
 }
 
 .flavours-mm {
-    background: url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/170940x1mciwb8vem1oxxk.png') no-repeat;
+    background: url(/resource/img/170940x1mciwb8vem1oxxk.png) no-repeat;
     padding-right: 153px;
     padding-top: 125px;
     left: 540px;
@@ -1631,7 +1631,7 @@ input[disabled='disabled'], textarea[disabled='disabled'], button[disabled='disa
 }
 
 .flavours-original {
-    background: url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/22/170938smy9zxx9xz97gp51.png') no-repeat;
+    background: url(/resource/img/170938smy9zxx9xz97gp51.png) no-repeat;
     padding-right: 131px;
     padding-top: 126px;
     left: 510px;
@@ -1864,13 +1864,13 @@ nav, .widget-content a, .widget-content h1 {
     float: left;
     width: 632px;
     height: 51px;
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/08/233107hm57qsl8tz8m5xvx.png) no-repeat;
+    background: url(/resource/img/233107hm57qsl8tz8m5xvx.png) no-repeat;
     margin-left:-23px;
 }
 .right-bottom {
     width: 632px;
     float: left;
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/11/002558tf55mwx6xx44lc5x.png) no-repeat;
+    background: url(/resource/img/002558tf55mwx6xx44lc5x.png) no-repeat;
     height: 130px;
     margin-left:-8px;
 
@@ -1903,7 +1903,7 @@ nav, .widget-content a, .widget-content h1 {
     float:left;
 }
 #footerother {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/21/232314nstqwnav1lxqllnl.png') center center no-repeat;
+    background:url(/resource/img/232314nstqwnav1lxqllnl.png) center center no-repeat;
     height:110px;
     width:880px;
     color:#554e4e;
@@ -1913,7 +1913,7 @@ nav, .widget-content a, .widget-content h1 {
     padding-top: 80px;
 }
 #footer {
-    background:url('http://files.bbs.tl.changyou.com/data/attachment/forum/201512/21/232314nstqwnav1lxqllnl.png') center center no-repeat;
+    background:url(/resource/img/232314nstqwnav1lxqllnl.png) center center no-repeat;
     height:110px;
     width:880px;
     color:#554e4e;
@@ -1974,13 +1974,14 @@ nav, .widget-content a, .widget-content h1 {
     margin-right: 50px;
     position: relative;
 }
+
 .right-container {
     float: left;
     width: 592px;
     position: relative;
 }
 .my-left {
-    width: 168px;
+    width: 188px;
     float: left;
     position: relative;
 }
@@ -1990,7 +1991,7 @@ nav, .widget-content a, .widget-content h1 {
     position: relative;
 }
 .my-right {
-    width: 160px;
+    width: 140px;
     float: left;
     position: relative;
     margin-left: 40px;
@@ -2030,8 +2031,10 @@ nav, .widget-content a, .widget-content h1 {
     font-family: 'Microsoft YaHei', å¾®è½¯é›…é»‘, 'Microsoft JhengHei', åŽæ–‡é»‘ä½“, STHeiti, Georgia, 'Times New Roman', Times, serif;
     font-size:30px;
 }
-.btn-bar a {
+.btn-bar {
     color: #ffffff;
 }
+
+
 /* STOCKISTS END */
 

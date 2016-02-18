@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tinymooc.iml" filepath="$PROJECT_DIR$/tinymooc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TinyMooc.iml" filepath="$PROJECT_DIR$/TinyMooc.iml" />
     </modules>
   </component>
 </project>
