@@ -118,7 +118,7 @@
                         <div class="info-item"> <a href="account.htm">编辑个人资料</a> <span class="info-item-name mhs">|</span>  <a href="goAccountAvatar.htm">更新头像</a> </div>
                     </c:if>
                     <c:if test="${user1.userId!=user.userId}">
-                        <div class="info-item"><a href="goSendMail1.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
+                        <div class="info-item"><a href="goSendMail.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
                     </c:if>
 
                 </div>

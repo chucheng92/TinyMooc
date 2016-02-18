@@ -431,10 +431,8 @@
                     <c:if test="${!empty userLearnCourseList}">
                         <c:forEach items="${userLearnCourseList}" var="course">
                             <li class="grid">
-                                <a href="goPersonnal.htm?userId=${course.user.userId}" class="show-user-card"><img
-                                        src="${course.user.headImage.imageSmall}" title="${course.user.userName}"></a>
-
-                                <div><a href="" class="show-user-card"
+                                <img src="${course.user.headImage.imageSmall}" title="${course.user.userName}">
+                                <div><a href="goPersonal.htm?userId=${course.user.userId}" class="show-user-card"
                                         title="${course.user.userName}">${course.user.userName}</a></div>
                             </li>
                         </c:forEach>

@@ -97,7 +97,7 @@
                         <div class="info-item"> <a href="account.htm">编辑个人资料</a> <span class="info-item-name mhs">|</span>  <a href="goAccountAvatar.htm">更新头像</a> </div>
                     </c:if>
                     <c:if test="${user1.userId!=user.userId}">
-                        <div class="info-item"><a href="goSendMail1.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
+                        <div class="info-item"><a href="goSendMail.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
                     </c:if>
 
                 </div>
@@ -154,10 +154,10 @@
 
 
                         <div class="nav clearfix">
-                            <a href="goPersonal.htm?userId=${user1.userId}" class="on">主页</a>
+                            <a href="goPersonal.htm?userId=${user1.userId}">主页</a>
                             <a href="goPersonalTeam.htm?userId=${user1.userId}">小组</a>
                             <a href="goPersonalAttention.htm?userId=${user1.userId}">好友</a>
-                            <a href="goPersonalNote.htm?userId=${user1.userId}">笔记</a>
+                            <a href="goPersonalNote.htm?userId=${user1.userId}" class="on">笔记</a>
                         </div>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
                                 <li class="">
                                     <div class="course-notes">
                                         <div class="course-info clearfix">
-                                            <a href=""><img src=""  class="picture" /></a>
+                                            <img src="/resource/img/icons/32/survey.png"  class="picture" />
                                             <a href="">${notelist.course.courseTitle}</a>
                                             <a href="javascript:;" class="toggle">+ 展开</a>
                                         </div>
@@ -194,7 +194,7 @@
                                                                         </div>
                                                                         <div class="more or" style="display: none;" id="kai">
                                                                             <div class="editor-content">
-                                                                                <p>${notes.noteContent}</p>
+                                                                                <p style="color:#000">${notes.noteContent}</p>
                                                                             </div>
                                                                             <a href="javascript:;" class="less-btn or" id="shou">(收起)</a>
                                                                             <div class="mvm clearfix">

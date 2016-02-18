@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/resource/jspf/commons.jspf"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
     <title>粉丝 - 萌课网</title>
-<link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+    <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
 
 </head>
 
@@ -71,9 +71,8 @@
                         <div class="info-item"> <a href="account.htm">编辑个人资料</a> <span class="info-item-name mhs">|</span>  <a href="goAccountAvatar.htm">更新头像</a> </div>
                     </c:if>
                     <c:if test="${user1.userId!=user.userId}">
-                        <div class="info-item"><a href="goSendMail1.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
+                        <div class="info-item"><a href="goSendMail.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
                     </c:if>
-
                 </div>
 
 
@@ -128,9 +127,9 @@
 
 
                         <div class="nav clearfix">
-                            <a href="goPersonal.htm?userId=${user1.userId}" class="on">主页</a>
+                            <a href="goPersonal.htm?userId=${user1.userId}">主页</a>
                             <a href="goPersonalTeam.htm?userId=${user1.userId}">小组</a>
-                            <a href="goPersonalAttention.htm?userId=${user1.userId}">好友</a>
+                            <a href="goPersonalAttention.htm?userId=${user1.userId}" class="on">好友</a>
                             <a href="goPersonalNote.htm?userId=${user1.userId}">笔记</a>
                         </div>
                     </div>
@@ -138,7 +137,7 @@
 
                 <hr class="custom-hr">
 
-                <div class="normal-main">
+                <div class="normal-main1">
                     <div class="tabs clearfix mtl mbm">
                         <ul>
                             <li ><a href="goPersonalAttention.htm?userId=${user1.userId}">关注的人</a></li>

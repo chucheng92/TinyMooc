@@ -69,7 +69,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="pl5" width="10px"><a href="" onclick="return confirm(&#39;真的要删除该会话吗？&#39;);">x</a></td>
+                                        <td class="pl5" width="10px"><a href="deleteMail.htm" onclick="return confirm('真的要删除么?')">x</a></td>
                                     </tr>
                                     </tbody></table>
                             </li>

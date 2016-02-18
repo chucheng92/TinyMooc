@@ -83,6 +83,7 @@
                                     <li class="">
                                         <div class="course-notes">
                                             <div class="course-info clearfix">
+                                                <img src="/resource/img/icons/32/survey.png"  class="picture" />
                                                 <a href="">${notelist.course.courseTitle}</a>
                                                 <a href="javascript:;" class="toggle">+ 展开</a>
                                             </div>
@@ -103,7 +104,7 @@
                                                                     </div>
                                                                     <div class="more or" style="display: none;" id="kai">
                                                                         <div class="editor-content">
-                                                                            <p>${notes.noteContent}</p>
+                                                                            <p style="color: #000">${notes.noteContent}</p>
                                                                         </div>
                                                                         <a href="javascript:;" class="less-btn or" id="shou">(收起)</a>
                                                                         <div class="mvm clearfix">

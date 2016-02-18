@@ -71,7 +71,7 @@
                         <div class="info-item"> <a href="account.htm">编辑个人资料</a> <span class="info-item-name mhs">|</span>  <a href="goAccountAvatar.htm">更新头像</a> </div>
                     </c:if>
                     <c:if test="${user1.userId!=user.userId}">
-                        <div class="info-item"><a href="goSendMail1.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
+                        <div class="info-item"><a href="goSendMail.htm?userName=${user1.userName}" class="btn-n2sec">发私信</a></div>
                     </c:if>
 
                 </div>
@@ -128,8 +128,8 @@
 
 
                         <div class="nav clearfix">
-                            <a href="goPersonal.htm?userId=${user1.userId}" class="on">主页</a>
-                            <a href="goPersonalTeam.htm?userId=${user1.userId}">小组</a>
+                            <a href="goPersonal.htm?userId=${user1.userId}">主页</a>
+                            <a href="goPersonalTeam.htm?userId=${user1.userId}"class="on" >小组</a>
                             <a href="goPersonalAttention.htm?userId=${user1.userId}">好友</a>
                             <a href="goPersonalNote.htm?userId=${user1.userId}">笔记</a>
                         </div>
