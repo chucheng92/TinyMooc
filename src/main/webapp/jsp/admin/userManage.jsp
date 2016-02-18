@@ -137,7 +137,7 @@ $(function(){
 									<th>金币</th>								
 									<th>状态</th>
 									<th>激活<=>锁定</th>
-									<th>删除</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -169,9 +169,7 @@ $(function(){
 										</div>
 											
 									</td>
-									<td style="text-align:center;">
-									<a class="btn success" href="deleUser.htm?userId=${user.userId}">删除用户</a>
-									</td>
+									
 								</tr>
 								</c:forEach>							
 							</tbody>
