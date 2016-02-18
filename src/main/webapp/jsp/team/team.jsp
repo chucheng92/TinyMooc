@@ -189,20 +189,11 @@
                             <div class="gray">我管理的小组</div>
 
                             <ul class="grids smallpic-grids">
-                                <c:forEach items="${userTeam1}" var="userteam">
-                                    <%--<c:if test="${userteam.userPosition=='组长'}">--%>
+                                <c:forEach items="${userTeam1}" var="team">
                                     <li class="grid">
-                                        <a href="teamHomePage.htm?teamId=${userteam.team.teamId}" title=""><img
-                                                src="${userteam.team.headImage.imageSmall}"
-                                                alt="${userteam.team.teamName}"/></a>
-
-                                        <div class="mvs">
-                                            <a href="teamHomePage.htm?teamId=${userteam.team.teamId}"
-                                               title="${userteam.team.teamName}">
-                                                <c:out value="${userteam.team.teamName}"></c:out>
-                                            </a></div>
+                                       <img src="${team.team.headImage.imageSmall}" alt="${team.team.teamName}"/>
+                                        <a href="teamHomePage.htm?teamId=${team.team.teamId}" title="${team.team.teamName}">${team.team.teamName}</a>
                                     </li>
-                                    <%--</c:if>--%>
                                 </c:forEach>
                             </ul>
                         </c:if>

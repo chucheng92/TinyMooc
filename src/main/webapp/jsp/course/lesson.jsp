@@ -374,7 +374,7 @@
             <h3>课程创建人</h3>
 
             <div class="course-author-block imageblock clearfix">
-                <div class="imageblock-image"><a href="goPersonnal.htm?userId=${currentCourse.user.userId}"
+                <div class="imageblock-image"><a href="goPersonal.htm?userId=${currentCourse.user.userId}"
                                                  class="show-user-card"><img
                         src="${currentCourse.user.headImage.imageMid}" alt="${currentCourse.user.userName}"></a>
                 </div>
@@ -400,7 +400,7 @@
                         </c:if>
                         </c:if>
 
-                    <div class="userName"><a href="goPersonnal.htm?userId=${currentCourse.user.userId}"
+                    <div class="userName"><a href="goPersonal.htm?userId=${currentCourse.user.userId}"
                                              class="show-user-card"
                                              title="${currentCourse.user.userName}">${currentCourse.user.userName}<span
                             class="o-ver-icn"></span></a></div>

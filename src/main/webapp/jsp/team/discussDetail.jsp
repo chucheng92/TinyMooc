@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="/resource/jspf/commons.jspf" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]><html class="ie ie6"><![endif]-->
 <!--[if IE 7]><html class="ie ie7"><![endif]-->
@@ -9,18 +10,9 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> ${discuss.topic} - ${discuss.team.teamName} - 好知网</title>
-  <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<link rel="stylesheet" type="text/css"href="<c:url value="/js/fancybox/jquery.fancybox-1.3.4.css"/>"/>
-<script type="text/javascript" src="<c:url value="/js/fancybox/jquery.fancybox-1.3.4.pack.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
- <script type="text/javascript" src="<c:url value="/js/xheditor/xheditor-1.1.6-zh-cn.js"/>"></script> 
+  <title> ${discuss.topic} - ${discuss.team.teamName} - 萌课网</title>
+  <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+ <script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
  <script type="text/javascript">
 $(function(){
 

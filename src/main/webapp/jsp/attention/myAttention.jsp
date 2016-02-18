@@ -68,7 +68,7 @@
                         <c:forEach items="${list}" var="list">
                             <li class="item lightitem item-border">
                                 <div class="imageblock clearfix mvm">
-                                    <div class="imageblock-image"><img src="<c:url value="${list.userByAttentionedUserId.headImage.imageMid}"/>">
+                                    <div class="imageblock-image"><img src="<c:url value="${list.userByAttentionedUserId.headImage.imageSmall}"/>">
                                     </div>
                                     <div class="imageblock-content">
                                         <div class="user-relation">

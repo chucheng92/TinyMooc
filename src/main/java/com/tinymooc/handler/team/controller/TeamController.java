@@ -412,7 +412,7 @@ public class TeamController {
         String teamId = ServletRequestUtils.getStringParameter(req, "teamId", "");
         Team team = teamService.findById(Team.class, teamId);
         req.setAttribute("team", team);
-        return new ModelAndView("/team/creatediscuss");
+        return new ModelAndView("/team/createDiscuss");
     }
 
     @CheckAuthority(name = "发表话题")
@@ -603,7 +603,7 @@ public class TeamController {
         ImageText text = texts.get(0);
         req.setAttribute("discuss", discuss);
         req.setAttribute("text", text);
-        return new ModelAndView("/team/editdiscuss");
+        return new ModelAndView("/team/editDiscuss");
     }
 
     @RequestMapping("updateDiscuss.htm")

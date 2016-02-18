@@ -255,7 +255,7 @@ public class HomePageController {
 
     @RequestMapping("recommendTeam.htm")
     public ModelAndView recommendTeam(HttpServletRequest request) {
-        System.out.println("=====Test Start===========Enter turnToTuiTeam===========");
+        System.out.println("=====Test Start===========Enter recommendTeam===========");
         User user = (User) request.getSession().getAttribute("user");
         int credit = user.getCredit();
         System.out.println("================credit============" + credit);
@@ -304,27 +304,45 @@ public class HomePageController {
                 }
                 DetachedCriteria dCriteriaTest = DetachedCriteria.forClass(UserTeam.class)
                         .add(Restrictions.eq("user", userTest))
-                                // 这里用组长会不会更好一些
-                        .add(Restrictions.eq("userPosition", "创建者"))
+                        .add(Restrictions.eq("userPosition", "组长"))
                         .add(Restrictions.eq("userState", "批准"));
-                UserTeam userTeamTemp = userService.queryAllOfCondition(UserTeam.class, dCriteriaTest).get(0);
 
-                // FIXME
-                System.out.println("======userTeamTemp======" + userTeamTemp);
-
-                teamList.add(userTeamTemp);
-            }
+                // FIXMe
+                List<UserTeam> list = userService.queryAllOfCondition(UserTeam.class, dCriteriaTest);
+                UserTeam userTeamTemp = null;
+                if (list.size() == 0) {
+                    System.out.println("========if====");
+                    continue;
+                } else {
+                    userTeamTemp = list.get(0);
+                }
+            teamList.add(userTeamTemp);
         }
-
-        request.getSession().setAttribute("labelList", labelList);
-        request.getSession().setAttribute("expertList", expertList);
-        request.getSession().setAttribute("teamList", teamList);
-        request.getSession().setAttribute("level", level);
-
-        //FIXME
-        System.out.println("============Test End============");
-        return new ModelAndView("/homePage/recommendTeam");
     }
+
+    request.getSession().
+
+    setAttribute("labelList",labelList);
+
+    request.getSession().
+
+    setAttribute("expertList",expertList);
+
+    request.getSession().
+
+    setAttribute("teamList",teamList);
+
+    request.getSession().
+
+    setAttribute("level",level);
+
+    //FIXME
+    System.out.println("============Test End============");
+    return new
+
+    ModelAndView("/homePage/recommendTeam");
+
+}
 
     @RequestMapping("turnToHelpPage.htm")
     public ModelAndView turnToHelpPage() {
@@ -366,9 +384,9 @@ public class HomePageController {
         }
 
         // FIXME
-        System.out.println("==================type="+type);
-        System.out.println("==================courseId="+courseId);
-        System.out.println("==================objectId="+objectId);
+        System.out.println("==================type=" + type);
+        System.out.println("==================courseId=" + courseId);
+        System.out.println("==================objectId=" + objectId);
 
         labelService.saveObjectLabels(labels, objectId, type);
 
@@ -386,7 +404,7 @@ public class HomePageController {
         String teamId = request.getParameter("teamId");
 
         // FIXME
-        System.out.println("==================type="+type);
+        System.out.println("==================type=" + type);
 
         labels = labelService.getTenHotLabels();
         if (type.equals("user")) {
@@ -566,21 +584,21 @@ public class HomePageController {
         System.out.println("=============进入goCourseHome=========");
         String filterType = request.getParameter("filterType");
         // FIXME
-        System.out.println("=============filterType========="+filterType);
+        System.out.println("=============filterType=========" + filterType);
 
         DetachedCriteria dc = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "创建者")).createCriteria("course")
                 .add(Restrictions.eq("courseState", "批准"))
                 .add(Restrictions.isNull("course"));
-        if (filterType == null )
+        if (filterType == null)
             // 默认
-            dc .addOrder(Order.desc("applyDate"));
-       else if (filterType.equals("grade"))
-               dc.addOrder(Order.desc("totalMark"));
-        else if (filterType.equals("time") )
-              dc .addOrder(Order.desc("approveDate"));
-        else if (filterType.equals("hot") )
-            dc .addOrder(Order.desc("scanNum"));
+            dc.addOrder(Order.desc("applyDate"));
+        else if (filterType.equals("grade"))
+            dc.addOrder(Order.desc("totalMark"));
+        else if (filterType.equals("time"))
+            dc.addOrder(Order.desc("approveDate"));
+        else if (filterType.equals("hot"))
+            dc.addOrder(Order.desc("scanNum"));
 
         int pageSize = 12;
         int totalPage = userService.countTotalPage(dc, pageSize);
