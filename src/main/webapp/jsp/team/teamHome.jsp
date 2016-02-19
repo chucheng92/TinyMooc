@@ -122,7 +122,7 @@
                             <p class="create-info clearfix">
                                 <c:if test="${! empty userTeam2.userPosition}">
                             <span class="fr">
-                            你是${userTeam2.userPosition}
+                            你是${userTeam1.userPosition}
                             </span>
                                 </c:if>
                         <span class="mr10">创建于<fmt:formatDate value="${userTeam2.team.applyDate}"
