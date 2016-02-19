@@ -133,7 +133,7 @@ public class HomePageController {
         DetachedCriteria dCriteria5 = DetachedCriteria.forClass(Note.class);
         dCriteria5.addOrder(Order.desc("addDate"));
         dCriteria5.add(Restrictions.eq("public_", "是"));
-        List<Note> noteList = userService.queryMaxNumOfCondition(Note.class, dCriteria5, 3);
+        List<Note> noteList = userService.queryMaxNumOfCondition(Note.class, dCriteria5, 5);
 
 
         request.setAttribute("hotCourseList", hotCourseList); // 热门课程
