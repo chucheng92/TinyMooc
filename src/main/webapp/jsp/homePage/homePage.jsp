@@ -369,7 +369,7 @@
                                 <div class="imageblock-content">
 
                                     <p class="title">
-                                        <a href="">${discuss.topic}</a>
+                                        <a href="discussDetailPage.htm?discussId=${discuss.discussId}"><span style="color: rgb(102, 194, 160)">${discuss.topic}</span></a>
                                     </p>
                                     <p class="metas">
                                         <a href="teamHomePage.htm?teamId=${discuss.team.teamId}" title="来自『${discuss.team.teamName}』小组"
