@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,11 +30,7 @@ $("a#video").click(function(){
 	 $("#content-control-group").css("display","none");
 	 $("#media-control-group").css("display","block");
 	 $("#lesson-form").attr({ action: "uploadAll.htm", enctype: "multipart/form-data" });;	
-  });	
-
-$("#save").click(function(){
-	$("#lesson-form").submit();
-});
+  });
 });
 </script>
 
@@ -65,9 +60,7 @@ $("#save").click(function(){
     <div class="page-head"><h2>添加第${lessons+1}课时</h2></div>
     <div class="page-body clearfix">
       <div class="page-body-main">
-         <form id="lesson-form" class="form-horizontal" method="post" 
-               data-widget="validator-bootstrap"  data-auto-submit="false" 
-               action="uploadAll.htm" enctype="multipart/form-data">
+         <form id="lesson-form" class="form-horizontal" method="post" data-widget="validator-bootstrap"  data-auto-submit="false" action="uploadAll.htm" enctype="multipart/form-data">
           <div class="control-group">
             <label class="control-label">课时类型</label>
             <div class="controls">
@@ -82,14 +75,14 @@ $("#save").click(function(){
           <div class="control-group" id="media-control-group">
             <label class="control-label">视频地址</label>
             <div class="controls media-controls">
-               <input type="file" name="url">
+               <input type="file" name="url" required>
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label">标题</label>
             <div class="controls">
-              <input type="text" name="courseTitle" value="" data-display="标题" required="required" />
+              <input type="text" name="courseTitle" value="" data-display="标题" required />
               <input type="hidden" name="courseId" value="${course.courseId}">
             </div>
           </div>
@@ -98,7 +91,7 @@ $("#save").click(function(){
             <label class="control-label">正文</label>
             <div class="controls">
               <a id="editor-save-images" class="fr"></a>
-              <textarea class="xheditors" id="content" name="content" rows="18" required="required" style="width:100%;height:360px;"></textarea>           
+              <textarea class="xheditors" id="content" name="content" rows="18" required style="width:100%;height:360px;"></textarea>
             </div>
           </div>
           <div class="control-group">
@@ -116,7 +109,8 @@ $("#save").click(function(){
               <button class="btn btn-success" id="save" type="submit">保存</button>
             </div>
           </div>
-        </form>
+
+         </form>
       </div>
       <div class="page-body-side">
       </div>
@@ -125,6 +119,17 @@ $("#save").click(function(){
 
 </section>
 
+AAAAAAAAAAAAAAAAAAAAAAAAA
+
+<form id="course-create-form" class="form-horizontal" method="post" action="uploadAll.htm" data-widget="validator-bootstrap" data-auto-submit="false" data-auto-focus="false">
+
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-success">提交</button>
+        </div>
+    </div>
+</form>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 

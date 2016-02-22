@@ -209,7 +209,8 @@
                     <div class="clearfix">
                         <h1 class="pull-left">${currentCourse.course.courseTitle}</h1>
                     </div>
-
+                <%--</div>--%>
+                <%--<div>--%>
                     <ul class="course-metas">
                         <li>
                             <c:if test="${userGrade !='0.0'}">
@@ -251,7 +252,6 @@
                             <button class="btn btn-large btn-success" id="start">${currentCourseState}</button>
                         </c:if>
                     </div>
-
                 </div>
             </div>
 

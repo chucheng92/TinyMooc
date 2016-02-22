@@ -58,10 +58,8 @@ public class AdminController {
 			request.setAttribute("note", "邮箱或是密码不正确，请重新输入");
 			return new ModelAndView("/admin/login");
 		}
-		
 	}
 
-	
 	@RequestMapping("goAdminHome.htm")
 	public ModelAndView goAdminHome(HttpServletRequest request) {
 		User user=(User) request.getSession().getAttribute("admin");

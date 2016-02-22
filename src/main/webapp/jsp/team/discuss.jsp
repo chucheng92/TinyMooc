@@ -134,7 +134,7 @@
                                                         </c:if>
                                                     </p>
                                                     <p class="metas">
-                                                        by <a href="" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
+                                                        by <a href="goPersonal.htm?userId=${dis.user.userId}" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
                                                         <span class="mhm">浏览量：${dis.scanNum}</span>
 
                                                     </p>
@@ -209,17 +209,15 @@
             <ul class="grids smallpic-grids">
                 <c:forEach items="${userTeams}" var="newUser">
                     <li class="grid">
-                        <a href="#" class="show-user-card" data-uid=""><img
-                                src="${newUser.user.headImage.imageSmall}"></a>
-
-                        <div><a href="#" class="show-user-card " data-uid=""
+                        <img src="${newUser.user.headImage.imageSmall}">
+                        <div><a href="goPersonal.htm?userId=${newUser.user.userId}" class="show-user-card " data-uid=""
                                 title="${newUser.user.userName}">${newUser.user.userName}</a></div>
                     </li>
                 </c:forEach>
             </ul>
 
 
-            <p class="fr mtm  mbl"><a href=""> » 更多成员</a></p>
+            <p class="fr mtm  mbl"><a href="#"> » 更多成员</a></p>
         </div>
 
         <c:if test="${userTeam1.userPosition=='成员'}">

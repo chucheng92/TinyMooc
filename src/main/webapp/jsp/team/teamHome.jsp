@@ -192,7 +192,7 @@
                                     </c:forEach>
                                 </ul>
                             </div>
-                            <p class="fr mtm"><a href=""> » 更多话题</a></p>
+                            <p class="fr mtm"><a href="#"> » 更多话题</a></p>
                         </c:if>
                     </div>
 
@@ -216,11 +216,10 @@
                 <h3>我的信息</h3>
 
                 <div class="owner-block imageblock clearfix">
-                    <div class="imageblock-image"><a href="" class="show-user-card"><img
-                            src="${userTeam1.user.headImage.imageSmall}" alt="${userTeam1.user.userName}"></a>
+                    <img src="${userTeam1.user.headImage.imageSmall}" alt="${userTeam1.user.userName}">
                     </div>
                     <div class="imageblock-content">
-                        <div class="userName"><a href="" class="show-user-card "
+                        <div class="userName"><a href="#" class="show-user-card "
                                                  title="${userTeam1.user.userName}">${userTeam1.user.userName}</a>
                         </div>
                         <div>
@@ -258,18 +257,15 @@
             <h2>最近加入</h2>
             <ul class="grids smallpic-grids">
                 <c:forEach items="${userTeams}" var="newUser">
-                    <li class="grid">
-                        <a href="#" class="show-user-card" data-uid=""><img
-                                src="${newUser.user.headImage.imageSmall}"></a>
-
-                        <div><a href="#" class="show-user-card " data-uid=""
+                    <li class="grid"><img src="${newUser.user.headImage.imageSmall}">
+                        <div><a href="goPersonal.htm?userId=${newUser.user.userId}" class="show-user-card " data-uid=""
                                 title="${newUser.user.userName}">${newUser.user.userName}</a></div>
                     </li>
                 </c:forEach>
             </ul>
 
 
-            <p class="fr mtm  mbl"><a href=""> » 更多成员</a></p>
+            <p class="fr mtm  mbl"><a href="#"> » 更多成员</a></p>
         </div>
 
         <c:if test="${userTeam1.userPosition=='成员'}">

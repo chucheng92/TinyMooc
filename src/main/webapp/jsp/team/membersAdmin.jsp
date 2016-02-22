@@ -54,7 +54,7 @@
                     <a href="teamHomePage.htm?teamId=${userTeam2.team.teamId}">小组首页</a>
                     <a href="discussPage.htm?teamId=${userTeam2.team.teamId}">讨论区</a>
                     <a href="membersAdminPage.htm?teamId=${userTeam2.team.teamId}">成员</a>
-                    <c:if test="${userTeam.userPosition=='组长'}">
+                    <c:if test="${userTeam1.userPosition=='组长'}">
                         <a href="manageTeam.htm?teamId=${userTeam2.team.teamId}">管理</a>
                     </c:if>
                 </div>
@@ -72,7 +72,7 @@
                             <p class="create-info clearfix">
                                 <c:if test="${! empty userTeam2.userPosition}">
                             <span class="fr">
-                            你是${userTeam2.userPosition}
+                            你是${userTeam1.userPosition}
                             </span>
                                 </c:if>
                         <span class="mr10">创建于<fmt:formatDate value="${userTeam2.team.applyDate}"
@@ -148,7 +148,7 @@
 
                                                     <p><a href="#" title="${uts.user.userName}">${uts.user.userName}</a>
                                                     </p>
-                                                    <c:if test="${userTeam.userPosition=='组长'}">
+                                                    <c:if test="${userTeam1.userPosition=='组长'}">
                                                         <p>
                                                             <a href="kickOutTeam.htm?userTeamId=${uts.userTeamId}"
                                                                class="opt" title="把${uts.user.userName}踢出小组">踢</a>
@@ -171,8 +171,50 @@
             </div>
         </div>
     </div>
+<%----%>
+    <c:if test="${!empty userTeam1.user}">
+        <div class="flat" style="margin-top: 5%">
+            <h3>我的信息</h3>
 
+            <div class="owner-block imageblock clearfix">
+                <img src="${userTeam1.user.headImage.imageSmall}" alt="${userTeam1.user.userName}">
+            </div>
+            <div class="imageblock-content">
+                <div class="userName"><a href="#" class="show-user-card "
+                                         title="${userTeam1.user.userName}">${userTeam1.user.userName}</a>
+                </div>
+                <div>
+                    <p>金币总数：${userTeam1.user.gold}</p>
 
+                    <p>组内贡献：${userTeam1.contribution}</p>
+
+                    <p>组内等级：${level1.lv}</p>
+
+                    <p>组内称号：${level1.title}</p>
+
+                    <p>个人说明：${userTeam1.user.intro}</p>
+
+                    <p class="text-info">
+                        <button type="button" class="btn btn-info btn-small">贡献</button>
+                        （1金币=1贡献度）
+                    </p>
+                </div>
+            </div>
+            <div class="construct" style="display: none;" align="center">
+                <div>
+                    <p>
+                        <input type="text" style="width: 40px;margin-top: 10px" maxlength="6" id="gold">
+                        <button class="btn btn-success btn-small">兑换</button>
+                        <input type="hidden" value="${userTeam1.user.gold}" id="goldNum">
+                        <input type="hidden" value="${userTeam1.team.teamId}" id="teamId">
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </c:if>
+    <%----%>
+<c:if test="${userTeam1.userPosition=='组长'}">
     <div id="course-side">
         <div class="membercol">
             <div class="mod">
@@ -192,7 +234,7 @@
             </div>
         </div>
     </div>
-
+</c:if>
 
 </section>
 
