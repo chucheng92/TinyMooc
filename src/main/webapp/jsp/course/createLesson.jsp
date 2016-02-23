@@ -19,6 +19,7 @@ $(function(){
 $("a#img").click(function(){
 	 $(this).addClass("active");
 	 $("a#video").removeClass("active");
+     $("#videoSelect").removeAttr("required");
 	 $("#content-control-group").css("display","block");
 	 $("#media-control-group").css("display","none");
 	 $("#lesson-form").removeAttr("enctype");
@@ -55,7 +56,6 @@ $("a#video").click(function(){
   </div>
 </div>
 
-
   <div class="light-page page-small lesson-form-page" style="">
     <div class="page-head"><h2>添加第${lessons+1}课时</h2></div>
     <div class="page-body clearfix">
@@ -69,13 +69,13 @@ $("a#video").click(function(){
                 <a class="btn btn-small active" id="video">视频</a>
               </div>
               <input type="hidden" name="lessonNum" value="${lessons+1}" id="lesson-method-field" />
-              
+
             </div>
           </div>
           <div class="control-group" id="media-control-group">
             <label class="control-label">视频地址</label>
             <div class="controls media-controls">
-               <input type="file" name="url" required>
+               <input id="videoSelect" type="file" name="url" required="required">
             </div>
           </div>
 
@@ -91,15 +91,16 @@ $("a#video").click(function(){
             <label class="control-label">正文</label>
             <div class="controls">
               <a id="editor-save-images" class="fr"></a>
-              <textarea class="xheditors" id="content" name="content" rows="18" required style="width:100%;height:360px;"></textarea>
+              <textarea class="xheditors" id="content" name="content" rows="18"  style="width:100%;height:360px;"></textarea>
             </div>
           </div>
-          <div class="control-group">
+
+             <div class="control-group">
             <label class="control-label">摘要</label>
             <div class="controls controls-state-folded">
             </div>
             <div class="controls controls-state-unfolded">
-              <textarea class="aa" name="courseIntro" rows="3" style="width:100%;"></textarea>
+              <textarea class="aa" name="courseIntro" rows="3" style="width:100%;" required></textarea>
             </div>
           </div>
 
@@ -109,27 +110,14 @@ $("a#video").click(function(){
               <button class="btn btn-success" id="save" type="submit">保存</button>
             </div>
           </div>
-
          </form>
       </div>
       <div class="page-body-side">
       </div>
     </div>
   </div>
-
 </section>
 
-AAAAAAAAAAAAAAAAAAAAAAAAA
-
-<form id="course-create-form" class="form-horizontal" method="post" action="uploadAll.htm" data-widget="validator-bootstrap" data-auto-submit="false" data-auto-focus="false">
-
-    <div class="control-group">
-        <div class="controls">
-            <button type="submit" class="btn btn-success">提交</button>
-        </div>
-    </div>
-</form>
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 <jsp:include page="/jsp/include/foot.jsp"></jsp:include>
 

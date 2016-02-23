@@ -13,18 +13,18 @@
                 <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>"/></a>
 
                 <div class="infos">
-                    <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
+                    <div class="nickname"><a href="goPersonal.htm?userId=${user.userId}" title="fanfanle">${user.userName}</a></div>
                     <div class="icons">
-                        <a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>
-                        <a class="user-level user-level-6"  href="">${level.title}</a>
+                        <a class="user-level user-level-6"  href="#" target="_blank">${level.lv}级</a>
+                        <a class="user-level user-level-6"  href="#">${level.title}</a>
                     </div>
                 </div>
             </div>
 
             <div class="stats-mod">
                 <ul class="user-stats clearfix">
-                    <li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>
-                    <li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>
+                    <li><a href="#"><strong>${user.credit}</strong>学分</a></li>
+                    <li><a href="#"><strong>${user.gold}</strong>金币</a></li>
                 </ul>
             </div>
 

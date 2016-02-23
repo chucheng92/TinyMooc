@@ -10,7 +10,7 @@
         <div class="infos">
           <div class="nickname"><a href="user.jsp" title="fanfanle">${user.userName}</a></div>
           <div class="icons">
-            <a class="user-level user-level-6" title="努力升级吧!" href="/help/helplevel.jsp" target="_blank">${level.lv}级</a>${level.title}
+            <a class="user-level user-level-6" title="努力升级吧!" href="turnToHelpPage.htm" target="_blank">${level.lv}级</a>${level.title}
 
           </div>
         </div>
@@ -18,8 +18,8 @@
 
       <div class="stats-mod">
           <ul class="user-stats clearfix">
-            <li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>
-            <li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>
+            <li><a href="#"><strong>${user.credit}</strong>学分</a></li>
+            <li><a href="#"><strong>${user.gold}</strong>金币</a></li>
           </ul>
       </div>
 </body>
