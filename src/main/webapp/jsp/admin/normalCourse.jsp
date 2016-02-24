@@ -143,7 +143,9 @@ $(function(){
 							<tbody>
 							<c:forEach items="${courseList}" var="courseList">
 								<tr>
-									<td style="text-align:center;"><c:out value="${courseList.courseTitle}"/></td>
+									<td style="text-align:center;">
+									<a class="btn success" href="turnToLessonManage.htm?courseId=${courseList.courseId}"><c:out value="${courseList.courseTitle}"/>
+									</a> </td>
 									
 									<td style="text-align:center;"><c:out value="${courseList.courseIntro}"/></td>
 									<td style="text-align:center;"><c:out value="${courseList.type}"/></td>
