@@ -340,7 +340,7 @@ public class CourseController {
         System.out.println("Test 7===============labelObjectList =" + labelObjectList.size());
 
         // Test 8
-        // 该门课程的评分
+        // 该门课程的评分同时写回Course表的totalMark中
         DetachedCriteria detachedCriteria8 = DetachedCriteria.forClass(Grade.class).add(Restrictions.eq("gradeObject", courseId));
         List<Grade> gradeList = courseService.queryAllOfCondition(Grade.class, detachedCriteria8);
         double userGrade = 0.0;
@@ -350,6 +350,8 @@ public class CourseController {
         } else {
             userGrade = 0.0;
         }
+        course.setTotalMark(userGrade);
+        courseService.update(course);
         // FIXME
         System.out.println("Test 8===============userGrade=" + userGrade);
 
@@ -376,7 +378,8 @@ public class CourseController {
         //查询该课程对应所有的课时及用户学习状态
         DetachedCriteria detachedCriteria10 = DetachedCriteria.forClass(Course.class)
                 .add(Restrictions.eq("course", course))
-                .addOrder(Order.asc("applyDate"));
+                .addOrder(Order.asc("applyDate"))
+                .add(Restrictions.eq("courseState", "批准"));
         List<Course> tempLessonList = (List<Course>) courseService.queryAllOfCondition(Course.class, detachedCriteria10);
         // FIXME
         System.out.println("Test10 ===============tempLessonList.size=" + tempLessonList.size());
@@ -418,10 +421,6 @@ public class CourseController {
             picSuffix = Integer.parseInt(currentCourse.getCourse().getCourseId().substring(0, 7), 16) % 10;
         }
 
-        // Test13
-        // FIXME
-        System.out.println("Test 13============picSuffix=" + picSuffix);
-
         // 封装信息
         req.setAttribute("currentCourse", currentCourse);
         req.setAttribute("fansNum", fansNum);
@@ -438,7 +437,7 @@ public class CourseController {
         req.setAttribute("labelList", labelObjectList);
         req.setAttribute("currentCourseState", currentCourseState);
         req.setAttribute("lessonList", lessonList);
-        return new ModelAndView("/course/courseDetailPage", "picSuffix", picSuffix);
+        return new ModelAndView("/course/courseDetailPage");
     }
 
     /**

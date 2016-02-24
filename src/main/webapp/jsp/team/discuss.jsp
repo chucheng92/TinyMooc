@@ -7,22 +7,11 @@
 <!--[if IE 8 ]><html class="ie8"><![endif]-->
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head>
-<<<<<<< HEAD
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>${userTeam2.team.teamName} - 萌课网</title>
-  <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
- 
- <script type="text/javascript">
-$(function(){
-=======
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${userTeam2.team.teamName} - 萌课网</title>
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
->>>>>>> refs/remotes/origin/dev
 
     <style type="text/css">
         .why-gnosh-movies2{
@@ -65,78 +54,6 @@ $(function(){
 </head>
 <body>
 
-<<<<<<< HEAD
-<jsp:include page="/jsp/include/head2.jsp"></jsp:include>
-
-
-<section class="container" style="margin-top: 60px;">
-  <div class="group-header" style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
-
-      <div class="icon">
-          <img src="<c:url value="${userTeam2.team.headImage.imageSmall}"/>"/>
-      </div>
-      <div>
-          <div class="infos" align="center">
-              <h1>小组名：${userTeam2.team.teamName}</h1>
-              <span>一共<font color="red">${memberNum}</font>个成员</span>
-          </div>
-      </div>
-  
-  <ul class="hnav">
-    <li><a href="teamHomePage.htm?teamId=${userTeam2.team.teamId}">小组首页</a></li>
-    <li  class="this"><a href="discussPage.htm?teamId=${userTeam2.team.teamId}">讨论区</a></li>  
-    <li><a href="membersAdminPage.htm?teamId=${userTeam2.team.teamId}">成员</a></li>
-    <c:if test="${userTeam.userPosition=='组长'}">
-    <li><a href="manageTeam.htm?teamId=${userTeam2.team.teamId}">管理</a></li>  
-    </c:if>   
-  </ul>
-
-</div>  
-<div class="container-padding clearfix">
-        <div class="normal-main"> 
-         <div class="mod last-discuss clearfix">
-
-              <div class="fr">
-                 <a href="createDiscussPage.htm?teamId=${userTeam2.team.teamId}" class="btn-s1"><span>发话题</span></a>
-              </div>
-          <c:if test="${discussNum==0}">
-            <h3>本小组暂时还没有话题</h3>
-         </c:if>
-         <c:if test="${discussNum>0}">
-               <h2><span>(共${discussNum}话题)</span></h2>
-    
-                <div class="group-discuss-categories">
-                      <a href="discuss" class="this">全部</a>
-                </div>
-        
-       <div class="discuss-list2">
-            <ul>
-            <c:forEach items="${discusses}" var="dis">
-                <li>
-                      <div class="imageblock clearfix">
-                          <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
-                          </div>
-                           <div class="imageblock-content">
-         
-                                 <p class="title">
-                                 <c:if test="${dis.top==1}">
-                                 <span class="stick-flag mrs">[置顶]</span>
-                                 </c:if>
-                                          <a href="discussDetailPage.htm?discussId=${dis.discussId}">${dis.topic}</a>
-                                          <c:if test="${dis.essence=='精华'}">
-                                          <img src='<c:url value="/resource/pic/elite-s.png"></c:url>' width="16" height="14" title="精华贴" />
-                                          </c:if>  
-                                           </p>
-                                           <p class="metas">
-                                              by <a href="" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
-                                            <span class="mhm">${dis.scanNum}</span>
-                                                
-                                    </p>
-                               </div>
-                              </div>
-                           </li>
-                           </c:forEach>
-=======
 <c:if test="${empty user.userId}">
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
 </c:if>
@@ -162,7 +79,6 @@ $(function(){
                         <li>
                             <span>一共<font color="red">${memberNum}</font>个成员</span>
                         </li>
->>>>>>> refs/remotes/origin/dev
                     </ul>
 
                 </div>
@@ -218,7 +134,7 @@ $(function(){
                                                         </c:if>
                                                     </p>
                                                     <p class="metas">
-                                                        by <a href="" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
+                                                        by <a href="goPersonal.htm?userId=${dis.user.userId}" class="show-user-card " title="${dis.user.userName}">${dis.user.userName}</a>
                                                         <span class="mhm">浏览量：${dis.scanNum}</span>
 
                                                     </p>
@@ -293,17 +209,15 @@ $(function(){
             <ul class="grids smallpic-grids">
                 <c:forEach items="${userTeams}" var="newUser">
                     <li class="grid">
-                        <a href="#" class="show-user-card" data-uid=""><img
-                                src="${newUser.user.headImage.imageSmall}"></a>
-
-                        <div><a href="#" class="show-user-card " data-uid=""
+                        <img src="${newUser.user.headImage.imageSmall}">
+                        <div><a href="goPersonal.htm?userId=${newUser.user.userId}" class="show-user-card " data-uid=""
                                 title="${newUser.user.userName}">${newUser.user.userName}</a></div>
                     </li>
                 </c:forEach>
             </ul>
 
 
-            <p class="fr mtm  mbl"><a href=""> » 更多成员</a></p>
+            <p class="fr mtm  mbl"><a href="#"> » 更多成员</a></p>
         </div>
 
         <c:if test="${userTeam1.userPosition=='成员'}">

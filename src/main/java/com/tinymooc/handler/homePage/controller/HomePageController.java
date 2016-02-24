@@ -133,7 +133,7 @@ public class HomePageController {
         DetachedCriteria dCriteria5 = DetachedCriteria.forClass(Note.class);
         dCriteria5.addOrder(Order.desc("addDate"));
         dCriteria5.add(Restrictions.eq("public_", "是"));
-        List<Note> noteList = userService.queryMaxNumOfCondition(Note.class, dCriteria5, 3);
+        List<Note> noteList = userService.queryMaxNumOfCondition(Note.class, dCriteria5, 5);
 
 
         request.setAttribute("hotCourseList", hotCourseList); // 热门课程
@@ -580,13 +580,6 @@ public class HomePageController {
     @SuppressWarnings("unchecked")
     @RequestMapping("goCourseHome.htm")
     public ModelAndView goCourseHome(HttpServletRequest request) {
-<<<<<<< HEAD
-        DetachedCriteria dCriteria = DetachedCriteria.forClass(UserCourse.class)
-                .add(Restrictions.eq("userPosition", "创建者")).createCriteria("course")
-                .add(Restrictions.eq("courseState", "批准"))
-                .add(Restrictions.isNull("course"))
-                .addOrder(Order.desc("applyDate"));
-=======
         // FIXME
         System.out.println("=============进入goCourseHome=========");
         String filterType = request.getParameter("filterType");
@@ -606,15 +599,17 @@ public class HomePageController {
             dc.addOrder(Order.desc("approveDate"));
         else if (filterType.equals("hot"))
             dc.addOrder(Order.desc("scanNum"));
->>>>>>> refs/remotes/origin/dev
 
         int pageSize = 12;
-        int totalPage = userService.countTotalPage(dCriteria, pageSize);
+        int totalPage = userService.countTotalPage(dc, pageSize);
         PageHelper.forPage(totalPage, pageSize);
-        List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dCriteria, pageSize);
+        List<UserCourse> list1 = (List<UserCourse>) userService.getByPage(dc, pageSize);
         request.setAttribute("list1", list1);
-        return new ModelAndView("/homePage/allcourse");
 
+        // FIXME
+        System.out.println("=============结束goCourseHome=========");
+
+        return new ModelAndView("/homePage/allcourse");
     }
 
 		/*---------------------------导航栏专业首页------------------------*/

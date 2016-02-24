@@ -73,12 +73,9 @@
                         <div class="flat">
                             <div class="clearfix">
                                 <h2 class="fl"><font color="black">全部课程</font></h2>
-<<<<<<< HEAD
-=======
                                 <div class="discuss-list2">
                                     <span  class="metas" style="margin-left: 10px;">排序:&nbsp;&nbsp;<a href="goCourseHome.htm">默认</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=grade">评分</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=time">最新</a>&nbsp;&nbsp;<a href="goCourseHome.htm?filterType=hot">最热</a></span>
                                 </div>
->>>>>>> refs/remotes/origin/dev
                                 <a href="" class="fr more"><font color="black">» 更多</font></a>
                             </div>
                             <ul class="cells cells-middle">

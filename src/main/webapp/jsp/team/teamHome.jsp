@@ -9,14 +9,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${userTeam2.team.teamName} - 萌课网</title>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
-=======
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
     <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />"/>
 
->>>>>>> refs/remotes/origin/dev
     <script type="text/javascript">
         $(function () {
             $(".btn.btn-info.btn-small").click(function () {
@@ -65,10 +60,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/dev
 <c:if test="${empty user.userId}">
     <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
 </c:if>
@@ -153,38 +145,6 @@
                     <div class="why-gnosh-movies2">
                     </div>
 
-<<<<<<< HEAD
-                    <div class="discuss-list2">
-                        <ul>
-                            <c:forEach items="${discusses}" var="dis">
-                                <li>
-                                    <div class="imageblock clearfix">
-                                        <div class="imageblock-image"><a href="" class="show-user-card"><img src=""></a>
-                                        </div>
-                                        <div class="imageblock-content">
-
-                                            <p class="title">
-                                                <c:if test="${dis.top==1}">
-                                                    <span class="stick-flag mrs">[置顶]</span>
-                                                </c:if>
-                                                <a href="discussDetailPage.htm?discussId=${dis.discussId}">${dis.topic}</a>
-                                                <c:if test="${dis.essence=='精华'}">
-                                                    <img src='<c:url value="/resource/pic/elite-s.png"></c:url>'
-                                                         width="16" height="14" title="精华贴"/>
-                                                </c:if>
-                                            </p>
-
-                                            <p class="metas">
-                                                by <a href="" class="show-user-card "
-                                                      title="${dis.user.userName}">${dis.user.userName}</a>
-                                                <span class="mhm">${dis.scanNum}</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </c:forEach>
-                        </ul>
-=======
                     <div class="mod last-discuss clearfix">
                         <c:if test="${! empty userTeam1.userPosition}">
                             <div class="fr">
@@ -232,9 +192,8 @@
                                     </c:forEach>
                                 </ul>
                             </div>
-                            <p class="fr mtm"><a href=""> » 更多话题</a></p>
+                            <p class="fr mtm"><a href="#"> » 更多话题</a></p>
                         </c:if>
->>>>>>> refs/remotes/origin/dev
                     </div>
 
                 </div>
@@ -257,11 +216,10 @@
                 <h3>我的信息</h3>
 
                 <div class="owner-block imageblock clearfix">
-                    <div class="imageblock-image"><a href="" class="show-user-card"><img
-                            src="${userTeam1.user.headImage.imageSmall}" alt="${userTeam1.user.userName}"></a>
+                    <img src="${userTeam1.user.headImage.imageSmall}" alt="${userTeam1.user.userName}">
                     </div>
                     <div class="imageblock-content">
-                        <div class="userName"><a href="" class="show-user-card "
+                        <div class="userName"><a href="#" class="show-user-card "
                                                  title="${userTeam1.user.userName}">${userTeam1.user.userName}</a>
                         </div>
                         <div>
@@ -299,18 +257,15 @@
             <h2>最近加入</h2>
             <ul class="grids smallpic-grids">
                 <c:forEach items="${userTeams}" var="newUser">
-                    <li class="grid">
-                        <a href="#" class="show-user-card" data-uid=""><img
-                                src="${newUser.user.headImage.imageSmall}"></a>
-
-                        <div><a href="#" class="show-user-card " data-uid=""
+                    <li class="grid"><img src="${newUser.user.headImage.imageSmall}">
+                        <div><a href="goPersonal.htm?userId=${newUser.user.userId}" class="show-user-card " data-uid=""
                                 title="${newUser.user.userName}">${newUser.user.userName}</a></div>
                     </li>
                 </c:forEach>
             </ul>
 
 
-            <p class="fr mtm  mbl"><a href=""> » 更多成员</a></p>
+            <p class="fr mtm  mbl"><a href="#"> » 更多成员</a></p>
         </div>
 
         <c:if test="${userTeam1.userPosition=='成员'}">

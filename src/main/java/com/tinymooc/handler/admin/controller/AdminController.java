@@ -1,6 +1,7 @@
 package com.tinymooc.handler.admin.controller;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.io.File;
 import javax.servlet.http.HttpServletRequest;
@@ -9,13 +10,12 @@ import javax.servlet.http.HttpSession;
 
 import com.tinymooc.common.domain.*;
 import com.tinymooc.handler.course.service.CourseService;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.*;
 import com.tinymooc.authority.annotation.CheckAuthority;
 import com.tinymooc.handler.admin.service.AdminService;
+import com.tinymooc.handler.video.service.VideoService;
 import com.tinymooc.handler.privateMail.PrivateMailService;
-
+import com.tinymooc.util.CSVUtil;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import com.tinymooc.util.UUIDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AdminController {
-	
+    @Autowired
+    private VideoService videoService;
+
 	@Autowired
 	private AdminService admin;
 	@Autowired
@@ -58,10 +60,8 @@ public class AdminController {
 			request.setAttribute("note", "邮箱或是密码不正确，请重新输入");
 			return new ModelAndView("/admin/login");
 		}
-		
 	}
 
-	
 	@RequestMapping("goAdminHome.htm")
 	public ModelAndView goAdminHome(HttpServletRequest request) {
 		User user=(User) request.getSession().getAttribute("admin");
@@ -588,30 +588,31 @@ public class AdminController {
 		message.setUserBySenderId(sender);
 		admin.save(message);
 	}
-	
-	/*##################管理员管理课程##################*/
-	@SuppressWarnings("unchecked")
-	@RequestMapping("turnToCourseManage.htm")
-	public ModelAndView turnToCourseManage(HttpServletRequest req,
-			HttpServletResponse res) throws Exception{
-		User user=(User) req.getSession().getAttribute("admin");
-		if(user==null){
-			
-			return new ModelAndView("redirect:goAdminLogin.htm");
-		}else{
-			
-        DetachedCriteria detachedCriteria=DetachedCriteria.forClass(Course.class);
-      
-        detachedCriteria.add(Restrictions.eq("courseState", "申请中"));
-        detachedCriteria.add(Restrictions.isNull("course"));
-        detachedCriteria.addOrder(Order.desc("applyDate"));
-  
-        int pageSize=8;
-        int totalPage=admin.countTotalPage(detachedCriteria, pageSize);
-        PageHelper.forPage(totalPage, pageSize);
-        List<Course> courseList=(List<Course>)admin.getByPage(detachedCriteria, pageSize);
-		return new ModelAndView("/admin/courseManage","courseList",courseList);}
-	}
+
+    /*##################管理员管理课程##################*/
+    @SuppressWarnings("unchecked")
+    @RequestMapping("turnToCourseManage.htm")
+    public ModelAndView turnToCourseManage(HttpServletRequest req,
+                                           HttpServletResponse res) throws Exception{
+        User user=(User) req.getSession().getAttribute("admin");
+        if(user==null){
+
+            return new ModelAndView("redirect:goAdminLogin.htm");
+        }else{
+
+            DetachedCriteria detachedCriteria=DetachedCriteria.forClass(Course.class);
+
+            detachedCriteria.add(Restrictions.eq("courseState", "申请中"));
+            detachedCriteria.add(Restrictions.isNull("course"));
+            detachedCriteria.addOrder(Order.desc("applyDate"));
+
+            int pageSize=8;
+            int totalPage=admin.countTotalPage(detachedCriteria, pageSize);
+            PageHelper.forPage(totalPage, pageSize);
+            List<Course> courseList=(List<Course>)admin.getByPage(detachedCriteria, pageSize);
+            return new ModelAndView("/admin/courseManage","courseList",courseList);}
+    }
+
 	@RequestMapping("turnToLessonManage.htm")
 	public ModelAndView turnToLessonManage(HttpServletRequest req,
 			HttpServletResponse res) throws Exception{
@@ -625,7 +626,8 @@ public class AdminController {
 		String courseId=req.getParameter("courseId");
 		
 		Course course=admin.findById(Course.class, courseId);
-		
+		  System.out.println("从课程搜索课时，看size：course.getCourses().size()"+course.getCourses().size());
+            System.out.println("从课程搜索课时，看直接输出效果：course.getCourses()"+course.getCourses());
 		return new ModelAndView("/admin/courseManage1","course",course);}
 	}
 	
@@ -696,6 +698,36 @@ public class AdminController {
 //                                   // 获取parentId 对应的Course
 //            System.out.println(" 测试 course.getCourse" + course.getCourse());
 		if(type.equals("1")){
+
+            //更新cvs
+            // FIXME
+            System.out.println("====================进入boot.do======================");
+         /*--------------------------准备FileId数据------------------------*/
+            List<Video> videoList = videoService.queryAll(Video.class);
+            String fileId = null;
+            int count = 0;
+            for (Video v : videoList) {
+                String videoId = v.getTencentVideoId();
+                // FIXME
+                System.out.println("===============videoId="+videoId+"==============");
+                if (videoId == null  || videoId.equals("")) {
+                    System.out.println("====================进入if======================");
+                    count++;
+                    String vTitle = v.getVideoUrl().substring(0, v.getVideoUrl().lastIndexOf('.'));
+                    //FIXME
+                    System.out.println(v.getVideoUrl().lastIndexOf('.'));
+                    System.out.println("=================vTitle=" + vTitle);
+                    fileId = CSVUtil.core(new File("src/main/videoAddress.csv"), vTitle);
+                    // FIXME
+                    System.out.println("==================fileId=" + fileId);
+
+                    v.setTencentVideoId(fileId);
+                    videoService.update(v);
+                    // FIXME
+                    System.out.println("==================fileId=" + fileId);
+                }
+            }
+
 			course.setApproveDate(new Date());
 			course.setCourseState("批准");
 			admin.update(course);

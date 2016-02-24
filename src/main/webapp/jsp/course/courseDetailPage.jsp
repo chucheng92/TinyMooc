@@ -11,8 +11,6 @@
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
 
-<<<<<<< HEAD
-=======
     <style type="text/css">
         .why-gnosh-movies2 {
             background: url("http://files.bbs.tl.changyou.com/data/attachment/forum/201512/28/170611h1f45gf51i2z4ram.png") top left no-repeat;
@@ -23,7 +21,6 @@
             margin-left: 0px;
         }
     </style>
->>>>>>> refs/remotes/origin/dev
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -212,7 +209,8 @@
                     <div class="clearfix">
                         <h1 class="pull-left">${currentCourse.course.courseTitle}</h1>
                     </div>
-
+                <%--</div>--%>
+                <%--<div>--%>
                     <ul class="course-metas">
                         <li>
                             <c:if test="${userGrade !='0.0'}">
@@ -254,7 +252,6 @@
                             <button class="btn btn-large btn-success" id="start">${currentCourseState}</button>
                         </c:if>
                     </div>
-
                 </div>
             </div>
 

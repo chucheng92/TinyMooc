@@ -8,27 +8,23 @@
 <div class="wrapper">
     <div class="left">
         <header>
-<<<<<<< HEAD
-            <div class="logo"></div>
-=======
->>>>>>> refs/remotes/origin/dev
 
             <div class="avatar-mod clearfix">
                 <a href="goPersonal.htm?userId=${user.userId}" class="avatar"><img src="<c:url value="${user.headImage.imageMid}"/>"/></a>
 
                 <div class="infos">
-                    <div class="nickname"><a href="/u/1359470/" title="fanfanle">${user.userName}</a></div>
+                    <div class="nickname"><a href="goPersonal.htm?userId=${user.userId}" title="fanfanle">${user.userName}</a></div>
                     <div class="icons">
-                        <a class="user-level user-level-6"  href="/help/#help_user_level" target="_blank">${level.lv}级</a>
-                        <a class="user-level user-level-6"  href="">${level.title}</a>
+                        <a class="user-level user-level-6"  href="#" target="_blank">${level.lv}级</a>
+                        <a class="user-level user-level-6"  href="#">${level.title}</a>
                     </div>
                 </div>
             </div>
 
             <div class="stats-mod">
                 <ul class="user-stats clearfix">
-                    <li><a href="/me/point"><strong>${user.credit}</strong>学分</a></li>
-                    <li><a href="/me/coin"><strong>${user.gold}</strong>金币</a></li>
+                    <li><a href="#"><strong>${user.credit}</strong>学分</a></li>
+                    <li><a href="#"><strong>${user.gold}</strong>金币</a></li>
                 </ul>
             </div>
 
@@ -43,11 +39,7 @@
                         <li id="menu-item-1274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1274"><a href="teamPage.htm"><span>小组</span></a></li>
                         <li id="menu-item-1272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1272"><a href="myFavorite.htm"><span>收藏夹</span></a></li>
                         <li id="menu-item-1275" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1275"><a href="myAttention.htm"><span>好友</span></a></li>
-<<<<<<< HEAD
-                        <li id="menu-item-1276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1276"><a href="ggoPrivateMail.htm"><span>私信</span></a></li>
-=======
                         <li id="menu-item-1276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1276"><a href="goPrivateMail.htm"><span>私信</span></a></li>
->>>>>>> refs/remotes/origin/dev
                         <li id="menu-item-1277" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1277"><a href="turnToHelpPage.htm"><span>金币</span></a></li>
                         <li id="menu-item-1278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1278"><a href="account.htm"><span>账户设置</span></a></li>
                     </ul>

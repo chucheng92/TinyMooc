@@ -57,18 +57,10 @@
     float: left;
     width: 316px;
     height: 240px;
-<<<<<<< HEAD
-    background: url(/resource/img/.png) no-repeat;
-margin-left: -10px;
-}
-.middle-container .gnews-banner-major div {
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/10/000355r0m6u912u90o60ma.png) no-repeat;
-=======
     margin-left: -10px;
 }
 .middle-container .gnews-banner-major div {
     background: url(/resource/img/000355r0m6u912u90o60ma.png) no-repeat;
->>>>>>> refs/remotes/origin/dev
     width: 316px;
     height: 205px;
     position: absolute;
@@ -76,11 +68,7 @@ margin-left: -10px;
     top: -30px;
 }
 .middle-container .gnews-banner-major {
-<<<<<<< HEAD
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/09/222633qyln1ybu4xnu4o68.png) no-repeat;
-=======
     background: url(/resource/img/222633qyln1ybu4xnu4o68.png) no-repeat;
->>>>>>> refs/remotes/origin/dev
     background-position: 450px 0px;
     margin-top: 20px;
 }
@@ -88,21 +76,14 @@ margin-left: -10px;
     float: left;
     height: 12px;
     width: 188px;
-<<<<<<< HEAD
-    background: url(http://files.bbs.tl.changyou.com/data/attachment/forum/201601/24/005912gsp9zypdps8gzg2g.png) no-repeat;
-=======
     background: url(/resource/img/005912gsp9zypdps8gzg2g.png) no-repeat;
->>>>>>> refs/remotes/origin/dev
 }
 
 .gnews-banner-mail {
     background: url(/resource/img/tmail.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
-<<<<<<< HEAD
-=======
     margin-left: 40px;
->>>>>>> refs/remotes/origin/dev
 }
 .gnews-banner-mail div {
     background: url(/resource/img/mail.png) no-repeat;
@@ -122,21 +103,14 @@ margin-left: -10px;
     width: 316px;
     height: 205px;
     position: absolute;
-<<<<<<< HEAD
-    left:-40px;
-=======
     left:30px;
->>>>>>> refs/remotes/origin/dev
     top: -30px;
 }
 .gnews-banner-note {
     background: url(/resource/img/tnote.png) no-repeat;
     background-position: 250px 0px;
     margin-top: 20px;
-<<<<<<< HEAD
-=======
     margin-left: 30px;
->>>>>>> refs/remotes/origin/dev
 }
 .gnews-banner-note div {
     background: url(/resource/img/note.png) no-repeat;
@@ -144,11 +118,7 @@ margin-left: -10px;
     height: 205px;
     position: absolute;
     left:-40px;
-<<<<<<< HEAD
-    top: -30px;
-=======
     top: 0px;
->>>>>>> refs/remotes/origin/dev
 }
 .gnews-banner-friendlist {
     background: url(/resource/img/tfriendlist.png) no-repeat;
@@ -162,8 +132,6 @@ margin-left: -10px;
     position: absolute;
     left:-40px;
     top: -30px;
-<<<<<<< HEAD
-=======
 }
 .gnews-banner-mytinymooc div{
     background: url(/resource/img/mytinymooc.png) no-repeat;
@@ -200,5 +168,4 @@ margin-left: -10px;
     position: absolute;
     left:50px;
     top: -40px;
->>>>>>> refs/remotes/origin/dev
 }

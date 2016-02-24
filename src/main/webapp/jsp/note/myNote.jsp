@@ -83,10 +83,7 @@
                                     <li class="">
                                         <div class="course-notes">
                                             <div class="course-info clearfix">
-<<<<<<< HEAD
-=======
                                                 <img src="/resource/img/icons/32/survey.png"  class="picture" />
->>>>>>> refs/remotes/origin/dev
                                                 <a href="">${notelist.course.courseTitle}</a>
                                                 <a href="javascript:;" class="toggle">+ 展开</a>
                                             </div>
@@ -107,11 +104,7 @@
                                                                     </div>
                                                                     <div class="more or" style="display: none;" id="kai">
                                                                         <div class="editor-content">
-<<<<<<< HEAD
-                                                                            <p>${notes.noteContent}</p>
-=======
                                                                             <p style="color: #000">${notes.noteContent}</p>
->>>>>>> refs/remotes/origin/dev
                                                                         </div>
                                                                         <a href="javascript:;" class="less-btn or" id="shou">(收起)</a>
                                                                         <div class="mvm clearfix">

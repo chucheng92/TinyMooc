@@ -16,7 +16,7 @@
 <body class="lily-theme">
 
 <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
-<section class="container signup">
+<section class="container signup" style="margin-top: 60px;">
 
 	<div class="container-padding clearfix">
   		<h1>${note}</h1>

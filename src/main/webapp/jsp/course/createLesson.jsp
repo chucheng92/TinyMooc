@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,6 +19,7 @@ $(function(){
 $("a#img").click(function(){
 	 $(this).addClass("active");
 	 $("a#video").removeClass("active");
+     $("#videoSelect").removeAttr("required");
 	 $("#content-control-group").css("display","block");
 	 $("#media-control-group").css("display","none");
 	 $("#lesson-form").removeAttr("enctype");
@@ -31,11 +31,7 @@ $("a#video").click(function(){
 	 $("#content-control-group").css("display","none");
 	 $("#media-control-group").css("display","block");
 	 $("#lesson-form").attr({ action: "uploadAll.htm", enctype: "multipart/form-data" });;	
-  });	
-
-$("#save").click(function(){
-	$("#lesson-form").submit();
-});
+  });
 });
 </script>
 
@@ -60,14 +56,11 @@ $("#save").click(function(){
   </div>
 </div>
 
-
   <div class="light-page page-small lesson-form-page" style="">
     <div class="page-head"><h2>添加第${lessons+1}课时</h2></div>
     <div class="page-body clearfix">
       <div class="page-body-main">
-         <form id="lesson-form" class="form-horizontal" method="post" 
-               data-widget="validator-bootstrap"  data-auto-submit="false" 
-               action="uploadAll.htm" enctype="multipart/form-data">
+         <form id="lesson-form" class="form-horizontal" method="post" data-widget="validator-bootstrap"  data-auto-submit="false" action="uploadAll.htm" enctype="multipart/form-data">
           <div class="control-group">
             <label class="control-label">课时类型</label>
             <div class="controls">
@@ -76,20 +69,20 @@ $("#save").click(function(){
                 <a class="btn btn-small active" id="video">视频</a>
               </div>
               <input type="hidden" name="lessonNum" value="${lessons+1}" id="lesson-method-field" />
-              
+
             </div>
           </div>
           <div class="control-group" id="media-control-group">
             <label class="control-label">视频地址</label>
             <div class="controls media-controls">
-               <input type="file" name="url">
+               <input id="videoSelect" type="file" name="url" required="required">
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label">标题</label>
             <div class="controls">
-              <input type="text" name="courseTitle" value="" data-display="标题" required="required" />
+              <input type="text" name="courseTitle" value="" data-display="标题" required />
               <input type="hidden" name="courseId" value="${course.courseId}">
             </div>
           </div>
@@ -98,15 +91,16 @@ $("#save").click(function(){
             <label class="control-label">正文</label>
             <div class="controls">
               <a id="editor-save-images" class="fr"></a>
-              <textarea class="xheditors" id="content" name="content" rows="18" required="required" style="width:100%;height:360px;"></textarea>           
+              <textarea class="xheditors" id="content" name="content" rows="18"  style="width:100%;height:360px;"></textarea>
             </div>
           </div>
-          <div class="control-group">
+
+             <div class="control-group">
             <label class="control-label">摘要</label>
             <div class="controls controls-state-folded">
             </div>
             <div class="controls controls-state-unfolded">
-              <textarea class="aa" name="courseIntro" rows="3" style="width:100%;"></textarea>
+              <textarea class="aa" name="courseIntro" rows="3" style="width:100%;" required></textarea>
             </div>
           </div>
 
@@ -116,13 +110,12 @@ $("#save").click(function(){
               <button class="btn btn-success" id="save" type="submit">保存</button>
             </div>
           </div>
-        </form>
+         </form>
       </div>
       <div class="page-body-side">
       </div>
     </div>
   </div>
-
 </section>
 
 

@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/img.css"/>
 
-    <script type="text/javascript" src="<c:url value="/resource/js/label.js"/>"></script>
+    <%--<script type="text/javascript" src="<c:url value="/resource/js/label.js"/>"></script>--%>
     <script type="text/javascript" src="<c:url value="/resource/js/xheditor/xheditor-1.1.9-zh-cn.min.js"/>"></script>
 </head>
 

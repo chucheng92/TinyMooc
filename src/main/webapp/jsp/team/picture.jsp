@@ -5,17 +5,9 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> 图标设置 - 起风了的小组管理 - 好知网</title>
-  <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  
-  <link rel="Shortcut Icon" href="<c:url value="/pic/icon.ico" />" />
-  <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/>" media="screen">
-  <script type="text/javascript" src="<c:url value="/bootstrap/js/jquery-1.8.3.min.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="/css/components.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v2.css"/>">
-<link rel="stylesheet" href="<c:url value="/css/site_v3.css"/>">
-<script type="text/javascript" src="<c:url value="/js/ga.js"/>"></script>
+  <title> 图标设置  - 萌课网</title>
+  <link rel="Shortcut Icon" href="<c:url value="/resource/pic/icon.ico" />" />
+
     
 <script type="text/javascript">
 $(function() {
@@ -94,21 +86,22 @@ $(function() {
 </script>
 </head>
 <body class="lily-theme">
-
-
+<c:if test="${! empty user}">
 <jsp:include page="/jsp/include/head2.jsp"></jsp:include>
+</c:if>
 
+<c:if test="${empty user}">
+    <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
+</c:if>
 
-
-
-<section class="container">
-  <div class="group-header" style="background-image:url(<c:url value="/pic/imagehead/group-header.jpg"></c:url>)">
+<section class="container" style="margin-top: 60px;">
+  <div class="group-header" style="background-image:url(<c:url value="/resource/pic/imagehead/group-header.jpg"></c:url>)">
 
   <div class="head">
     <div class="icon"><img src="<c:url value="${teamforpicture.headImage.imageSmall}"/>"  alt="${teamforpicture.teamName}"  /></div>
     <div class="infos">
       <h1>${teamforpicture.teamName}</h1>
-      <span>${memberNum}0个成员</span>
+      <span>${memberNum}个成员</span>
     </div>
   </div>
   
@@ -127,8 +120,8 @@ $(function() {
    <div class="mod">
    <div class="tab-nav clearfix">
        <ul>
-         <li ><a href="admin.jsp">基本设置</a></li>
-         <li class="this"><a href="goteampicture.htm">图标设置</a></li>
+         <li ><a href="manageTeam.htm?teamId=${teamforpicture.teamId}">基本设置</a></li>
+         <li class="this"><a href="goTeamPicture.htm?teamId=${teamforpicture.teamId}">图标设置</a></li>
         </ul>
     </div>  
       

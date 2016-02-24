@@ -183,21 +183,25 @@ public class NoteController {
     }
 
     @RequestMapping("doGrade.htm")
-    public void doGrade(HttpServletRequest re, HttpServletResponse response) throws Exception {
+    public void doGrade(HttpServletRequest req, HttpServletResponse response) throws Exception {
         // FIXME
         log.info("==================doGrade->START==========");
 
         PrintWriter out = response.getWriter();
-        User user = (User) re.getSession().getAttribute("user");
+        User user = (User) req.getSession().getAttribute("user");
 
         if (user == null) {
             //FIXME
             log.info("===================user={}", user);
             out.print("go");
         } else {
-            String objectId = re.getParameter("courseId");
-            String score = re.getParameter("score");
-            int mark = Integer.parseInt(score);
+            String objectId = req.getParameter("courseId");
+            String score = req.getParameter("score");
+//            int mark = Integer.parseInt(score);
+            double mark = Double.parseDouble(score);
+            // FIXME
+            System.out.println("================mark=========="+mark);
+
             boolean flag = noteService.isAreadyGrade(user, objectId);
             if (flag) {
                 Grade grade = new Grade();

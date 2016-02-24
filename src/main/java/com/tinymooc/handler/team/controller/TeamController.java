@@ -42,6 +42,9 @@ public class TeamController {
 
     @RequestMapping("teamPage.htm")
     public ModelAndView teamPage(HttpServletRequest req, HttpServletResponse res) {
+        String message = req.getParameter("message");
+        // FIXME
+        System.out.println("============message========="+message);
         User user = (User) req.getSession().getAttribute("user");
         // 1 我的小组 - 我管理的小组
         DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(UserTeam.class)
@@ -83,7 +86,7 @@ public class TeamController {
         req.setAttribute("hotTeams", hotTeams);
         req.setAttribute("dictionaries", dictionaries);
         req.setAttribute(" discussList", discussList);
-        return new ModelAndView("/team/team");
+        return new ModelAndView("/team/team", "message", message);
     }
 
     @RequestMapping("teamHomePage.htm")
@@ -220,6 +223,7 @@ public class TeamController {
         team.setType(teamType);
         team.setConstruction(0);
         team.setTeamState("申请中");
+        team.setHeadImage(new HeadImage("70328611d330411ca1d438ba70a10ccc"));
         team.setApplyDate(new Date());
         teamService.save(team);
 
@@ -233,7 +237,9 @@ public class TeamController {
         userTeam.setTeam(team);
         userTeam.setUserState("批准");
         teamService.save(userTeam);
-        return new ModelAndView("redirect:teamPage.htm");
+
+        String message = "创建成功，请等待批准";
+        return new ModelAndView("redirect:teamPage.htm", "message", message);
     }
 
 
@@ -257,32 +263,84 @@ public class TeamController {
         String teamId = ServletRequestUtils.getStringParameter(req, "teamId", "");
         User user = (User) req.getSession().getAttribute("user");
         Team team = teamService.findById(Team.class, teamId);
+
         DetachedCriteria detachedCriteria = DetachedCriteria.forClass(UserTeam.class)
                 .add(Restrictions.eq("team", team))
                 .add(Restrictions.eq("userState", "批准"))
                 .addOrder(Order.desc("approveDate"));
+        // 批准的UserTeam
         List<UserTeam> userTeams = (List<UserTeam>) teamService.queryAllOfCondition(UserTeam.class, detachedCriteria);
+
+        // 申请中的UserTeam
         DetachedCriteria detachedCriteria2 = DetachedCriteria.forClass(UserTeam.class)
                 .add(Restrictions.eq("team", team))
                 .add(Restrictions.eq("userState", "申请中"))
                 .addOrder(Order.desc("applyDate"));
         List<UserTeam> userTeams2 = (List<UserTeam>) teamService.queryAllOfCondition(UserTeam.class, detachedCriteria2);
-        UserTeam userTeam = new UserTeam();
+
+        // 个人UserTeam
+        UserTeam userTeam1 = new UserTeam();
+        // 组长UserTeam2
         UserTeam userTeam2 = new UserTeam();
+
         for (int i = 0; i < userTeams.size(); i++) {
             if (userTeams.get(i).getUser().getUserId().equals(user.getUserId())) {
-                userTeam = userTeams.get(i);
+                userTeam1 = userTeams.get(i);
             }
             if (userTeams.get(i).getUserPosition().equals("组长")) {
                 userTeam2 = userTeams.get(i);
             }
         }
+
+        // 获取小组成员等级及其称号
+        DetachedCriteria detachedCriteria3 = DetachedCriteria.forClass(Level.class)
+                .add(Restrictions.eq("type", "小组用户"))
+                .addOrder(Order.asc("lvCondition"));
+        List<Level> teamUserLevels = (List<Level>) teamService.queryAllOfCondition(Level.class, detachedCriteria3);
+
+        // 组内成员等级
+        Level level1 = new Level();
+        // 小组等级
+        Level level2 = new Level();
+        for (int j = 0; j < teamUserLevels.size(); j++) {
+            if (j == teamUserLevels.size() - 1) {
+                level1 = teamUserLevels.get(j);
+                break;
+            }
+
+            if (userTeam1.getContribution() != null) {
+                if (userTeam1.getContribution() < teamUserLevels.get(j).getLvCondition()) {
+                    level1 = teamUserLevels.get(j - 1);
+                    break;
+                }
+            }
+        }
+
+        // 获取小组等级及其称号
+        DetachedCriteria detachedCriteria4 = DetachedCriteria.forClass(Level.class)
+                .add(Restrictions.eq("type", "小组"))
+                .addOrder(Order.asc("lvCondition"));
+        List<Level> teamLevels = (List<Level>) teamService.queryAllOfCondition(Level.class, detachedCriteria4);
+
+        for (int k = 0; k < teamLevels.size(); k++) {
+            if (k == teamLevels.size() - 1) {
+                level2 = teamLevels.get(k);
+                break;
+            }
+            if (team.getConstruction() < teamLevels.get(k).getLvCondition()) {
+                level2 = teamLevels.get(k - 1);
+                break;
+            }
+        }
+
         int memberNum = userTeams.size();
         req.setAttribute("userTeams", userTeams);
         req.setAttribute("userTeams2", userTeams2);
         req.setAttribute("memberNum", memberNum);
-        req.setAttribute("userTeam", userTeam);
+        req.setAttribute("userTeam1", userTeam1);
         req.setAttribute("userTeam2", userTeam2);
+        req.setAttribute("level1", level1);
+        req.setAttribute("level2", level2);
         return new ModelAndView("/team/membersAdmin");
     }
 
@@ -355,8 +413,10 @@ public class TeamController {
         String teamId = ServletRequestUtils.getStringParameter(req, "teamId", "");
         String teamName = ServletRequestUtils.getStringParameter(req, "teamName", "");
         String teamIntro = ServletRequestUtils.getStringParameter(req, "teamIntro", "");
-        String labels = ServletRequestUtils.getStringParameter(req, "keyWordsHidden", "");
+        String labels = ServletRequestUtils.getStringParameter(req, "teamTag", "");
+
         labelService.saveObjectLabels(labels, teamId, "team");
+
         Team team = teamService.findById(Team.class, teamId);
         team.setTeamName(teamName);
         team.setTeamIntro(teamIntro);
@@ -489,22 +549,19 @@ public class TeamController {
         UserTeam userTeam = userTeams.get(0);
         int courseNum = userCourses.size();
         int fansNum = attentions2.size();
-        int at = 0;
-        if (!attentions.isEmpty()) {
-            at = 1;
+
+        int isAttention = 0;
+        if (! attentions.isEmpty()) {
+            isAttention = 1;
         }
 
-//        int flag = 1;
-//        if (favorites.isEmpty()) {
-//            flag = 0;
-//        }
         int commentNum = comments.size() + comments2.size();
         discuss.setScanNum(discuss.getScanNum() + 1);
         teamService.update(discuss);
 
         req.setAttribute("discuss", discuss);
         req.setAttribute("fansNum", fansNum);
-        req.setAttribute("at", at);
+        req.setAttribute("isAttention", isAttention);
         req.setAttribute("discusses", discusses);
         req.setAttribute("resource", resource);
         req.setAttribute("courseNum", courseNum);
@@ -660,15 +717,26 @@ public class TeamController {
     }
 
 
-    @RequestMapping("goteampicture.htm")
+    @RequestMapping("goTeamPicture.htm")
     public ModelAndView goteampicture(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //teamId
         String teamId = request.getParameter("teamId");
+        Team team = teamService.findById(Team.class, teamId);
+
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(UserTeam.class)
+                .add(Restrictions.eq("team", team))
+                .add(Restrictions.eq("userState", "批准"))
+                .addOrder(Order.desc("approveDate"));
+        List<UserTeam> userTeams = (List<UserTeam>) teamService.queryAllOfCondition(UserTeam.class, detachedCriteria);
+
+        int memberNum = userTeams.size();
+
         Team teamforpicture = new Team();
         teamforpicture = (Team) teamService.getCurrentSession().createCriteria(Team.class).add(Restrictions.eq("teamId", teamId)).uniqueResult();
         HttpSession hs = request.getSession();
         hs.setAttribute("teamforpicture", teamforpicture);
-        hs.setMaxInactiveInterval(100);
+//        hs.setMaxInactiveInterval(100);
+        request.setAttribute("memberNum" , memberNum);
         return new ModelAndView("/team/picture");
     }
 

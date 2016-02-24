@@ -16,12 +16,7 @@
 <body class="lily-theme">
 
 <jsp:include page="/jsp/include/head1.jsp"></jsp:include>
-<<<<<<< HEAD
-<section class="container signup">
-
-=======
 <section class="container signup" style="margin-top: 60px;">
->>>>>>> refs/remotes/origin/dev
 	<div class="container-padding clearfix">
   		<h1>${verify}</h1>
  	 </div>
