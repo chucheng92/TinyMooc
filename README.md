@@ -83,12 +83,15 @@ OK，这一切看起来多么的简单，欢迎查看我的其他项目和相关
 
 [更新日志](https://github.com/Lemonjing/TinyMooc/blob/master/UPDATE_LOG.md)
 
-## 联系我
+### 联系我
 
-- WebSite:[http://www.tinymood.com](http://www.tinymood.com)
+- WebSite: [http://www.tinymood.com][1]
 - Mail: 932191671@qq.com
-- Linux交流群: [257265338](http://jq.qq.com/?_wv=1027&k=ZKsbKb)
-- 邂逅厦大交流群:[103949230](http://jq.qq.com/?_wv=1027&k=Xxno3g)
+- Linux交流群: [257265338][2]
+- 开源技术小组: [521087632][3]
+
+作者 [微博@Campanulaceae][4]     
+2015 年 11月 15日
 
 ## 开源协议
 
@@ -108,6 +111,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-
-
-
+[1]: http://www.tinymood.com   
+[2]: http://jq.qq.com/?_wv=1027&k=ZKsbKb
+[3]: http://jq.qq.com/?_wv=1027&k=26Y8BYN
+[4]: http://weibo.com/u/1662536394
