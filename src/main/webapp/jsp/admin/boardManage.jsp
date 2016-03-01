@@ -44,6 +44,8 @@
 			$("#form2").submit();
 		});
 
+	
+
 		$("button.btn.btn-danger").click(
 				function() {
 					if (confirm("是否真的要删除？")) {
@@ -65,7 +67,7 @@
 		</div>
 		
 		<div id="search">
-			<input type="text" placeholder="Search here..." /><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
+			<input type="text" placeholder="Search here..." /><button type="submit" class="tip-right"  title="Search"><i class="icon-search icon-white"></i></button>
 		</div>
 		<div id="user-nav" class="navbar navbar-inverse">
             <ul class="nav btn-group">

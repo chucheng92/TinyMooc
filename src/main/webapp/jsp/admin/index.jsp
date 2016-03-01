@@ -19,6 +19,20 @@
     <script src="<c:url value="/resource/js/jquery.peity.min.js"/>"></script>
     <script src="<c:url value="/resource/js/unicorn.js"/>"></script>
     <title>管理员首页 - 萌课网</title>
+    <script type="text/javascript">
+    	$(function(){
+    	 
+    		$("#tip-right").click(function() {
+    			alert("hhh");
+    		
+    		location.href = "adminSearch.htm";
+    		
+    		
+    	 };);
+    	});
+
+      
+    </script>
 </head>
 <body>
 <div id="header">

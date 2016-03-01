@@ -227,6 +227,17 @@ public class AdminController {
 		admin.update(user);
 		return new ModelAndView("redirect:turnToUserManage.htm");
 	}
+
+    //分词搜索
+    @RequestMapping ("adminSearch.htm")
+    public ModelAndView adminSerch(HttpServletRequest req, HttpServletResponse res){
+        String java = "java";
+
+
+        return null;
+    }
+
+
 	@RequestMapping("lockAccount.htm")
 	public ModelAndView lockAccount(HttpServletRequest req,
 			HttpServletResponse res) {
