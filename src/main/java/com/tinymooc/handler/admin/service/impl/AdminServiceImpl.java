@@ -30,8 +30,12 @@ public class AdminServiceImpl extends BaseServiceImpl implements AdminService {
 			
 			return "no-such-person";
 		}
-	
-	}
 
+
+	}
+    public List<Course> findApplyCourse() {
+//        List<Course> applyCourse = getCurrentSession().cre
+        return null;
+    }
 
 }

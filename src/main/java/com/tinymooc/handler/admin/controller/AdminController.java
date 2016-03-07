@@ -1,8 +1,7 @@
 package com.tinymooc.handler.admin.controller;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
+import java.text.DecimalFormat;
+import java.util.*;
 import java.io.File;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +29,9 @@ public class AdminController {
     @Autowired
     private VideoService videoService;
 
+    @Autowired
+    private CourseService courseService;
+
 	@Autowired
 	private AdminService admin;
 	@Autowired
@@ -40,9 +42,71 @@ public class AdminController {
 
 		return new ModelAndView("/admin/login");
 	}
-	
-	
-	@RequestMapping("adminLogin.htm")
+    //课程搜索
+    @RequestMapping("searchCourseIndex.htm")
+    public ModelAndView searchCourseIndex(HttpServletRequest req, HttpServletResponse res)
+            {    List<Course> SlistC = null;
+                User user=(User) req.getSession().getAttribute("admin");
+                     String path = req.getSession().getServletContext().getRealPath("/");
+                System.out.println("路径：" + path);
+                if(user==null){
+                    return new ModelAndView("redirect:goAdminLogin.htm");
+                }else{
+               System.out.println("开始搜索了吗？");
+
+        String q = req.getParameter("searchValue");
+        System.out.println("搜索的内容" + q);
+        DecimalFormat df = new DecimalFormat("#0.000");
+
+        if(courseService.createCourseIndex()){
+
+            long begin = new Date().getTime();
+            List<Course> list = courseService.getCourses(q);
+            System.out.println("输出list数量：" + list.size());
+            long end = new Date().getTime();
+            double time = (double) (end - begin) / 1000;
+            String timeStr = df.format(time);
+                           DetachedCriteria dc = DetachedCriteria.forClass(Course.class);
+            Disjunction disjuncteTitle = Restrictions.disjunction();
+            disjuncteTitle.add(Restrictions.eq("courseId","!@#$%^&*()"));
+              Set<Course> courseSet =  new HashSet<>();
+
+
+            //将课时想光的课程搜索出来
+            for(int i =0;i < list.size();i ++)   {
+            Course course = admin.findById(Course.class,list.get(i).getCourseId()) ;
+                  if (course.getCourse() !=null )     {
+               System.out.println( "输出涉及的课时" + course.getCourse().getCourseId())   ;
+                  courseSet.add(course.getCourse()) ;
+                  }
+                    else {
+                    System.out.println("输出涉及的课程" + course.getCourseId());
+                    courseSet.add(course) ;
+                }
+            }
+            List<Course> list2 = new LinkedList<>();
+            list2.addAll(courseSet);
+            courseSet.clear();
+
+           for(int i =0;i<list2.size();i++) {
+                disjuncteTitle.add(Restrictions.eq("courseId",list2.get(i).getCourseId()));
+                           }
+                       dc.add(disjuncteTitle);
+            int totalPage=admin.countTotalPage(dc, 9);
+            PageHelper.forPage(totalPage, 9);
+            SlistC = (List<Course>)admin.getByPage(dc,9);
+
+                     System.out.println("SlistC.size():"+SlistC.size());
+
+            req.setAttribute("totalTime", timeStr);
+            req.setAttribute("searchValue",q);
+        }
+        return new ModelAndView("/admin/searchResult","SearchCourselist", SlistC);
+    }
+            }
+
+
+    @RequestMapping("adminLogin.htm")
 	public ModelAndView adminLogin(HttpServletRequest request) throws Exception{
 		HttpSession hs=request.getSession();
 		hs.invalidate();
@@ -140,15 +204,16 @@ public class AdminController {
 			
 			return new ModelAndView("redirect:goAdminLogin.htm");
 		}else{
-
+            System.out.println("用户翻页执行1");
 		DetachedCriteria detachedCriteria = DetachedCriteria
 				.forClass(User.class);
 		detachedCriteria.add(Restrictions.ne("userState", "管理员"));
 		int pageSize=6;
 		int totalPage=admin.countTotalPage(detachedCriteria, pageSize);
 		PageHelper.forPage(totalPage, pageSize);
+            System.out.println("用户翻页执行2");
 		List<User> userList = (List<User>) admin.getByPage(detachedCriteria, pageSize);
-		
+            System.out.println("用户翻页执行3");
 		return new ModelAndView("/admin/userManage", "userList", userList);}
 	}
 
@@ -228,14 +293,6 @@ public class AdminController {
 		return new ModelAndView("redirect:turnToUserManage.htm");
 	}
 
-    //分词搜索
-    @RequestMapping ("adminSearch.htm")
-    public ModelAndView adminSerch(HttpServletRequest req, HttpServletResponse res){
-        String java = "java";
-
-
-        return null;
-    }
 
 
 	@RequestMapping("lockAccount.htm")

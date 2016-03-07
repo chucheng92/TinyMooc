@@ -11,6 +11,7 @@
 <script src="<c:url value="/resource/js/jquery.min.js"/>"></script>
 <script src="<c:url value="/resource/js/unicorn.login.js"/>"></script>
 <title>管理员登陆 - 萌课网</title>
+
 </head>
 <body>
 	 <div id="logo">

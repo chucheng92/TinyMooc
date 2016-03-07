@@ -16,6 +16,7 @@ import org.hibernate.criterion.Restrictions;
 import com.tinymooc.common.domain.DataDic;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,7 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Service
-public class BaseServiceImpl implements BaseService {
+public class BaseServiceImpl extends JdbcDaoSupport implements BaseService {
 
     @Autowired(required = true)
     private SessionFactory sessionFactory;

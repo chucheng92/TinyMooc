@@ -53,7 +53,17 @@
 
 		});
 
-
+    function _search()
+    {
+        var form = document.form1;
+        form.searchValue.value = (form.searchValue.value).replace(/[&\|\\\*^%$#@\-]/g,"");
+        if(form.searchValue.value == '')
+        {
+            alert("输入需要搜索关键字！");
+            return false;
+        }
+        form.action ='searchCourseIndex.htm';
+    }
 
 </script>
 <title>用户管理 - 萌课网</title>
@@ -62,10 +72,11 @@
 <div id="header">
 			<h1><a href="">MicroCourse Admin</a></h1>		
 		</div>
-		
-		<div id="search">
-			<input type="text" placeholder="Search here..." /><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
-		</div>
+<form name="form1"  method="post" onsubmit="return _search()">
+    <div id="search">
+        <input type="text" name="searchValue"  placeholder="Search here..." /><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
+    </div>
+</form>
 		<div id="user-nav" class="navbar navbar-inverse">
             <ul class="nav btn-group">
                 <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-user"></i> <span class="text">${admin.userName}</span></a></li>

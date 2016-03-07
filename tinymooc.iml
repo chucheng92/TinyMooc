@@ -70,9 +70,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.7" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:4.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-demo:4.3.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:4.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-facet:4.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queryparser:4.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:4.3.0" level="project" />
@@ -85,6 +83,8 @@
     <orderEntry type="library" name="Maven: com.marswork:marswork-dataaccess:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-highlighter:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:2.4.1" level="project" />
   </component>
 </module>
 
