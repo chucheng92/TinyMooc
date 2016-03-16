@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:tool="http://www.springframework.org/schema/tool" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/tx
+			http://www.springframework.org/schema/tx/spring-tx.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/jee
+           http://www.springframework.org/schema/jee/spring-jee.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/tool
+           http://www.springframework.org/schema/tool/spring-tool.xsd"
+       default-lazy-init="true" default-autowire="byName">
+
+    <!--添加对Annotation的支持-->
+    <context:annotation-config />
+
+    <!-- 打开aop注解配置支持 true表示使用cglib方式实现aop，这个是为了不和struts零配置冲突 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <!-- 扫描该包下的所有Bean(@Component @Controller@Service) 这个默认添加了对Annotation 的支持 -->
+    <context:component-scan base-package="com.tinymooc" />
+
+    <!-- 解决懒加载，真可怕，调了两天的Bug-->
+    <bean id="openSessionInViewInterceptor" class="org.springframework.orm.hibernate4.support.OpenSessionInViewInterceptor">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+
+    <!--HandlerMapping无需配置，SpingMVC默认启动-->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="openSessionInViewInterceptor" />
+            </list>
+        </property>
+    </bean>
+
+    <!-- 静态资源处理-->
+    <!--<mvc:resources mapping="/styles/**" location="/resources/css/" />-->
+    <!--<mvc:resources mapping="/js/**" location="/resources/js/" />-->
+    <!--<mvc:resources mapping="/img/**" location="/resources/img/" />-->
+    <!--<mvc:resources mapping="/pic/**" location="/resources/pic/" />-->
+    <!--<mvc:resources mapping="/video/**" location="/resources/video/" />-->
+
+    <!-- 配置ViewResolver InternalResourceViewResolver放在最后-->
+    <!--配置springMvc的view层。根据url解析视图-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+    <!-- Hibernate配置-->
+    <!-- 读取数据库配置信息 -->
+    <bean id="props"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/configs/jdbc.properties
+
+                </value>
+                <value>/WEB-INF/configs/path.properties
+                </value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置dataSource -->
+    <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="removeAbandoned" value="${jdbc.removeAbandoned}" />
+        <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}" />
+    </bean>
+
+    <!-- 配置SessionFactory -->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan">
+            <list>
+                <value>com.tinymooc.common.domain</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 配置事务管理器transactionManager-->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+
+    <!--采用注解来管理Bean -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!--配置springMvc的view层。根据url解析视图。 -->
+    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean
+            class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop
+                        key="com.tinymooc.common.exception.UserUnLoginException">/loginAndRegister/login</prop>
+                <prop
+                        key="com.tinymooc.common.exception.AdminUnLoginException">/adminJsp/login/login</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

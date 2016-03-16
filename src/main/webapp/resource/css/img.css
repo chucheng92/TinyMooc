@@ -1,0 +1,171 @@
+.gnews-banner div {
+    background: url(/resource/img/003637u4e9rwur4wtqqr0l.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner {
+    background: url(/resource/img/231737vo18nzcdd85e7s7u.png) no-repeat;
+    background-position: 260px 0px;
+    margin-top: 20px;
+}
+.logo {
+    float: left;
+    width: 218px;
+    height: 78px;
+    background: url(/resource/img/235155zqscfap0cu0afkfo.png) no-repeat;
+
+    margin-bottom: 20px;
+}
+.gnews-menu a {
+    float: left;
+    height: 72px;
+    width: 188px;
+    background: url(/resource/img/000244u7li6fs60yiymine.png) no-repeat;
+}
+.gnews-menu-major a {
+    float: left;
+    height: 72px;
+    width: 188px;
+    background: url(/resource/img/223204dyasahehzeseskhk.png) no-repeat;
+}
+.gnews-banner-major {
+    background: url(/resource/img/222633qyln1ybu4xnu4o68.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+}
+.gnews-banner-major div {
+    background: url(/resource/img/000355r0m6u912u90o60ma.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.right hr {
+    margin: 20px 0;
+}
+.custom-hr {
+    width: 100%;
+    height: 5px;
+    background: url(/resource/img/hr-break.jpg) no-repeat;
+}
+.garlic {
+    position: relative;
+    float: left;
+    width: 316px;
+    height: 240px;
+    margin-left: -10px;
+}
+.middle-container .gnews-banner-major div {
+    background: url(/resource/img/000355r0m6u912u90o60ma.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:50px;
+    top: -30px;
+}
+.middle-container .gnews-banner-major {
+    background: url(/resource/img/222633qyln1ybu4xnu4o68.png) no-repeat;
+    background-position: 450px 0px;
+    margin-top: 20px;
+}
+.gnews-menu-major-board a {
+    float: left;
+    height: 12px;
+    width: 188px;
+    background: url(/resource/img/005912gsp9zypdps8gzg2g.png) no-repeat;
+}
+
+.gnews-banner-mail {
+    background: url(/resource/img/tmail.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.gnews-banner-mail div {
+    background: url(/resource/img/mail.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner-account {
+    background: url(/resource/img/taccount.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+}
+.gnews-banner-account div {
+    background: url(/resource/img/account.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:30px;
+    top: -30px;
+}
+.gnews-banner-note {
+    background: url(/resource/img/tnote.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.gnews-banner-note div {
+    background: url(/resource/img/note.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: 0px;
+}
+.gnews-banner-friendlist {
+    background: url(/resource/img/tfriendlist.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+}
+.gnews-banner-friendlist div {
+    background: url(/resource/img/friendlist.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner-mytinymooc div{
+    background: url(/resource/img/mytinymooc.png) no-repeat;
+    width: 520px;
+    height: 150px;
+    position: absolute;
+    left:100px;
+    top: -15px;
+}
+.gnews-banner-team {
+    background: url(/resource/img/231737vo18nzcdd85e7s7u.png) no-repeat;
+    background-position: 260px 0px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.gnews-banner-team div {
+    background: url(/resource/img/003637u4e9rwur4wtqqr0l.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:-40px;
+    top: -30px;
+}
+.gnews-banner-help {
+    background: url(/resource/img/help1.png) no-repeat;
+    background-position: 250px 0px;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.gnews-banner-help div {
+    background: url(/resource/img/help.png) no-repeat;
+    width: 316px;
+    height: 205px;
+    position: absolute;
+    left:50px;
+    top: -40px;
+}
