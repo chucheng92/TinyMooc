@@ -45,7 +45,7 @@ public class Announcement implements java.io.Serializable {
 		this.announcementId = announcementId;
 	}
 
-	@Column(name = "ANNOUNCEMENT_CONTENT", length = 65535)
+	@Column(name = "ANNOUNCEMENT_CONTENT", length = 5000)
 	public String getAnnouncementContent() {
 		return this.announcementContent;
 	}
