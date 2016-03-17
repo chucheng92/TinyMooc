@@ -13,19 +13,21 @@
 
 如果你喜欢,欢迎 [Star and Fork](https://github.com/lemonjing/tinymooc), 谢谢!
 
-## 个人课程学习情况
+## 部分页面展示
+
+### 个人课程学习情况
 ![](http://7xlkoc.com1.z0.glb.clouddn.com/tiny%2Fmooc1.jpg)
 
-## 课程分类
+### 课程分类
 ![](http://7xlkoc.com1.z0.glb.clouddn.com/tiny%2Fmooc2.jpg)
 
-## 课程和课时
+### 课程和课时
 ![](http://7xlkoc.com1.z0.glb.clouddn.com/tiny%2Fmooc3.jpg)
 
-## 课程播放（接入腾讯云视频服务）
+### 课程播放（接入腾讯云视频服务）
 ![](http://7xlkoc.com1.z0.glb.clouddn.com/tiny%2Fmooc4.jpg)
 
-## 推荐页面
+### 推荐页面
 ![](http://7xlkoc.com1.z0.glb.clouddn.com/tiny%2Fmooc5.jpg)
 
 ## 特性
