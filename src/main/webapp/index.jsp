@@ -25,7 +25,7 @@
         <div class="title">
             <div class="group">
                 <div class="item">2015年12月25日</div>
-                <div class="item">萌课网正式公测&nbsp;<a href="http://localhost:8092/turnToHomePage.htm" target="_blank">进入萌课</a></div>
+                <div class="item">萌课网正式公测&nbsp;<a href="http://119.29.97.92/tinymooc/turnToHomePage.htm" target="_blank">进入萌课</a></div>
             </div>
         </div>
         <div class="logo">
