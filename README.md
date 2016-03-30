@@ -13,6 +13,10 @@
 
 如果你喜欢,欢迎 [Star and Fork](https://github.com/lemonjing/tinymooc), 谢谢!
 
+## 演示地址
+
+http://119.29.97.92/tinymooc
+
 ## 部分页面展示
 
 ### 个人课程学习情况
