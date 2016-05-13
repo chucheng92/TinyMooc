@@ -47,7 +47,7 @@ function _search()
 {
     var form = document.form1;
     form.searchValue.value = (form.searchValue.value).replace(/[&\|\\\*^%$#@\-]/g,"");
-    if(form.searchValue.value == '')
+    if(form.searchValue.value.trim() == '')
     {
         alert("输入需要搜索关键字！");
         return false;

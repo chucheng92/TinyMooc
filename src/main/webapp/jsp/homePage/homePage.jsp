@@ -40,6 +40,26 @@
             });
         });
 
+        function _search()
+        {
+            var form = document.form1;
+            form.searchValue.value = (form.searchValue.value).replace(/[&\|\\\*^%$#@\-]/g,"");
+            if(form.searchValue.value.trim() == '')
+            {
+                alert("输入需要搜索关键字！");
+                return false;
+            }
+            form.action ='searchCourseFront.htm';
+        }
+
+    </script>
+
+    <script type="text/javascript">
+    </script>
+
+    <script type="text/javascript">
+
+
     </script>
 
     <style>
@@ -182,9 +202,15 @@
                     </li>
                 </ul>
 
-                <form class="search-form" action="MulsearchByKey.htm" method="post">
+             <%--   <form class="search-form" action="MulsearchByKey.htm" method="post">
                     <input type="text" class="search-input" value name="keyWord" placeholder="想学什么？搜搜看...">
                     <input type="submit" class="search-btn" value>
+                </form>--%>
+                <form name="form1" class="search-form"  method="post" onsubmit="return _search()">
+
+                        <input type="text" name="searchValue" class="search-input" placeholder="想学什么？搜搜看..." >
+                        <input type="submit" class="search-btn" value="">
+
                 </form>
 
 
