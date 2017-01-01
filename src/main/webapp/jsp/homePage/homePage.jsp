@@ -298,6 +298,32 @@
     </div>
 
     <div class="flat clearfix">
+        <h2><strong>课程频道</strong></h2>
+        <ul class="cells channel-cells">
+            <li class="cell"><a href="goCourseHome.htm"><i
+                    class="channel-icon channel-icon-photography"></i>全部</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=摄影"><i
+                    class="channel-icon channel-icon-photography"></i>摄影</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=艺术"><i
+                    class="channel-icon channel-icon-programme"></i>艺术</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=兴趣"><i
+                    class="channel-icon channel-icon-interest"></i>兴趣</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=计算机"><i
+                    class="channel-icon channel-icon-computer"></i>计算机</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=文学"><i
+                    class="channel-icon channel-icon-language"></i>文学</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=求职"><i
+                    class="channel-icon channel-icon-life"></i>求职</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=动漫"><i
+                    class="channel-icon channel-icon-career"></i>动漫</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=音乐"><i
+                    class="channel-icon channel-icon-culture"></i>音乐</a></li>
+            <li class="cell"><a href="goMajorHome.htm?type=其他"><i
+                    class="channel-icon channel-icon-openclass"></i>其他</a></li>
+        </ul>
+    </div>
+
+    <div class="flat clearfix">
         <h2><strong>热门课程 | 瞧瞧大家都在学啥&nbsp;(～￣▽￣)～</strong></h2>
         <ul class="cells cells-middle">
             <c:forEach items="${hotCourseList}" var="hotCourse">
