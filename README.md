@@ -8,7 +8,7 @@
 
 ## 关于Maven下载缺失的Jar包以及数据库SQL文件
 
-[点此下载](链接：http://pan.baidu.com/s/1eRJcPoA) 密码：9ub8
+[点此下载](http://pan.baidu.com/s/1eRJcPoA) 密码：9ub8
 
 ## 萌课(`tinymooc`)是什么?
 
@@ -19,7 +19,7 @@
 
 ## 演示地址
 
-http://localhost:8092
+~~http://119.29.97.92已失效~~ 请换用本地测试
 
 ## 部分页面展示
 
