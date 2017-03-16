@@ -8,7 +8,6 @@ import com.tinymooc.common.domain.Course;
 import org.springframework.jdbc.core.RowMapper;
 
 
-
 /**
  * @Author fenglong
  * @CreateDate Jun 4, 2010 1:31:54 PM
