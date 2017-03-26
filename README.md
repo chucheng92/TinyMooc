@@ -10,6 +10,8 @@
 
 [点此下载](http://pan.baidu.com/s/1eRJcPoA) 密码：9ub8
 
+如果链接失效，请使用extra目录。
+
 ## 萌课(`tinymooc`)是什么?
 
 `tinymooc` 中文名萌课,是一个轻量级Web网站。它拥有简洁的代码,优雅的设计。
