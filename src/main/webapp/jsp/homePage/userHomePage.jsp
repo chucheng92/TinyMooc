@@ -158,13 +158,13 @@
 <body>
 <div class="wrapper">
     <header id="header">
-        <h1><a href="http://localhost:8092/turnToHomePage.htm" target="_blank"></a></h1>
+        <h1><a href="http://119.29.231.159:8080/tinymooc/turnToHomePage.htm" target="_blank"></a></h1>
         <nav>
             <div class="pages">
                 <ul class="header-nav">
 
                     <li class="item">
-                        <a href="http://localhost:8092/turnToHomePage.htm" target="_blank" class="scroll">首页</a>
+                        <a href="http://119.29.231.159:8080/tinymooc/turnToHomePage.htm" target="_blank" class="scroll">首页</a>
                     </li>
 
                     <li class="item course">

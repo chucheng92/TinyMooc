@@ -32,13 +32,6 @@ import org.apache.lucene.search.highlight.SimpleFragmenter;
 import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-
-
-
-
-
-
-
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;

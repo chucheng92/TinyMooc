@@ -103,7 +103,7 @@ public class UserRegisterController {
 		userRegisterService.save(user);
 		
 		SendMailService email = new SendMailService("smtp.163.com", 25, 0, true, "initialran@163.com","19920104tr",true);
-		String url="尊敬的"+user.getUserName()+"您好，点击链接激活您的微课程账号<br><a href='http://localhost:8092/verifyEmail.htm?userid="+user.getUserId()+"'>激活</a><br>";
+		String url="尊敬的"+user.getUserName()+"您好，点击链接激活您的微课程账号<br><a href='http://119.29.231.159:8080/tinymooc/verifyEmail.htm?userid="+user.getUserId()+"'>激活</a><br>";
 		try {
 			email.sendEmail(
 					"initialran@163.com",
@@ -148,7 +148,7 @@ public class UserRegisterController {
         System.out.println(userEmail);
         SendMailService email = new SendMailService("smtp.163.com", 25, 0, true, "initialran@163.com","19920104tr",true);
         System.out.println(userEmail);
-        String url="尊敬的用户您好，点击链接跳转到密码重置页面重置您的密码<br><a href='http://localhost:8092/goChangePasswordPage.htm?userEmail="+userEmail+"'>重置密码</a><br>";
+        String url="尊敬的用户您好，点击链接跳转到密码重置页面重置您的密码<br><a href='http://119.29.231.159:8080/tinymooc/goChangePasswordPage.htm?userEmail="+userEmail+"'>重置密码</a><br>";
 
         try {
             email.sendEmail(

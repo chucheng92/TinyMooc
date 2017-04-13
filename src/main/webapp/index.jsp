@@ -25,7 +25,7 @@
         <div class="title">
             <div class="group">
                 <div class="item">2015年12月25日</div>
-                <div class="item">萌课网2正式公测&nbsp;<a href="http://localhost:8092/turnToHomePage.htm" target="_blank">进入萌课</a></div>
+                <div class="item">萌课网2正式公测&nbsp;<a href="http://119.29.231.159:8080/tinymooc/turnToHomePage.htm" target="_blank">进入萌课</a></div>
             </div>
         </div>
         <div class="logo">
@@ -50,38 +50,6 @@
                 宇宙那么大，我们没弄懂的事情还多着呢。<br />
             </p>
         </div>
-        <div class="info">
-            <div class="info-title">
-                到场团队成员
-            </div>
-            <div class="actress">
-                <div class="act">
-                    <div class="pic">
-                        <img src="http://i0.hdslb.com/u_user/activities/garakowa/imgs/seyuu1.png" alt="actor" />
-                    </div>
-                    <div class="name">
-                        Lily(视觉)
-                    </div>
-                </div>
-                <div class="act">
-                    <div class="pic">
-                        <img src="http://i0.hdslb.com/u_user/activities/garakowa/imgs/seyuu2.png" alt="actor" />
-                    </div>
-                    <div class="name">
-                        Jesscia(程序媛)
-                    </div>
-                </div>
-            </div>
-            <p>
-                &nbsp;<br />
-                活动名称：萌课网公测活动<br />
-                活动时间：2015年12月29日 18:30开场 22:00开演<br />
-                活动地点：厦门鼓浪屿（福建省厦门市鼓浪屿）<br />
-                门票分档：S席680元、A席380元、B席280元、C席180元 <br />
-
-                活动流程：1.萌课介绍 2.主创团队见面会相关 3.迷你Live<br />
-            </p>
-        </div>
         <div class="staff">
             <p>
                 STAFF　<br />
@@ -98,7 +66,7 @@
         <div class="label" data-type="summary"> 萌课简介 </div>
         <div class="label" data-type="info"> 公测活动 </div>
         <div class="label" data-type="staff"> STAFF&amp;团队 </div>
-        <div class="buy" data-type="staff"> <a href="http://localhost:8092/turnToHomePage.htm" target="_blank">萌课首页</a>&nbsp;| </div>
+        <div class="buy" data-type="staff"> <a href="http://119.29.231.159:8080/tinymooc/turnToHomePage.htm" target="_blank">萌课首页</a>&nbsp;| </div>
     </div>
 </div>
 <div class="l-footer">
@@ -108,7 +76,7 @@
         <div class="label" data-type="summary"> 萌课简介&nbsp;| </div>
         <div class="label" data-type="info"> 公测活动&nbsp;| </div>
         <div class="label" data-type="staff"> STAFF&amp;团队&nbsp;| </div>
-        <div class="buy" data-type="staff"> <a href="http://localhost:8092/turnToHomePage.htm" target="_blank">萌课首页</a>&nbsp;| </div>
+        <div class="buy" data-type="staff"> <a href="http://119.29.231.159:8080/tinymooc/turnToHomePage.htm" target="_blank">萌课首页</a>&nbsp;| </div>
     </div>
     <div class = "menu">
         <div>©2015 TinyMooc.COM &nbsp;All Rights Reserved.&nbsp;<a href="#">闽ICP备15018990号-1</a></div>
