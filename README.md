@@ -1,9 +1,5 @@
 
 [![](http://7xlkoc.com1.z0.glb.clouddn.com/LOGO_BIG.png)](http://www.tinymood.com)
-
-[![Developers' website](https://img.shields.io/travis/biezhi/blade.svg?style=flat-square)](http://www.tinymood.com)
-[![maven-central](https://img.shields.io/maven-central/v/com.bladejava/blade-core.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.bladejava%22)
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![@不能卖萌心塞塞 on weibo](http://7xlkoc.com1.z0.glb.clouddn.com/weibo.png)](http://weibo.com/u/1662536394)
 
 ## 关于Maven下载缺失的Jar包以及数据库SQL文件
