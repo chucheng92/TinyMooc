@@ -1,6 +1,5 @@
 
-[![](http://7xlkoc.com1.z0.glb.clouddn.com/LOGO_BIG.png)](http://www.tinymood.com)
-[![@不能卖萌心塞塞 on weibo](http://7xlkoc.com1.z0.glb.clouddn.com/weibo.png)](http://weibo.com/u/1662536394)
+[![](http://7xlkoc.com1.z0.glb.clouddn.com/LOGO_BIG.png)](http://taoxiaoran.top)
 
 ## 关于Maven下载缺失的Jar包以及数据库SQL文件
 
