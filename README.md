@@ -52,38 +52,14 @@
 
 开始之前,首先 [Download或Clone本工程](https://github.com/lemonjing/tinymooc) ：
 
-`Maven` 配置：
-使用maven3.1,并加入tomcat插件
-项目已经启用Jetty部署，tomcat的话可以参考以下配置
+配置`Maven`：
 
-``` sh
-<plugin>
-	<groupId>org.apache.tomcat.maven</groupId>
-	<artifactId>tomcat7-maven-plugin</artifactId>
-	<version>2.2</version>
-	<configuration>
-	<url>http://localhost:8888/manager/text</url>
-	<username>admin</username>
-	<password>admin</password>
-	<server>tomcat7</server>
-	<path>/microlecture</path>
-	</configuration>
-</plugin>
+项目已经启用Jetty插件，默认端口8092
+
+```sh
+jetty:run
 ```
-
-加入用户组到 `tomcat-users.xml`文件：
-
-``` sh
-<role rolename="admin-gui"/>
-<role rolename="admin-script"/>
-<role rolename="manager-gui"/>
-<role rolename="manager-script"/>
-<role rolename="manager-jmx"/>
-<role rolename="manager-status"/>
-<user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-script,admin-gui"/>
-```
-
-运行项目，然后用浏览器打开 http://localhost:8888/tinymooc 这样就可以看到萌课了！
+运行项目，然后用浏览器打开 http://localhost:8092 这样就可以看到萌课了！
 
 OK，这一切看起来多么的简单，欢迎查看我的其他项目和相关更新:
 
