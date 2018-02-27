@@ -79,25 +79,10 @@ OK，这一切看起来多么的简单.
 - WebSite: [http://rannn.cc][1]
 - Mail: xmusaber@163.com
 
-作者 [微博@风屿alter][4]     
+作者 [微博@梦回少年rannn][2]     
 2015 年 11月 15日
 
 ## 开源协议
 
-```
-Copyright 2015 lemonjing
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
-
 [1]: http://rannn.cc
+[2]: https://weibo.com/u/1662536394
