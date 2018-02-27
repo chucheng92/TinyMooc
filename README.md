@@ -61,12 +61,7 @@ jetty:run
 ```
 运行项目，然后用浏览器打开 http://localhost:8092 这样就可以看到萌课了！
 
-OK，这一切看起来多么的简单，欢迎查看我的其他项目和相关更新:
-
-+ [JavaSE工程](https://github.com/Lemonjing/myjavase)
-+ [Leetcode题解](https://github.com/Lemonjing/leetcode)
-+ [版本查询](LAST_VERSION.md)
-+ [更新日志](UPDATE_LOG.md)
+OK，这一切看起来多么的简单.
 
 ## 计划
 
@@ -81,10 +76,8 @@ OK，这一切看起来多么的简单，欢迎查看我的其他项目和相关
 
 ### 联系我
 
-- WebSite: [http://taoxiaoran.top][1]
+- WebSite: [http://rannn.cc][1]
 - Mail: xmusaber@163.com
-- Linux交流群: [257265338][2]
-- 开源技术小组: [521087632][3]
 
 作者 [微博@风屿alter][4]     
 2015 年 11月 15日
@@ -107,7 +100,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-[1]: http://taoxiaoran.top 
-[2]: http://jq.qq.com/?_wv=1027&k=ZKsbKb
-[3]: http://jq.qq.com/?_wv=1027&k=26Y8BYN
-[4]: http://weibo.com/u/1662536394
+[1]: http://rannn.cc
