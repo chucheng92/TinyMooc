@@ -1,7 +1,5 @@
 package com.tinymooc.authority.listener;
 
-
-
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import com.tinymooc.authority.annotation.CheckAuthority;
@@ -19,8 +17,7 @@ import java.util.TimerTask;
 
 
 public class SyncAuthority extends TimerTask {
-	
-	
+
 	private BaseServiceImpl service;
 	private String skanPackage;
 	private String pattern;

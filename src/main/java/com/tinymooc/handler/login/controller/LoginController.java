@@ -42,61 +42,36 @@ public class LoginController {
     // 登录方式1：无Cookie
     @RequestMapping("login.htm")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws ServletRequestBindingException {
-
         HttpSession hs = request.getSession();
         hs.invalidate();
-
         String userEmail = ServletRequestUtils.getStringParameter(request, "userEmail");
         String userPswd = ServletRequestUtils.getStringParameter(request, "userPassword");
         String autoLogin = ServletRequestUtils.getStringParameter(request, "autoLogin");
-
-        // TODO
-        log.info("====userEmail={}===", userEmail);
-        log.info("====userPassword={}===", userPswd);
-        log.info("autoLogin={}", autoLogin);
-
         String userId = loginService.checkByEmailAndPswd(userEmail, userPswd);
-        log.info("userId={}", userId);
         // 设置用户的私信数
         int sumMail = pmService.sumMail(userId);
-        log.info("sumMail={}", userId);
 
         // 找到该用户，封装它的登录信息
         if (!userId.equals("no-such-person")) {
             User userInfo = loginService.findById(User.class, userId);
-            //String avatar = userInfo.getHeadImage().getImageMid();
-            // FIXME
-            //log.info("====avatar={}===", avatar);
             int credit = userInfo.getCredit();
-            // FIXME
-            System.out.println("========credit=====" + credit);
             Level level = userService.getUserLevel(credit);
-            System.out.println("===level===" + level.getLv());
-            // FIXME
-            //log.info("====credit={}===", credit);
-
             // 封装数据
             hs = request.getSession();
             hs.setAttribute("user", userInfo);
             hs.setAttribute("startTime", new Date());
             hs.setAttribute("sumMail", sumMail);
             hs.setAttribute("level", level);
-            // FIXME
-            System.out.println("=========LoginController -> autoLogin====="+ autoLogin);
             // 自动登录时效 一周
-            if (autoLogin!=null) {
-                Cookie cookie = new Cookie("cookie", userInfo.getEmail()+"&&"+userInfo.getPassword());
-                cookie.setMaxAge(7*24*60*60);
+            if (autoLogin != null) {
+                Cookie cookie = new Cookie("cookie", userInfo.getEmail() + "&&" + userInfo.getPassword());
+                cookie.setMaxAge(7 * 24 * 60 * 60);
                 response.addCookie(cookie);
-                // FIXME
-                System.out.println("====LoginController -> cookie====="+cookie.getName()+" "+cookie.getValue()+"==============");
             }
-
             Calendar cal = Calendar.getInstance();
-            request.getSession().setAttribute("month", cal.get(Calendar.MONTH)+1);
+            request.getSession().setAttribute("month", cal.get(Calendar.MONTH) + 1);
             request.getSession().setAttribute("day", cal.get(Calendar.DAY_OF_MONTH));
-            request.getSession().setAttribute("week", cal.get(Calendar.DAY_OF_WEEK)-1);
-
+            request.getSession().setAttribute("week", cal.get(Calendar.DAY_OF_WEEK) - 1);
             return new ModelAndView("redirect:turnToHomePage.htm");
         } else {
             request.setAttribute("note", "邮箱或密码不正确，请重新输入");
@@ -108,11 +83,8 @@ public class LoginController {
     @RequestMapping("checkLogin.htm")
     public ModelAndView checkLogin(HttpServletRequest request) {
         Enumeration<?> e = request.getSession().getAttributeNames();
-
-        // FIXME
-        System.out.println("=====checkLogin enter=========");
         while (e.hasMoreElements()) {
-            String attributeName = (String)e.nextElement();
+            String attributeName = (String) e.nextElement();
             request.getSession().removeAttribute(attributeName);
         }
 
@@ -122,9 +94,9 @@ public class LoginController {
         String cookiePswd = null;
         User userInfo = new User();
 
-        if (cookies!=null) {
+        if (cookies != null) {
             boolean exist = false;
-            for (Cookie coo: cookies) {
+            for (Cookie coo : cookies) {
                 String value = coo.getValue();
                 cooks = value.split("&&");
                 if (cooks.length == 2) {
@@ -134,37 +106,28 @@ public class LoginController {
                     break;
                 }
             }
-            // FIXME
-            System.out.println("=======exist====="+ exist);
-
             if (exist) {
                 String userId = loginService.checkByEmailAndCookie(cookieEmail, cookiePswd);
                 if (!userId.equals("no-such-person")) {
                     int sumMail = pmService.sumMail(userId);
                     userInfo = loginService.findById(User.class, userId);
                     int credit = userInfo.getCredit();
-
-                    // FIXME
-                    log.info("======credit={}======", credit);
                     Level level = userService.getUserLevel(credit);
 
-                    HttpSession hs= request.getSession();
+                    HttpSession hs = request.getSession();
                     // 封装到session
                     hs.setAttribute("userId", userInfo.getUserId());
                     //hs.setAttribute("userName", userInfo.getUserName());
-                   // hs.setAttribute("userEmail", userInfo.getEmail());
+                    // hs.setAttribute("userEmail", userInfo.getEmail());
                     hs.setAttribute("user", userInfo);
                     hs.setAttribute("startTime", new Date());
                     hs.setAttribute("sumMail", sumMail);
-                   hs.setAttribute("level", level);
-                    System.out.println("========cookie LoginController1=======");
+                    hs.setAttribute("level", level);
 
                     Calendar cal = Calendar.getInstance();
-                    request.getSession().setAttribute("month", cal.get(Calendar.MONTH)+1);
+                    request.getSession().setAttribute("month", cal.get(Calendar.MONTH) + 1);
                     request.getSession().setAttribute("day", cal.get(Calendar.DAY_OF_MONTH));
-                    request.getSession().setAttribute("week", cal.get(Calendar.DAY_OF_WEEK)-1);
-                    System.out.println("========cookie LoginController2=======");
-
+                    request.getSession().setAttribute("week", cal.get(Calendar.DAY_OF_WEEK) - 1);
                     return new ModelAndView("redirect:turnToHomePage.htm");
                 }
             }
@@ -174,7 +137,7 @@ public class LoginController {
 
     @RequestMapping("goLoginPage.htm")
     public ModelAndView goLoginPage() {
-        return  new ModelAndView("redirect:checkLogin.htm");
+        return new ModelAndView("redirect:checkLogin.htm");
     }
 
     @RequestMapping("logout.htm")

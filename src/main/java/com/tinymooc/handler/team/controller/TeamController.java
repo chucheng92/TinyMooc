@@ -22,16 +22,17 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
 public class TeamController {
-
+    private static final Logger logger = LoggerFactory.getLogger(TeamController.class);
     @Autowired
     private TeamService teamService;
     @Autowired
@@ -43,8 +44,6 @@ public class TeamController {
     @RequestMapping("teamPage.htm")
     public ModelAndView teamPage(HttpServletRequest req, HttpServletResponse res) {
         String message = req.getParameter("message");
-        // FIXME
-        System.out.println("============message========="+message);
         User user = (User) req.getSession().getAttribute("user");
         // 1 我的小组 - 我管理的小组
         DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(UserTeam.class)
@@ -92,9 +91,6 @@ public class TeamController {
     @RequestMapping("teamHomePage.htm")
     public ModelAndView teamHomePage(HttpServletRequest req, HttpServletResponse res) {
         String teamId = ServletRequestUtils.getStringParameter(req, "teamId", "");
-
-        // FIXME
-        System.out.println("==============teamId" + teamId + "===============");
         User user = (User) req.getSession().getAttribute("user");
         if (user == null) {
             return new ModelAndView("redirect:login.htm");
@@ -137,10 +133,6 @@ public class TeamController {
                 .add(Restrictions.eq("type", "小组用户"))
                 .addOrder(Order.asc("lvCondition"));
         List<Level> teamUserLevels = (List<Level>) teamService.queryAllOfCondition(Level.class, detachedCriteria3);
-
-        // FIXME
-        for (Level l: teamUserLevels)
-            System.out.println("==========测试小组成员========="+l.getTitle());
 
         // 获取小组等级及其称号
         DetachedCriteria detachedCriteria4 = DetachedCriteria.forClass(Level.class)
@@ -551,7 +543,7 @@ public class TeamController {
         int fansNum = attentions2.size();
 
         int isAttention = 0;
-        if (! attentions.isEmpty()) {
+        if (!attentions.isEmpty()) {
             isAttention = 1;
         }
 
@@ -736,7 +728,7 @@ public class TeamController {
         HttpSession hs = request.getSession();
         hs.setAttribute("teamforpicture", teamforpicture);
 //        hs.setMaxInactiveInterval(100);
-        request.setAttribute("memberNum" , memberNum);
+        request.setAttribute("memberNum", memberNum);
         return new ModelAndView("/team/picture");
     }
 
@@ -793,10 +785,8 @@ public class TeamController {
         OutputStream d1S = new FileOutputStream(folder1S);
         d1S.write(b1);
         d1S.flush();
-//		         关闭输出流   
         d1S.close();
-        System.out.println("唯一小组头像已保存到" + uploadPath + uploadPath1);
-
+        logger.info("唯一小组头像已保存到={}", uploadPath + uploadPath1);
 
         //存头像数据
         if (folder1.length() >= 0) {
@@ -815,18 +805,11 @@ public class TeamController {
             teamService.update(team);
             hs.setAttribute("teamforpicture", team);
         }
-
         //返回后台数据
         PrintWriter pw = response.getWriter();
-
         String math = "?" + Math.random();
         uploadPath1 = "<c:url value=\"" + uploadPath1 + "\"/>";
-
         String data = uploadPath1;
-
-        System.out.println(data);
         pw.println(data);
-        //hs.removeAttribute("teamId");
-
     }
 }

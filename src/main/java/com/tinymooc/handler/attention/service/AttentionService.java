@@ -12,6 +12,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 添加关注
+     *
      * @param userA 当前用户
      * @param userB 被关注的人
      */
@@ -19,6 +20,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 查询 与当前用户互粉的人的ID
+     *
      * @param userAid 当前用户
      * @return List
      */
@@ -27,6 +29,7 @@ public interface AttentionService extends BaseService {
     /**
      * userAid 当前用户
      * userBid 要取消关注的人的Id
+     *
      * @param userAid
      * @param userBid
      */
@@ -34,6 +37,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 统计当前用户关注的人的总数
+     *
      * @param userAid
      * @return int
      */
@@ -41,6 +45,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 统计当前用户的粉丝数量
+     *
      * @param userAid
      * @return int
      */
@@ -48,6 +53,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 统计当前用户的互粉的数量
+     *
      * @param userAid
      * @return int
      */
@@ -55,6 +61,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 查询粉丝
+     *
      * @param userAid
      * @return List
      */
@@ -62,6 +69,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 查询关注的人
+     *
      * @param userAid
      * @return
      */
@@ -69,6 +77,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 是否关注
+     *
      * @param userAid
      * @param userBid
      * @return
@@ -77,6 +86,7 @@ public interface AttentionService extends BaseService {
 
     /**
      * 是否互粉
+     *
      * @param userAid
      * @param userBid
      * @return

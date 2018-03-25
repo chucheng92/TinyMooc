@@ -10,8 +10,5 @@ import java.lang.annotation.Target;
 public @interface CheckAuthority {
 	
 	boolean value() default true;
-	//TODO
-	//FIXME
-	//XXX
 	String name();
 }

@@ -21,32 +21,45 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.25</version>
         </dependency>
-
         <!--2  Spring framework -->
+        <!-- 核心依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <artifactId>spring-core</artifactId>
             <version>3.1.1.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>3.1.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>3.1.1.RELEASE</version>
+        </dependency>
+        <!-- Spring dao依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>3.1.1.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
+            <artifactId>spring-tx</artifactId>
             <version>3.1.1.RELEASE</version>
         </dependency>
-
+        <!-- Spring web依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.1.1.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>3.1.1.RELEASE</version>
         </dependency>
-
         <!-- 3 Hibernate core -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -58,20 +71,17 @@
             <artifactId>hibernate-commons-annotations</artifactId>
             <version>4.0.2.Final</version>
         </dependency>
-
         <!--4 Hibernate core library dependency start -->
         <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
         </dependency>
-
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.1.1</version>
         </dependency>
-
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
@@ -114,7 +124,6 @@
         </dependency>
         <!-- Hibernate core library dependency end -->
 
-        <!-- 5 other dependency-->
         <dependency>
             <groupId>antlr</groupId>
             <artifactId>antlr</artifactId>
@@ -150,19 +159,29 @@
             <artifactId>json-lib</artifactId>
             <version>2.4</version>
         </dependency>
-
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.2</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
@@ -174,51 +193,42 @@
             <artifactId>mail</artifactId>
             <version>1.4.7</version>
         </dependency>
-
-
-        <!-- 6 lucene part -->
+        <!-- lucene -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
             <version>2.4.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-demo</artifactId>
             <version>4.3.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-highlighter</artifactId>
             <version>2.4.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-memory</artifactId>
             <version>4.3.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
             <version>4.3.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.wltea</groupId>
             <artifactId>analyzer</artifactId>
             <version>2012FF_u1</version>
         </dependency>
-
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.8</version>
         </dependency>
-
         <dependency>
             <groupId>com.marswork</groupId>
             <artifactId>marswork-core</artifactId>
@@ -229,21 +239,17 @@
             <artifactId>marswork-dataaccess</artifactId>
             <version>1.0.0</version>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
         </dependency>
-
-        <!--
         <dependency>
             <groupId>com.marswork</groupId>
             <artifactId>marswork-websupport</artifactId>
             <version>1.0.0</version>
         </dependency>
-        -->
-
     </dependencies>
 
     <build>
@@ -287,12 +293,12 @@
 
     </build>
 
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>ibiblio.org</id>-->
-    <!--<name>ibiblio.org</name>-->
-    <!--<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>-->
-    <!--</repository>-->
-    <!--</repositories>-->
+    <repositories>
+    <repository>
+    <id>ibiblio.org</id>
+    <name>ibiblio.org</name>
+    <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+    </repository>
+    </repositories>
 
 </project>

@@ -15,9 +15,9 @@ import java.util.List;
 @Transactional
 @Service
 public class LoginServiceImpl extends BaseServiceImpl implements LoginService {
+
     @Override
     public String checkByEmailAndCookie(String cookieEmail, String cookiePswd) {
-
         List<User> userinfo = (List<User>) getCurrentSession().createCriteria(User.class)
                 .add(Restrictions.eq("email", cookieEmail))
                 .add(Restrictions.eqOrIsNull("password", cookiePswd))
@@ -27,18 +27,14 @@ public class LoginServiceImpl extends BaseServiceImpl implements LoginService {
         } else {
             return "no-this-person";
         }
-
     }
 
     @Override
     public String checkByEmailAndPswd(String email, String pswd) {
-
-        System.out.println("######测试checkByEmailAndPswd#######");
         List<User> userinfo = (List<User>) getCurrentSession().createCriteria(User.class)
                 .add(Restrictions.eq("email", email))
                 .add(Restrictions.eq("password", pswd))
                 .add(Restrictions.eq("userState", "激活")).list();
-
         if (userinfo.size() != 0) {
             return userinfo.get(0).getUserId();
         } else {

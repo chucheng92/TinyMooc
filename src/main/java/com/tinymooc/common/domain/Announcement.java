@@ -1,7 +1,5 @@
 package com.tinymooc.common.domain;
 
-// Generated 2013-9-27 23:42:58 by Hibernate Tools 4.0.0
-
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,51 +15,51 @@ import javax.persistence.TemporalType;
 @Table(name = "announcement", catalog = "tinymooc")
 public class Announcement implements java.io.Serializable {
 
-	private String announcementId;
-	private String announcementContent;
-	private Date publishDate;
+    private String announcementId;
+    private String announcementContent;
+    private Date publishDate;
 
-	public Announcement() {
-	}
+    public Announcement() {
+    }
 
-	public Announcement(String announcementId) {
-		this.announcementId = announcementId;
-	}
+    public Announcement(String announcementId) {
+        this.announcementId = announcementId;
+    }
 
-	public Announcement(String announcementId, String announcementContent,
-			Date publishDate) {
-		this.announcementId = announcementId;
-		this.announcementContent = announcementContent;
-		this.publishDate = publishDate;
-	}
+    public Announcement(String announcementId, String announcementContent,
+                        Date publishDate) {
+        this.announcementId = announcementId;
+        this.announcementContent = announcementContent;
+        this.publishDate = publishDate;
+    }
 
-	@Id
-	@Column(name = "ANNOUNCEMENT_ID", unique = true, nullable = false, length = 32)
-	public String getAnnouncementId() {
-		return this.announcementId;
-	}
+    @Id
+    @Column(name = "ANNOUNCEMENT_ID", unique = true, nullable = false, length = 32)
+    public String getAnnouncementId() {
+        return this.announcementId;
+    }
 
-	public void setAnnouncementId(String announcementId) {
-		this.announcementId = announcementId;
-	}
+    public void setAnnouncementId(String announcementId) {
+        this.announcementId = announcementId;
+    }
 
-	@Column(name = "ANNOUNCEMENT_CONTENT", length = 5000)
-	public String getAnnouncementContent() {
-		return this.announcementContent;
-	}
+    @Column(name = "ANNOUNCEMENT_CONTENT", length = 5000)
+    public String getAnnouncementContent() {
+        return this.announcementContent;
+    }
 
-	public void setAnnouncementContent(String announcementContent) {
-		this.announcementContent = announcementContent;
-	}
+    public void setAnnouncementContent(String announcementContent) {
+        this.announcementContent = announcementContent;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "PUBLISH_DATE", length = 19)
-	public Date getPublishDate() {
-		return this.publishDate;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "PUBLISH_DATE", length = 19)
+    public Date getPublishDate() {
+        return this.publishDate;
+    }
 
-	public void setPublishDate(Date publishDate) {
-		this.publishDate = publishDate;
-	}
+    public void setPublishDate(Date publishDate) {
+        this.publishDate = publishDate;
+    }
 
 }

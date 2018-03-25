@@ -1,7 +1,6 @@
 package com.tinymooc.handler.upload.controller;
 
 import java.io.File;
-import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -32,12 +31,9 @@ public class UploadVideoController extends BaseServiceImpl implements BaseServic
     @Autowired
     private UploadService uploadService;
 
-
     @RequestMapping("goUpload.htm")
     public ModelAndView goUpload(HttpServletRequest request) {
-
         String courseId = "1";
-
         request.setAttribute("courseId", courseId);
 
         return new ModelAndView("/help/upload");
@@ -45,30 +41,18 @@ public class UploadVideoController extends BaseServiceImpl implements BaseServic
 
     @RequestMapping("goShowVideo.htm")
     public ModelAndView goShowVideo(HttpServletRequest request) {
-
         String courseId = "1";
-
-
         DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Resource.class);
-
         detachedCriteria.add(Restrictions.eq("resourceObject", courseId));
         detachedCriteria.add(Restrictions.eq("type", "video"));
 
         List<Resource> resourceList = uploadService.queryMaxNumOfCondition(Resource.class, detachedCriteria, 1);
-
         Resource resource = resourceList.get(0);
-        System.out.println(resource.getResourceId());
-
         DetachedCriteria dCriteria = DetachedCriteria.forClass(Video.class);
-
         dCriteria.add(Restrictions.eq("resourceId", resource.getResourceId()));
-
         List<Video> videoList = uploadService.queryAllOfCondition(Video.class, dCriteria);
 
-        System.out.println(videoList.size());
-
         Video video = videoList.get(0);
-
         request.setAttribute("video", video);
 
         return new ModelAndView("/help/showVideo");
@@ -108,21 +92,9 @@ public class UploadVideoController extends BaseServiceImpl implements BaseServic
                         message = "文件太大，不超过1000M";
                         break;
                     }
-
-//                    String filepath = "F:\\eclipse_workplace\\tinymooc\\src\\main\\webapp\\resource\\video";
                     String filepath = "D:\\GitHub\\TinyMooc\\src\\main\\webapp\\resource\\video";
-
-                    //		System.out.println("filepath =====" + filepath);
-                    //		String filename="";
                     postfix = resourceUrl.substring(resourceUrl.lastIndexOf(".") + 1, resourceUrl.length());
-
-                    // FIXME
-                    System.out.println("=========postfix======" + postfix);
-                    //					System.out.println("==============="+postfix);
-
-
                     File uploadPath = new File(filepath);
-
                     File saveFile = new File(uploadPath, fileName);
                     fm.write(saveFile);
                     message = "文件上传成功！";
@@ -139,9 +111,7 @@ public class UploadVideoController extends BaseServiceImpl implements BaseServic
                         courseId = con;
                     }
                 }
-
             }
-
             Course course = new Course();
             course.setCourseId(UUIDGenerator.randomUUID());
             course.setApplyDate(new Date());

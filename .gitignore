@@ -1,6 +1,5 @@
 *.iml
-!tinymooc.iml
-!TinyMooc.iml
-/.idea/*
+.idea/
 *.class
-/target/*
+target/
+*.log

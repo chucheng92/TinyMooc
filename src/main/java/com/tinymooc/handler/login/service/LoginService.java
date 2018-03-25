@@ -9,6 +9,6 @@ import org.springframework.stereotype.Service;
 
 public interface LoginService extends BaseService {
     String checkByEmailAndCookie(String cookieEmail, String cookiePswd);
-    String checkByEmailAndPswd(String email, String pswd);
 
+    String checkByEmailAndPswd(String email, String pswd);
 }

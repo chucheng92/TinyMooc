@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Created by 哓哓 on 2016/1/14 0014.
  */
-
 @Transactional
 @Service
 public class VideoServiceImpl extends BaseServiceImpl implements  VideoService {

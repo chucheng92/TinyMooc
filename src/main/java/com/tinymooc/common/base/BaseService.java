@@ -6,6 +6,7 @@ package com.tinymooc.common.base;
 
 import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
+
 import java.util.List;
 
 public interface BaseService {

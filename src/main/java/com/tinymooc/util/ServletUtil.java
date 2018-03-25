@@ -8,44 +8,39 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
  * Spring side, get the info of Servlet, such as request, HTTP session
- * 
+ *
  * @author Nordy
  */
 public class ServletUtil {
 
     /**
      * get an object in Session
-     * 
-     * @param name
-     *            name of the object
-     * @param clazz
-     *            Class of the Object
+     *
+     * @param name  name of the object
+     * @param clazz Class of the Object
      * @return the object, null if the object not in session or can not cast to given class
      */
     public static <T> T getBeanInSession(String name, Class<T> clazz) {
         try {
             return clazz.cast(getSession().getAttribute(name));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return null;
         }
     }
 
     /**
      * get the HttpRequest
-     * 
+     *
      * @return
      */
     public static HttpServletRequest getRequest() {
         return ((ServletRequestAttributes) RequestContextHolder
                 .currentRequestAttributes()).getRequest();
     }
-    
-    
 
     /**
      * get the HttpRequestParameter
-     * 
+     *
      * @return
      */
     public static String getRequestParameter(String name) {
@@ -54,7 +49,7 @@ public class ServletUtil {
 
     /**
      * get the HttpRequestParameters
-     * 
+     *
      * @return
      */
     public static String[] getRequestParameters(String name) {
@@ -63,7 +58,7 @@ public class ServletUtil {
 
     /**
      * get the HTTP Session
-     * 
+     *
      * @return
      */
     public static HttpSession getSession() {
@@ -72,7 +67,7 @@ public class ServletUtil {
 
     /**
      * get the HTTP Session
-     * 
+     *
      * @param bool
      * @return
      */
@@ -82,7 +77,7 @@ public class ServletUtil {
 
     /**
      * put an object to Session
-     * 
+     *
      * @param name
      * @param value
      */
@@ -92,7 +87,7 @@ public class ServletUtil {
 
     /**
      * set Object to HttpRequestAttribute
-     * 
+     *
      * @param key
      * @param value
      */

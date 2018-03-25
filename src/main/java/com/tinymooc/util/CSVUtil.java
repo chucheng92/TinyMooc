@@ -11,9 +11,6 @@ import java.io.InputStreamReader;
  */
 public class CSVUtil {
 
-    public static void main(String[] args) {
-
-    }
     public static String format(String str) {
         String regex = "[\\s\"]+";
         String res = str.replaceAll(regex, "");
@@ -41,9 +38,9 @@ public class CSVUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (fileId !=  null)
+        if (fileId != null)
             return format(fileId);
         else
-            return  null;
+            return null;
     }
 }

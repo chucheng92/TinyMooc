@@ -9,7 +9,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 /**
  * Created by 哓哓 on 2015/11/26 0026.
  */
@@ -22,8 +21,8 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
      */
     @Override
     public User getUserInfo(String userId) {
-        User user = (User)getCurrentSession().createCriteria(User.class)
-                .add(Restrictions.eq("userId",userId)).setMaxResults(1)
+        User user = (User) getCurrentSession().createCriteria(User.class)
+                .add(Restrictions.eq("userId", userId)).setMaxResults(1)
                 .uniqueResult();
         return user;
     }
@@ -33,9 +32,9 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
      */
     @Override
     public Level getUserLevel(int credit) {
-        Level level = (Level)getCurrentSession().createCriteria(Level.class)
+        Level level = (Level) getCurrentSession().createCriteria(Level.class)
                 .add(Restrictions.le("lvCondition", credit))
-                .add(Restrictions.eq("type","用户"))
+                .add(Restrictions.eq("type", "用户"))
                 .addOrder(Order.desc("lvCondition")).setFirstResult(0)
                 .setMaxResults(1).uniqueResult();
         return level;

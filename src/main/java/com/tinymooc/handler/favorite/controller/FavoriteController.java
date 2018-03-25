@@ -20,7 +20,6 @@ import org.hibernate.criterion.Restrictions;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,23 +49,15 @@ public class FavoriteController {
 
     @RequestMapping("createFavorite.htm")
     public void createFavorite(HttpServletRequest req, HttpServletResponse res) throws MarsException, IOException {
-        // FIXME
-        System.out.println("================createFavorite.htm被执行==============");
         PrintWriter pw = res.getWriter();
-
         User user = (User) req.getSession().getAttribute("user");
         if (user == null) {
             pw.print("login");
         }
         String url = ServletRequestUtils.getStringParameter(req, "url", "");
-        System.out.println("======url=" + url);
         String courseId = ServletRequestUtils.getStringParameter(req, "courseId", "");
-        System.out.println("=========courseId=" + courseId);
-
         Course course = courseService.findById(Course.class, courseId);
-
         Date favoriteDate = new Date();
-
         try {
             Favorite favorite = new Favorite();
             favorite.setUser(user);
@@ -86,7 +77,6 @@ public class FavoriteController {
     @SuppressWarnings("unchecked")
     @RequestMapping("myFavorite.htm")
     public ModelAndView myFavotite(HttpServletRequest req, HttpServletResponse res) throws MarsException {
-
         User user = (User) req.getSession().getAttribute("user");
         DetachedCriteria dCriteria = DetachedCriteria.forClass(Favorite.class)
                 .add(Restrictions.eq("user", user));
@@ -101,12 +91,9 @@ public class FavoriteController {
 
     @RequestMapping("deleteFavorite.htm")
     public ModelAndView ddeleteFavotite(HttpServletRequest req, HttpServletResponse res) throws MarsException {
-
         String favoriteId = ServletRequestUtils.getStringParameter(req, "favoriteId", "");
         Favorite favorite = favoriteService.findById(Favorite.class, favoriteId);
-
         favoriteService.delete(favorite);
-
         return new ModelAndView("redirect:myFavorite.htm");
     }
 }

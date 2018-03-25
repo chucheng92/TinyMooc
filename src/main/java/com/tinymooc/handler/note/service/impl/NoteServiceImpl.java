@@ -15,25 +15,25 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class NoteServiceImpl extends BaseServiceImpl implements NoteService {
 
-	@Override
-	public boolean isAreadyGrade(User user,String ObjId) {
-		// TODO Auto-generated method stub
-		List<Grade> list=getCurrentSession().createCriteria(Grade.class).add(Restrictions.eq("user", user)).add(Restrictions.eq("gradeObject", ObjId)).list();
-		if(list.size()!=0){
-			return false;
-		}else{
-			return true;	
-		}
-	}
+    @Override
+    public boolean isAreadyGrade(User user, String ObjId) {
+        // TODO Auto-generated method stub
+        List<Grade> list = getCurrentSession().createCriteria(Grade.class).add(Restrictions.eq("user", user)).add(Restrictions.eq("gradeObject", ObjId)).list();
+        if (list.size() != 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-	@Override
-	public double queryGrade(String ObjId) {
-		// TODO Auto-generated method stub
-		String sql="select avg(mark) from grade where GRADE_OBJECT='"+ObjId+"'";
-		double avgGrade=(double) getCurrentSession().createQuery(sql).uniqueResult();
-		
-		double a=(Math.round(avgGrade*10+5))/10;
-		return a;
-	}
+    @Override
+    public double queryGrade(String ObjId) {
+        // TODO Auto-generated method stub
+        String sql = "select avg(mark) from grade where GRADE_OBJECT='" + ObjId + "'";
+        double avgGrade = (double) getCurrentSession().createQuery(sql).uniqueResult();
+
+        double a = (Math.round(avgGrade * 10 + 5)) / 10;
+        return a;
+    }
 
 }
