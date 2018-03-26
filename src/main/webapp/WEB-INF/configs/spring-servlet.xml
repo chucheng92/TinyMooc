@@ -127,10 +127,8 @@
             class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
-                <prop
-                        key="com.tinymooc.common.exception.UserUnLoginException">/loginAndRegister/login</prop>
-                <prop
-                        key="com.tinymooc.common.exception.AdminUnLoginException">/adminJsp/login/login</prop>
+                <prop key="com.tinymooc.common.exception.UserUnLoginException">/loginAndRegister/login</prop>
+                <prop key="com.tinymooc.common.exception.AdminUnLoginException">/adminJsp/login/login</prop>
             </props>
         </property>
     </bean>

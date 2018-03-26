@@ -38,6 +38,12 @@
             <artifactId>spring-context</artifactId>
             <version>3.1.1.RELEASE</version>
         </dependency>
+        <!-- Spring ORM -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>3.1.1.RELEASE</version>
+        </dependency>
         <!-- Spring dao依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
