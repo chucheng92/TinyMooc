@@ -3,13 +3,10 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/30 0030.
  */
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name = "rule", catalog = "tinymooc")
@@ -82,6 +79,4 @@ public class Rule implements java.io.Serializable {
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
 }
-

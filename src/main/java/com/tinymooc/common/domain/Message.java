@@ -3,7 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/26 0026.
  */
-
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -104,6 +103,4 @@ public class Message implements java.io.Serializable {
     public void setMessageState(String messageState) {
         this.messageState = messageState;
     }
-
 }
-

@@ -4,7 +4,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/26 0026.
  */
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;

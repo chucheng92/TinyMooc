@@ -72,7 +72,6 @@ public class UploadServiceImpl extends BaseServiceImpl implements UploadService 
 
                     if (!fm.isFormField()) {
                         String filePath = fm.getName();
-                        System.out.println(filePath);
                         String fileName = "";
                         int startIndex = filePath.lastIndexOf("\\");
                         if (startIndex != -1) {

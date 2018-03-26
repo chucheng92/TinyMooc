@@ -81,7 +81,7 @@ public class AttentionServiceImpl extends BaseServiceImpl implements AttentionSe
         //A取消对B的关注
         User user1 = (User) getCurrentSession().createCriteria(User.class).add(Restrictions.eq("userId", userAid)).list().get(0);
         User user2 = (User) getCurrentSession().createCriteria(User.class).add(Restrictions.eq("userId", userBid)).list().get(0);
-        // TODO  这里是不是应该先删除B的AttentionEach 待测试 2015年12月1日11:12:44
+        // TODO  这里是不是应该先删除B的AttentionEach 待测试
         List<Attention> list = getCurrentSession().createCriteria(Attention.class)
                 .add(Restrictions.eq("userByUserId", user1))
                 .add(Restrictions.eq("userByAttentionedUserId", user2)).list();

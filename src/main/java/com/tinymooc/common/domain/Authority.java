@@ -90,6 +90,5 @@ public class Authority implements java.io.Serializable {
     public void setLevelAuthorities(Set<LevelAuthority> levelAuthorities) {
         this.levelAuthorities = levelAuthorities;
     }
-
 }
 

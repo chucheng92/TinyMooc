@@ -4,7 +4,6 @@ package com.tinymooc.common.domain;
  * Created by 哓哓 on 2015/12/6 0006.
  */
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -72,7 +71,7 @@ public class Video implements java.io.Serializable {
         this.videoUrl = videoUrl;
     }
 
-    @Column(name="TENCENT_VIDEO_ID")
+    @Column(name = "TENCENT_VIDEO_ID")
     public String getTencentVideoId() {
         return this.tencentVideoId;
     }
@@ -81,4 +80,3 @@ public class Video implements java.io.Serializable {
         this.tencentVideoId = tencentVideoId;
     }
 }
-

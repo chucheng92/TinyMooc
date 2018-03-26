@@ -3,8 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/30 0030.
  */
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -62,6 +60,4 @@ public class SensitiveWords implements java.io.Serializable {
     public void setReplaceWord(String replaceWord) {
         this.replaceWord = replaceWord;
     }
-
 }
-

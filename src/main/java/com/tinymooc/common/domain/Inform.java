@@ -3,7 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/26 0026.
  */
-
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * 举报
+ * 举报模块
  * 预留
  */
 @Entity

@@ -179,7 +179,7 @@ public class Course implements java.io.Serializable {
         this.logoUrl = logoUrl;
     }
 
-    @Column(name = "TOTAL_MARK", columnDefinition="double(3,2) default '0.00'")
+    @Column(name = "TOTAL_MARK", columnDefinition = "double(3,2) default '0.00'")
     public Double getTotalMark() {
         return totalMark;
     }

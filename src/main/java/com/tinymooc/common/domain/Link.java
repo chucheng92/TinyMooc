@@ -3,8 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/12/6 0006.
  */
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -70,6 +68,4 @@ public class Link implements java.io.Serializable {
     public void setLinkUrl(String linkUrl) {
         this.linkUrl = linkUrl;
     }
-
 }
-

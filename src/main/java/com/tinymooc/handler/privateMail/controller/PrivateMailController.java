@@ -59,7 +59,6 @@ public class PrivateMailController {
         }
         int credit = user.getCredit();
         Level level = userService.getUserLevel(credit);
-        System.out.println("===============level.title&level.lv=" + level.getTitle() + " " + level.getLv());
 
         int mailNum = mailList.size();
         request.setAttribute("level", level);
@@ -89,7 +88,6 @@ public class PrivateMailController {
             result = "info_default";
         } else if ((userRegisterService.checkUserName(userName)) != 0) {
             result = "info_registered";
-            System.out.println(result);
         } else {
             result = "info_no_such_person";
         }

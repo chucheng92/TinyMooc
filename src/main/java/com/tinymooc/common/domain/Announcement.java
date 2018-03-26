@@ -61,5 +61,4 @@ public class Announcement implements java.io.Serializable {
     public void setPublishDate(Date publishDate) {
         this.publishDate = publishDate;
     }
-
 }

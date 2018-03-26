@@ -12,8 +12,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
 import com.tinymooc.common.base.BaseService;
-import org.hibernate.criterion.Restrictions;
-import com.tinymooc.common.domain.DataDic;
 import com.tinymooc.common.tag.pageTag.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -96,10 +94,8 @@ public class BaseServiceImpl extends JdbcDaoSupport implements BaseService {
     @Transactional(readOnly = true)
     public int countTotalPage(Class<?> clazz, int pageSize) {
         Criteria criteria = getCurrentSession().createCriteria(clazz);
-
         // 查询总记录数 使用Criteria和Projections的静态方法
         int totalRecord = ((Long) criteria.setProjection(Projections.rowCount()).uniqueResult()).intValue();
-
         int totalPage = (int) Math.ceil(((double) totalRecord / pageSize));
         return totalPage;
     }
@@ -157,11 +153,9 @@ public class BaseServiceImpl extends JdbcDaoSupport implements BaseService {
     public List<?> getByPage(DetachedCriteria dCriteria, int pageSize) {
 
         int curPage = PageHelper.getCurPage();
-//		System.out.println(curPage);
         Criteria criteria = dCriteria.getExecutableCriteria(getCurrentSession());
         criteria.setFirstResult((curPage - 1) * pageSize);
         criteria.setMaxResults(pageSize);
-//		criteria.setResultTransformer(CriteriaSpecification.ROOT_ENTITY);
         List<?> list = criteria.list();
         return list;
     }
@@ -195,21 +189,6 @@ public class BaseServiceImpl extends JdbcDaoSupport implements BaseService {
         }
     }
 
-//	 @Transactional(readOnly=true)
-//		public List<DataDic> getDataDicByDescription(String description) {
-//			Criteria criteria=getCurrentSession().createCriteria(DataDic.class);
-//			criteria.add(Restrictions.eq("dataDicDescription", description));
-//			List<DataDic> list=criteria.list();
-//			return list;
-//		}
-//	    @Transactional(readOnly=true)
-//		public List<DataDic> getDataDicByKey(String key) {
-//			Criteria criteria=getCurrentSession().createCriteria(DataDic.class);
-//			criteria.add(Restrictions.eq("dataDicKey", key));
-//			List<DataDic> list=criteria.list();
-//			return list;
-//		}
-
     @SuppressWarnings("unchecked")
     @Transactional(readOnly = true)
     public <T> List<T> queryMaxNumOfCondition(Class<T> clazz, DetachedCriteria dCriteria, int num) {
@@ -217,5 +196,4 @@ public class BaseServiceImpl extends JdbcDaoSupport implements BaseService {
         List<T> list = criteria.setMaxResults(num).list();
         return list;
     }
-
 }

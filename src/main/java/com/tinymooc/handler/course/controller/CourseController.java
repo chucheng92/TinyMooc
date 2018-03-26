@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import java.text.DecimalFormat;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -34,6 +33,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CourseController {
     private Logger log = LoggerFactory.getLogger(CourseController.class);
+
     @Autowired
     private VideoService videoService;
 
@@ -53,7 +53,7 @@ public class CourseController {
     private AttentionService attentionService;
 
     @Autowired
-    private FavoriteService  favoriteService;
+    private FavoriteService favoriteService;
 
     private String labels;
 
@@ -78,13 +78,8 @@ public class CourseController {
      */
     @RequestMapping("createCourse.htm")
     public ModelAndView createCourse(HttpServletRequest req, HttpServletResponse res) {
-        // FIXME
-        System.out.println("================进入CreateCourse.htm=============");
         User user = (User) req.getSession().getAttribute("user");
-        String picUrl = (String)req.getSession().getAttribute("picUrl");
-        // FIXME
-        System.out.println("=================picUrl="+picUrl);
-
+        String picUrl = (String) req.getSession().getAttribute("picUrl");
         String courseTitle = ServletRequestUtils.getStringParameter(req, "courseTitle", "");
         String courseIntro = ServletRequestUtils.getStringParameter(req, "courseIntro", "");
         String type = ServletRequestUtils.getStringParameter(req, "type", "");
@@ -94,10 +89,11 @@ public class CourseController {
         course.setCourseIntro(courseIntro);
         course.setCourseState("申请中");
         course.setType(type);
-        if (picUrl != null)
+        if (picUrl != null) {
             course.setLogoUrl(picUrl);
-        else
+        } else {
             course.setLogoUrl("/resource/pic/courseLogo/course1.jpg");
+        }
         course.setScanNum(0);
         course.setCourseTitle(courseTitle);
         courseService.save(course);
@@ -109,8 +105,6 @@ public class CourseController {
         courseService.save(userCourse);
         req.getSession().removeAttribute("picUrl");
 
-        // FIXME
-        System.out.println("================结束CreateCourse.htm=============");
         return new ModelAndView("redirect:courseList.htm");
     }
 
@@ -122,11 +116,7 @@ public class CourseController {
                 .createCriteria("course")
                 .add(Restrictions.eq("course", course));
         List<UserCourse> userCourseList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria1);
-        // FIXME
-        System.out.println("===============userCourseList=" + userCourseList.size());
-
         int lessons = userCourseList.size();
-
         req.setAttribute("course", course);
         req.setAttribute("lessons", lessons);
         return new ModelAndView("/course/createLesson");
@@ -171,7 +161,6 @@ public class CourseController {
         imageText.setResource(resource);
         courseService.save(imageText);
 
-
         return new ModelAndView("redirect:courseList.htm");
     }
 
@@ -195,13 +184,8 @@ public class CourseController {
         int totalPage = courseService.countTotalPage(detachedCriteria, pageSize);
         PageHelper.forPage(totalPage, pageSize);
         List<UserCourse> myCreatedCourseList = (List<UserCourse>) courseService.getByPage(detachedCriteria, pageSize);
-
         int credit = user.getCredit();
-        // FIXME
-        System.out.println("========credit=====" + credit);
-
         Level myLevel = userService.getUserLevel(credit);
-        System.out.println("===myLevel===" + myLevel.getLv());
 
         req.setAttribute("myLevel", myLevel);
         req.setAttribute("myCreatedCourseList", myCreatedCourseList);
@@ -221,28 +205,15 @@ public class CourseController {
 
         User user = (User) req.getSession().getAttribute("user");
 
-        // Test 1
+        // 1
         //查询该课程的用户课程信息（能得到创建者信息）
         DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "创建者"))
                 .add(Restrictions.eq("course", course));
         // currentCourse 针对当前课程的创建者
         UserCourse currentCourse = courseService.queryAllOfCondition(UserCourse.class, detachedCriteria1).get(0);
-        // FIXME
-        if (currentCourse.getLearnState() == null) {
-            System.out.println("Test 1 if===============currentCourse.getLearnState()=NULL");
-        } else {
-            System.out.println("Test 1 else===============currentCourse.getLearnState()=" + currentCourse.getLearnState());
-        }
 
-        //查询该课程的所有课时
-//		DetachedCriteria criteria2=DetachedCriteria.forClass(UserCourse.class)
-//				.add(Restrictions.eq("user", user))
-//				.createCriteria("course")
-//				.add(Restrictions.eq("course", course))				
-//				.addOrder(Order.asc("applyDate"));
-
-        // Test 2
+        // 2
         //按开始学习时间降序排列查询该课程用户学习状态为"学习中"的用户课程信息
         DetachedCriteria detachedCriteria2 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "学员"))
@@ -252,10 +223,7 @@ public class CourseController {
         // 学员学习中
         List<UserCourse> userLearnCourseList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria2);
 
-        // FIXME
-        System.out.println("Test 2===============userLearnCourseList .size=" + userLearnCourseList.size());
-
-        // Test 3
+        // 3
         //按开始学习时间降序排列查询该课程用户学习状态为"已学"的用户课程信息
         DetachedCriteria detachedCriteria3 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "学员"))
@@ -264,12 +232,10 @@ public class CourseController {
                 .addOrder(Order.desc("startDate"));
         // 学员已学
         List<UserCourse> userEndCourseList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria3);
-        // FIXME
-        System.out.println("Test 3===============userEndCourseList.size=" + userEndCourseList.size());
         // 准备学员数据
         int studentNum = userLearnCourseList.size() + userEndCourseList.size();
 
-        // Test 4
+        // 4
         // 查询该课程创建者其他创建的用户课程
         DetachedCriteria detachedCriteria4 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "创建者"))
@@ -278,10 +244,8 @@ public class CourseController {
         List<UserCourse> creatorCourseList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria4);
         // 准备课程数数据
         int creatorCourseNum = creatorCourseList.size();
-        // FIXME
-        System.out.println("Test 4===============creatorCourseList.size=" + creatorCourseList.size());
 
-        // Test 5
+        // 5
         // 查询关注者为登录用户，被关注者为课程创建者的关注信息
         // 查询当前用户与创建者的关注信息
         DetachedCriteria detachedCriteria5_1 = DetachedCriteria.forClass(Attention.class)
@@ -303,10 +267,8 @@ public class CourseController {
         if (!favoriteOfCurrentCourse.isEmpty()) {
             isFavorite = 1;
         }
-        // FIXME
-        System.out.println("Test 5===============attentionOfCurrentToCreator.size=" + attentionOfCurrentToCreator.size());
 
-        // Test 6-1
+        // 6-1
         // 查询课程创建者的关注信息
         // 创建者的粉丝
         DetachedCriteria detachedCriteria6_1 = DetachedCriteria.forClass(Attention.class)
@@ -316,10 +278,7 @@ public class CourseController {
         // 准备粉丝数据
         int fansNum = fansOfCreatorList.size();
 
-        // FIXME
-        System.out.println("Test 6-1 ===============fansOfCreatorList.size=" + fansOfCreatorList.size());
-
-        // Test 6-2
+        // 6-2
         // 创建者的关注
         DetachedCriteria detachedCriteria6_2 = DetachedCriteria.forClass(Attention.class)
                 .add(Restrictions.eq("userByUserId", currentCourse.getUser()));
@@ -327,20 +286,16 @@ public class CourseController {
         List<Attention> followOfCreatorList = (List<Attention>) courseService.queryAllOfCondition(Attention.class, detachedCriteria6_2);
         // 准备关注数据
         int followNum = followOfCreatorList.size();
-        // FIXME
-        System.out.println("Test 6-2===============followOfCreatorList =" + followOfCreatorList.size());
 
-        // Test 7
+        // 7
         // 该门课程的标签
         DetachedCriteria detachedCriteria7 = DetachedCriteria.forClass(LabelObject.class)
                 .add(Restrictions.eq("objectType", "course"))
                 .add(Restrictions.eq("objectId", currentCourse.getCourse().getCourseId()));
         // 该门课程的标签
         List<LabelObject> labelObjectList = (List<LabelObject>) courseService.queryAllOfCondition(LabelObject.class, detachedCriteria7);
-        // FIXME
-        System.out.println("Test 7===============labelObjectList =" + labelObjectList.size());
 
-        // Test 8
+        // 8
         // 该门课程的评分同时写回Course表的totalMark中
         DetachedCriteria detachedCriteria8 = DetachedCriteria.forClass(Grade.class).add(Restrictions.eq("gradeObject", courseId));
         List<Grade> gradeList = courseService.queryAllOfCondition(Grade.class, detachedCriteria8);
@@ -353,11 +308,8 @@ public class CourseController {
         }
         course.setTotalMark(userGrade);
         courseService.update(course);
-        // FIXME
-        System.out.println("Test 8===============userGrade=" + userGrade);
 
-
-        // Test 9
+        // 9
         // 查询当前用户针对本课程的学习状态
         DetachedCriteria detachedCriteria9 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("user", user))
@@ -365,25 +317,16 @@ public class CourseController {
                 .add(Restrictions.eq("userPosition", "学员"));
         String currentCourseState = "开始学习";
         List<UserCourse> tempList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria9);
-        // FIXME
-        System.out.println("Test 9===============tempList.size=" + tempList.size());
-
         if (!tempList.isEmpty()) {
             currentCourseState = tempList.get(0).getLearnState();
         }
-
-        // FIXME
-        System.out.println("==============程序执行到CourseController ->Test9===============");
-
-        // Test 10
+        // 10
         //查询该课程对应所有的课时及用户学习状态
         DetachedCriteria detachedCriteria10 = DetachedCriteria.forClass(Course.class)
                 .add(Restrictions.eq("course", course))
                 .addOrder(Order.asc("applyDate"))
                 .add(Restrictions.eq("courseState", "批准"));
         List<Course> tempLessonList = (List<Course>) courseService.queryAllOfCondition(Course.class, detachedCriteria10);
-        // FIXME
-        System.out.println("Test10 ===============tempLessonList.size=" + tempLessonList.size());
 
         // 课时
         List<UserCourse> lessonList = new ArrayList<UserCourse>();
@@ -395,9 +338,6 @@ public class CourseController {
                     .add(Restrictions.eq("course", tempLessonList.get(i)))
                     .add(Restrictions.eq("userPosition", "学员"));
             List<UserCourse> localTempCourseList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria11);
-            // FIXME
-            System.out.println("Test11 ===============localTempCourseList=" + localTempCourseList.size());
-
             if (!localTempCourseList.isEmpty()) {
                 currentLessonState = localTempCourseList.get(0).getLearnState();
             }
@@ -405,16 +345,10 @@ public class CourseController {
             newCourse.setLearnState(currentLessonState);
             lessonList.add(newCourse);
         }
-        // Test UserCourseList
-        // FIXME
-        System.out.println("Test 章节===============lessonList=" + lessonList.size());
-
         // 准备章节数据
         int lessonNum = lessonList.size();
-        // Test12
-        // FIXME
-        System.out.println("Test 12=============lessonNum=" + lessonNum);
 
+        // 12
         int picSuffix = 0;
         if (currentCourse.getCourse().getCourseId().length() <= 2) {
             picSuffix = Integer.parseInt(currentCourse.getCourse().getCourseId());
@@ -438,6 +372,7 @@ public class CourseController {
         req.setAttribute("labelList", labelObjectList);
         req.setAttribute("currentCourseState", currentCourseState);
         req.setAttribute("lessonList", lessonList);
+
         return new ModelAndView("/course/courseDetailPage");
     }
 
@@ -478,21 +413,14 @@ public class CourseController {
 
     @RequestMapping("lessonPage.htm")
     public ModelAndView lessonPage(HttpServletRequest req, HttpServletResponse res) {
-        // FIXME
-        log.info("==================进入lessonPage===============");
         String childrenId = ServletRequestUtils.getStringParameter(req, "childrenId", "");
-
-        // FIXME
         log.info("==================childrenId={}", childrenId);
-
         User user = (User) req.getSession().getAttribute("user");
         // 课时
         Course lesson = courseService.findById(Course.class, childrenId);
-
-        // FIXME
         log.info("==================lesson.title={}", lesson.getCourseTitle());
 
-        //1查询创建者
+        //1 查询创建者
         DetachedCriteria detachedCriteria1 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("course", lesson.getCourse()))
                 .add(Restrictions.eq("userPosition", "创建者"));
@@ -508,7 +436,7 @@ public class CourseController {
                 .addOrder(Order.desc("startDate"));
         List<UserCourse> userLearnCourseList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria2);
 
-        // 3查询本课程已学
+        // 3 查询本课程已学
         //按开始学习时间降序排列查询该课程用户学习状态为"已学"的用户课程信息
         DetachedCriteria detachedCriteria3 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("userPosition", "学员"))
@@ -517,8 +445,7 @@ public class CourseController {
                 .addOrder(Order.desc("startDate"));
         List<UserCourse> userEndCourseList = (List<UserCourse>) courseService.queryAllOfCondition(UserCourse.class, detachedCriteria3);
 
-        // Test 4
-        // 查询当前用户与创建者的关注信息
+        // 4 查询当前用户与创建者的关注信息
         DetachedCriteria detachedCriteria4 = DetachedCriteria.forClass(Attention.class)
                 .add(Restrictions.eq("userByUserId", user))
                 .add(Restrictions.eq("userByAttentionedUserId", currentCourse.getUser()));
@@ -528,10 +455,7 @@ public class CourseController {
         if (!attentionOfCurrentToCreator.isEmpty()) {
             isAttention = 1;
         }
-        // FIXME
-        System.out.println("Test 4===============attentionOfCurrentToCreator.size=" + attentionOfCurrentToCreator.size());
-
-        // Test 5-1
+        // 5-1
         // 创建者的粉丝
         DetachedCriteria detachedCriteria5_1 = DetachedCriteria.forClass(Attention.class)
                 .add(Restrictions.eq("userByAttentionedUserId", currentCourse.getUser()));
@@ -540,10 +464,7 @@ public class CourseController {
         // 准备粉丝数据
         int fansNum = fansOfCreatorList.size();
 
-        // FIXME
-        System.out.println("Test 5-1 ===============fansOfCreatorList.size=" + fansOfCreatorList.size());
-
-        // Test 5-2
+        // 5-2
         // 创建者的关注
         DetachedCriteria detachedCriteria5_2 = DetachedCriteria.forClass(Attention.class)
                 .add(Restrictions.eq("userByUserId", currentCourse.getUser()));
@@ -551,10 +472,8 @@ public class CourseController {
         List<Attention> followOfCreatorList = (List<Attention>) courseService.queryAllOfCondition(Attention.class, detachedCriteria5_2);
         // 准备关注数据
         int followNum = followOfCreatorList.size();
-        // FIXME
-        System.out.println("Test 5-2===============followOfCreatorList =" + followOfCreatorList.size());
 
-        //6-评论信息
+        // 6 评论信息
         DetachedCriteria detachedCriteria6 = DetachedCriteria.forClass(Comment.class)
                 .add(Restrictions.eq("commentObject", childrenId))
                 .add(Restrictions.isNull("comment"))
@@ -568,19 +487,19 @@ public class CourseController {
         List<Comment> nestedCommentList = (List<Comment>) courseService.queryAllOfCondition(Comment.class, detachedCriteria7);
 
 
-        // 7-课时资源信息
+        // 7 课时资源信息
         DetachedCriteria detachedCriteria8 = DetachedCriteria.forClass(Resource.class)
                 .add(Restrictions.eq("resourceObject", childrenId));
         List<Resource> resources = (List<Resource>) courseService.queryAllOfCondition(Resource.class, detachedCriteria8);
         Resource resource = resources.get(0);
 
-        // 8-课程对应的课时列表
+        // 8 课程对应的课时列表
         DetachedCriteria detachedCriteria9 = DetachedCriteria.forClass(Course.class)
                 .add(Restrictions.eq("course", currentCourse.getCourse()))
                 .addOrder(Order.asc("lessonNum"));
         List<Course> lessonList = (List<Course>) courseService.queryAllOfCondition(Course.class, detachedCriteria9);
 
-        // 9-当前用户对于本课时的学习状态
+        // 9 当前用户对于本课时的学习状态
         DetachedCriteria detachedCriteria10 = DetachedCriteria.forClass(UserCourse.class)
                 .add(Restrictions.eq("user", user))
                 .add(Restrictions.eq("course", lesson))
@@ -594,20 +513,13 @@ public class CourseController {
         int studentNum = userLearnCourseList.size() + userEndCourseList.size();
         lesson.setScanNum(lesson.getScanNum() + 1);
 
-        // Test14 准备TencentVideoId
-        String  resourceObject = courseService.findById(Course.class, childrenId).getCourseId();
+        // 14 准备TencentVideoId
+        String resourceObject = courseService.findById(Course.class, childrenId).getCourseId();
         DetachedCriteria detachedCriteria14 = DetachedCriteria.forClass(Resource.class)
                 .add(Restrictions.eq("resourceObject", resourceObject));
         Resource temResource = resourceService.queryAllOfCondition(Resource.class, detachedCriteria14).get(0);
         String fileId = videoService.findById(Video.class, temResource.getResourceId()).getTencentVideoId();
 
-        // FIXME
-        System.out.println("======================resourceObject="+resourceObject);
-        // FIXME
-        System.out.println("======================fileId="+fileId);
-
-        // FIXME
-        log.info("==============程序执行到此============");
         req.setAttribute("lesson", lesson);
         req.setAttribute("currentCourse", currentCourse);
         req.setAttribute("userLearnCourseList", userLearnCourseList);
@@ -635,8 +547,8 @@ public class CourseController {
         String courseTimeId = ServletRequestUtils.getStringParameter(req, "courseTimeId", "");
         String content = ServletRequestUtils.getStringParameter(req, "content", "");
         String parentId = ServletRequestUtils.getStringParameter(req, "parentId", "");
-        User user = (User) req.getSession().getAttribute("user");
 
+        User user = (User) req.getSession().getAttribute("user");
         Comment comment = new Comment();
         comment.setCommentId(UUIDGenerator.randomUUID());
         comment.setCommentDate(new Date());
@@ -655,7 +567,6 @@ public class CourseController {
     @RequestMapping("startLearn.htm")
     public ModelAndView startLearn(HttpServletRequest req, HttpServletResponse res) {
         // 本课时学习状态
-        log.info("==============进入startLearn===========");
         String courseId = ServletRequestUtils.getStringParameter(req, "courseId", "");
         User user = (User) req.getSession().getAttribute("user");
         Course course = courseService.findById(Course.class, courseId);

@@ -3,8 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/30 0030.
  */
-
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -164,6 +162,4 @@ public class Team implements java.io.Serializable {
     public void setDiscusses(Set<Discuss> discusses) {
         this.discusses = discusses;
     }
-
 }
-

@@ -29,10 +29,8 @@ public class FileUploadUtils {
         String pathType = "images";
         if (!(filepaths.equals("")))
             pathType = filepaths;
-
         String readPath = "";
         String contextPath = "";
-
         if ((readPath == null) || (readPath.equals("")))
             readPath = request.getSession().getServletContext().getRealPath("");
 
@@ -119,7 +117,6 @@ public class FileUploadUtils {
     public static final void downFile(HttpServletRequest request, HttpServletResponse response, String filepath, String fileName)
             throws IOException {
         String path = filePath(request, filepath);
-        System.out.println(path);
         response.setContentType("text/html;charset=utf-8");
 
         File isfile = new File(path);
@@ -135,7 +132,6 @@ public class FileUploadUtils {
         }
 
         File file = new File(path);
-
         response.setContentType("application/x-msdownload");
         response.setContentLength((int) file.length());
         response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
@@ -145,15 +141,12 @@ public class FileUploadUtils {
 
         byte[] b = new byte[1024];
         long k = 0L;
-
         OutputStream myout = response.getOutputStream();
-
         while (k < file.length()) {
             int j = buff.read(b, 0, 1024);
             k += j;
             myout.write(b, 0, j);
         }
-
         myout.flush();
     }
 
@@ -178,10 +171,8 @@ public class FileUploadUtils {
 
     public static String getContextPath(HttpServletRequest request) {
         String contextPath = "";
-
         if ((contextPath == null) || (contextPath.equals("")))
             contextPath = request.getContextPath();
-
         return contextPath;
     }
 

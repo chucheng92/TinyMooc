@@ -37,7 +37,6 @@ public class UserRegisterController {
         out = response.getWriter();
         if (userRegisterService.checkEmail(userEmail) != 0) {
             result = "registered";
-            System.out.println(result);
         } else {
             result = "ok";
         }
@@ -49,13 +48,11 @@ public class UserRegisterController {
     public String checkUsedNick(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String name = ServletRequestUtils.getStringParameter(request, "userName");
         String userName = new String(name.getBytes("ISO8859-1"), "UTF-8");
-        System.out.println(userName + "####################");
         PrintWriter out = null;
         String result = null;
         out = response.getWriter();
         if (userRegisterService.checkUserName(userName) != 0) {
             result = "registered";
-            System.out.println(result);
         } else {
             result = "ok";
         }
@@ -105,7 +102,6 @@ public class UserRegisterController {
             request.setAttribute("note", "尊敬的用户,您已经成功注册，请前往注册邮箱激活账号。");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("send fail");
             request.setAttribute("note", "尊敬的用户,很不幸的消息，由于网络故障，注册激活邮件发送失败。");
         }
         return new ModelAndView("/register/registerSuccess");
@@ -114,9 +110,7 @@ public class UserRegisterController {
     //邮箱激活
     @RequestMapping("verifyEmail.htm")
     public ModelAndView verifyEmail(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
         String userid = request.getParameter("userid");
-        System.out.println(userid);
         User user = userRegisterService.getUserInfo(userid);
 
         if (user.getUserId() != null) {
@@ -134,13 +128,9 @@ public class UserRegisterController {
 
     @RequestMapping("findPassword.htm")
     public ModelAndView findPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
         String userEmail = request.getParameter("userEmail");
-        System.out.println(userEmail);
         SendMailService email = new SendMailService("smtp.163.com", 25, 0, true, "initialran@163.com", "19920104tr", true);
-        System.out.println(userEmail);
         String url = "尊敬的用户您好，点击链接跳转到密码重置页面重置您的密码<br><a href='http://119.29.231.159:8080/tinymooc/goChangePasswordPage.htm?userEmail=" + userEmail + "'>重置密码</a><br>";
-
         try {
             email.sendEmail(
                     "initialran@163.com",
@@ -151,7 +141,6 @@ public class UserRegisterController {
             request.setAttribute("note", "尊敬的用户，系统已经给您的注册邮箱发送了找回密码的链接，请尽快查请前邮箱查看。");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("send fail");
             request.setAttribute("note", "尊敬的用户,很不幸的消息，由于网络故障，注册验证邮件发送失败。");
         }
         return new ModelAndView("/register/sendEmailSuccess");

@@ -124,6 +124,4 @@ public class UserTeam implements java.io.Serializable {
     public void setContribution(Integer contribution) {
         this.contribution = contribution;
     }
-
 }
-

@@ -36,8 +36,6 @@ public class SensitiveWordTag extends TagSupport {
             for (int i = 0; i < sensitiveWordList.size(); i++) {
                 originContent = originContent.replaceAll(sensitiveWordList.get(i).getSensitiveWord(), sensitiveWordList.get(i).getReplaceWord());
             }
-            System.out.println(originContent);
-            System.out.println(sensitiveWordList.size());
             out.print(originContent);
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,7 +49,6 @@ public class SensitiveWordTag extends TagSupport {
     }
 
     @Override
-
     public void release() {
         super.release();
         this.originContent = null;

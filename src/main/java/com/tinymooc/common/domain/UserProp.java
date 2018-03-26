@@ -1,8 +1,5 @@
 package com.tinymooc.common.domain;
 
-/**
- * Created by 哓哓 on 2015/11/26 0026.
- */
 
 /**
  * 道具功能 预留
@@ -15,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name = "user_prop", catalog = "tinymooc")
@@ -78,6 +74,4 @@ public class UserProp implements java.io.Serializable {
     public void setNumber(Integer number) {
         this.number = number;
     }
-
 }
-

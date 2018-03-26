@@ -149,7 +149,6 @@ public class PageTag extends BodyTagSupport {
 
     private String makeUrl(String url, int toPage) {
         url = url.replaceAll("\\{curPage\\}", String.valueOf(toPage));
-//		url=url.replaceAll("\\{pageSize\\}", String.valueOf(pageSize));
         return url;
     }
 

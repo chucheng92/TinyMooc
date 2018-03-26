@@ -737,28 +737,18 @@ public class TeamController {
         HttpSession hs = request.getSession();
         Team team0 = (Team) hs.getAttribute("teamforpicture");
         Team team = (Team) teamService.getCurrentSession().createCriteria(Team.class).add(Restrictions.eq("teamId", team0.getTeamId())).uniqueResult();
-        System.out.println(team.getTeamId());
         //存两份一份供用户读取，如下
         //设置基本路径
         String uploadPath = request.getSession().getServletContext().getRealPath("/") + "";
-
         String PathToService = uploadPath.split(".metadata")[0] + "/Supper_Microlecture/src/main/webapp/pic/imagehead/";
-
-
-        System.out.println("uploadPath" + uploadPath);
-
-
-        System.out.println("uploadPath*********************" + uploadPath);
         File upPath = new File(PathToService);
         if (!upPath.exists()) upPath.mkdirs();
+
         //创建小头像
         String jsn = request.getParameter("dataAll");
-
-        System.out.println("+++++++jsn:" + jsn.substring(0, 50));
         JSONObject jsonObject = JSONObject.fromObject(jsn);
         String img1 = ((String) jsonObject.get("data1")).substring(22);
         img1 = img1.replaceAll("_", "+");
-        System.out.println("+++++++img1：" + img1.substring(0, 30));
         //byte[] b1=img1.getBytes();
         Base64 base64 = new Base64();
         byte[] b1 = base64.decode(img1);
@@ -768,7 +758,6 @@ public class TeamController {
             }
         }
         String uploadPath1 = "/pic/imagehead/" + team.getTeamId() + "3.jpg";
-        System.out.println(uploadPath + uploadPath1);
         File folder1 = new File(uploadPath + uploadPath1);
         //检查文件存在与否
         if (!folder1.exists())

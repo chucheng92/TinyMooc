@@ -3,7 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/30 0030.
  */
-
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -77,6 +76,5 @@ public class Prop implements java.io.Serializable {
     public void setUserProps(Set<UserProp> userProps) {
         this.userProps = userProps;
     }
-
 }
 

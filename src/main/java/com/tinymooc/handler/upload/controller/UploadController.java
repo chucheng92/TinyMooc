@@ -55,7 +55,7 @@ public class UploadController {
             if (!userUploadDir.exists())
                 userUploadDir.mkdirs();
         } catch (Exception e) {
-            System.out.println("创建目录失败");
+            logger.error("创建目录失败");
         }
         String jsn = request.getParameter("dataAll");
         JSONObject jsonObject = JSONObject.fromObject(jsn);
@@ -68,7 +68,6 @@ public class UploadController {
         //创建大头像
         //byte[] b1=img1.getBytes();
         Base64 base64 = new Base64();
-        System.out.println("img1：" + img1.substring(0, 30));
         byte[] b1 = base64.decode(img1);
         for (int i = 0; i < b1.length; ++i) {
             if (b1[i] < 0) {// 调整异常数据
@@ -86,7 +85,6 @@ public class UploadController {
         logger.info("大头像已保存到={}", imageLarge.getPath());
 
         //创建中头像
-        System.out.println("img2：" + img2.substring(0, 30));
         byte[] b2 = img2.getBytes();
         Base64 base642 = new Base64();
         b2 = base642.decode(b2);
@@ -99,7 +97,6 @@ public class UploadController {
         logger.info("中头像已保存到={}", imageMid.getPath());
 
         //创建小头像
-        System.out.println("img3：" + img3.substring(0, 30));
         byte[] b3 = img3.getBytes();
         Base64 base643 = new Base64();
         b3 = base643.decode(b3);
@@ -138,5 +135,4 @@ public class UploadController {
         String data = uploadPath1 + "%" + uploadPath2 + "%" + uploadPath3;
         pw.println(data);
     }
-
 }

@@ -3,8 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/30 0030.
  */
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -64,6 +62,4 @@ public class LevelAuthority implements java.io.Serializable {
     public void setAuthority(Authority authority) {
         this.authority = authority;
     }
-
 }
-

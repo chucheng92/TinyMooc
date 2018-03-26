@@ -3,7 +3,6 @@ package com.tinymooc.common.domain;
 /**
  * Created by 哓哓 on 2015/11/30 0030.
  */
-
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -91,6 +90,4 @@ public class Note implements java.io.Serializable {
     public void setPublic_(String public_) {
         this.public_ = public_;
     }
-
 }
-

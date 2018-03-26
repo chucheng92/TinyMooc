@@ -29,7 +29,6 @@ public class Favorite implements java.io.Serializable {
     private String url;
     private Date favoriteDate;
     private String courseName;
-//    private String objectId;
 
     public Favorite() {
     }

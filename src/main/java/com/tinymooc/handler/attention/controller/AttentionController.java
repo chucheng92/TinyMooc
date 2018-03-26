@@ -112,7 +112,6 @@ public class AttentionController {
     // 我的粉丝列表
     @RequestMapping("myFans.htm")
     public ModelAndView myFans(HttpServletRequest request) throws Exception {
-        System.out.println("================myFans.htm被执行==========");
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
             return new ModelAndView("/login/login");
