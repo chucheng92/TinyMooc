@@ -76,11 +76,11 @@ OK，这一切看起来多么的简单.
 
 ### 联系我
 
-- WebSite: [http://rannn.cc][1]
+- WebSite: [http://rann.cc][1]
 - Mail: xmusaber@163.com
 
 作者 [微博@梦回少年rannn][2]     
 2015 年 11月 15日
 
-[1]: http://rannn.cc
+[1]: http://rann.cc
 [2]: https://weibo.com/u/1662536394
