@@ -10,7 +10,7 @@
 `tinymooc` 中文名萌课,是一个轻量级Web网站。它拥有简洁的代码,优雅的设计。
 萌课网目前打算实现微课程的点播和直播服务，依托于腾讯云强大的云计算服务给用户带去更好的微课学习体验。
 
-如果你喜欢,欢迎 [Star and Fork](https://github.com/lemonjing/tinymooc), 谢谢!
+如果你喜欢,欢迎 [Star & Fork](https://github.com/lemonjing/tinymooc), 谢谢!
 
 ## 演示地址
 
