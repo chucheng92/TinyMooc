@@ -1,5 +1,5 @@
 
-[![](http://7xlkoc.com1.z0.glb.clouddn.com/LOGO_BIG.png)](http://taoxiaoran.top)
+[![](http://7xlkoc.com1.z0.glb.clouddn.com/LOGO_BIG.png)](http://rann.cc)
 
 ## 关于Maven下载缺失的Jar包以及数据库SQL文件
 
@@ -10,7 +10,7 @@
 `tinymooc` 中文名萌课,是一个轻量级Web网站。它拥有简洁的代码,优雅的设计。
 萌课网目前打算实现微课程的点播和直播服务，依托于腾讯云强大的云计算服务给用户带去更好的微课学习体验。
 
-如果你喜欢,欢迎 [Star and Fork](https://github.com/lemonjing/tinymooc), 谢谢!
+如果你喜欢,欢迎 [Star and Fork](https://github.com/ferrari014/tinymooc), 谢谢!
 
 ## 演示地址
 
@@ -50,7 +50,7 @@
 
 ## 快速入门
 
-开始之前,首先 [Download或Clone本工程](https://github.com/lemonjing/tinymooc) ：
+开始之前,首先 [Download或Clone本工程](https://github.com/ferrari014/tinymooc) ：
 
 配置`Maven`：
 
@@ -72,7 +72,7 @@ OK，这一切看起来多么的简单.
 
 ## 更新日志
 
-[更新日志](https://github.com/Lemonjing/TinyMooc/blob/master/UPDATE_LOG.md)
+[更新日志](https://github.com/ferrari014/TinyMooc/blob/master/UPDATE_LOG.md)
 
 ### 联系我
 
